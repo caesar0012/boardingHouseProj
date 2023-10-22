@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class Form1 : Form
+    public partial class Room : Form
     {
-        public Form1()
+        public Room()
         {
             InitializeComponent();
+        }
+
+        private void Room_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

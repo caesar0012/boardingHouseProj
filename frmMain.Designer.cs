@@ -34,23 +34,16 @@
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAnalytics = new System.Windows.Forms.Button();
+            this.btnMaintenance = new System.Windows.Forms.Button();
+            this.btnPayments = new System.Windows.Forms.Button();
+            this.btnRoom = new System.Windows.Forms.Button();
+            this.btnCustomer = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.txtBg = new System.Windows.Forms.TextBox();
-            this.txtPanel = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.roundPictureBox1 = new boardingHouseProj.RoundPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +57,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 124);
+            this.panel1.Size = new System.Drawing.Size(1099, 124);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtSearch
             // 
@@ -102,166 +94,108 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(109)))), ((int)(((byte)(130)))));
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnAnalytics);
+            this.panel2.Controls.Add(this.btnMaintenance);
+            this.panel2.Controls.Add(this.btnPayments);
+            this.panel2.Controls.Add(this.btnRoom);
+            this.panel2.Controls.Add(this.btnCustomer);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 124);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 374);
+            this.panel2.Size = new System.Drawing.Size(226, 498);
             this.panel2.TabIndex = 1;
             // 
-            // button5
+            // btnAnalytics
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 264);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(226, 66);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalytics.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalytics.Location = new System.Drawing.Point(0, 264);
+            this.btnAnalytics.Name = "btnAnalytics";
+            this.btnAnalytics.Size = new System.Drawing.Size(226, 66);
+            this.btnAnalytics.TabIndex = 14;
+            this.btnAnalytics.Text = "Analytics";
+            this.btnAnalytics.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnMaintenance
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 198);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 66);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Analytics";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnMaintenance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintenance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintenance.Location = new System.Drawing.Point(0, 198);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Size = new System.Drawing.Size(226, 66);
+            this.btnMaintenance.TabIndex = 13;
+            this.btnMaintenance.Text = "Maintenance";
+            this.btnMaintenance.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPayments
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 66);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Payments";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPayments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayments.Location = new System.Drawing.Point(0, 132);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Size = new System.Drawing.Size(226, 66);
+            this.btnPayments.TabIndex = 12;
+            this.btnPayments.Text = "Payments";
+            this.btnPayments.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRoom
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 66);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Maintenance";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRoom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoom.Location = new System.Drawing.Point(0, 66);
+            this.btnRoom.Name = "btnRoom";
+            this.btnRoom.Size = new System.Drawing.Size(226, 66);
+            this.btnRoom.TabIndex = 11;
+            this.btnRoom.Text = "Room";
+            this.btnRoom.UseVisualStyleBackColor = true;
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
-            // button1
+            // btnCustomer
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 66);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Room";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(226, 66);
+            this.btnCustomer.TabIndex = 7;
+            this.btnCustomer.Text = "Customer";
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // panelMain
             // 
+            this.panelMain.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelMain.Controls.Add(this.button6);
-            this.panelMain.Controls.Add(this.label3);
-            this.panelMain.Controls.Add(this.label2);
-            this.panelMain.Controls.Add(this.txtPanel);
-            this.panelMain.Controls.Add(this.txtBg);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(226, 124);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(827, 374);
+            this.panelMain.Size = new System.Drawing.Size(873, 498);
             this.panelMain.TabIndex = 2;
-            // 
-            // txtBg
-            // 
-            this.txtBg.Location = new System.Drawing.Point(149, 132);
-            this.txtBg.Name = "txtBg";
-            this.txtBg.Size = new System.Drawing.Size(161, 20);
-            this.txtBg.TabIndex = 2;
-            // 
-            // txtPanel
-            // 
-            this.txtPanel.Location = new System.Drawing.Point(149, 169);
-            this.txtPanel.Name = "txtPanel";
-            this.txtPanel.Size = new System.Drawing.Size(161, 20);
-            this.txtPanel.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Background";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Panel";
-            // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(556, 257);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 6;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(330, 169);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Apply";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // roundPictureBox1
             // 
             this.roundPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.roundPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
-            this.roundPictureBox1.Location = new System.Drawing.Point(941, 12);
+            this.roundPictureBox1.Location = new System.Drawing.Point(987, 12);
             this.roundPictureBox1.Name = "roundPictureBox1";
             this.roundPictureBox1.Size = new System.Drawing.Size(100, 100);
             this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundPictureBox1.TabIndex = 1;
             this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1053, 498);
-            this.Controls.Add(this.btnApply);
+            this.ClientSize = new System.Drawing.Size(1099, 622);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -271,8 +205,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -284,20 +216,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private RoundPictureBox roundPictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPanel;
-        private System.Windows.Forms.TextBox txtBg;
-        private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAnalytics;
+        private System.Windows.Forms.Button btnMaintenance;
+        private System.Windows.Forms.Button btnPayments;
+        private System.Windows.Forms.Button btnRoom;
+        private System.Windows.Forms.Button btnCustomer;
     }
 }
 

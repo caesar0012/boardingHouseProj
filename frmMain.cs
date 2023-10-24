@@ -18,40 +18,30 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        private void roundPictureBox1_Click(object sender, EventArgs e)
+        private void btnCustomer_Click(object sender, EventArgs e)
         {
-
+            frmCustomer c1 = new frmCustomer();
+            c1.TopLevel = false;
+            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            c1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(c1);
+            c1.BringToFront();
+            c1.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnRoom_Click(object sender, EventArgs e)
         {
-
+            frmRoom fr1 = new frmRoom();
+            fr1.TopLevel = false;
+            fr1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            fr1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(fr1);
+            fr1.BringToFront();
+            fr1.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-            //
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            string colorMain = "#" + txtBg.Text;
-
-            Color selectedColor = ColorTranslator.FromHtml(colorMain);
-
-            panelMain.BackColor= selectedColor;
-
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string colorMain2 = "#" + txtPanel.Text;
-
-            Color selectedColor2 = ColorTranslator.FromHtml(colorMain2);
-
-            panel1.BackColor = selectedColor2;
-            panel2.BackColor = selectedColor2;
 
         }
     }

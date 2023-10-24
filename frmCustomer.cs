@@ -10,16 +10,23 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmRoom : Form
+    public partial class frmCustomer : Form
     {
-        public frmRoom()
+        public frmCustomer()
         {
             InitializeComponent();
         }
 
-        private void frmRoom_Load(object sender, EventArgs e)
-        {
 
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Upload Success");
+        }
+
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Save Successfully");
         }
     }
 }

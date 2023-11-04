@@ -18,30 +18,50 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            frmCustomer c1 = new frmCustomer();
-            c1.TopLevel = false;
-            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(c1);
-            c1.BringToFront();
-            c1.Show();
-        }
-
-        private void btnRoom_Click(object sender, EventArgs e)
-        {
-            frmRoom fr1 = new frmRoom();
-            fr1.TopLevel = false;
-            fr1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            fr1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(fr1);
-            fr1.BringToFront();
-            fr1.Show();
+            this.Close();
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void panelBig_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            showReservation();
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            frmCreateStaff staff1 = new frmCreateStaff();
+            staff1.TopLevel = false;
+            staff1.Dock = DockStyle.Fill;
+            panelBig.Controls.Add(staff1);
+            staff1.BringToFront();
+            staff1.Show();
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            showReservation();
+        }
+
+        void showReservation() {
+
+            frmCustomer c1 = new frmCustomer();
+            c1.TopLevel = false;
+            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            c1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelBig.Controls.Add(c1);
+            c1.BringToFront();
+            c1.Show();
 
         }
     }

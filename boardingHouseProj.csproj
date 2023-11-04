@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCreateStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCreateStaff.Designer.cs">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateStaff.Designer.cs">
+      <DependentUpon>frmCreateStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -64,28 +64,19 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRoom.Designer.cs">
-      <DependentUpon>frmRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="frmCreateStaff.resx">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateStaff.resx">
+      <DependentUpon>frmCreateStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRoom.resx">
-      <DependentUpon>frmRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

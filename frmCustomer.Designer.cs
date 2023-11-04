@@ -29,288 +29,185 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnFirstName = new System.Windows.Forms.TextBox();
+            this.btnMiddleName = new System.Windows.Forms.TextBox();
+            this.btnLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnFile = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnRelationship = new System.Windows.Forms.TextBox();
+            this.btnEmergencyContact = new System.Windows.Forms.TextBox();
+            this.btnContact = new System.Windows.Forms.TextBox();
+            this.btnReserved = new System.Windows.Forms.Button();
+            this.btnUnreserved = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkAC = new System.Windows.Forms.CheckBox();
+            this.checkWifi = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 105);
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(351, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.Size = new System.Drawing.Size(203, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "FirstName:";
+            this.label1.Text = "Personal Information";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // btnFirstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(154, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 35);
-            this.textBox1.TabIndex = 1;
+            this.btnFirstName.Location = new System.Drawing.Point(30, 75);
+            this.btnFirstName.Name = "btnFirstName";
+            this.btnFirstName.Size = new System.Drawing.Size(257, 32);
+            this.btnFirstName.TabIndex = 1;
+            this.btnFirstName.Text = "First Name*";
+            this.btnFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // btnMiddleName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(154, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 35);
-            this.textBox2.TabIndex = 3;
+            this.btnMiddleName.Location = new System.Drawing.Point(326, 75);
+            this.btnMiddleName.Name = "btnMiddleName";
+            this.btnMiddleName.Size = new System.Drawing.Size(257, 32);
+            this.btnMiddleName.TabIndex = 2;
+            this.btnMiddleName.Text = "Middle Name";
+            this.btnMiddleName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // btnLastName
+            // 
+            this.btnLastName.Location = new System.Drawing.Point(642, 75);
+            this.btnLastName.Name = "btnLastName";
+            this.btnLastName.Size = new System.Drawing.Size(257, 32);
+            this.btnLastName.TabIndex = 3;
+            this.btnLastName.Text = "Last Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 158);
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(351, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MiddleName";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(154, 321);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 35);
-            this.textBox3.TabIndex = 7;
+            this.label2.Size = new System.Drawing.Size(193, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Contact Information";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 322);
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(351, 270);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Address";
+            this.label3.Size = new System.Drawing.Size(175, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Room Information";
             // 
-            // textBox4
+            // btnRelationship
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(154, 206);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 35);
-            this.textBox4.TabIndex = 5;
+            this.btnRelationship.Location = new System.Drawing.Point(642, 209);
+            this.btnRelationship.Name = "btnRelationship";
+            this.btnRelationship.Size = new System.Drawing.Size(257, 32);
+            this.btnRelationship.TabIndex = 8;
+            this.btnRelationship.Text = "Relationship";
+            this.btnRelationship.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label4
+            // btnEmergencyContact
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 212);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "LastName";
+            this.btnEmergencyContact.Location = new System.Drawing.Point(326, 209);
+            this.btnEmergencyContact.Name = "btnEmergencyContact";
+            this.btnEmergencyContact.Size = new System.Drawing.Size(257, 32);
+            this.btnEmergencyContact.TabIndex = 7;
+            this.btnEmergencyContact.Text = "Emergency Contact";
             // 
-            // dateTimePicker1
+            // btnContact
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(692, 156);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker1.TabIndex = 14;
+            this.btnContact.Location = new System.Drawing.Point(30, 209);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(257, 32);
+            this.btnContact.TabIndex = 6;
+            this.btnContact.Text = "Contact Number";
             // 
-            // label8
+            // btnReserved
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(583, 167);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 23);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "BirthDate";
+            this.btnReserved.Location = new System.Drawing.Point(704, 350);
+            this.btnReserved.Name = "btnReserved";
+            this.btnReserved.Size = new System.Drawing.Size(119, 41);
+            this.btnReserved.TabIndex = 12;
+            this.btnReserved.Text = "Reserve";
+            this.btnReserved.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // btnUnreserved
             // 
-            this.textBox8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(154, 263);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 35);
-            this.textBox8.TabIndex = 17;
+            this.btnUnreserved.Location = new System.Drawing.Point(704, 426);
+            this.btnUnreserved.Name = "btnUnreserved";
+            this.btnUnreserved.Size = new System.Drawing.Size(119, 41);
+            this.btnUnreserved.TabIndex = 13;
+            this.btnUnreserved.Text = "Unrserved";
+            this.btnUnreserved.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // textBox1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(43, 269);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 23);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Contact";
+            this.textBox1.Location = new System.Drawing.Point(41, 350);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(186, 32);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.Text = "Number of beds";
             // 
-            // textBox9
+            // checkAC
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(692, 105);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 35);
-            this.textBox9.TabIndex = 19;
+            this.checkAC.AutoSize = true;
+            this.checkAC.Location = new System.Drawing.Point(41, 399);
+            this.checkAC.Name = "checkAC";
+            this.checkAC.Size = new System.Drawing.Size(57, 28);
+            this.checkAC.TabIndex = 16;
+            this.checkAC.Text = "AC";
+            this.checkAC.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // checkWifi
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(583, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 23);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Address";
+            this.checkWifi.AutoSize = true;
+            this.checkWifi.Location = new System.Drawing.Point(41, 439);
+            this.checkWifi.Name = "checkWifi";
+            this.checkWifi.Size = new System.Drawing.Size(66, 28);
+            this.checkWifi.TabIndex = 17;
+            this.checkWifi.Text = "Wifi";
+            this.checkWifi.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // textBox2
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(692, 215);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 35);
-            this.textBox10.TabIndex = 21;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(541, 226);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 23);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Emergency Contact";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(154, 390);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 35);
-            this.textBox11.TabIndex = 23;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(43, 391);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 23);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Gender";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(692, 275);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(200, 35);
-            this.textBox13.TabIndex = 27;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(581, 276);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(107, 23);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "Preference";
-            // 
-            // btnFile
-            // 
-            this.btnFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFile.Font = new System.Drawing.Font("Arial", 10F);
-            this.btnFile.Location = new System.Drawing.Point(692, 328);
-            this.btnFile.Name = "btnFile";
-            this.btnFile.Size = new System.Drawing.Size(200, 28);
-            this.btnFile.TabIndex = 29;
-            this.btnFile.Text = "Upload File";
-            this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(203)))), ((int)(((byte)(153)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(388, 459);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 27);
-            this.btnSave.TabIndex = 30;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 88);
-            this.panel1.TabIndex = 31;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(583, 332);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 23);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Document";
+            this.textBox2.Location = new System.Drawing.Point(354, 350);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(190, 117);
+            this.textBox2.TabIndex = 18;
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1017, 540);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnFile);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(1001, 508);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.checkWifi);
+            this.Controls.Add(this.checkAC);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnUnreserved);
+            this.Controls.Add(this.btnReserved);
+            this.Controls.Add(this.btnRelationship);
+            this.Controls.Add(this.btnEmergencyContact);
+            this.Controls.Add(this.btnContact);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnLastName);
+            this.Controls.Add(this.btnMiddleName);
+            this.Controls.Add(this.btnFirstName);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmCustomer";
-            this.Text = "m";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmPersonal_infoCx_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,28 +216,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox btnFirstName;
+        private System.Windows.Forms.TextBox btnMiddleName;
+        private System.Windows.Forms.TextBox btnLastName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnFile;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox btnRelationship;
+        private System.Windows.Forms.TextBox btnEmergencyContact;
+        private System.Windows.Forms.TextBox btnContact;
+        private System.Windows.Forms.Button btnReserved;
+        private System.Windows.Forms.Button btnUnreserved;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkAC;
+        private System.Windows.Forms.CheckBox checkWifi;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

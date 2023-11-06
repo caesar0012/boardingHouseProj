@@ -16,6 +16,8 @@ namespace boardingHouseProj
         public frmMain()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -62,6 +64,11 @@ namespace boardingHouseProj
             panelBig.Controls.Add(c1);
             c1.BringToFront();
             c1.Show();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

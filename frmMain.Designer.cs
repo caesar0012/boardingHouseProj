@@ -39,6 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.loginfrm = new boardingHouseProj.UserControl1();
+            this.panelMain.SuspendLayout();
             this.panelFuntion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +49,7 @@
             // 
             this.panelMain.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelMain.Controls.Add(this.loginfrm);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 107);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4);
@@ -123,6 +126,7 @@
             this.btnPayment.TabIndex = 2;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnReport
             // 
@@ -193,6 +197,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Jr. Boarding House System";
             // 
+            // loginfrm
+            // 
+            this.loginfrm.BackColor = System.Drawing.Color.BurlyWood;
+            this.loginfrm.Location = new System.Drawing.Point(498, 207);
+            this.loginfrm.Name = "loginfrm";
+            this.loginfrm.Size = new System.Drawing.Size(376, 373);
+            this.loginfrm.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,6 +218,7 @@
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.panelMain.ResumeLayout(false);
             this.panelFuntion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -225,6 +238,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAccount;
+        private UserControl1 loginfrm;
     }
 }
 

@@ -17,6 +17,7 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+            
 
         }
 
@@ -53,6 +54,7 @@ namespace boardingHouseProj
         private void btnReservation_Click(object sender, EventArgs e)
         {
             showReservation();
+            
         }
 
         void showReservation() {
@@ -70,6 +72,11 @@ namespace boardingHouseProj
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

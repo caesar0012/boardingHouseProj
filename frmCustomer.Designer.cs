@@ -190,10 +190,10 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(380, 366);
+            this.textBox2.Location = new System.Drawing.Point(308, 366);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 117);
+            this.textBox2.Size = new System.Drawing.Size(330, 117);
             this.textBox2.TabIndex = 18;
             // 
             // frmCustomer

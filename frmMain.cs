@@ -45,7 +45,7 @@ namespace boardingHouseProj
             frmCreateStaff staff1 = new frmCreateStaff();
             staff1.TopLevel = false;
             staff1.Dock = DockStyle.Fill;
-            panelBig.Controls.Add(staff1);
+            panelMain.Controls.Add(staff1);
             staff1.BringToFront();
             staff1.Show();
         }
@@ -61,7 +61,7 @@ namespace boardingHouseProj
             c1.TopLevel = false;
             c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
             c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelBig.Controls.Add(c1);
+            panelMain.Controls.Add(c1);
             c1.BringToFront();
             c1.Show();
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelBig = new System.Windows.Forms.Panel();
             this.panelFuntion = new System.Windows.Forms.Panel();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnManageRoom = new System.Windows.Forms.Button();
@@ -40,7 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelMain.SuspendLayout();
             this.panelFuntion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,31 +47,16 @@
             // 
             this.panelMain.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelMain.Controls.Add(this.panelFuntion);
-            this.panelMain.Controls.Add(this.panel1);
-            this.panelMain.Controls.Add(this.panelBig);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Location = new System.Drawing.Point(0, 107);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1465, 766);
+            this.panelMain.Size = new System.Drawing.Size(1465, 659);
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
-            // panelBig
-            // 
-            this.panelBig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBig.Location = new System.Drawing.Point(0, 0);
-            this.panelBig.Margin = new System.Windows.Forms.Padding(4);
-            this.panelBig.Name = "panelBig";
-            this.panelBig.Size = new System.Drawing.Size(1465, 766);
-            this.panelBig.TabIndex = 2;
-            this.panelBig.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBig_Paint);
-            // 
             // panelFuntion
             // 
-            this.panelFuntion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFuntion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.panelFuntion.Controls.Add(this.btnAccount);
             this.panelFuntion.Controls.Add(this.btnManageRoom);
@@ -81,6 +64,7 @@
             this.panelFuntion.Controls.Add(this.btnPayment);
             this.panelFuntion.Controls.Add(this.btnReport);
             this.panelFuntion.Controls.Add(this.btnReservation);
+            this.panelFuntion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFuntion.Location = new System.Drawing.Point(0, 107);
             this.panelFuntion.Margin = new System.Windows.Forms.Padding(4);
             this.panelFuntion.Name = "panelFuntion";
@@ -89,7 +73,7 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAccount.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Location = new System.Drawing.Point(1264, 14);
@@ -103,7 +87,7 @@
             // 
             // btnManageRoom
             // 
-            this.btnManageRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnManageRoom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnManageRoom.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageRoom.Location = new System.Drawing.Point(789, 14);
@@ -116,7 +100,7 @@
             // 
             // btnRequest
             // 
-            this.btnRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRequest.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRequest.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRequest.Location = new System.Drawing.Point(1028, 14);
@@ -129,7 +113,7 @@
             // 
             // btnPayment
             // 
-            this.btnPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPayment.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Location = new System.Drawing.Point(557, 14);
@@ -142,6 +126,7 @@
             // 
             // btnReport
             // 
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnReport.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Location = new System.Drawing.Point(93, 14);
@@ -154,6 +139,7 @@
             // 
             // btnReservation
             // 
+            this.btnReservation.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnReservation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservation.Location = new System.Drawing.Point(309, 14);
@@ -180,6 +166,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Location = new System.Drawing.Point(1349, 39);
@@ -187,17 +174,19 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "button1";
+            this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(519, 34);
+            this.label1.Location = new System.Drawing.Point(591, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(375, 35);
@@ -208,14 +197,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1465, 766);
+            this.Controls.Add(this.panelFuntion);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.panelMain.ResumeLayout(false);
             this.panelFuntion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -234,7 +224,6 @@
         private System.Windows.Forms.Button btnReservation;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panelBig;
         private System.Windows.Forms.Button btnAccount;
     }
 }

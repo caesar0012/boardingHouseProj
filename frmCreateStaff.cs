@@ -15,6 +15,8 @@ namespace boardingHouseProj
         public frmCreateStaff()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
         }
 
         private void frmCreateStaff_Load(object sender, EventArgs e)

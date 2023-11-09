@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmLogin : Form
+    public partial class frmRequest : Form
     {
-        public frmLogin()
+        public frmRequest()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void frmRequest_Load(object sender, EventArgs e)
         {
 
         }

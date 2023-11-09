@@ -89,5 +89,15 @@ namespace boardingHouseProj
             rm1.BringToFront();
             rm1.Show();
         }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            frmRequest reqs1 = new frmRequest();
+            reqs1.TopLevel = false;
+            reqs1.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(reqs1);
+            reqs1.BringToFront();
+            reqs1.Show();
+        }
     }
 }

@@ -78,5 +78,16 @@ namespace boardingHouseProj
         {
             
         }
+
+        private void btnManageRoom_Click(object sender, EventArgs e)
+        {
+            frmManage_rm rm1 = new frmManage_rm();
+            rm1.TopLevel = false;
+            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(rm1);
+            rm1.BringToFront();
+            rm1.Show();
+        }
     }
 }

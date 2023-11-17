@@ -79,6 +79,16 @@ namespace boardingHouseProj
             panelMain.Controls.Add(reqs1);
             reqs1.BringToFront();
             reqs1.Show();
+        }   
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelFuntion_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

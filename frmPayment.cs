@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmCustomer : Form
+    public partial class frmPayment : Form
     {
-        public frmCustomer()
+        public frmPayment()
         {
             InitializeComponent();
         }
-
-    
     }
 }

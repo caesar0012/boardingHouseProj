@@ -26,16 +26,6 @@ namespace boardingHouseProj
             this.Close();
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelBig_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             showReservation();
@@ -69,15 +59,6 @@ namespace boardingHouseProj
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnManageRoom_Click(object sender, EventArgs e)
         {

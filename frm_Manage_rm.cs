@@ -15,6 +15,7 @@ namespace boardingHouseProj
         public frmManage_rm()
         {
             InitializeComponent();
+            exampleDataGrid();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -24,6 +25,13 @@ namespace boardingHouseProj
 
         private void frmManage_rm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        void exampleDataGrid() {
+
+            DataGridRoom.Rows.Add("Al James", 69, "Deluxe", "King Size", 15000);
+            
 
         }
     }

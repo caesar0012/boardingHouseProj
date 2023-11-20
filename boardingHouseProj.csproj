@@ -46,17 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectSql.cs" />
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateStaff.cs">
+    <Compile Include="Create_Staff_Acc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateStaff.Designer.cs">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
+    <Compile Include="Create_Staff_Acc.Designer.cs">
+      <DependentUpon>Create_Staff_Acc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -102,8 +103,8 @@
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateStaff.resx">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Create_Staff_Acc.resx">
+      <DependentUpon>Create_Staff_Acc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

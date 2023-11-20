@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmCreateStaff : Form
+    public partial class Create_Staff_Acc : Form
     {
-        public frmCreateStaff()
+        public Create_Staff_Acc()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -41,12 +42,33 @@ namespace boardingHouseProj
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try {
 
+                using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString)) {
+                    connection.Close();
+                    connection.Open();
+                        string userName, password;
+                        
+
+
+
+
+                    connection.Close();
+                }
+
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
+            
+            }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnUpload_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

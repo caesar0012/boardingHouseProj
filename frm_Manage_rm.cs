@@ -30,7 +30,7 @@ namespace boardingHouseProj
 
         void exampleDataGrid() {
 
-            DataGridRoom.Rows.Add("Al James", 69, "Deluxe", "King Size", 15000);
+            DataGridRoom.Rows.Add("Al James", 45, "Deluxe", "King Size", 15000);
             
 
         }

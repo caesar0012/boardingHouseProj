@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,27 @@ namespace boardingHouseProj
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
+            using (SqlConnection connect  = new SqlConnection(ConnectSql.connectionString)) {
+                try {
+                    connect.Close();
+                    connect.Open();
+
+                    String query = @"select * from employee_account";
+                    
+
+
+
+
+                    connect.Close();
+                }
+                catch (Exception ex) {
+
+                    MessageBox.Show(ex.Message);
+                
+                }
+            
+            
+            }
         }
     }
 }

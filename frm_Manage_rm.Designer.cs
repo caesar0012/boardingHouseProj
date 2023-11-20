@@ -40,16 +40,16 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.DataGridRoom = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPayment = new System.Windows.Forms.Button();
-            this.btnMaintain = new System.Windows.Forms.Button();
             this.Clmn_customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnBed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnMaintain = new System.Windows.Forms.Button();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridRoom)).BeginInit();
             this.SuspendLayout();
@@ -186,54 +186,6 @@
             this.DataGridRoom.Size = new System.Drawing.Size(890, 252);
             this.DataGridRoom.TabIndex = 11;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(484, 409);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(226, 21);
-            this.comboBox2.TabIndex = 11;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(800, 438);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 36);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add Room";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(800, 489);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(104, 36);
-            this.btnPayment.TabIndex = 13;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            // 
-            // btnMaintain
-            // 
-            this.btnMaintain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMaintain.BackColor = System.Drawing.Color.IndianRed;
-            this.btnMaintain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaintain.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaintain.Location = new System.Drawing.Point(800, 393);
-            this.btnMaintain.Name = "btnMaintain";
-            this.btnMaintain.Size = new System.Drawing.Size(104, 36);
-            this.btnMaintain.TabIndex = 14;
-            this.btnMaintain.Text = "Maintenance";
-            this.btnMaintain.UseVisualStyleBackColor = false;
-            // 
             // Clmn_customer
             // 
             this.Clmn_customer.HeaderText = "Customer Name";
@@ -271,6 +223,54 @@
             this.clmnStatus.Name = "clmnStatus";
             this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(484, 409);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(226, 21);
+            this.comboBox2.TabIndex = 11;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(800, 438);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(104, 36);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add Room";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Location = new System.Drawing.Point(800, 489);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(104, 36);
+            this.btnPayment.TabIndex = 13;
+            this.btnPayment.Text = "Payment";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            // 
+            // btnMaintain
+            // 
+            this.btnMaintain.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMaintain.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMaintain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintain.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintain.Location = new System.Drawing.Point(800, 393);
+            this.btnMaintain.Name = "btnMaintain";
+            this.btnMaintain.Size = new System.Drawing.Size(104, 36);
+            this.btnMaintain.TabIndex = 14;
+            this.btnMaintain.Text = "Maintenance";
+            this.btnMaintain.UseVisualStyleBackColor = false;
             // 
             // frmManage_rm
             // 

@@ -33,7 +33,7 @@ namespace boardingHouseProj
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            frmCreateStaff staff1 = new frmCreateStaff();
+            Create_Staff_Acc staff1 = new Create_Staff_Acc();
             staff1.TopLevel = false;
             staff1.Dock = DockStyle.Fill;
             panelMain.Controls.Add(staff1);

@@ -45,28 +45,34 @@ namespace boardingHouseProj
             else if (string.IsNullOrEmpty(cmbQuestionPass.Text))
             {
 
-                MessageBox.Show("Pls input lastName");
+                MessageBox.Show("Pls input Question for password");
 
             }
             else if (string.IsNullOrEmpty(cmbRole.Text))
             {
 
-                MessageBox.Show("Pls input lastName");
+                MessageBox.Show("Pls input Role");
 
             }
             else if (string.IsNullOrEmpty(txtContact.Text))
             {
 
-                MessageBox.Show("Pls input lastName");
+                MessageBox.Show("Pls input Contact");
 
             }
             else if (string.IsNullOrEmpty(txtAnswerQuestion.Text))
             {
 
-                MessageBox.Show("Pls input lastName");
+                MessageBox.Show("Pls input answer for forgot question");
 
             }
-            else {
+            else if (string.IsNullOrEmpty(txtUserName.Text)) {
+
+                MessageBox.Show("Pls Input username");
+            
+            }
+            else
+            {
 
                 try
                 {
@@ -133,15 +139,13 @@ namespace boardingHouseProj
                     dpBox.ImageLocation = imgFilePath;
 
                 }
-
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Error: " + ex.Message);
 
-            }
-            
+            }   
 
         }
 
@@ -174,16 +178,13 @@ namespace boardingHouseProj
                         MessageBox.Show("Success for account");
 
                     }
-
                     connect.Close();
                 }
-
                 
             }
             catch (Exception ex) {
 
                 MessageBox.Show("Error: " + ex.Message);
-            
             
             }
         

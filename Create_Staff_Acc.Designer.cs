@@ -49,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.dpBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dpBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,7 +115,6 @@
             this.label6.Size = new System.Drawing.Size(103, 24);
             this.label6.TabIndex = 10;
             this.label6.Text = "Password";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -165,7 +166,6 @@
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
             this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 20);
             this.txtAnswerQuestion.TabIndex = 16;
-            this.txtAnswerQuestion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtPassword
             // 
@@ -272,12 +272,23 @@
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // dpBox
+            // 
+            this.dpBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dpBox.Location = new System.Drawing.Point(839, 12);
+            this.dpBox.Name = "dpBox";
+            this.dpBox.Size = new System.Drawing.Size(157, 116);
+            this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dpBox.TabIndex = 27;
+            this.dpBox.TabStop = false;
+            // 
             // Create_Staff_Acc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1019, 526);
+            this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtContact);
@@ -302,7 +313,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Create_Staff_Acc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Load += new System.EventHandler(this.frmCreateStaff_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dpBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +342,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.PictureBox dpBox;
     }
 }

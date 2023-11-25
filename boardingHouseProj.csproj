@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acc_prac01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acc_prac01.Designer.cs">
+      <DependentUpon>acc_prac01.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectSql.cs" />
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
@@ -94,12 +100,16 @@
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="staff_Class.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="acc_prac01.resx">
+      <DependentUpon>acc_prac01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>

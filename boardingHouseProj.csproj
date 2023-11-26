@@ -53,6 +53,12 @@
       <DependentUpon>acc_prac01.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectSql.cs" />
+    <Compile Include="designManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="designManagement.Designer.cs">
+      <DependentUpon>designManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="acc_prac01.resx">
       <DependentUpon>acc_prac01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="designManagement.resx">
+      <DependentUpon>designManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>

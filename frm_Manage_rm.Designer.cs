@@ -40,16 +40,17 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.DataGridRoom = new System.Windows.Forms.DataGridView();
-            this.Clmn_customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnBed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnMaintain = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridRoom)).BeginInit();
             this.SuspendLayout();
@@ -163,11 +164,11 @@
             this.DataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Clmn_customer,
-            this.clmnRoomNumber,
-            this.clmnRoomType,
-            this.clmnBed,
-            this.clmnPrice,
+            this.Column1,
+            this.Column4,
+            this.Column2,
+            this.Capacity,
+            this.Column3,
             this.clmnStatus});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
@@ -185,44 +186,6 @@
             this.DataGridRoom.RowHeadersVisible = false;
             this.DataGridRoom.Size = new System.Drawing.Size(890, 252);
             this.DataGridRoom.TabIndex = 11;
-            // 
-            // Clmn_customer
-            // 
-            this.Clmn_customer.HeaderText = "Customer Name";
-            this.Clmn_customer.Name = "Clmn_customer";
-            // 
-            // clmnRoomNumber
-            // 
-            this.clmnRoomNumber.HeaderText = "Room Number";
-            this.clmnRoomNumber.Name = "clmnRoomNumber";
-            // 
-            // clmnRoomType
-            // 
-            this.clmnRoomType.HeaderText = "Room Type";
-            this.clmnRoomType.Name = "clmnRoomType";
-            // 
-            // clmnBed
-            // 
-            this.clmnBed.HeaderText = "Bed";
-            this.clmnBed.Name = "clmnBed";
-            // 
-            // clmnPrice
-            // 
-            this.clmnPrice.HeaderText = "Price";
-            this.clmnPrice.Name = "clmnPrice";
-            // 
-            // clmnStatus
-            // 
-            this.clmnStatus.HeaderText = "Status";
-            this.clmnStatus.Items.AddRange(new object[] {
-            "Occupied",
-            "Maintenance",
-            "Destroyed",
-            "Under Renovation",
-            "Available"});
-            this.clmnStatus.Name = "clmnStatus";
-            this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // comboBox2
             // 
@@ -272,12 +235,65 @@
             this.btnMaintain.Text = "Maintenance";
             this.btnMaintain.UseVisualStyleBackColor = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(884, 9);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(104, 36);
+            this.btnClose.TabIndex = 15;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Room Number";
+            this.Column1.Name = "Column1";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.Name = "Column4";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tenant";
+            this.Column2.Name = "Column2";
+            // 
+            // Capacity
+            // 
+            this.Capacity.HeaderText = "Capacity";
+            this.Capacity.Name = "Capacity";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Price";
+            this.Column3.Name = "Column3";
+            // 
+            // clmnStatus
+            // 
+            this.clmnStatus.HeaderText = "Status";
+            this.clmnStatus.Items.AddRange(new object[] {
+            "Occupied",
+            "Maintenance",
+            "Destroyed",
+            "Under Renovation",
+            "Available"});
+            this.clmnStatus.Name = "clmnStatus";
+            this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmManage_rm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1000, 566);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMaintain);
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.btnAdd);
@@ -318,11 +334,12 @@
         private System.Windows.Forms.DataGridView DataGridRoom;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnMaintain;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clmn_customer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnRoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnBed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnPrice;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Capacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewComboBoxColumn clmnStatus;
     }
 }

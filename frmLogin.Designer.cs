@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblforgotPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(104, 119);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(121, 20);
             this.txtUserName.TabIndex = 1;
@@ -58,7 +59,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(104, 205);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(121, 20);
             this.txtPassword.TabIndex = 3;
@@ -79,7 +80,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.IndianRed;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Location = new System.Drawing.Point(132, 258);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(70, 26);
             this.btnLogin.TabIndex = 4;
@@ -98,12 +99,26 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Login Account";
             // 
+            // lblforgotPassword
+            // 
+            this.lblforgotPassword.AutoSize = true;
+            this.lblforgotPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblforgotPassword.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblforgotPassword.Location = new System.Drawing.Point(113, 361);
+            this.lblforgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblforgotPassword.Name = "lblforgotPassword";
+            this.lblforgotPassword.Size = new System.Drawing.Size(112, 16);
+            this.lblforgotPassword.TabIndex = 6;
+            this.lblforgotPassword.Text = "Forgot Password?";
+            this.lblforgotPassword.Click += new System.EventHandler(this.lblforgotPassword_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(375, 386);
+            this.Controls.Add(this.lblforgotPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -111,7 +126,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
@@ -128,5 +143,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblforgotPassword;
     }
 }

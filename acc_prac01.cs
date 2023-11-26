@@ -92,9 +92,33 @@ namespace boardingHouseProj
 
 
         }
+        //this opens the image from sql
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+                string query = "SELECT ProfilePic FROM Employee_Info WHERE Employee_id = @id";
 
-       
-            
-        
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", 1);
+
+                    using (SqlDataReader read = cmd.ExecuteReader())
+                    {
+                        if (read.Read())
+                        {
+                            byte[] imageData = (byte[])read["ProfilePic"]; // Corrected column name
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                Image image = Image.FromStream(ms);
+                                dpBox.Image = image;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }

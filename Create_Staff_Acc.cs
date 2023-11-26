@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace boardingHouseProj
 {
@@ -17,13 +18,15 @@ namespace boardingHouseProj
         public Create_Staff_Acc()
         {
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;
+            //WindowState = FormWindowState.Maximized;
 
         }
         string imgFilePath = null;
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //this is the else if statement when the text box has problems
+
             if (string.IsNullOrEmpty(txtFirstName.Text))
             {
 
@@ -40,6 +43,11 @@ namespace boardingHouseProj
             {
 
                 MessageBox.Show("Pls input password");
+
+            } 
+            else if (txtPassword.Text != txtConfirmPass.Text) {
+
+                MessageBox.Show("Password does not match");
 
             }
             else if (string.IsNullOrEmpty(cmbQuestionPass.Text))
@@ -69,14 +77,12 @@ namespace boardingHouseProj
             else if (string.IsNullOrEmpty(txtUserName.Text)) {
 
                 MessageBox.Show("Pls Input username");
-            
+
             }
             else
             {
-
                 try
                 {
-
                     using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString))
                     {
                         connection.Close();
@@ -99,6 +105,8 @@ namespace boardingHouseProj
                                 fileStream.Read(imageData, 0, imageData.Length);
                             }
                         }
+
+                        //sqlcommand that execute the query for the database 
                         using (SqlCommand cmd = new SqlCommand(query, connection))
                         {
                             cmd.Parameters.AddWithValue("@first", firstname);
@@ -109,6 +117,8 @@ namespace boardingHouseProj
                             cmd.ExecuteNonQuery();
 
                         }
+
+                        //insert_acc method executed in line 164
                         insert_acc();
                         connection.Close();
                     }
@@ -128,10 +138,13 @@ namespace boardingHouseProj
         {
             try {
 
+                //instance of Openfile dialog so I dont have to open filedialog on the designer
                 OpenFileDialog ofdProfile = new OpenFileDialog();
 
+                //this filters the file that profile picture can accept
                 ofdProfile.Filter = "png files(*.png) | *.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
 
+                //if the picture was selected it the filepath will be pass to the imgFilePath
                 if (ofdProfile.ShowDialog() == DialogResult.OK)
                 {
 
@@ -153,20 +166,23 @@ namespace boardingHouseProj
         {
             try {
 
+                //query for insert acc to the database
                 string query_insert_acc = "insert into Employee_acc(userName, password, forgotQuestion, forgotAnswer, Role)values" +
                     "(@userName, @password, @forgotQuestion, @forgotAnswer, @Role)";
 
+                //Idosposable using for connection
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
                     connect.Close();
                     connect.Open();
 
+                    //declaring string for the textbox input will be stored at strings
                     string username = txtUserName.Text;
                     string password = txtPassword.Text;
                     string forgotQuestion = cmbQuestionPass.Text;
                     string forgotAnswer = txtAnswerQuestion.Text;
                     string role = cmbRole.Text;
                     
-
+                    //instance of sqlcommand for the query to execute
                     using (SqlCommand cmd = new SqlCommand(query_insert_acc, connect)) {
                         cmd.Parameters.AddWithValue("@userName", username);
                         cmd.Parameters.AddWithValue("@password", password);
@@ -178,6 +194,7 @@ namespace boardingHouseProj
                         MessageBox.Show("Success for account");
 
                     }
+                    //close the connection of the sql connection
                     connect.Close();
                 }
                 
@@ -187,10 +204,40 @@ namespace boardingHouseProj
                 MessageBox.Show("Error: " + ex.Message);
             
             }
-        
-        
-        
         }
 
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space) { 
+            
+                e.SuppressKeyPress = true;
+            
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUserName_KeyDown(sender, e);
+        }
+
+        private void txtConfirmPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUserName_KeyDown(sender, e);
+        }
+
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the key pressed is a number or a backspace.
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Check if the length of the text box is already 11.
+            if (txtContact.Text.Length == 11)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.ofdProfile = new System.Windows.Forms.OpenFileDialog();
             this.dpBox = new System.Windows.Forms.PictureBox();
+            this.btnProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(318, 6);
+            this.btnClose.Location = new System.Drawing.Point(635, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -100,10 +101,9 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpload.BackColor = System.Drawing.Color.Gainsboro;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Location = new System.Drawing.Point(37, 238);
+            this.btnUpload.Location = new System.Drawing.Point(31, 238);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(161, 23);
             this.btnUpload.TabIndex = 7;
@@ -113,10 +113,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSubmit.BackColor = System.Drawing.Color.IndianRed;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Location = new System.Drawing.Point(86, 304);
+            this.btnSubmit.Location = new System.Drawing.Point(80, 304);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 8;
@@ -137,12 +136,26 @@
             this.dpBox.TabIndex = 9;
             this.dpBox.TabStop = false;
             // 
+            // btnProfile
+            // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProfile.BackColor = System.Drawing.Color.IndianRed;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Location = new System.Drawing.Point(526, 257);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 23);
+            this.btnProfile.TabIndex = 10;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
             // acc_prac01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(405, 408);
+            this.ClientSize = new System.Drawing.Size(722, 408);
+            this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnUpload);
@@ -173,5 +186,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.OpenFileDialog ofdProfile;
         private System.Windows.Forms.PictureBox dpBox;
+        private System.Windows.Forms.Button btnProfile;
     }
 }

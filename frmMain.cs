@@ -16,7 +16,7 @@ namespace boardingHouseProj
         public frmMain()
         {
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;
+            //WindowState = FormWindowState.Maximized;
             
 
         }

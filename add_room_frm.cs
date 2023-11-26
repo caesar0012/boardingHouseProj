@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class designManagement : Form
+    public partial class add_room_frm : Form
     {
-        public designManagement()
+        public add_room_frm()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        }   
     }
 }

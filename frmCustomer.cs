@@ -91,8 +91,8 @@ namespace boardingHouseProj
             }
             else
             {
-                
-
+                try
+                {
                     string firstname = txtFirstname.Text;
                     string middlename = txtMiddleName.Text;
                     string lastName = txtLastName.Text;
@@ -101,10 +101,6 @@ namespace boardingHouseProj
                     string relationship = txtRelationship.Text;
                     string school = txtSchool.Text;
                     string address = txtAddress.Text;
-
-
-                try
-                {
                     using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                     {
                         connect.Open();
@@ -118,7 +114,6 @@ namespace boardingHouseProj
                                 fileStream.Read(imageData, 0, imageData.Length);
                             }
                         }
-
 
                         string query = "INSERT INTO Customer_Personal_Info (firstName, middleName, lastName, Contact, Emergency_Contact, Relationship, School, Address, Document) " +
                             "VALUES (@fName, @midName, @lName, @contact, @emergencyContact, @relationship, @school, @address, @document)";
@@ -137,7 +132,7 @@ namespace boardingHouseProj
 
                             cmd.ExecuteNonQuery();
 
-                            Console.WriteLine("Done inserting customer personal info");
+                            MessageBox.Show("Done inserting customer personal info");
                         }
                     }
                 }
@@ -148,13 +143,8 @@ namespace boardingHouseProj
 
 
             }
-
-
-
-
-
         }
-        }
+    }
 
 
     

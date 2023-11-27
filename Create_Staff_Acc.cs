@@ -121,6 +121,7 @@ namespace boardingHouseProj
                         //insert_acc method executed in line 164
                         insert_acc();
                         connection.Close();
+                        MessageBox.Show("Account Created");
                     }
 
                 }

@@ -1,14 +1,17 @@
 
 
-create table Employee_Info(
+Begin Transaction;
 
-	Employee_id int primary key identity(1,1),
-	firstName varchar(45),
-	lastName varchar(45),
-	ProfilePic varbinary(max),
-	Contact Bigint
+	create table Employee_Info(
 
-);
+		Employee_id int primary key identity(1,1),
+		firstName varchar(45),
+		lastName varchar(45),
+		ProfilePic varbinary(max),
+		Contact Bigint
+
+	);
+
 
 create table Employee_acc(
 
@@ -27,6 +30,16 @@ create table Employee_acc(
 
 );
 
+
+
+/*
+
+Begin Transaction
+	Rollback;
+
+	*/
+	select * from Customer_Personal_Info
+
 create table Customer_Personal_Info(
 	
 	id int primary key identity(1,1),
@@ -43,8 +56,7 @@ create table Customer_Personal_Info(
 
 );
 
---drop table Customer_occupancy
---  Select * from Customer_occupancy
+
 
 
 create table Customer_occupancy(
@@ -58,22 +70,44 @@ create table Customer_occupancy(
 
 );
 
+create table Create_room(
+
+	Room_id int primary key identity(1,1),
+	room_number int unique,
+	Description varchar(45),
+	Capacity int,
+	Price decimal(10,2),
+	Status varchar(20)
+
+);
+
+select cr.room_number, cp1.id, cp1.firstName from Create_room as cr
+Join Customer_Personal_Info as cp1
+on cr.room_number = cp1.id;
 
 
 
+SELECT cr1.room_number, cr1.Description, cr1.Capacity, cr1.Price
+,cpi.firstName + ' ' + cpi.middleName + ' ' + cpi.LastName AS Tenant,
+cr1.Status
+FROM Create_room as cr1
+join Customer_Personal_Info as cpi
+on cpi.id = cr1.Room_id;
 
-
+SELECT cr1.room_number, cr1.Description, cr1.Capacity, cr1.Price\r\n,cpi.firstName + ' ' + cpi.middleName + ' ' + cpi.LastName AS Tenant,\r\ncr1.Status\r\nFROM Create_room as cr1\r\njoin Customer_Personal_Info as cpi\r\non cpi.id = cr1.Room_id
 
 create table transaction_info(
 
-   Transaction_id int primary key,
-   Customer_id int,
+   Transaction_id int primary key identity(1,1),
+   Customer_id int identity(1,1),
    Staff_id int,
    Amount decimal,
-   Via varchar(10),
-   type int,
+   Via varchar(10)
 
 );
+
+
+
 
 create table Maintenance(
 

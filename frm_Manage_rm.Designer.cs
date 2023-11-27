@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panelGrid = new System.Windows.Forms.Panel();
-            this.DataGridRoom = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.gridRoom = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnMaintain = new System.Windows.Forms.Button();
+            this.clmnRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,89 +63,50 @@
             this.panelGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelGrid.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelGrid.Controls.Add(this.DataGridRoom);
+            this.panelGrid.Controls.Add(this.gridRoom);
             this.panelGrid.Location = new System.Drawing.Point(68, 87);
             this.panelGrid.Name = "panelGrid";
             this.panelGrid.Size = new System.Drawing.Size(894, 377);
             this.panelGrid.TabIndex = 10;
             // 
-            // DataGridRoom
+            // gridRoom
             // 
-            this.DataGridRoom.AllowUserToDeleteRows = false;
-            this.DataGridRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridRoom.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DataGridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column4,
-            this.Column2,
-            this.Capacity,
-            this.Column3,
+            this.gridRoom.AllowUserToDeleteRows = false;
+            this.gridRoom.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnRoom,
+            this.clmnDesc,
+            this.clmnCapacity,
+            this.Column5,
+            this.Tenant,
             this.clmnStatus});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridRoom.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGridRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridRoom.EnableHeadersVisualStyles = false;
-            this.DataGridRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DataGridRoom.Location = new System.Drawing.Point(0, 0);
-            this.DataGridRoom.Name = "DataGridRoom";
-            this.DataGridRoom.RowHeadersVisible = false;
-            this.DataGridRoom.Size = new System.Drawing.Size(890, 373);
-            this.DataGridRoom.TabIndex = 11;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Room Number";
-            this.Column1.Name = "Column1";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Description";
-            this.Column4.Name = "Column4";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tenant";
-            this.Column2.Name = "Column2";
-            // 
-            // Capacity
-            // 
-            this.Capacity.HeaderText = "Capacity";
-            this.Capacity.Name = "Capacity";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            // 
-            // clmnStatus
-            // 
-            this.clmnStatus.HeaderText = "Status";
-            this.clmnStatus.Items.AddRange(new object[] {
-            "Occupied",
-            "Maintenance",
-            "Destroyed",
-            "Under Renovation",
-            "Available"});
-            this.clmnStatus.Name = "clmnStatus";
-            this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridRoom.DefaultCellStyle = dataGridViewCellStyle8;
+            this.gridRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridRoom.EnableHeadersVisualStyles = false;
+            this.gridRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gridRoom.Location = new System.Drawing.Point(0, 0);
+            this.gridRoom.Name = "gridRoom";
+            this.gridRoom.RowHeadersVisible = false;
+            this.gridRoom.Size = new System.Drawing.Size(890, 373);
+            this.gridRoom.TabIndex = 11;
             // 
             // btnAdd
             // 
@@ -187,6 +148,55 @@
             this.btnMaintain.Text = "Maintenance";
             this.btnMaintain.UseVisualStyleBackColor = false;
             // 
+            // clmnRoom
+            // 
+            this.clmnRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnRoom.FillWeight = 87.19263F;
+            this.clmnRoom.HeaderText = "Room";
+            this.clmnRoom.MinimumWidth = 2;
+            this.clmnRoom.Name = "clmnRoom";
+            // 
+            // clmnDesc
+            // 
+            this.clmnDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnDesc.FillWeight = 142.8572F;
+            this.clmnDesc.HeaderText = "Description";
+            this.clmnDesc.Name = "clmnDesc";
+            // 
+            // clmnCapacity
+            // 
+            this.clmnCapacity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnCapacity.FillWeight = 89.98338F;
+            this.clmnCapacity.HeaderText = "Capacity";
+            this.clmnCapacity.Name = "clmnCapacity";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Price";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 127;
+            // 
+            // Tenant
+            // 
+            this.Tenant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tenant.FillWeight = 89.98338F;
+            this.Tenant.HeaderText = "Tenant";
+            this.Tenant.Name = "Tenant";
+            // 
+            // clmnStatus
+            // 
+            this.clmnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnStatus.FillWeight = 89.98338F;
+            this.clmnStatus.HeaderText = "Status";
+            this.clmnStatus.Items.AddRange(new object[] {
+            "Available",
+            "Maintenance",
+            "Renovation",
+            "Destroyed"});
+            this.clmnStatus.Name = "clmnStatus";
+            this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -218,7 +228,7 @@
             this.Text = "frm_Manage_rm";
             this.Load += new System.EventHandler(this.frmManage_rm_Load);
             this.panelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,15 +239,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelGrid;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView DataGridRoom;
+        private System.Windows.Forms.DataGridView gridRoom;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnMaintain;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Capacity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnCapacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tenant;
         private System.Windows.Forms.DataGridViewComboBoxColumn clmnStatus;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace boardingHouseProj
 {
@@ -15,26 +16,70 @@ namespace boardingHouseProj
         public room_tenant_add()
         {
             InitializeComponent();
+            loadList();
 
-            for (int i = 1; i <= 50; i++)
-            {
-                checkedListBox1.Items.Add("Student " + i);
-            }
+            //Room number was taken from frmManage, a static string 
+            lblRoomNumber.Text = frmManage_rm.roomNum;
         }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+        //this method loads the list to the form
+        private void loadList() {
 
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                connect.Open();
+
+                string query = "Select * from Tenant";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+
+                        while (reader.Read()) {
+
+                            checkedListBox1.Items.Add(reader["FirstName"]);
+                        
+                        }
+                    }      
+                }
+            }
+        }
+        //method for cheking the items
+        private void CheckAllItems(CheckedListBox checkedListBox)
+        {
+            for (int i = 0; i < checkedListBox.Items.Count; i++)
+            {
+                checkedListBox.SetItemChecked(i, true);
+            }
+        }
+
+
+        //method for uncheking the items
+        private void UnCheckAllItems(CheckedListBox checkedListBox)
+        {
+            for (int i = 0; i < checkedListBox.Items.Count; i++)
+            {
+                checkedListBox.SetItemChecked(i, false);
+            }
+        }
+
+
+        private void cbSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSelect.Checked)
+            {//this checks all the checklist
+
+                CheckAllItems(checkedListBox1);
+
+            }
+            else { //Uncheck all the checklistBox
+
+                UnCheckAllItems(checkedListBox1);
+
+            }
         }
     }
 }

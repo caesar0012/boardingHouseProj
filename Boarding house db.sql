@@ -39,11 +39,9 @@ create table Tenant(
  
 drop table Room
 
-select * from Room
-
 --Room Desc, cap, price status
 
-Select Room_number, Description, (Availability + '/' + Capacity) as Availability,
+Select Room_number, Description, (Availability + ':' + Capacity) as Availability,
 Price, Status from Room; 
 
 Select Room_number, Description, Availability + '/' + Capacity as Availability, Price, Status from Room;
@@ -60,7 +58,7 @@ Create table Room(
 	Availability int,
 	Capacity int,
 	Price decimal(10,2),
-	Status varchar(30)
+	Status varchar(30) DEFAULT 'Available'
 
 );
 

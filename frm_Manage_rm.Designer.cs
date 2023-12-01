@@ -38,6 +38,7 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMaintain = new System.Windows.Forms.Button();
+            this.ClmnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +87,7 @@
             this.gridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClmnNumber,
             this.clmnRoom,
             this.clmnDesc,
             this.clmnCapacity,
@@ -164,6 +166,14 @@
             this.btnMaintain.TabIndex = 14;
             this.btnMaintain.Text = "Maintenance";
             this.btnMaintain.UseVisualStyleBackColor = false;
+            // 
+            // ClmnNumber
+            // 
+            this.ClmnNumber.DividerWidth = 2;
+            this.ClmnNumber.HeaderText = "#";
+            this.ClmnNumber.MinimumWidth = 2;
+            this.ClmnNumber.Name = "ClmnNumber";
+            this.ClmnNumber.Width = 50;
             // 
             // clmnRoom
             // 
@@ -258,6 +268,7 @@
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMaintain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnCapacity;

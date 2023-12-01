@@ -41,10 +41,14 @@ namespace boardingHouseProj
 
                 SqlCommand cmd = new SqlCommand(query1, connect);
 
+                int i = 0;
+
                 using (SqlDataReader reader = cmd.ExecuteReader()) {
                     while (reader.Read()) {
 
-                        gridRoom.Rows.Add(reader["Room_number"], reader["Description"], reader["Availability"], reader["Price"], reader["Status"]);
+                        i++;
+
+                        gridRoom.Rows.Add(i, reader["Room_number"], reader["Description"], reader["Availability"], reader["Price"], reader["Status"]);
                     
                     }
                     reader.Close();
@@ -68,10 +72,37 @@ namespace boardingHouseProj
             a1.Show();
         }
 
+        public static string roomNum= "";
+
         private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            room_tenant_add t1 = new room_tenant_add();
-            t1.ShowDialog();
+
+            try {
+
+                // Check if the clicked cell is in the "clmnTenant" and is a button
+                if (e.ColumnIndex == gridRoom.Columns["clmnTenant"].Index && e.RowIndex >= 0)
+                {
+                    // Get the value in a specific column of the clicked row
+                    string roomNumber = gridRoom.Rows[e.RowIndex].Cells["clmnRoom"].Value.ToString();
+
+                    roomNum = roomNumber;
+
+                    room_tenant_add r1 = new room_tenant_add();
+                    r1.ShowDialog();
+
+                }
+                else {
+
+                    MessageBox.Show("Error: Invalid");
+            
+                }
+
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show("Error:" + ex.Message);
+            
+            }
         }
     }
 }

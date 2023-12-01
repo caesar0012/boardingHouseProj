@@ -18,7 +18,7 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        public static int employee_id;
+        public static int employee_id = 0;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

@@ -37,19 +37,23 @@ namespace boardingHouseProj
 
                 String query = "SELECT cr1.room_number, cr1.Description, cr1.Capacity, cr1.Price,cpi.firstName + ' ' + cpi.middleName + ' ' + cpi.LastName AS Tenant, cr1.Status FROM Create_room as cr1 join Customer_Personal_Info as cpi on cpi.id = cr1.Room_id;";
 
-                string example = "select number, description from manage_room";
+                string query1 = "Select Room_number, Description, Availability, Price, Status from Room; ";
 
+                SqlCommand cmd = new SqlCommand(query1, connect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) {
+                    while (reader.Read()) {
+
+                        gridRoom.Rows.Add(reader["Room_number"], reader["Description"], reader["Availability"], reader["Price"], reader["Status"]);
+                    
+                    }
+                    reader.Close();
+
+                }
                 
 
             }
             //HEre lies
-
-        }
-
-        void exampleDataGrid() {
-
-            gridRoom.Rows.Add("Al James", 45, "Deluxe", "King Size", 15000);
-            
 
         }
 
@@ -62,6 +66,12 @@ namespace boardingHouseProj
         {
             add_room_frm a1 = new add_room_frm();
             a1.Show();
+        }
+
+        private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            room_tenant_add t1 = new room_tenant_add();
+            t1.ShowDialog();
         }
     }
 }

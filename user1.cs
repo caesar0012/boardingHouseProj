@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class UserControl1 : UserControl
+    public partial class room_option : UserControl
     {
-        public UserControl1()
+        public room_option()
         {
             InitializeComponent();
         }

@@ -103,15 +103,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="room_tenant_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_tenant_add.Designer.cs">
+      <DependentUpon>room_tenant_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="staff_Class.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="user1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="user1.Designer.cs">
+      <DependentUpon>user1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="acc_prac01.resx">
       <DependentUpon>acc_prac01.cs</DependentUpon>
@@ -149,8 +155,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="room_tenant_add.resx">
+      <DependentUpon>room_tenant_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user1.resx">
+      <DependentUpon>user1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

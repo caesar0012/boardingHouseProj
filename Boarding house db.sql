@@ -1,6 +1,5 @@
 use BoardingHouse
 
-select * from Tenant
 
 create Table Employee_acc(
 
@@ -20,6 +19,7 @@ create Table Employee_acc(
 
 );
 
+select * from Tenant
 
 create table Tenant(
 
@@ -37,14 +37,26 @@ create table Tenant(
 
 );
  
- select * from Roo
+drop table Room
+
+select * from Room
+
+--Room Desc, cap, price status
+
+Select Room_number, Description, (Availability + '/' + Capacity) as Availability,
+Price, Status from Room; 
+
+Select Room_number, Description, Availability + '/' + Capacity as Availability, Price, Status from Room;
+
+select * from Room
+
+use BoardingHouse
 
 Create table Room(
 	
 	Room_id int primary key identity(1,1),
 	Room_number int unique,
 	Description varchar(50),
-	Tenant_id int,
 	Availability int,
 	Capacity int,
 	Price decimal(10,2),
@@ -63,6 +75,8 @@ create table Maintenance(
 	Archive smallint
 
 );
+
+
 
 
 

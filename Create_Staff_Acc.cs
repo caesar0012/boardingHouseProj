@@ -85,17 +85,18 @@ namespace boardingHouseProj
                 {
                     using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString))
                     {
-                        connection.Close();
                         connection.Open();
-
                         string firstname = txtFirstName.Text;
-                        string lastname = txtLastName.Text;
+                        string lastname = txtFirstName.Text;
+                        string profile_pic = txtFirstName.Text;
                         long contact = long.Parse(txtContact.Text);
+                        string username = txtFirstName.Text;
+                        string password = txtFirstName.Text;
+                        string forgotquestion = txtFirstName.Text;
+                        string forgotanswer = txtFirstName.Text;
+                        string role = txtFirstName.Text;
 
-                        //@ in the query mean it stores the declared string above
-
-                        string query = "insert into Employee_Info(firstName, lastName, ProfilePic, Contact) " +
-                        "values(@first, @last, @Profile ,@Contact)";
+                        //this reads the image
                         byte[] imageData = null;
                         if (imgFilePath != null && imgFilePath != "")
                         {
@@ -106,22 +107,28 @@ namespace boardingHouseProj
                             }
                         }
 
-                        //sqlcommand that execute the query for the database 
-                        using (SqlCommand cmd = new SqlCommand(query, connection))
-                        {
-                            cmd.Parameters.AddWithValue("@first", firstname);
-                            cmd.Parameters.AddWithValue("@last", lastname);
+                        string query = "insert into Employee_acc(FirstName, Lastname, ProfilePic, Contact, userName, password," +
+                            "forgotQuestion, forgotAnswer, Role) values (@FirstName, @Lastname, @ProfilePic, @Contact, @userName, @password," +
+                            "@forgotQuestion, @forgotAnswer, @Role)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, connection)) {
+
+                            cmd.Parameters.AddWithValue("@FirstName", firstname);
+                            cmd.Parameters.AddWithValue("@Lastname", lastname);
+                            cmd.Parameters.AddWithValue("@ProfilePic", imageData);
                             cmd.Parameters.AddWithValue("@Contact", contact);
-                            cmd.Parameters.AddWithValue("@Profile", imageData);
+                            cmd.Parameters.AddWithValue("@userName", username);
+                            cmd.Parameters.AddWithValue("@password", password);
+                            cmd.Parameters.AddWithValue("@forgotQuestion", forgotquestion);
+                            cmd.Parameters.AddWithValue("@forgotAnswer", forgotanswer);
+                            cmd.Parameters.AddWithValue("@Role", role);
 
                             cmd.ExecuteNonQuery();
 
+                            MessageBox.Show("Insert Success");
+
                         }
 
-                        //insert_acc method executed in line 164
-                        insert_acc();
-                        connection.Close();
-                        MessageBox.Show("Account Created");
                     }
 
                 }
@@ -163,50 +170,6 @@ namespace boardingHouseProj
 
         }
 
-        void insert_acc()
-        {
-            try {
-
-                //query for insert acc to the database
-                string query_insert_acc = "insert into Employee_acc(userName, password, forgotQuestion, forgotAnswer, Role)values" +
-                    "(@userName, @password, @forgotQuestion, @forgotAnswer, @Role)";
-
-                //Idosposable using for connection
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
-                    connect.Close();
-                    connect.Open();
-
-                    //declaring string for the textbox input will be stored at strings
-                    string username = txtUserName.Text;
-                    string password = txtPassword.Text;
-                    string forgotQuestion = cmbQuestionPass.Text;
-                    string forgotAnswer = txtAnswerQuestion.Text;
-                    string role = cmbRole.Text;
-                    
-                    //instance of sqlcommand for the query to execute
-                    using (SqlCommand cmd = new SqlCommand(query_insert_acc, connect)) {
-                        cmd.Parameters.AddWithValue("@userName", username);
-                        cmd.Parameters.AddWithValue("@password", password);
-                        cmd.Parameters.AddWithValue("@forgotQuestion", forgotQuestion);
-                        cmd.Parameters.AddWithValue("@forgotAnswer", forgotAnswer);
-                        cmd.Parameters.AddWithValue("@Role", role);
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Success for account");
-
-                    }
-                    //close the connection of the sql connection
-                    connect.Close();
-                }
-                
-            }
-            catch (Exception ex) {
-
-                MessageBox.Show("Error: " + ex.Message);
-            
-            }
-        }
-
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { 
@@ -239,6 +202,9 @@ namespace boardingHouseProj
             {
                 e.Handled = true;
             }
-        }
+
+            }
+
+        
     }
 }

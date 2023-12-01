@@ -47,12 +47,6 @@ namespace boardingHouseProj
                 MessageBox.Show("Pls input firstname");
 
             }
-            else if (string.IsNullOrEmpty(txtMiddleName.Text))
-            {
-
-                MessageBox.Show("Pls input middle name");
-
-            }
             else if (string.IsNullOrEmpty(txtLastName.Text))
             {
 
@@ -88,19 +82,24 @@ namespace boardingHouseProj
 
                 MessageBox.Show("Please Input your address");
 
+            } else if (string.IsNullOrEmpty(txtEmergencyName.Text)) {
+
+                MessageBox.Show("Please Emergency Contact Name");
+
             }
             else
             {
                 try
                 {
                     string firstname = txtFirstname.Text;
-                    string middlename = txtMiddleName.Text;
                     string lastName = txtLastName.Text;
                     long contact = long.Parse(txtContact.Text);
                     long emergency_contact = long.Parse(txtEmergencyContact.Text);
                     string relationship = txtRelationship.Text;
                     string school = txtSchool.Text;
                     string address = txtAddress.Text;
+                    string emergencyName = txtEmergencyName.Text;
+
                     using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                     {
                         connect.Open();
@@ -115,20 +114,20 @@ namespace boardingHouseProj
                             }
                         }
 
-                        string query = "INSERT INTO Customer_Personal_Info (firstName, middleName, lastName, Contact, Emergency_Contact, Relationship, School, Address, Document) " +
-                            "VALUES (@fName, @midName, @lName, @contact, @emergencyContact, @relationship, @school, @address, @document)";
+                        string query = "INSERT INTO Tenant (FirstName, Lastname, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic) " +
+                            "VALUES (@FirstName, @Lastname, @Contact, @Emergency_name, @Emergency_Contact, @Relationship, @School, @Address, @Document_pic)";
 
                         using (SqlCommand cmd = new SqlCommand(query, connect))
                         {
-                            cmd.Parameters.AddWithValue("@fName", firstname);
-                            cmd.Parameters.AddWithValue("@midName", middlename);
-                            cmd.Parameters.AddWithValue("@lName", lastName);
-                            cmd.Parameters.AddWithValue("@contact", contact);
-                            cmd.Parameters.AddWithValue("@emergencyContact", emergency_contact);
-                            cmd.Parameters.AddWithValue("@relationship", relationship);
-                            cmd.Parameters.AddWithValue("@school", school);
-                            cmd.Parameters.AddWithValue("@address", address);
-                            cmd.Parameters.AddWithValue("@document", imageData);
+                            cmd.Parameters.AddWithValue("@FirstName", firstname);
+                            cmd.Parameters.AddWithValue("@Lastname", lastName);
+                            cmd.Parameters.AddWithValue("@Contact", contact);
+                            cmd.Parameters.AddWithValue("@Emergency_name", emergencyName);
+                            cmd.Parameters.AddWithValue("@Emergency_Contact", emergency_contact);
+                            cmd.Parameters.AddWithValue("@Relationship", relationship);
+                            cmd.Parameters.AddWithValue("@School", school);
+                            cmd.Parameters.AddWithValue("@Address", address);
+                            cmd.Parameters.AddWithValue("@Document_pic", imageData);
 
                             cmd.ExecuteNonQuery();
 

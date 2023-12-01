@@ -31,13 +31,15 @@ namespace boardingHouseProj
                 double price = double.Parse((txtPrice.Text));
                 string status = "Available";
 
-                string query = "Insert into Create_room(room_number, Description, Capacity, Price, Status) values " +
-                    "(@roomNumber, @Desc, @Capacity, @Price, @Status)";
+                string query = "Insert into Room(Room_number, Description, Employee_id, Availability, Capacity, Price, Status) values " +
+                    "(@Room_number, @Description, @Employee_id, @Availability, @Capacity, @Price, @Status)";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@roomNumber", room_number);
-                    cmd.Parameters.AddWithValue("@Desc", description);
+                    cmd.Parameters.AddWithValue("@Room_number", room_number);
+                    cmd.Parameters.AddWithValue("@Description", description);
+                    cmd.Parameters.AddWithValue("@Employee_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@Availability", capacity);
                     cmd.Parameters.AddWithValue("@Capacity", capacity);
                     cmd.Parameters.AddWithValue("@Price", price);
                     cmd.Parameters.AddWithValue("@Status", status);

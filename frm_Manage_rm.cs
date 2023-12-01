@@ -18,6 +18,8 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             //exampleDataGrid();
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,20 +39,7 @@ namespace boardingHouseProj
 
                 string example = "select number, description from manage_room";
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
-
-                    using (SqlDataReader reader = cmd.ExecuteReader()) {
-
-                        while (reader.Read()) {
-
-
-                            gridRoom.Rows.Add(reader["room_number"].ToString(), reader["Description"].ToString(), reader["Capacity"].ToString(), reader["Price"].ToString(), reader["Tenant"].ToString(), reader["Status"].ToString());
-                        
-                        }
-                        reader.Close();
-                    
-                    }
-                }
+                
 
             }
             //HEre lies

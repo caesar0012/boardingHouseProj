@@ -18,12 +18,17 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
+        public static int employee_id;
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (authenticateLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString())) {
 
                 MessageBox.Show("Login Success");
 
+                frmMain f1 = new frmMain();
+                this.Hide();
+                f1.Show();
             }
             else
             {
@@ -41,7 +46,7 @@ namespace boardingHouseProj
                 connect.Close();
                 connect.Open();
 
-                string query = "Select count(*) from Employee_acc where userName = @user01 and password = @pass01 and Archive = 0";
+                string query = "Select count(*) from Employee_acc where userName = @user01 and password = @pass01 and Arhive = 0";
                 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
@@ -50,12 +55,15 @@ namespace boardingHouseProj
 
                     int count = (int)cmd.ExecuteScalar();
 
+                    int retrievedEmployeeID = (int)cmd.ExecuteScalar();
+                    employee_id = retrievedEmployeeID;
+
                     return count > 0;
 
+            
                 }
             }
 
-        
         }
 
         private void lblforgotPassword_Click(object sender, EventArgs e)

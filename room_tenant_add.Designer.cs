@@ -30,11 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.cbNoRoomTenant = new System.Windows.Forms.CheckedListBox();
+            this.cbCheckInTenant = new System.Windows.Forms.CheckedListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblRoomNumber = new System.Windows.Forms.Label();
             this.cbSelect = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,38 +63,39 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // checkedListBox1
+            // cbNoRoomTenant
             // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkedListBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 64);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(255, 340);
-            this.checkedListBox1.TabIndex = 17;
+            this.cbNoRoomTenant.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbNoRoomTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNoRoomTenant.FormattingEnabled = true;
+            this.cbNoRoomTenant.Location = new System.Drawing.Point(12, 129);
+            this.cbNoRoomTenant.Name = "cbNoRoomTenant";
+            this.cbNoRoomTenant.Size = new System.Drawing.Size(255, 340);
+            this.cbNoRoomTenant.TabIndex = 17;
             // 
-            // checkedListBox2
+            // cbCheckInTenant
             // 
-            this.checkedListBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkedListBox2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(326, 64);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(255, 340);
-            this.checkedListBox2.TabIndex = 18;
+            this.cbCheckInTenant.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbCheckInTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCheckInTenant.FormattingEnabled = true;
+            this.cbCheckInTenant.Location = new System.Drawing.Point(326, 129);
+            this.cbCheckInTenant.Name = "cbCheckInTenant";
+            this.cbCheckInTenant.Size = new System.Drawing.Size(255, 340);
+            this.cbCheckInTenant.TabIndex = 18;
             // 
-            // btnSave
+            // btnAdd
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.IndianRed;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(284, 418);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(68, 29);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(103, 483);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(68, 29);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblRoomNumber
             // 
@@ -100,9 +103,9 @@
             this.lblRoomNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumber.Location = new System.Drawing.Point(99, 19);
             this.lblRoomNumber.Name = "lblRoomNumber";
-            this.lblRoomNumber.Size = new System.Drawing.Size(62, 22);
+            this.lblRoomNumber.Size = new System.Drawing.Size(43, 22);
             this.lblRoomNumber.TabIndex = 20;
-            this.lblRoomNumber.Text = "Room";
+            this.lblRoomNumber.Text = "000";
             // 
             // cbSelect
             // 
@@ -115,17 +118,39 @@
             this.cbSelect.UseVisualStyleBackColor = true;
             this.cbSelect.CheckedChanged += new System.EventHandler(this.cbSelect_CheckedChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(152, 22);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "No Room Tenant";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(322, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 22);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Tenant Occupation";
+            // 
             // room_tenant_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(629, 459);
+            this.ClientSize = new System.Drawing.Size(629, 524);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbSelect);
             this.Controls.Add(this.lblRoomNumber);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cbCheckInTenant);
+            this.Controls.Add(this.cbNoRoomTenant);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,10 +165,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.CheckedListBox cbNoRoomTenant;
+        private System.Windows.Forms.CheckedListBox cbCheckInTenant;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblRoomNumber;
         private System.Windows.Forms.CheckBox cbSelect;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

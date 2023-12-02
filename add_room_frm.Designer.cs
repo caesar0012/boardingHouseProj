@@ -137,7 +137,7 @@
             this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(200, 57);
+            this.btnClose.Location = new System.Drawing.Point(208, 57);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(69, 31);
             this.btnClose.TabIndex = 16;
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(293, 397);
+            this.ClientSize = new System.Drawing.Size(309, 397);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);

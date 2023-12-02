@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace boardingHouseProj
 {
@@ -40,7 +41,7 @@ namespace boardingHouseProj
 
                         while (reader.Read()) {
 
-                            checkedListBox1.Items.Add(reader["FirstName"]);
+                            cbNoRoomTenant.Items.Add(reader["FirstName"]);
                         
                         }
                     }      
@@ -66,19 +67,35 @@ namespace boardingHouseProj
             }
         }
 
-
+        //this is where the two method runs for uncheck and check all students
         private void cbSelect_CheckedChanged(object sender, EventArgs e)
         {
             if (cbSelect.Checked)
             {//this checks all the checklist
 
-                CheckAllItems(checkedListBox1);
+                CheckAllItems(cbNoRoomTenant);
 
             }
             else { //Uncheck all the checklistBox
 
-                UnCheckAllItems(checkedListBox1);
+                UnCheckAllItems(cbNoRoomTenant);
 
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                connect.Open();
+
+                string query = "Update Tenant";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect)) { 
+                
+                
+                }
+            
+            
             }
         }
     }

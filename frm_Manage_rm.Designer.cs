@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ClmnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +57,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(27, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 33);
             this.label1.TabIndex = 0;
@@ -70,7 +69,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(133, 454);
+            this.btnAdd.Location = new System.Drawing.Point(25, 372);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(104, 36);
             this.btnAdd.TabIndex = 12;
@@ -84,7 +83,7 @@
             this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(800, 489);
+            this.btnPayment.Location = new System.Drawing.Point(289, 372);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(104, 36);
             this.btnPayment.TabIndex = 13;
@@ -97,7 +96,7 @@
             this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(884, 9);
+            this.btnClose.Location = new System.Drawing.Point(882, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(104, 36);
             this.btnClose.TabIndex = 15;
@@ -111,7 +110,7 @@
             this.btnMaintain.BackColor = System.Drawing.Color.IndianRed;
             this.btnMaintain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintain.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaintain.Location = new System.Drawing.Point(423, 489);
+            this.btnMaintain.Location = new System.Drawing.Point(163, 372);
             this.btnMaintain.Name = "btnMaintain";
             this.btnMaintain.Size = new System.Drawing.Size(104, 36);
             this.btnMaintain.TabIndex = 14;
@@ -124,30 +123,29 @@
             this.gridRoom.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClmnNumber,
             this.clmnRoom,
             this.clmnDesc,
             this.clmnCapacity,
             this.clmnPrice,
             this.clmnStatus});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridRoom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridRoom.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridRoom.EnableHeadersVisualStyles = false;
             this.gridRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gridRoom.Location = new System.Drawing.Point(416, 77);
@@ -183,6 +181,7 @@
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(191, 20);
             this.txtCapacity.TabIndex = 21;
+            this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
             // 
             // label6
             // 
@@ -217,6 +216,7 @@
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(191, 20);
             this.txtRoomNumber.TabIndex = 17;
+            this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
             // 
             // label2
             // 
@@ -227,15 +227,6 @@
             this.label2.Size = new System.Drawing.Size(109, 18);
             this.label2.TabIndex = 16;
             this.label2.Text = "Room Number";
-            // 
-            // ClmnNumber
-            // 
-            this.ClmnNumber.DividerWidth = 2;
-            this.ClmnNumber.HeaderText = "#";
-            this.ClmnNumber.MinimumWidth = 2;
-            this.ClmnNumber.Name = "ClmnNumber";
-            this.ClmnNumber.ReadOnly = true;
-            this.ClmnNumber.Width = 50;
             // 
             // clmnRoom
             // 
@@ -296,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1000, 566);
+            this.ClientSize = new System.Drawing.Size(998, 500);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCapacity);
@@ -337,7 +328,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnCapacity;

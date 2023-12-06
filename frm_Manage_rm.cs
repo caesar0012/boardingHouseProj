@@ -26,6 +26,8 @@ namespace boardingHouseProj
             showData();
         }
 
+        private static string stats;
+
         private void showData()
         {
 
@@ -65,30 +67,9 @@ namespace boardingHouseProj
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-
-
             if (txtRoomNumber.Text == roomNum)
             {
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-                    connect.Open();
-
-                    string query = "Update Room set Description = @Desc, Capacity = @capacity, " +
-                        "Price = @price, Status = @status";
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
-                    {
-
-                        cmd.Parameters.AddWithValue("@Desc", txtDescription.Text);
-                        cmd.Parameters.AddWithValue("@capacity", txtCapacity.Text);
-                        cmd.Parameters.AddWithValue("@price", txtPrice.Text);
-                        cmd.Parameters.AddWithValue("@status", "Available");
-
-                    }
-
-                }
-                MessageBox.Show("Update Success!");
-
+                MessageBox.Show("Tangina");
 
             }
             else if (txtRoomNumber.Text != roomNum)
@@ -195,6 +176,10 @@ namespace boardingHouseProj
                 string capacity = selectedRow.Cells["clmnCapacity"].Value?.ToString();
                 string price = selectedRow.Cells["clmnPrice"].Value?.ToString(); // Fix the column name here
 
+                string status = selectedRow.Cells["clmnStatus"].Value?.ToString(); // Fix the column name here
+
+                stats = status;
+
                 roomNum = roomNumber;
 
                 // Check if any cell value is null
@@ -233,5 +218,22 @@ namespace boardingHouseProj
         {
             txtRoomNumber_KeyPress(sender, e);
         }
+
+        private void gridRoom_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (gridRoom.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = gridRoom.CurrentRow;
+
+                // Get the value of the "clmnStatus" cell
+
+
+                // Check if the status is "Single"
+                if (stats == "Destroyed")
+                {
+                    MessageBox.Show("Nooooooooo");
+                }
+            }
+        }
     }
-}
+}   

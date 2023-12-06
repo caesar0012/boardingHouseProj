@@ -116,19 +116,45 @@ create table Maintenance(
 
 Select * from Tenant
 
-Create Table occupation_detail(
-
+Create Table lease_tbl(
+	
+	lease_id int primary key identity(1,1),
 	Tenant_id int,
 	Employee_id int,
-	Room_number int default 0,
-	Date datetime DEFAULT GETDATE()
+	room_id int,
+	StartDate datetime DEFAULT GETDATE()
 
 );
+
+Create Table Payment(
+	
+	Payment_id int primary key identity(1,1),
+	lease_id int,
+	PaymentDate datetime default getdate(),
+	Employee_id int,
+	balance decimal(10,2) default 0,
+	Amount_paid decimal(10,2) default 0,
+	Type varchar(10)
+
+
+);
+
+Create table Maintenance(
+	
+	Maintenance_id int primary key identity(1,1),
+	Tenant_id int,
+	Employee_id int,
+	Details varchar(45),
+	Date_added datetime default getdate(),
+	Archive smallint default 0
+);
+
+drop table Maintenance
 
 select * from occupation_detail
 
 
-
+Select * from Room
 
 
 

@@ -49,9 +49,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelMain.Location = new System.Drawing.Point(0, 236);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1333, 604);
+            this.panelMain.Size = new System.Drawing.Size(1333, 489);
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -64,7 +64,7 @@
             this.panelFuntion.Controls.Add(this.btnReport);
             this.panelFuntion.Controls.Add(this.btnReservation);
             this.panelFuntion.Location = new System.Drawing.Point(0, 106);
-            this.panelFuntion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFuntion.Margin = new System.Windows.Forms.Padding(4);
             this.panelFuntion.Name = "panelFuntion";
             this.panelFuntion.Size = new System.Drawing.Size(1327, 130);
             this.panelFuntion.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.btnAccount.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Location = new System.Drawing.Point(924, 20);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(161, 85);
             this.btnAccount.TabIndex = 5;
@@ -90,7 +90,7 @@
             this.btnManageRoom.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageRoom.Location = new System.Drawing.Point(688, 20);
-            this.btnManageRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageRoom.Name = "btnManageRoom";
             this.btnManageRoom.Size = new System.Drawing.Size(161, 85);
             this.btnManageRoom.TabIndex = 4;
@@ -104,7 +104,7 @@
             this.btnReport.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Location = new System.Drawing.Point(264, 20);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(161, 85);
             this.btnReport.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.btnReservation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservation.Location = new System.Drawing.Point(480, 20);
-            this.btnReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnReservation.Name = "btnReservation";
             this.btnReservation.Size = new System.Drawing.Size(161, 85);
             this.btnReservation.TabIndex = 1;
@@ -132,7 +132,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1327, 107);
             this.panel1.TabIndex = 0;
@@ -143,7 +143,7 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Location = new System.Drawing.Point(1211, 39);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 5;
@@ -171,11 +171,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1327, 839);
+            this.ClientSize = new System.Drawing.Size(1327, 724);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelFuntion);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);

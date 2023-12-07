@@ -19,18 +19,19 @@ namespace boardingHouseProj
         public frmManage_rm()
         {
             InitializeComponent();
+            gridRoom.DataError += dataGridView1_DataError;
 
         }
+
         private void frmManage_rm_Load(object sender, EventArgs e)
         {
             showData();
         }
 
         private static string stats;
-
+        public static string roomNum = "";
         private void showData()
         {
-
             DataTable dt = new DataTable();
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
@@ -58,6 +59,8 @@ namespace boardingHouseProj
                 }
                 gridRoom.Sort(gridRoom.Columns["clmnRoom"], ListSortDirection.Ascending);
             }
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -69,8 +72,31 @@ namespace boardingHouseProj
         {
             if (txtRoomNumber.Text == roomNum)
             {
-                MessageBox.Show("Tangina");
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
 
+                    connect.Open();
+
+                    string query = "Update Room set Description = @desc, Capacity = @capacity, Price = @price, Status = @stats where Room_number = @roomNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+
+                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+                        cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@capacity", int.Parse(txtCapacity.Text));
+                        cmd.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
+                        cmd.Parameters.AddWithValue("@stats", stats); ;
+
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Update Success");
+
+                    }
+                }
+
+                gridRoom.CellEndEdit += gridRoom_CellEndEdit;
             }
             else if (txtRoomNumber.Text != roomNum)
             {
@@ -116,47 +142,22 @@ namespace boardingHouseProj
                 MessageBox.Show("Invalid room Number");
 
             }
-
             gridRoom.Rows.Clear();
             showData();
-
-
-
         }
-
-        public static string roomNum = "";
 
         private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            /* try
-             {
+        }
 
-                 // Check if the clicked cell is in the "clmnTenant" and is a button
-                 if (e.ColumnIndex == gridRoom.Columns["clmnRoom"].Index && e.RowIndex >= 0)
-                 {
-                     // Get the value in a specific column of the clicked row
-                     string roomNumber = gridRoom.Rows[e.RowIndex].Cells["clmnRoom"].Value.ToString();
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // Display the default error dialog
+            MessageBox.Show("Error in data: " + e.Exception.Message, "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                     roomNum = roomNumber;
-
-                     MessageBox.Show($"Button clicked in row {e.RowIndex + 1}. Room Number: {roomNumber}");
-
-                 }
-                 else
-                 {
-
-                     MessageBox.Show("Error: Invalid");
-
-                 }
-
-             }
-             catch (Exception ex)
-             {
-
-                 MessageBox.Show("Error:" + ex.Message);
-
-             }*/
+            // Optionally, you can cancel the event to suppress the default error dialog
+            e.Cancel = true;
         }
 
         private void gridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,7 +177,7 @@ namespace boardingHouseProj
                 string capacity = selectedRow.Cells["clmnCapacity"].Value?.ToString();
                 string price = selectedRow.Cells["clmnPrice"].Value?.ToString(); // Fix the column name here
 
-                string status = selectedRow.Cells["clmnStatus"].Value?.ToString(); // Fix the column name here
+                   string status = selectedRow.Cells["clmnStatss"].Value?.ToString(); // Fix the column name here
 
                 stats = status;
 
@@ -200,6 +201,7 @@ namespace boardingHouseProj
 
         }
 
+
         private void txtRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the key is not a control key, a digit, or a minus sign
@@ -221,19 +223,14 @@ namespace boardingHouseProj
 
         private void gridRoom_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (gridRoom.CurrentRow != null)
-            {
-                DataGridViewRow selectedRow = gridRoom.CurrentRow;
+            
+        }
 
-                // Get the value of the "clmnStatus" cell
+        private void gridRoom_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-                // Check if the status is "Single"
-                if (stats == "Destroyed")
-                {
-                    MessageBox.Show("Nooooooooo");
-                }
-            }
+        }
+        
         }
     }
-}   
+   

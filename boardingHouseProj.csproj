@@ -59,6 +59,12 @@
     <Compile Include="add_room_frm.Designer.cs">
       <DependentUpon>add_room_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forgotPassFrms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotPassFrms.Designer.cs">
+      <DependentUpon>forgotPassFrms.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="add_room_frm.resx">
       <DependentUpon>add_room_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotPassFrms.resx">
+      <DependentUpon>forgotPassFrms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>

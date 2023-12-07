@@ -22,6 +22,7 @@ namespace boardingHouseProj
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //calls authenticator for user and pass
             if (authenticateLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString())) {
 
                 MessageBox.Show("Login Success");
@@ -39,19 +40,19 @@ namespace boardingHouseProj
 
         private Boolean authenticateLogin(string user, string pass) {
 
-            string username = txtUserName.Text;
-            string password = txtPassword.Text;
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
                 connect.Close();
                 connect.Open();
 
-                string query = "Select count(*) from Employee_acc where userName = @user01 and password = @pass01 and Arhive = 0";
-                
+                //collate mean it was case sensitive comparision for user and pass
+                string query = "SELECT COUNT(*) FROM Employee_acc WHERE userName COLLATE latin1_general_cs_as = @user01 AND password COLLATE latin1_general_cs_as = @pass01 AND Archive = 0";
+
+
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@user01", username);
-                    cmd.Parameters.AddWithValue("@pass01", password);
+                    cmd.Parameters.AddWithValue("@user01", user);
+                    cmd.Parameters.AddWithValue("@pass01", pass);
 
                     int count = (int)cmd.ExecuteScalar();
 
@@ -68,7 +69,14 @@ namespace boardingHouseProj
 
         private void lblforgotPassword_Click(object sender, EventArgs e)
         {
-            //
+            forgotPassFrms f1 = new forgotPassFrms();
+            f1.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

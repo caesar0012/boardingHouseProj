@@ -35,11 +35,6 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.gridRoom = new System.Windows.Forms.DataGridView();
-            this.clmnRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCapacity = new System.Windows.Forms.TextBox();
@@ -48,6 +43,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.clmnRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStatss = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridRoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(72, 496);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(139, 44);
             this.btnAdd.TabIndex = 12;
@@ -85,7 +85,7 @@
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.Location = new System.Drawing.Point(266, 496);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(139, 44);
             this.btnPayment.TabIndex = 13;
@@ -99,7 +99,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(1176, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(139, 44);
             this.btnClose.TabIndex = 15;
@@ -127,7 +127,7 @@
             this.clmnDesc,
             this.clmnCapacity,
             this.clmnPrice,
-            this.clmnStatus});
+            this.clmnStatss});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ScrollBar;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,7 +139,7 @@
             this.gridRoom.EnableHeadersVisualStyles = false;
             this.gridRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gridRoom.Location = new System.Drawing.Point(555, 95);
-            this.gridRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridRoom.Margin = new System.Windows.Forms.Padding(4);
             this.gridRoom.Name = "gridRoom";
             this.gridRoom.RowHeadersVisible = false;
             this.gridRoom.RowHeadersWidth = 51;
@@ -147,7 +147,86 @@
             this.gridRoom.TabIndex = 11;
             this.gridRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
             this.gridRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);
+            this.gridRoom.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellEndEdit);
             this.gridRoom.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridRoom_EditingControlShowing);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(140, 415);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(253, 22);
+            this.txtPrice.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(136, 382);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 23);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Price";
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Location = new System.Drawing.Point(140, 345);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Size = new System.Drawing.Size(253, 22);
+            this.txtCapacity.TabIndex = 21;
+            this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(136, 311);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 23);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Capacity";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(140, 246);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(253, 22);
+            this.txtDescription.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(136, 213);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Description";
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.Location = new System.Drawing.Point(140, 155);
+            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(253, 22);
+            this.txtRoomNumber.TabIndex = 17;
+            this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(136, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 23);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Room Number";
             // 
             // clmnRoom
             // 
@@ -182,99 +261,17 @@
             this.clmnPrice.MinimumWidth = 6;
             this.clmnPrice.Name = "clmnPrice";
             // 
-            // clmnStatus
+            // clmnStatss
             // 
-            this.clmnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmnStatus.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.clmnStatus.FillWeight = 89.98338F;
-            this.clmnStatus.HeaderText = "Status";
-            this.clmnStatus.Items.AddRange(new object[] {
+            this.clmnStatss.HeaderText = "Status";
+            this.clmnStatss.Items.AddRange(new object[] {
             "Available",
-            "Maintenance",
-            "Renovation",
+            "Under Renovation",
             "Destroyed"});
-            this.clmnStatus.MinimumWidth = 6;
-            this.clmnStatus.Name = "clmnStatus";
-            this.clmnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmnStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(140, 415);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(253, 22);
-            this.txtPrice.TabIndex = 24;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(136, 382);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 23);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Price";
-            // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Location = new System.Drawing.Point(140, 345);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(253, 22);
-            this.txtCapacity.TabIndex = 21;
-            this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(136, 311);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 23);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Capacity";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(140, 246);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(253, 22);
-            this.txtDescription.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 213);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Description";
-            // 
-            // txtRoomNumber
-            // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(140, 155);
-            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(253, 22);
-            this.txtRoomNumber.TabIndex = 17;
-            this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 23);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Room Number";
+            this.clmnStatss.MinimumWidth = 6;
+            this.clmnStatss.Name = "clmnStatss";
+            this.clmnStatss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnStatss.Width = 125;
             // 
             // frmManage_rm
             // 
@@ -296,7 +293,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
             this.Load += new System.EventHandler(this.frmManage_rm_Load);
@@ -325,6 +322,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnPrice;
-        private System.Windows.Forms.DataGridViewComboBoxColumn clmnStatus;
+        private System.Windows.Forms.DataGridViewComboBoxColumn clmnStatss;
     }
 }

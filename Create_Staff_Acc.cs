@@ -87,14 +87,13 @@ namespace boardingHouseProj
                     {
                         connection.Open();
                         string firstname = txtFirstName.Text;
-                        string lastname = txtFirstName.Text;
-                        string profile_pic = txtFirstName.Text;
+                        string lastname = txtLastName.Text;
                         long contact = long.Parse(txtContact.Text);
-                        string username = txtFirstName.Text;
-                        string password = txtFirstName.Text;
-                        string forgotquestion = txtFirstName.Text;
-                        string forgotanswer = txtFirstName.Text;
-                        string role = txtFirstName.Text;
+                        string username = txtUserName.Text;
+                        string password = txtPassword.Text;
+                        string forgotquestion = cmbQuestionPass.Text;
+                        string forgotanswer = txtAnswerQuestion.Text;
+                        string role = cmbRole.Text;
 
                         //this reads the image
                         byte[] imageData = null;

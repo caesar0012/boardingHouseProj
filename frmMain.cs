@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +18,8 @@ namespace boardingHouseProj
         public frmMain()
         {
             InitializeComponent();
-            //WindowState = FormWindowState.Maximized;
+            
+            
             
 
         }
@@ -28,7 +31,7 @@ namespace boardingHouseProj
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            showReservation();
+            
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -58,37 +61,21 @@ namespace boardingHouseProj
             c1.Show();
 
         }
-
-
-        private void btnManageRoom_Click(object sender, EventArgs e)
-        {
-            frmManage_rm rm1 = new frmManage_rm();
-            rm1.TopLevel = false;
-            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(rm1);
-            rm1.BringToFront();
-            rm1.Show();
-        }
-
-        private void btnRequest_Click(object sender, EventArgs e)
-        {
-            frmRequest reqs1 = new frmRequest();
-            reqs1.TopLevel = false;
-            reqs1.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(reqs1);
-            reqs1.BringToFront();
-            reqs1.Show();
-        }   
-
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panelFuntion_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void profileMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

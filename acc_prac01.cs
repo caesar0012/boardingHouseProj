@@ -31,7 +31,7 @@ namespace boardingHouseProj
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO account (username, password, profile_picture) VALUES (@Username, @Password, @images)";
+                    string query = "INSERT INTO Employee_Info (firstName, lastName, ProfilePic) VALUES (@Username, @Password, @images)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -119,6 +119,42 @@ namespace boardingHouseProj
                 }
             }
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = "Select * from Employee_Info where Employee_id = @emp_id";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+                cmd.Parameters.AddWithValue("@emp_id", txtUserID.Text);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) {
+
+                    if (reader.Read()) {
+
+                        txtUserID.Text = reader[0].ToString();
+
+                        byte[] img = (byte[])(reader["ProfilePic"]);
+
+                        if (img == null) {
+
+                            dpBox.Image = null;
+
+                        }
+                        else {
+
+                            MemoryStream ms = new MemoryStream(img);
+                            dpBox.Image = Image.FromStream(ms);
+                        
+                        }
+                    }
+                }            
+            
+            }
         }
     }
 }

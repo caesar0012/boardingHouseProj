@@ -39,6 +39,9 @@
             this.ofdProfile = new System.Windows.Forms.OpenFileDialog();
             this.dpBox = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.txtUserId1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +132,8 @@
             // 
             // dpBox
             // 
-            this.dpBox.Location = new System.Drawing.Point(233, 79);
+            this.dpBox.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.dpBox.Location = new System.Drawing.Point(361, 56);
             this.dpBox.Name = "dpBox";
             this.dpBox.Size = new System.Drawing.Size(137, 120);
             this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,12 +153,45 @@
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(286, 304);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.Location = new System.Drawing.Point(249, 260);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(161, 20);
+            this.txtUserID.TabIndex = 13;
+            // 
+            // txtUserId1
+            // 
+            this.txtUserId1.AutoSize = true;
+            this.txtUserId1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserId1.Location = new System.Drawing.Point(246, 226);
+            this.txtUserId1.Name = "txtUserId1";
+            this.txtUserId1.Size = new System.Drawing.Size(29, 18);
+            this.txtUserId1.TabIndex = 12;
+            this.txtUserId1.Text = "ID*";
+            // 
             // acc_prac01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(722, 408);
+            this.Controls.Add(this.txtUserID);
+            this.Controls.Add(this.txtUserId1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnSubmit);
@@ -187,5 +224,8 @@
         private System.Windows.Forms.OpenFileDialog ofdProfile;
         private System.Windows.Forms.PictureBox dpBox;
         private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.Label txtUserId1;
     }
 }

@@ -11,7 +11,7 @@ namespace boardingHouseProj
     {
         //dapiton = @"Data Source=COLA\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
 
-        public static string connectionString = @"Data Source=PC\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
+        public static string connectionString = @"Data Source=COLA\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
 
         static string edward = @"Data Source=DESKTOP-2GB3QJK\SQLEXPRESS01;Initial Catalog=BoardingHouse;Integrated Security=True";
 

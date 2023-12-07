@@ -45,9 +45,8 @@
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1327, 724);
+            this.panelMain.Size = new System.Drawing.Size(995, 588);
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -59,10 +58,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(466, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(350, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(375, 35);
+            this.label1.Size = new System.Drawing.Size(305, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Jr. Boarding House System";
             // 
@@ -71,10 +69,9 @@
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(1214, 5);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(909, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -84,9 +81,10 @@
             // 
             this.profileMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.profileMain.Image = ((System.Drawing.Image)(resources.GetObject("profileMain.Image")));
-            this.profileMain.Location = new System.Drawing.Point(1168, 52);
+            this.profileMain.Location = new System.Drawing.Point(872, 41);
+            this.profileMain.Margin = new System.Windows.Forms.Padding(2);
             this.profileMain.Name = "profileMain";
-            this.profileMain.Size = new System.Drawing.Size(147, 120);
+            this.profileMain.Size = new System.Drawing.Size(110, 98);
             this.profileMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profileMain.TabIndex = 0;
             this.profileMain.TabStop = false;
@@ -101,22 +99,20 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1327, 188);
+            this.panel1.Size = new System.Drawing.Size(995, 154);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1327, 724);
+            this.ClientSize = new System.Drawing.Size(995, 588);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

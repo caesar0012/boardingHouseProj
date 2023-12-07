@@ -17,9 +17,7 @@ namespace boardingHouseProj
     {
         public frmMain()
         {
-            InitializeComponent();
-            
-            
+            InitializeComponent();          
             
 
         }
@@ -31,7 +29,53 @@ namespace boardingHouseProj
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+            loadProfile();
+        }
+
+        private void loadProfile() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
+                connect.Open();
+
+                string query = "Select * from Employee_Info where Employee_id = @emp_id";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+                cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+
+                    if (reader.Read())
+                    {
+                        if (int.TryParse(reader[0].ToString(), out int intNumValue))
+                        {
+                            frmLogin.employee_id = intNumValue;
+                        }
+
+                        byte[] img = (byte[])(reader["ProfilePic"]);
+
+                        if (img == null)
+                        {
+
+                            profileMain.Image = null;
+
+                        }
+                        else
+                        {
+
+                            MemoryStream ms = new MemoryStream(img);
+                            profileMain.Image = Image.FromStream(ms);
+
+                        }
+                    }
+                }
+
+            }
+
+
+
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -42,12 +86,6 @@ namespace boardingHouseProj
             panelMain.Controls.Add(staff1);
             staff1.BringToFront();
             staff1.Show();
-        }
-
-        private void btnReservation_Click(object sender, EventArgs e)
-        {
-            showReservation();
-            
         }
 
         void showReservation() {
@@ -75,6 +113,7 @@ namespace boardingHouseProj
         {
 
         }
+
 
 
     }

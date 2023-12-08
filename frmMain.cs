@@ -39,7 +39,7 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Select * from Employee_Info where Employee_id = @emp_id";
+                string query = "Select * from Employee_acc where Employee_id = @emp_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);

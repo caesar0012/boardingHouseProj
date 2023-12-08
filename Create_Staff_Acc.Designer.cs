@@ -55,10 +55,9 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(384, 37);
+            this.label1.Location = new System.Drawing.Point(366, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 32);
             this.label1.TabIndex = 0;
@@ -66,18 +65,16 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLastName.Location = new System.Drawing.Point(30, 173);
+            this.txtLastName.Location = new System.Drawing.Point(12, 151);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(221, 20);
             this.txtLastName.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 135);
+            this.label2.Location = new System.Drawing.Point(8, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 24);
             this.label2.TabIndex = 2;
@@ -85,10 +82,9 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(385, 143);
+            this.label3.Location = new System.Drawing.Point(367, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 24);
             this.label3.TabIndex = 4;
@@ -96,10 +92,9 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(716, 244);
+            this.label5.Location = new System.Drawing.Point(627, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 12;
@@ -107,10 +102,9 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(385, 244);
+            this.label6.Location = new System.Drawing.Point(367, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 24);
             this.label6.TabIndex = 10;
@@ -118,10 +112,9 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(717, 133);
+            this.label7.Location = new System.Drawing.Point(628, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 24);
             this.label7.TabIndex = 8;
@@ -129,8 +122,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUserName.Location = new System.Drawing.Point(720, 173);
+            this.txtUserName.Location = new System.Drawing.Point(631, 151);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(222, 20);
             this.txtUserName.TabIndex = 7;
@@ -138,10 +130,9 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConfirm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Location = new System.Drawing.Point(464, 430);
+            this.btnConfirm.Location = new System.Drawing.Point(444, 380);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(97, 31);
             this.btnConfirm.TabIndex = 13;
@@ -151,10 +142,9 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 329);
+            this.label8.Location = new System.Drawing.Point(6, 306);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 24);
             this.label8.TabIndex = 15;
@@ -162,16 +152,14 @@
             // 
             // txtAnswerQuestion
             // 
-            this.txtAnswerQuestion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAnswerQuestion.Location = new System.Drawing.Point(28, 413);
+            this.txtAnswerQuestion.Location = new System.Drawing.Point(10, 391);
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
             this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 20);
             this.txtAnswerQuestion.TabIndex = 16;
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(389, 282);
+            this.txtPassword.Location = new System.Drawing.Point(371, 260);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(222, 20);
             this.txtPassword.TabIndex = 17;
@@ -179,8 +167,7 @@
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirmPass.Location = new System.Drawing.Point(719, 282);
+            this.txtConfirmPass.Location = new System.Drawing.Point(630, 260);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(221, 20);
             this.txtConfirmPass.TabIndex = 18;
@@ -188,31 +175,28 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFirstName.Location = new System.Drawing.Point(389, 173);
+            this.txtFirstName.Location = new System.Drawing.Point(371, 151);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(221, 20);
             this.txtFirstName.TabIndex = 19;
             // 
             // cmbRole
             // 
-            this.cmbRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Manager",
             "Admin",
             "Cashier"});
-            this.cmbRole.Location = new System.Drawing.Point(30, 281);
+            this.cmbRole.Location = new System.Drawing.Point(12, 259);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(221, 21);
             this.cmbRole.TabIndex = 21;
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 243);
+            this.label9.Location = new System.Drawing.Point(8, 222);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 24);
             this.label9.TabIndex = 22;
@@ -220,13 +204,12 @@
             // 
             // cmbQuestionPass
             // 
-            this.cmbQuestionPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbQuestionPass.FormattingEnabled = true;
             this.cmbQuestionPass.Items.AddRange(new object[] {
             "Birth Place",
             "Favorite Hero",
             "Favorite Team"});
-            this.cmbQuestionPass.Location = new System.Drawing.Point(28, 367);
+            this.cmbQuestionPass.Location = new System.Drawing.Point(10, 345);
             this.cmbQuestionPass.Name = "cmbQuestionPass";
             this.cmbQuestionPass.Size = new System.Drawing.Size(223, 21);
             this.cmbQuestionPass.TabIndex = 14;
@@ -234,8 +217,7 @@
             // 
             // txtContact
             // 
-            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtContact.Location = new System.Drawing.Point(388, 367);
+            this.txtContact.Location = new System.Drawing.Point(370, 345);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(222, 20);
             this.txtContact.TabIndex = 24;
@@ -243,10 +225,9 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(384, 329);
+            this.label4.Location = new System.Drawing.Point(366, 307);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 24);
             this.label4.TabIndex = 23;
@@ -254,10 +235,9 @@
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(717, 329);
+            this.label10.Location = new System.Drawing.Point(628, 307);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 24);
             this.label10.TabIndex = 25;
@@ -265,10 +245,9 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Location = new System.Drawing.Point(719, 367);
+            this.btnUpload.Location = new System.Drawing.Point(630, 345);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(223, 31);
             this.btnUpload.TabIndex = 26;
@@ -278,9 +257,8 @@
             // 
             // dpBox
             // 
-            this.dpBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dpBox.Location = new System.Drawing.Point(831, 12);
+            this.dpBox.Location = new System.Drawing.Point(743, 14);
             this.dpBox.Name = "dpBox";
             this.dpBox.Size = new System.Drawing.Size(157, 116);
             this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.ClientSize = new System.Drawing.Size(930, 471);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label10);

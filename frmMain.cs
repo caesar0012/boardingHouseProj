@@ -71,11 +71,7 @@ namespace boardingHouseProj
                         }
                     }
                 }
-
             }
-
-
-
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -99,22 +95,39 @@ namespace boardingHouseProj
             c1.Show();
 
         }
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            frmManage_rm rm1 = new frmManage_rm();
+            rm1.TopLevel = false;
+            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(rm1);
+            rm1.BringToFront();
+            rm1.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnTenant_Click(object sender, EventArgs e)
         {
-
+            frmCustomer c1 = new frmCustomer();
+            c1.TopLevel = false;
+            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            c1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(c1);
+            c1.BringToFront();
+            c1.Show();
         }
 
         private void profileMain_Click(object sender, EventArgs e)
         {
+            userAccount user = new userAccount();
 
+            user.TopLevel = false;
+            user.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            user.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(user);
+            user.BringToFront();
+            user.Show();
         }
-
-
-
     }
 }

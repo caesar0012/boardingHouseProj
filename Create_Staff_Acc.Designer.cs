@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_Staff_Acc));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpload = new System.Windows.Forms.Button();
-            this.dpBox = new System.Windows.Forms.PictureBox();
+            this.dpBox = new boardingHouseProj.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(366, 14);
+            this.label1.Location = new System.Drawing.Point(364, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 32);
             this.label1.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(12, 151);
+            this.txtLastName.Location = new System.Drawing.Point(37, 151);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(221, 20);
             this.txtLastName.TabIndex = 1;
@@ -74,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 112);
+            this.label2.Location = new System.Drawing.Point(33, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 24);
             this.label2.TabIndex = 2;
@@ -94,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(627, 222);
+            this.label5.Location = new System.Drawing.Point(665, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 12;
@@ -114,7 +115,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(628, 111);
+            this.label7.Location = new System.Drawing.Point(666, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 24);
             this.label7.TabIndex = 8;
@@ -122,7 +123,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(631, 151);
+            this.txtUserName.Location = new System.Drawing.Point(669, 151);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(222, 20);
             this.txtUserName.TabIndex = 7;
@@ -144,7 +145,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 306);
+            this.label8.Location = new System.Drawing.Point(31, 306);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 24);
             this.label8.TabIndex = 15;
@@ -152,7 +153,7 @@
             // 
             // txtAnswerQuestion
             // 
-            this.txtAnswerQuestion.Location = new System.Drawing.Point(10, 391);
+            this.txtAnswerQuestion.Location = new System.Drawing.Point(35, 391);
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
             this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 20);
             this.txtAnswerQuestion.TabIndex = 16;
@@ -167,7 +168,7 @@
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(630, 260);
+            this.txtConfirmPass.Location = new System.Drawing.Point(668, 260);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(221, 20);
             this.txtConfirmPass.TabIndex = 18;
@@ -187,7 +188,7 @@
             "Manager",
             "Admin",
             "Cashier"});
-            this.cmbRole.Location = new System.Drawing.Point(12, 259);
+            this.cmbRole.Location = new System.Drawing.Point(37, 259);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(221, 21);
             this.cmbRole.TabIndex = 21;
@@ -196,7 +197,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 222);
+            this.label9.Location = new System.Drawing.Point(33, 222);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 24);
             this.label9.TabIndex = 22;
@@ -209,7 +210,7 @@
             "Birth Place",
             "Favorite Hero",
             "Favorite Team"});
-            this.cmbQuestionPass.Location = new System.Drawing.Point(10, 345);
+            this.cmbQuestionPass.Location = new System.Drawing.Point(35, 345);
             this.cmbQuestionPass.Name = "cmbQuestionPass";
             this.cmbQuestionPass.Size = new System.Drawing.Size(223, 21);
             this.cmbQuestionPass.TabIndex = 14;
@@ -237,7 +238,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(628, 307);
+            this.label10.Location = new System.Drawing.Point(666, 307);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 24);
             this.label10.TabIndex = 25;
@@ -247,7 +248,7 @@
             // 
             this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Location = new System.Drawing.Point(630, 345);
+            this.btnUpload.Location = new System.Drawing.Point(668, 345);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(223, 31);
             this.btnUpload.TabIndex = 26;
@@ -258,9 +259,10 @@
             // dpBox
             // 
             this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dpBox.Location = new System.Drawing.Point(743, 14);
+            this.dpBox.Image = ((System.Drawing.Image)(resources.GetObject("dpBox.Image")));
+            this.dpBox.Location = new System.Drawing.Point(787, 12);
             this.dpBox.Name = "dpBox";
-            this.dpBox.Size = new System.Drawing.Size(157, 116);
+            this.dpBox.Size = new System.Drawing.Size(118, 110);
             this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dpBox.TabIndex = 27;
             this.dpBox.TabStop = false;
@@ -270,7 +272,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 471);
+            this.ClientSize = new System.Drawing.Size(930, 455);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label10);
@@ -325,6 +327,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.PictureBox dpBox;
+        private RoundPictureBox dpBox;
     }
 }

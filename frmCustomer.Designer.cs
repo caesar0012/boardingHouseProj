@@ -53,62 +53,56 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(374, 34);
+            this.label1.Location = new System.Drawing.Point(373, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 32);
+            this.label1.Size = new System.Drawing.Size(203, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Personal Information";
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFirstname.Location = new System.Drawing.Point(56, 127);
+            this.txtFirstname.Location = new System.Drawing.Point(55, 108);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(257, 38);
+            this.txtFirstname.Size = new System.Drawing.Size(257, 32);
             this.txtFirstname.TabIndex = 1;
             // 
             // txtLastName
             // 
-            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLastName.Location = new System.Drawing.Point(353, 127);
+            this.txtLastName.Location = new System.Drawing.Point(352, 108);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(257, 38);
+            this.txtLastName.Size = new System.Drawing.Size(257, 32);
             this.txtLastName.TabIndex = 3;
             // 
             // txtRelationship
             // 
-            this.txtRelationship.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtRelationship.Location = new System.Drawing.Point(668, 230);
+            this.txtRelationship.Location = new System.Drawing.Point(667, 211);
             this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(257, 38);
+            this.txtRelationship.Size = new System.Drawing.Size(220, 32);
             this.txtRelationship.TabIndex = 8;
             // 
             // txtEmergencyContact
             // 
-            this.txtEmergencyContact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmergencyContact.Location = new System.Drawing.Point(57, 230);
+            this.txtEmergencyContact.Location = new System.Drawing.Point(56, 211);
             this.txtEmergencyContact.Name = "txtEmergencyContact";
-            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 38);
+            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 32);
             this.txtEmergencyContact.TabIndex = 7;
             // 
             // txtContact
             // 
-            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtContact.Location = new System.Drawing.Point(669, 127);
+            this.txtContact.Location = new System.Drawing.Point(668, 108);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(257, 38);
+            this.txtContact.Size = new System.Drawing.Size(220, 32);
             this.txtContact.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 87);
+            this.label4.Location = new System.Drawing.Point(52, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 23);
+            this.label4.Size = new System.Drawing.Size(85, 18);
             this.label4.TabIndex = 19;
             this.label4.Text = "First Name";
             // 
@@ -116,9 +110,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(350, 87);
+            this.label6.Location = new System.Drawing.Point(349, 68);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.Size = new System.Drawing.Size(84, 18);
             this.label6.TabIndex = 21;
             this.label6.Text = "Last Name";
             // 
@@ -126,9 +120,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(665, 194);
+            this.label7.Location = new System.Drawing.Point(664, 175);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 23);
+            this.label7.Size = new System.Drawing.Size(94, 18);
             this.label7.TabIndex = 24;
             this.label7.Text = "Relationship";
             // 
@@ -136,9 +130,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 194);
+            this.label8.Location = new System.Drawing.Point(53, 175);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 23);
+            this.label8.Size = new System.Drawing.Size(140, 18);
             this.label8.TabIndex = 23;
             this.label8.Text = "Emegency Contact";
             // 
@@ -146,19 +140,18 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(666, 91);
+            this.label9.Location = new System.Drawing.Point(665, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 23);
+            this.label9.Size = new System.Drawing.Size(62, 18);
             this.label9.TabIndex = 22;
             this.label9.Text = "Contact";
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBrowse.BackColor = System.Drawing.SystemColors.Window;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(56, 460);
+            this.btnBrowse.Location = new System.Drawing.Point(56, 383);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(335, 32);
             this.btnBrowse.TabIndex = 27;
@@ -169,7 +162,7 @@
             // pb_tenantDoc
             // 
             this.pb_tenantDoc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb_tenantDoc.Location = new System.Drawing.Point(56, 316);
+            this.pb_tenantDoc.Location = new System.Drawing.Point(55, 261);
             this.pb_tenantDoc.Name = "pb_tenantDoc";
             this.pb_tenantDoc.Size = new System.Drawing.Size(335, 111);
             this.pb_tenantDoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,45 +173,42 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(665, 280);
+            this.label2.Location = new System.Drawing.Point(664, 261);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 23);
+            this.label2.Size = new System.Drawing.Size(56, 18);
             this.label2.TabIndex = 30;
             this.label2.Text = "School";
             // 
             // txtSchool
             // 
-            this.txtSchool.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSchool.Location = new System.Drawing.Point(668, 316);
+            this.txtSchool.Location = new System.Drawing.Point(667, 297);
             this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(257, 38);
+            this.txtSchool.Size = new System.Drawing.Size(220, 32);
             this.txtSchool.TabIndex = 29;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(665, 365);
+            this.label3.Location = new System.Drawing.Point(664, 346);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.Size = new System.Drawing.Size(67, 18);
             this.label3.TabIndex = 32;
             this.label3.Text = "Address";
             // 
             // txtAddress
             // 
-            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAddress.Location = new System.Drawing.Point(668, 401);
+            this.txtAddress.Location = new System.Drawing.Point(667, 382);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(257, 38);
+            this.txtAddress.Size = new System.Drawing.Size(220, 32);
             this.txtAddress.TabIndex = 31;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConfirm.BackColor = System.Drawing.Color.LightCoral;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(746, 460);
+            this.btnConfirm.Location = new System.Drawing.Point(484, 383);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(92, 32);
             this.btnConfirm.TabIndex = 33;
@@ -230,26 +220,25 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(350, 194);
+            this.label10.Location = new System.Drawing.Point(349, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(233, 23);
+            this.label10.Size = new System.Drawing.Size(186, 18);
             this.label10.TabIndex = 35;
             this.label10.Text = "Emegency Contact Name";
             // 
             // txtEmergencyName
             // 
-            this.txtEmergencyName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmergencyName.Location = new System.Drawing.Point(353, 230);
+            this.txtEmergencyName.Location = new System.Drawing.Point(352, 211);
             this.txtEmergencyName.Name = "txtEmergencyName";
-            this.txtEmergencyName.Size = new System.Drawing.Size(257, 38);
+            this.txtEmergencyName.Size = new System.Drawing.Size(257, 32);
             this.txtEmergencyName.TabIndex = 34;
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1000, 510);
+            this.ClientSize = new System.Drawing.Size(930, 455);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtEmergencyName);
             this.Controls.Add(this.btnConfirm);

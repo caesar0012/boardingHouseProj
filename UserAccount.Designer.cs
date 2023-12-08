@@ -1,6 +1,6 @@
 ﻿namespace boardingHouseProj
 {
-    partial class UserAccount
+    partial class userAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,6 @@
             this.btnUpload.TabIndex = 48;
             this.btnUpload.Text = "Select File";
             this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // label10
             // 
@@ -165,7 +164,6 @@
             this.btnConfirm.TabIndex = 36;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label5
             // 
@@ -291,7 +289,7 @@
             this.dpProfile.TabIndex = 49;
             this.dpProfile.TabStop = false;
             // 
-            // UserAccount
+            // userAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,9 +319,8 @@
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserAccount";
+            this.Name = "userAccount";
             this.Text = "UserAccount";
-            this.Load += new System.EventHandler(this.UserAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dpProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

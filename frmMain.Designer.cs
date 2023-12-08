@@ -33,9 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTenant = new System.Windows.Forms.Button();
+            this.btnRoom = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.profileMain = new boardingHouseProj.RoundPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).BeginInit();
@@ -50,7 +50,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(996, 435);
             this.panelMain.TabIndex = 2;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // label1
             // 
@@ -83,8 +82,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnTenant);
+            this.panel1.Controls.Add(this.btnRoom);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.profileMain);
             this.panel1.Controls.Add(this.btnExit);
@@ -94,44 +93,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 154);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnTenant
+            // 
+            this.btnTenant.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnTenant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTenant.Location = new System.Drawing.Point(149, 68);
+            this.btnTenant.Name = "btnTenant";
+            this.btnTenant.Size = new System.Drawing.Size(160, 48);
+            this.btnTenant.TabIndex = 8;
+            this.btnTenant.Text = "Tenant";
+            this.btnTenant.UseVisualStyleBackColor = false;
+            this.btnTenant.Click += new System.EventHandler(this.btnTenant_Click);
+            // 
+            // btnRoom
+            // 
+            this.btnRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoom.Location = new System.Drawing.Point(413, 68);
+            this.btnRoom.Name = "btnRoom";
+            this.btnRoom.Size = new System.Drawing.Size(160, 48);
+            this.btnRoom.TabIndex = 7;
+            this.btnRoom.Text = "Room";
+            this.btnRoom.UseVisualStyleBackColor = false;
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(137, 76);
+            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(670, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 29);
+            this.button1.Size = new System.Drawing.Size(160, 48);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Account";
+            this.button1.Text = "Employee";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnAccount_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(382, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 29);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(624, 76);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 29);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Close";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // profileMain
             // 
@@ -172,9 +175,9 @@
         private System.Windows.Forms.Button btnExit;
         private RoundPictureBox profileMain;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTenant;
+        private System.Windows.Forms.Button btnRoom;
     }
 }
 

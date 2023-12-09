@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userAccount));
             this.btnUpload = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
@@ -85,6 +86,7 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(222, 20);
             this.txtContact.TabIndex = 46;
+            this.txtContact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContact_KeyDown);
             // 
             // label4
             // 
@@ -100,7 +102,8 @@
             // txtFirstName
             // 
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtFirstName.Location = new System.Drawing.Point(478, 165);
+            this.txtFirstName.Enabled = false;
+            this.txtFirstName.Location = new System.Drawing.Point(118, 171);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(221, 20);
             this.txtFirstName.TabIndex = 42;
@@ -120,6 +123,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(222, 20);
             this.txtPassword.TabIndex = 40;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtAnswerQuestion
             // 
@@ -207,13 +211,14 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(222, 20);
             this.txtUserName.TabIndex = 32;
+            this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(474, 135);
+            this.label3.Location = new System.Drawing.Point(114, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 24);
             this.label3.TabIndex = 31;
@@ -224,7 +229,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(115, 127);
+            this.label2.Location = new System.Drawing.Point(468, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 24);
             this.label2.TabIndex = 30;
@@ -233,7 +238,8 @@
             // txtLastName
             // 
             this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtLastName.Location = new System.Drawing.Point(119, 165);
+            this.txtLastName.Enabled = false;
+            this.txtLastName.Location = new System.Drawing.Point(472, 171);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(221, 20);
             this.txtLastName.TabIndex = 29;
@@ -284,6 +290,7 @@
             // dpProfile
             // 
             this.dpProfile.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.dpProfile.Image = ((System.Drawing.Image)(resources.GetObject("dpProfile.Image")));
             this.dpProfile.Location = new System.Drawing.Point(777, 66);
             this.dpProfile.Name = "dpProfile";
             this.dpProfile.Size = new System.Drawing.Size(162, 145);

@@ -70,14 +70,10 @@ namespace boardingHouseProj
             }
             else if (string.IsNullOrEmpty(txtAnswerQuestion.Text))
             {
-
                 MessageBox.Show("Pls input answer for forgot question");
-
             }
             else if (string.IsNullOrEmpty(txtUserName.Text)) {
-
                 MessageBox.Show("Pls Input username");
-
             }
             else
             {
@@ -85,6 +81,7 @@ namespace boardingHouseProj
                 {
                     using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString))
                     {
+
                         connection.Open();
                         string firstname = txtFirstName.Text;
                         string lastname = txtLastName.Text;
@@ -127,20 +124,14 @@ namespace boardingHouseProj
                             MessageBox.Show("Insert Success");
 
                         }
-
                     }
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
-
                 }
-
             }//
         }
-
         private void btnUpload_Click(object sender, EventArgs e)
         {
             try {
@@ -154,27 +145,20 @@ namespace boardingHouseProj
                 //if the picture was selected it the filepath will be pass to the imgFilePath
                 if (ofdProfile.ShowDialog() == DialogResult.OK)
                 {
-
                     imgFilePath = ofdProfile.FileName.ToString();
                     dpBox.ImageLocation = imgFilePath;
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.Message);
-
             }   
-
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { 
-            
                 e.SuppressKeyPress = true;
-            
             }
         }
 

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace boardingHouseProj
@@ -20,11 +14,11 @@ namespace boardingHouseProj
         }
 
         string imgFilePath = null;
-
         private void tbnSearch_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
-                
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
                 connect.Open();
 
                 string query = "Select * from Employee_acc where Employee_id = @emp_id";
@@ -33,9 +27,11 @@ namespace boardingHouseProj
 
                 cmd.Parameters.AddWithValue("emp_id", txt_emp_id.Text);
 
-                using (SqlDataReader reader = cmd.ExecuteReader()) {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
 
-                    while (reader.Read()) {
+                    while (reader.Read())
+                    {
 
                         txtUserName.Text = reader["UserName"].ToString();
                         txtPassword.Text = reader["Password"].ToString();
@@ -54,14 +50,16 @@ namespace boardingHouseProj
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
-            
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
                 connect.Open();
 
                 string query = "Update Employee_acc set ProfilePic = @profile ,UserName = @user, Password = @pass, ForgotQuestion = @forgQuestion, ForgotAnswer = @forgotAnswer, Contact = @contact " +
                     "where Employee_id = @emp_id";
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
 
                     byte[] imageData = null;
                     if (imgFilePath != null && imgFilePath != "")
@@ -84,7 +82,6 @@ namespace boardingHouseProj
                     cmd.ExecuteNonQuery();
                 }
             }
-
             MessageBox.Show("Update Success");
         }
 
@@ -124,14 +121,12 @@ namespace boardingHouseProj
                     }
                 }
             }
-
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
             try
             {
-
                 //instance of Openfile dialog so I dont have to open filedialog on the designer
                 OpenFileDialog ofdProfile = new OpenFileDialog();
 
@@ -141,19 +136,34 @@ namespace boardingHouseProj
                 //if the picture was selected it the filepath will be pass to the imgFilePath
                 if (ofdProfile.ShowDialog() == DialogResult.OK)
                 {
-
                     imgFilePath = ofdProfile.FileName.ToString();
                     dpProfile.ImageLocation = imgFilePath;
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+
+                e.SuppressKeyPress = true;
 
             }
+        }
 
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUserName_KeyDown(sender, e);
+        }
+
+        private void txtContact_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUserName_KeyDown(sender, e);
         }
     }
 }

@@ -107,6 +107,12 @@
     <Compile Include="frm_Manage_rm.Designer.cs">
       <DependentUpon>frm_Manage_rm.cs</DependentUpon>
     </Compile>
+    <Compile Include="listTenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listTenant.Designer.cs">
+      <DependentUpon>listTenant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="room_tenant_add.cs">
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Manage_rm.resx">
       <DependentUpon>frm_Manage_rm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listTenant.resx">
+      <DependentUpon>listTenant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

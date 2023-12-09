@@ -65,6 +65,7 @@
             this.btnUpload.TabIndex = 48;
             this.btnUpload.Text = "Select File";
             this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // label10
             // 
@@ -164,6 +165,7 @@
             this.btnConfirm.TabIndex = 36;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label5
             // 

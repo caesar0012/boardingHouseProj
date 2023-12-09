@@ -111,18 +111,6 @@ VALUES
 
 
 
-create table Maintenance(
-	
-	Maintenance_id int primary key identity(1,1),
-	Tenant_id int,
-	Employee_id int,
-	Request varchar(45),
-	Date_request datetime,
-	Status varchar(40),
-	Archive smallint
-
-);
-
 Select * from Tenant
 
 Create Table lease_tbl(

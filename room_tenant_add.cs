@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Net.Configuration;
 
 namespace boardingHouseProj
 {
@@ -17,10 +18,6 @@ namespace boardingHouseProj
         public room_tenant_add()
         {
             InitializeComponent();
-            loadList();
-
-            //Room number was taken from frmManage, a static string 
-            lblRoomNumber.Text = frmManage_rm.roomNum;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -30,73 +27,69 @@ namespace boardingHouseProj
         //this method loads the list to the form
         private void loadList() {
 
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-                connect.Open();
+            try {
 
-                string query = "Select * from Tenant";
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                    connect.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                    string query = "Select * from Room union Select * from Tenant";
 
-                        while (reader.Read()) {
+                    SqlCommand cmd = new SqlCommand(query, connect);
 
-                            cbNoRoomTenant.Items.Add(reader["FirstName"]);
-                        
-                        }
-                    }      
-                }
-            }
-        }
-        //method for cheking the items
-        private void CheckAllItems(CheckedListBox checkedListBox)
-        {
-            for (int i = 0; i < checkedListBox.Items.Count; i++)
-            {
-                checkedListBox.SetItemChecked(i, true);
-            }
-        }
-
-
-        //method for uncheking the items
-        private void UnCheckAllItems(CheckedListBox checkedListBox)
-        {
-            for (int i = 0; i < checkedListBox.Items.Count; i++)
-            {
-                checkedListBox.SetItemChecked(i, false);
-            }
-        }
-
-        //this is where the two method runs for uncheck and check all students
-        private void cbSelect_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSelect.Checked)
-            {//this checks all the checklist
-
-                CheckAllItems(cbNoRoomTenant);
-
-            }
-            else { //Uncheck all the checklistBox
-
-                UnCheckAllItems(cbNoRoomTenant);
-
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-                connect.Open();
-
-                string query = "Update Tenant";
-
-                using (SqlCommand cmd = new SqlCommand(query, connect)) { 
+                    using () { 
+                    
+                    
+                    
+                    
+                    }
                 
                 
                 }
-            
+
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
             
             }
+
+        }
+
+
+        private void txtTenant_id_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+
+                MessageBox.Show("Hello piece of shit");
+            
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = "Select t1.Tenant_id ,(t1.FirstName + ' ' + t1.LastName) as Name, Gender from Tenant as t1 ";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) {
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    dgAssignTenant.DataSource = dt;
+                }
+            
+            }
+        }
+
+        private void room_tenant_add_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

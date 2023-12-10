@@ -48,6 +48,9 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmergencyName = new System.Windows.Forms.TextBox();
+            this.cbMale = new System.Windows.Forms.CheckBox();
+            this.cbFemale = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tenantDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,7 +211,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.LightCoral;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(484, 383);
+            this.btnConfirm.Location = new System.Drawing.Point(459, 383);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(92, 32);
             this.btnConfirm.TabIndex = 33;
@@ -233,12 +236,47 @@
             this.txtEmergencyName.Size = new System.Drawing.Size(257, 32);
             this.txtEmergencyName.TabIndex = 34;
             // 
+            // cbMale
+            // 
+            this.cbMale.AutoSize = true;
+            this.cbMale.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMale.Location = new System.Drawing.Point(459, 299);
+            this.cbMale.Name = "cbMale";
+            this.cbMale.Size = new System.Drawing.Size(57, 21);
+            this.cbMale.TabIndex = 36;
+            this.cbMale.Text = "Male";
+            this.cbMale.UseVisualStyleBackColor = true;
+            // 
+            // cbFemale
+            // 
+            this.cbFemale.AutoSize = true;
+            this.cbFemale.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFemale.Location = new System.Drawing.Point(459, 333);
+            this.cbFemale.Name = "cbFemale";
+            this.cbFemale.Size = new System.Drawing.Size(76, 21);
+            this.cbFemale.TabIndex = 37;
+            this.cbFemale.Text = "Female";
+            this.cbFemale.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(481, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 18);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Gender";
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(930, 455);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbFemale);
+            this.Controls.Add(this.cbMale);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtEmergencyName);
             this.Controls.Add(this.btnConfirm);
@@ -292,5 +330,8 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmergencyName;
+        private System.Windows.Forms.CheckBox cbMale;
+        private System.Windows.Forms.CheckBox cbFemale;
+        private System.Windows.Forms.Label label5;
     }
 }

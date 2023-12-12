@@ -39,19 +39,22 @@ VALUES ('Henry', 'Davis', NULL, 3333333333, 'henrydavis', 'password456', 'Favori
 INSERT INTO Employee_acc (FirstName, Lastname, ProfilePic, Contact, UserName, Password, ForgotQuestion, ForgotAnswer, Role)
 VALUES ('Isabella', 'Rodriguez', NULL, 4444444444, 'isabellarodriguez', 'password789', 'Birth Place', 'Miami', 'Admin');
 
+Select * from Room where allowed_gender = 'Male'
 
-INSERT INTO Room (Room_number, Description, Availability, Capacity, Price, Status)
+INSERT INTO Room (Room_number, Description, allowed_gender, Capacity, Price, Status)
 VALUES 
-(101, 'Standard Single', 1, 1, 75.00, 'Available'),
-(102, 'Deluxe Double', 1, 2, 120.00, 'Available'),
-(103, 'Executive Suite', 1, 4, 200.00, 'Available'),
-(201, 'Standard Twin', 1, 2, 90.00, 'Available'),
-(202, 'Family Room', 1, 4, 150.00, 'Available'),
-(203, 'Luxury Suite', 1, 2, 250.00, 'Available'),
-(301, 'Honeymoon Suite', 1, 2, 180.00, 'Available'),
-(302, 'Penthouse', 1, 6, 400.00, 'Available'),
-(303, 'Accessible Room', 1, 2, 100.00, 'Available'),
-(401, 'VIP Suite', 1, 3, 300.00, 'Available');
+(101, 'Standard Single', 'Male', 5, 75.00, 'Available'),
+(102, 'Deluxe Double', 'Female', 10, 120.00, 'Available'),
+(103, 'Executive Suite', 'Male', 10, 200.00, 'Available'),
+(201, 'Standard Twin', 'Female', 10, 90.00, 'Available'),
+(202, 'Family Room', 'Male', 10, 150.00, 'Available'),
+(203, 'Luxury Suite', 'Female', 20, 250.00, 'Available'),
+(301, 'Honeymoon Suite', 'Male', 20, 180.00, 'Available'),
+(302, 'Penthouse', 'Female', 10, 400.00, 'Available'),
+(303, 'Accessible Room', 'Male', 20, 100.00, 'Available'),
+(401, 'VIP Suite', 'Female', 15, 300.00, 'Available');
+
+Delete from Room
 
 drop table Tenant
 
@@ -85,19 +88,19 @@ DROP table lease_tbl
 
 INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease)
 VALUES
-    (1, 1, 101, 1, '2023-01-01', '2023-12-31'),
-    (2, 2, 102, 2, '2023-02-01', '2023-11-30'),
-    (3, 2, 103, 3, '2023-03-01', '2023-10-31'),
-    (4, 2, 201, 4, '2023-04-01', '2023-09-30'),
-    (5, 4, 202, 5, '2023-05-01', '2023-08-31'),
-    (6, 4, 203, 6, '2023-06-01', '2023-07-31'),
-    (7, 5, 301, 7, '2023-07-01', '2023-06-30'),
-    (8, 10, 302, 8, '2023-08-01', '2023-05-31'),
-    (9, 15, 303, 9, '2023-09-01', '2023-04-30'),
-    (10, 13, 401, 10, '2023-10-01', '2023-03-31');
+    (1, 1, 1, 1, '2023-01-01', '2023-12-31'),
+    (2, 2, 2, 2, '2023-02-01', '2023-11-30'),
+    (3, 2, 3, 3, '2023-03-01', '2023-10-31'),
+    (4, 2, 4, 4, '2023-04-01', '2023-09-30'),
+    (5, 4, 5, 5, '2023-05-01', '2023-08-31'),
+    (6, 4, 6, 6, '2023-06-01', '2023-07-31'),
+    (7, 5, 7, 7, '2023-07-01', '2023-06-30'),
+    (8, 10, 8, 8, '2023-08-01', '2023-05-31'),
+    (9, 15, 9, 9, '2023-09-01', '2023-04-30'),
+    (10, 13, 10, 10, '2023-10-01', '2023-03-31');
 
 	
-
+select * from Room
 
 Select r1.Room_number, r1.Description,r1.Capacity, t1.Tenant_id, t1.FirstName, l1.Lease_id from Room as r1
 right join Tenant as t1 
@@ -105,8 +108,14 @@ on r1.Room_id = t1.Tenant_id
 full join lease_tbl as l1
 on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null
 
-
-select l1.Lease_id, t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name
+--No room Tenant query
+select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, t1.Contact
  from Tenant as t1
  left join Lease_tbl as l1
- on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null
+ on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null and archive = 0
+
+ Select * from Room
+ Select * from Tenant
+
+
+drop table Room

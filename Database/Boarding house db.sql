@@ -1,6 +1,11 @@
 use BoardingHouse
 
 
+Select Employee_id, FirstName from Employee_acc
+Union all
+Select Tenant.Tenant_id, FirstName from Tenant
+order by Employee_id asc
+
 
 
 create Table Employee_acc(
@@ -44,7 +49,7 @@ Create table Room(
 	Room_id int primary key identity(1,1),
 	Room_number int unique,
 	Description varchar(50),
-	Availability int,
+	allowed_gender varchar(10),
 	Capacity int,
 	Price decimal(10,2),
 	Status varchar(30) DEFAULT 'Available',
@@ -66,6 +71,8 @@ Create Table lease_tbl(
 
 );
 
+Select * from lease_tbl
+
 use BoardingHouse
 
 alter table lease_tbl
@@ -73,6 +80,13 @@ alter table lease_tbl
 
 alter table lease_tbl
 	add FOREIGN key(Tenant_id) references Tenant(Tenant_id)
+
+alter table lease_tbl
+	add FOREIGN key(room_id) references Room(Room_id)
+
+select * from lease_tbl
+
+truncate table lease_tbl
 
 -- Select t1.Tenant_id ,(t1.FirstName + ' ' + t1.LastName) as Name, Gender,  lease1.room_id from Tenant as t1
 -- 	inner join lease_tbl as lease1

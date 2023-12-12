@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenant_id = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.dgAssignTenant = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.dtStartLease = new System.Windows.Forms.DateTimePicker();
@@ -43,6 +46,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtBed = new System.Windows.Forms.TextBox();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAssignTenant)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,31 +64,59 @@
             // txtTenant_id
             // 
             this.txtTenant_id.Location = new System.Drawing.Point(32, 112);
-            this.txtTenant_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenant_id.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenant_id.Name = "txtTenant_id";
             this.txtTenant_id.Size = new System.Drawing.Size(265, 22);
             this.txtTenant_id.TabIndex = 1;
             this.txtTenant_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenant_id_KeyDown);
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1124, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(1124, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgAssignTenant
             // 
+            this.dgAssignTenant.AllowUserToAddRows = false;
+            this.dgAssignTenant.AllowUserToDeleteRows = false;
+            this.dgAssignTenant.AllowUserToOrderColumns = true;
+            this.dgAssignTenant.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgAssignTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgAssignTenant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgAssignTenant.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgAssignTenant.EnableHeadersVisualStyles = false;
             this.dgAssignTenant.Location = new System.Drawing.Point(380, 112);
-            this.dgAssignTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgAssignTenant.Margin = new System.Windows.Forms.Padding(4);
             this.dgAssignTenant.Name = "dgAssignTenant";
+            this.dgAssignTenant.ReadOnly = true;
+            this.dgAssignTenant.RowHeadersVisible = false;
             this.dgAssignTenant.RowHeadersWidth = 51;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MistyRose;
+            this.dgAssignTenant.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgAssignTenant.Size = new System.Drawing.Size(819, 352);
             this.dgAssignTenant.TabIndex = 3;
             // 
@@ -102,7 +134,7 @@
             // dtStartLease
             // 
             this.dtStartLease.Location = new System.Drawing.Point(32, 361);
-            this.dtStartLease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtStartLease.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartLease.Name = "dtStartLease";
             this.dtStartLease.Size = new System.Drawing.Size(265, 22);
             this.dtStartLease.TabIndex = 5;
@@ -154,7 +186,7 @@
             // dtEndLease
             // 
             this.dtEndLease.Location = new System.Drawing.Point(32, 438);
-            this.dtEndLease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEndLease.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndLease.Name = "dtEndLease";
             this.dtEndLease.Size = new System.Drawing.Size(265, 22);
             this.dtEndLease.TabIndex = 11;
@@ -163,7 +195,7 @@
             // 
             this.cmbRoomNum.FormattingEnabled = true;
             this.cmbRoomNum.Location = new System.Drawing.Point(32, 209);
-            this.cmbRoomNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRoomNum.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRoomNum.Name = "cmbRoomNum";
             this.cmbRoomNum.Size = new System.Drawing.Size(265, 24);
             this.cmbRoomNum.TabIndex = 13;
@@ -173,7 +205,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.IndianRed;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(101, 495);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 15;
@@ -184,8 +216,8 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.IndianRed;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(199, 73);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(380, 69);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 16;
@@ -201,12 +233,27 @@
             this.txtBed.Size = new System.Drawing.Size(265, 22);
             this.txtBed.TabIndex = 17;
             // 
+            // cmbFilter
+            // 
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Items.AddRange(new object[] {
+            "Available Room",
+            "Tenant without Room",
+            "Female",
+            "Male"});
+            this.cmbFilter.Location = new System.Drawing.Point(511, 77);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(182, 24);
+            this.cmbFilter.TabIndex = 18;
+            this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
+            // 
             // room_tenant_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1240, 560);
+            this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.txtBed);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnUpdate);
@@ -219,11 +266,11 @@
             this.Controls.Add(this.dtStartLease);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgAssignTenant);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTenant_id);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "room_tenant_add";
             this.Text = "room_option";
             this.Load += new System.EventHandler(this.room_tenant_add_Load);
@@ -237,7 +284,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenant_id;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgAssignTenant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtStartLease;
@@ -250,5 +297,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtBed;
+        private System.Windows.Forms.ComboBox cmbFilter;
     }
 }

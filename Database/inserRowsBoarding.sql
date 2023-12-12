@@ -53,6 +53,7 @@ VALUES
 (303, 'Accessible Room', 1, 2, 100.00, 'Available'),
 (401, 'VIP Suite', 1, 3, 300.00, 'Available');
 
+drop table Tenant
 
 INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
 VALUES
@@ -65,7 +66,12 @@ VALUES
 ('Ethan', 'Davis', 'Male', 7890123456, 'Emergency7', 3210987654, 'Friend', 'School7', 'Address7', NULL, 0),
 ('Fiona', 'Moore', 'Female', 8901234567, 'Emergency8', 2109876543, 'Relative', 'School8', 'Address8', NULL, 0),
 ('George', 'Lee', 'Male', 9012345678, 'Emergency9', 1098765432, 'Sibling', 'School9', 'Address9', NULL, 0),
-('Holly', 'Nguyen', 'Female', 9876543210, 'Emergency10', 9876543210, 'Family', 'School10', 'Address10', NULL, 0);
+('Molly', 'Nguyen2', 'Female', 9876543210, 'Emergency10', 9876543210, 'Family', 'School10', 'Address10', NULL, 0),
+('Diyo', 'Miller', 'Female', 6789012345, 'Emergency6', 4321098765, 'Family', 'School6', 'Address6', NULL, 0),
+('Ethaniel', 'Davis', 'Male', 7890123456, 'Emergency7', 3210987654, 'Friend', 'School7', 'Address7', NULL, 0),
+('Bombastic', 'Moore', 'Female', 8901234567, 'Emergency8', 2109876543, 'Relative', 'School8', 'Address8', NULL, 0),
+('Georgiana', 'Lee', 'Male', 9012345678, 'Emergency9', 1098765432, 'Sibling', 'School9', 'Address9', NULL, 0),
+('Holistic', 'Nguyen', 'Female', 9876543210, 'Emergency10', 9876543210, 'Family', 'School10', 'Address10', NULL, 0);
 
 Select * from Tenant
 
@@ -79,15 +85,28 @@ DROP table lease_tbl
 
 INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease)
 VALUES
-    (1, 1, 101, 1, '2023-01-01', '2023-01-15'),
-    (2, 2, 102, 2, '2023-02-01', '2023-02-20'),
-    (3, 2, 103, 3, '2023-03-01', '2023-03-25'),
-    (4, 3, 201, 4, '2023-04-01', '2023-04-30'),
-    (5, 3, 202, 5, '2023-05-01', '2023-05-15'),
-    (6, 4, 203, 6, '2023-06-01', '2023-06-20'),
-    (7, 5, 301, 7, '2023-07-01', '2023-07-25'),
-    (8, 6, 303, 8, '2023-08-01', '2023-08-30'),
-    (9, 7, 302, 9, '2023-09-01', '2023-09-15'),
-    (10, 7, 301, 10, '2023-10-01', '2023-10-20');
+    (1, 1, 101, 1, '2023-01-01', '2023-12-31'),
+    (2, 2, 102, 2, '2023-02-01', '2023-11-30'),
+    (3, 2, 103, 3, '2023-03-01', '2023-10-31'),
+    (4, 2, 201, 4, '2023-04-01', '2023-09-30'),
+    (5, 4, 202, 5, '2023-05-01', '2023-08-31'),
+    (6, 4, 203, 6, '2023-06-01', '2023-07-31'),
+    (7, 5, 301, 7, '2023-07-01', '2023-06-30'),
+    (8, 10, 302, 8, '2023-08-01', '2023-05-31'),
+    (9, 15, 303, 9, '2023-09-01', '2023-04-30'),
+    (10, 13, 401, 10, '2023-10-01', '2023-03-31');
 
-Select * from Room union Select * from Tenant
+	
+
+
+Select r1.Room_number, r1.Description,r1.Capacity, t1.Tenant_id, t1.FirstName, l1.Lease_id from Room as r1
+right join Tenant as t1 
+on r1.Room_id = t1.Tenant_id 
+full join lease_tbl as l1
+on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null
+
+
+select l1.Lease_id, t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name
+ from Tenant as t1
+ left join Lease_tbl as l1
+ on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null

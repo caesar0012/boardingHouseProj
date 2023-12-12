@@ -20,49 +20,24 @@ namespace boardingHouseProj
         {
             InitializeComponent();
         }
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e) //close the exe
         {
             this.Close();
         }
 
-        //this method loads the list to the form
+        //this method is default load the list to the form
         private void loadList()
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-            {
-                connect.Open();
-
-                SqlCommand cmd = new SqlCommand("Select * from lease_tbl", connect);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    DataTable dt = new DataTable();  // Create DataTable outside the loop
-
-                    if (reader.HasRows)
-                    {
-                        dt.Load(reader);  // Load data into the DataTable once
-
-                        dgAssignTenant.DataSource = dt;  // Set the DataTable as the DataSource for the DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("No Data");
-                    }
-                }
-            }
+            loadFilter("Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease  \r\nfrom Tenant as t1\r\nleft JOIN Room as r1\r\non t1.Tenant_id = r1.Room_id\r\nleft Join lease_tbl as l1\r\non t1.Tenant_id = l1.Lease_id");
         }
-
-
-
         private void txtTenant_id_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
 
-                MessageBox.Show("Hello piece of shit");
+                btnSearch_Click(sender, e);
             
             }
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
@@ -91,53 +66,56 @@ namespace boardingHouseProj
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbFilter.SelectedIndex == 0) { //Available Room
+            if (cmbFilter.SelectedIndex == 0) { //Default Room
 
-                loadFilter("Select * from Room where allowed_gender = 'Male'");
+                loadList();
 
+            } else if (cmbFilter.SelectedIndex == 1) { //Available Room
 
-            } else if (cmbFilter.SelectedIndex == 1) { //Tenant without Room
-
-                loadFilter("select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, t1.Contact from Tenant as t1 left join " +
-                    "Lease_tbl as l1 on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null and archive = 0");
-
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n RIGHT join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
 
             }
-            else if (cmbFilter.SelectedIndex == 2) //Female Room
+            else if (cmbFilter.SelectedIndex == 2) //Tenant without Room
             {
 
-                loadFilter("Select * from Room");
-
+                loadFilter("select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where Room_number is null");
 
             }
-            else if (cmbFilter.SelectedIndex == 3) //Male Room
+            else if (cmbFilter.SelectedIndex == 3) //Female Room
             {
 
-                loadFilter("Select * from Room where allowed_gender = 'Female'");
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Female' and t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
 
+            } else if (cmbFilter.SelectedIndex == 4) { //Male Room 
+
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Male' and t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
 
             }
         }
+        private void loadFilter(string query) { //this a method with just a query, loads the data to datagrid
 
+            try {
 
-
-        private void loadFilter(string query) {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
             
-                connect.Open();
+                    connect.Open();
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                    using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    using (SqlDataReader reader = cmd.ExecuteReader()) { 
+                        using (SqlDataReader reader = cmd.ExecuteReader()) { 
                     
-                            DataTable dt = new DataTable();
+                                DataTable dt = new DataTable();
 
-                            dt.Load(reader);
-                            dgAssignTenant.DataSource = dt;
-                     
+                                dt.Load(reader);
+                                dgAssignTenant.DataSource = dt;
+                        }
                     }
                 }
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message); //Shows the message in messagebox for whats the error
+            
             }
         }
     }

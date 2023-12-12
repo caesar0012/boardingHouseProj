@@ -133,7 +133,7 @@ select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Roo
  left join Room as r1
  on r1.Room_id = t1.Tenant_id
  RIGHT join lease_tbl as l1
- on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Male' and t1.Archive = 0
+ on r1.Room_id = l1.lease_id where t1.Archive = 0
  GROUP BY 
     r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;
 

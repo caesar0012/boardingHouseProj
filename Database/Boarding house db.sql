@@ -44,6 +44,10 @@ create table Tenant(
 
 );
 
+drop table Room
+
+Select * from Room
+
 Create table Room(
 	
 	Room_id int primary key identity(1,1),

@@ -25,36 +25,32 @@ namespace boardingHouseProj
         }
 
         //this method loads the list to the form
-        private void loadList() {
+        private void loadList()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
 
-            try {
+                SqlCommand cmd = new SqlCommand("Select * from lease_tbl", connect);
 
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();  // Create DataTable outside the loop
 
-                    connect.Open();
+                    if (reader.HasRows)
+                    {
+                        dt.Load(reader);  // Load data into the DataTable once
 
-                    string query = "Select * from Room union Select * from Tenant";
-
-                    SqlCommand cmd = new SqlCommand(query, connect);
-
-                    using () { 
-                    
-                    
-                    
-                    
+                        dgAssignTenant.DataSource = dt;  // Set the DataTable as the DataSource for the DataGridView
                     }
-                
-                
+                    else
+                    {
+                        MessageBox.Show("No Data");
+                    }
                 }
-
             }
-            catch (Exception ex) {
-
-                MessageBox.Show(ex.Message);
-            
-            }
-
         }
+
 
 
         private void txtTenant_id_KeyDown(object sender, KeyEventArgs e)
@@ -89,7 +85,7 @@ namespace boardingHouseProj
 
         private void room_tenant_add_Load(object sender, EventArgs e)
         {
-
+            loadList();
         }
     }
 }

@@ -1,11 +1,6 @@
 use BoardingHouse
 
 
-Select Employee_id, FirstName from Employee_acc
-Union all
-Select Tenant.Tenant_id, FirstName from Tenant
-order by Employee_id asc
-
 
 
 create Table Employee_acc(

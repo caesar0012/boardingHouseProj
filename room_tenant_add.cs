@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Net.Configuration;
 using System.Xml.Linq;
+using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace boardingHouseProj
 {
@@ -190,11 +192,70 @@ namespace boardingHouseProj
 
         private void loadDate() {
 
-            DateTime selectedDate = dtEndLease.Value;
+/*            DateTime selectedDate = dtEndLease.Value;
             MessageBox.Show($"{selectedDate:yyyy-MM-dd}");
 
+*/
+        }
+
+        private void dgAssignTenant_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) {
+
+                DataGridViewRow selectedRow = dgAssignTenant.Rows[e.RowIndex];
+
+                selectedRow.Selected = true;
+
+                // selectedRow.Cells["clmnRoom"].Value?.ToString();
+
+                string assignedBed = selectedRow.Cells["assign_bed"].Value.ToString();
+
+                txtBed.Text = assignedBed;
+                cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value.ToString();
+                txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+
+                if (DateTime.TryParse(selectedRow.Cells["StartLease"].Value?.ToString(), 
+                    out DateTime startDate) && DateTime.TryParse
+                    (selectedRow.Cells["EndLease"].Value?.ToString(), out DateTime endDate)){ //value?.string checks if the cell is null
+
+                        dtStartLease.Value = startDate;
+                        dtEndLease.Value = endDate;
+
+                }
+            }
+        }
+
+        private void dtEndLease_ValueChanged(object sender, EventArgs e)
+        {
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTenant_id.Text)) {
+
+                MessageBox.Show("Please input the tenant_id");
+            }
+            if (dtEndLease.Value < dtStartLease.Value)
+            {
+
+                MessageBox.Show("End Lease should be after the Start Lease: ", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                    connect.Open();
+
+                    string query = "Update lease_tbl set";
+
+                    using (SqlCommand cmd = new SqlCommand()) { 
+                    
+                    
+                    
+                    }
+                }
+            }
+        }
     }
 }

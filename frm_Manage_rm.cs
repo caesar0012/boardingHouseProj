@@ -124,7 +124,7 @@ namespace boardingHouseProj
                         cmd.Parameters.AddWithValue("@Availability", capacity);
                         cmd.Parameters.AddWithValue("@Capacity", capacity);
                         cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Status", status);
+                        cmd.Parameters.AddWithValue("@Status", status); //Replace this with sql query
 
                         cmd.ExecuteNonQuery();
 

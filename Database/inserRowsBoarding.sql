@@ -139,7 +139,15 @@ select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Roo
 
 
 
-
+select 
+	t1.Tenant_id ,
+	(t1.FirstName + ' ' + t1.LastName) as Name, 
+	Gender, 
+	l1.room_id as Room_number, 
+	l1.assign_bed as Assign_bed  from Tenant 
+as t1 
+left join lease_tbl as l1
+on t1.Tenant_id = l1.lease_id
 
 
  Select * from Room

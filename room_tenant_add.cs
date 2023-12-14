@@ -28,11 +28,14 @@ namespace boardingHouseProj
         //this method is default load the list to the form
         private void loadList()
         {
-            loadFilter("Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease  \r\nfrom Tenant as t1\r\nleft JOIN Room as r1\r\non t1.Tenant_id = r1.Room_id\r\nleft Join lease_tbl as l1\r\non t1.Tenant_id = l1.Lease_id");
+            loadFilter("Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, " +
+                "Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease  \r\n" +
+                "from Tenant as t1\r\nleft JOIN Room as r1\r\non t1.Tenant_id = r1.Room_id\r\n" +
+                "left Join lease_tbl as l1\r\non t1.Tenant_id = l1.Lease_id");
         }
         private void txtTenant_id_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter) { //if Keys.Enter was detected it activate the search button
 
                 btnSearch_Click(sender, e);
             
@@ -40,28 +43,58 @@ namespace boardingHouseProj
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
+                    connect.Open();
 
-                connect.Open();
+                    string query = "SELECT t1.Tenant_id, " +
+                                   "(t1.FirstName + ' ' + t1.LastName) AS Name, " +
+                                   "Gender, l1.room_id AS Room_number, " +
+                                   "l1.assign_bed AS Assign_bed, l1.StartLease, l1.EndLease " +
+                                   "FROM Tenant AS t1 " +
+                                   "LEFT JOIN lease_tbl AS l1 ON t1.Tenant_id = l1.lease_id " +
+                                   "WHERE t1.Tenant_id = @tenant_id";
 
-                string query = "Select t1.Tenant_id ,(t1.FirstName + ' ' + t1.LastName) as Name, Gender from Tenant as t1 ";
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        if (int.TryParse(txtTenant_id.Text, out int tenantId)) //if parsing is success it passes to tenantId
+                        {
+                            cmd.Parameters.AddWithValue("@tenant_id", tenantId);
 
-                SqlCommand cmd = new SqlCommand(query, connect);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(reader);
 
-                using (SqlDataReader reader = cmd.ExecuteReader()) {
-
-                    DataTable dt = new DataTable();
-                    dt.Load(reader);
-
-                    dgAssignTenant.DataSource = dt;
+                                dgAssignTenant.DataSource = dt;
+                            }
+                        }
+                        else
+                        {
+                            // Handle the case where txtTenant_id.Text is not a valid integer.
+                            MessageBox.Show("Please enter a valid Tenant ID.");
+                        }
+                    }
                 }
-            
+
+                loadDate()
+;
+            }
+            catch (Exception ex)
+            {
+                // Handle and log the exception appropriately.
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+
 
         private void room_tenant_add_Load(object sender, EventArgs e)
         {
             loadList();
+            loadRoomAvailable();
+            
         }
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,23 +105,38 @@ namespace boardingHouseProj
 
             } else if (cmbFilter.SelectedIndex == 1) { //Available Room
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n RIGHT join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as " +
+                    "'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n " +
+                    "from Tenant " + "as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n " +
+                    "RIGHT join lease_tbl " + "as l1\r\n on r1.Room_id = l1.lease_id where t1.Archive = 0\r\n " +
+                    "GROUP BY \r\n    r1.Room_number, " + "r1.Description, r1.allowed_gender, r1.Capacity;");
 
             }
             else if (cmbFilter.SelectedIndex == 2) //Tenant without Room
             {
 
-                loadFilter("select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where Room_number is null");
+                loadFilter("select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, " +
+                    "r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease\r\n from Tenant as t1\r\n " +
+                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
+                    "on r1.Room_id = l1.lease_id where Room_number is null");
 
             }
             else if (cmbFilter.SelectedIndex == 3) //Female Room
             {
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Female' and t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', " +
+                    "r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n " +
+                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
+                    "on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Female' and t1.Archive = 0\r\n " +
+                    "GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
 
             } else if (cmbFilter.SelectedIndex == 4) { //Male Room 
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Male' and t1.Archive = 0\r\n GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', " +
+                    "r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n " +
+                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
+                    "on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Male' and t1.Archive = 0\r\n GROUP BY \r\n    " +
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
 
             }
         }
@@ -118,5 +166,35 @@ namespace boardingHouseProj
             
             }
         }
+
+        private void loadRoomAvailable() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = "Select * from lease_tbl";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) {
+
+                    while (reader.Read()) {
+
+                        cmbRoomNum.Items.Add(reader["room_id"]);
+                    
+                    }
+                }
+            }
+        }
+
+        private void loadDate() {
+
+            DateTime selectedDate = dtEndLease.Value;
+            MessageBox.Show($"{selectedDate:yyyy-MM-dd}");
+
+
+        }
+
     }
 }

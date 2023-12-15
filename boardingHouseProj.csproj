@@ -59,6 +59,12 @@
     <Compile Include="add_room_frm.Designer.cs">
       <DependentUpon>add_room_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="dashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashBoard.Designer.cs">
+      <DependentUpon>dashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="forgotPassFrms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,17 +137,20 @@
     <Compile Include="user1.Designer.cs">
       <DependentUpon>user1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAccount.cs">
+    <Compile Include="UserSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAccount.Designer.cs">
-      <DependentUpon>UserAccount.cs</DependentUpon>
+    <Compile Include="UserSettings.Designer.cs">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="acc_prac01.resx">
       <DependentUpon>acc_prac01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="add_room_frm.resx">
       <DependentUpon>add_room_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashBoard.resx">
+      <DependentUpon>dashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forgotPassFrms.resx">
       <DependentUpon>forgotPassFrms.cs</DependentUpon>
@@ -185,8 +194,8 @@
     <EmbeddedResource Include="user1.resx">
       <DependentUpon>user1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAccount.resx">
-      <DependentUpon>UserAccount.cs</DependentUpon>
+    <EmbeddedResource Include="UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

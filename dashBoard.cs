@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmPayment : Form
+    public partial class dashBoard : Form
     {
-        public frmPayment()
+        public dashBoard()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

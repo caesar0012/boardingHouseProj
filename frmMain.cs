@@ -120,18 +120,27 @@ namespace boardingHouseProj
 
         private void profileMain_Click(object sender, EventArgs e)
         {
-            frmManage_rm rm1 = new frmManage_rm();
-            rm1.TopLevel = false;
-            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(rm1);
-            rm1.BringToFront();
-            rm1.Show();
+            UserSettings u1 = new UserSettings();
+
+            u1.TopLevel = false;
+            u1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            u1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(u1);
+            u1.BringToFront();
+            u1.Show();
 
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
+            dashBoard d1 = new dashBoard();
+
+            d1.TopLevel = false;
+            d1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            d1.Dock = DockStyle.Fill; // Optional to fill the panel
+            panelMain.Controls.Add(d1);
+            d1.BringToFront();
+            d1.Show();
 
         }
     }

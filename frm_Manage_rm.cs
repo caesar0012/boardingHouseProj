@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,9 +69,15 @@ namespace boardingHouseProj
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) //needs rework
         {
-            if (txtRoomNumber.Text == roomNum)
+            if (string.IsNullOrEmpty(txtRoomNumber.Text)) {
+
+                MessageBox.Show("Please Input room number");
+                return;
+            
+            }
+            else if (txtRoomNumber.Text == roomNum)
             {
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
@@ -93,6 +100,8 @@ namespace boardingHouseProj
 
                         MessageBox.Show("Update Success");
 
+                        dgRoom.Rows.Clear();
+                        showData();
                     }
                 }
 
@@ -100,41 +109,54 @@ namespace boardingHouseProj
             }
             else if (txtRoomNumber.Text != roomNum)
             {
+                if (string.IsNullOrEmpty(txtCapacity.Text) && string.IsNullOrEmpty(txtDescription.Text) && string.IsNullOrEmpty(txtPrice.Text)) {
 
+                    MessageBox.Show("");
+                
+                }
+                try {
 
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-
-                    connect.Close();
-                    connect.Open();
-
-                    int room_number = int.Parse(txtRoomNumber.Text);
-                    string description = txtDescription.Text;
-                    int capacity = int.Parse(txtCapacity.Text);
-                    double price = double.Parse((txtPrice.Text));
-                    string status = "Available";
-
-                    string query = "Insert into Room(Room_number, Description, Availability, Capacity, Price, Status) values " +
-                        "(@Room_number, @Description, @Availability, @Capacity, @Price, @Status)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                     {
 
-                        cmd.Parameters.AddWithValue("@Room_number", room_number);
-                        cmd.Parameters.AddWithValue("@Description", description);
-                        cmd.Parameters.AddWithValue("@Availability", capacity);
-                        cmd.Parameters.AddWithValue("@Capacity", capacity);
-                        cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Status", status); //Replace this with sql query
-
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Room Added successfully");
-
                         connect.Close();
+                        connect.Open();
 
+                        int room_number = int.Parse(txtRoomNumber.Text);
+                        string description = txtDescription.Text;
+                        int capacity = int.Parse(txtCapacity.Text);
+                        double price = double.Parse((txtPrice.Text));
+                        string status = "Available";
+
+                        string query = "Insert into Room(Room_number, Description, Capacity, Price, Status) values " +
+                            "(@Room_number, @Description, @Capacity, @Price, @Status)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        {
+
+                            cmd.Parameters.AddWithValue("@Room_number", room_number);
+                            cmd.Parameters.AddWithValue("@Description", description);
+                        //    cmd.Parameters.AddWithValue("@Availability", capacity);
+                            cmd.Parameters.AddWithValue("@Capacity", capacity);
+                            cmd.Parameters.AddWithValue("@Price", price);
+                            cmd.Parameters.AddWithValue("@Status", status); //Replace this with sql query
+
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Room Added successfully");
+
+                            connect.Close();
+
+                        }
                     }
                 }
+                catch (Exception ex) {
+
+                    MessageBox.Show(ex.Message);
+
+                }
+
+
             }
             else
             {
@@ -142,8 +164,16 @@ namespace boardingHouseProj
                 MessageBox.Show("Invalid room Number");
 
             }
-            dgRoom.Rows.Clear();
-            showData();
+            try
+            {
+
+                dgRoom.Rows.Clear();
+                showData();
+
+            }
+            catch { 
+            
+            }
         }
 
         private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -172,12 +202,12 @@ namespace boardingHouseProj
                 selectedRow.Selected = true;
 
                 // Use the column names directly instead of retrieving index
-                string roomNumber = selectedRow.Cells["clmnRoom"].Value?.ToString();
-                string desc = selectedRow.Cells["clmnDesc"].Value?.ToString();
-                string capacity = selectedRow.Cells["clmnCapacity"].Value?.ToString();
-                string price = selectedRow.Cells["clmnPrice"].Value?.ToString(); // Fix the column name here
+                string roomNumber = selectedRow.Cells["Room_number"].Value?.ToString();
+                string desc = selectedRow.Cells["Description"].Value?.ToString();
+                string capacity = selectedRow.Cells["Capacity"].Value?.ToString();
+                string price = selectedRow.Cells["Price"].Value?.ToString(); // Fix the column name here
 
-                   string status = selectedRow.Cells["clmnStatss"].Value?.ToString(); // Fix the column name here
+                string status = selectedRow.Cells["Status"].Value?.ToString(); // Fix the column name here
 
                 stats = status;
 
@@ -230,7 +260,12 @@ namespace boardingHouseProj
         {
 
         }
-        
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            frmPayment f1 = new frmPayment();
+            f1.ShowDialog();
         }
+    }
     }
    

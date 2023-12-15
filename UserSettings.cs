@@ -1,53 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class userAccount : Form
+    public partial class UserSettings : Form
     {
-        public userAccount()
+        public UserSettings()
         {
             InitializeComponent();
         }
 
         string imgFilePath = null;
-        private void tbnSearch_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-            {
-
-                connect.Open();
-
-                string query = "Select * from Employee_acc where Employee_id = @emp_id";
-
-                SqlCommand cmd = new SqlCommand(query, connect);
-
-                cmd.Parameters.AddWithValue("emp_id", txt_emp_id.Text);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-
-                    while (reader.Read())
-                    {
-
-                        txtUserName.Text = reader["UserName"].ToString();
-                        txtPassword.Text = reader["Password"].ToString();
-                        cmbQuestionPass.Text = reader["ForgotQuestion"].ToString();
-                        txtAnswerQuestion.Text = reader["ForgotAnswer"].ToString();
-                        txtContact.Text = reader["Contact"].ToString();
-
-                        txtLastName.Text = reader["FirstName"].ToString();
-                        txtFirstName.Text = reader["Lastname"].ToString();
-
-                    }
-                }
-            }
-            loadProfile();
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
@@ -77,7 +49,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@forgQuestion", cmbQuestionPass.Text);
                     cmd.Parameters.AddWithValue("@forgotAnswer", txtAnswerQuestion.Text);
                     cmd.Parameters.AddWithValue("@contact", txtContact.Text);
-                    cmd.Parameters.AddWithValue("@emp_id", txt_emp_id.Text);
+                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -94,28 +66,23 @@ namespace boardingHouseProj
                 string query = "Select * from Employee_acc where Employee_id = @emp_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
-                cmd.Parameters.AddWithValue("@emp_id", txt_emp_id.Text);
+                cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    if (reader.Read())
-                    {
-                        if (int.TryParse(reader[0].ToString(), out int intNumValue))
-                        {
-                            txt_emp_id.Text = intNumValue.ToString();
-                        }
-
+                    if (reader.Read()){
+                        
                         byte[] img = reader["ProfilePic"] as byte[];
 
                         if (img == null)
                         {
-                            dpProfile.Image = null;
+                            dpBox.Image = null;
                         }
                         else
                         {
                             using (MemoryStream ms = new MemoryStream(img))
                             {
-                                dpProfile.Image = Image.FromStream(ms);
+                                dpBox.Image = Image.FromStream(ms);
                             }
                         }
                     }
@@ -137,7 +104,7 @@ namespace boardingHouseProj
                 if (ofdProfile.ShowDialog() == DialogResult.OK)
                 {
                     imgFilePath = ofdProfile.FileName.ToString();
-                    dpProfile.ImageLocation = imgFilePath;
+                    dpBox.ImageLocation = imgFilePath;
                 }
             }
             catch (Exception ex)
@@ -161,14 +128,49 @@ namespace boardingHouseProj
             txtUserName_KeyDown(sender, e);
         }
 
+        private void txtConfirmPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUserName_KeyDown(sender, e);
+        }
+
         private void txtContact_KeyDown(object sender, KeyEventArgs e)
         {
             txtUserName_KeyDown(sender, e);
         }
 
-        private void userAccount_Load(object sender, EventArgs e)
+        private void UserSettings_Load(object sender, EventArgs e)
         {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
 
+                connect.Open();
+
+                string query = "Select * from Employee_acc where Employee_id = @emp_id";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                cmd.Parameters.AddWithValue("emp_id", 10); //change this for employee_id from login.cs
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+
+                        txtUserName.Text = reader["UserName"].ToString();
+                      //  txtPassword.Text = reader["Password"].ToString();
+                        cmbQuestionPass.Text = reader["ForgotQuestion"].ToString();
+                        txtAnswerQuestion.Text = reader["ForgotAnswer"].ToString();
+                        txtContact.Text = reader["Contact"].ToString();
+
+                        txtLastName.Text = reader["FirstName"].ToString();
+                        txtFirstName.Text = reader["Lastname"].ToString();
+
+                    }
+                }
+            }
+            loadProfile();
         }
     }
 }
+

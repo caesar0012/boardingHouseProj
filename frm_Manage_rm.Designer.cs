@@ -49,10 +49,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 42);
+            this.label1.Size = new System.Drawing.Size(269, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Room Management";
             // 
@@ -61,10 +60,9 @@
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(27, 468);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(20, 380);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(139, 44);
+            this.btnAdd.Size = new System.Drawing.Size(104, 36);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add Room";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -75,13 +73,13 @@
             this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(221, 468);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPayment.Location = new System.Drawing.Point(166, 380);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(139, 44);
+            this.btnPayment.Size = new System.Drawing.Size(104, 36);
             this.btnPayment.TabIndex = 13;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // dgRoom
             // 
@@ -108,12 +106,11 @@
             this.dgRoom.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgRoom.Location = new System.Drawing.Point(496, 33);
-            this.dgRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.dgRoom.Location = new System.Drawing.Point(372, 27);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.RowHeadersWidth = 51;
-            this.dgRoom.Size = new System.Drawing.Size(650, 459);
+            this.dgRoom.Size = new System.Drawing.Size(488, 373);
             this.dgRoom.TabIndex = 11;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
             this.dgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);
@@ -122,29 +119,26 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(91, 400);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrice.Location = new System.Drawing.Point(68, 325);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(253, 22);
+            this.txtPrice.Size = new System.Drawing.Size(191, 20);
             this.txtPrice.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 367);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(65, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 23);
+            this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 23;
             this.label4.Text = "Price";
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(91, 330);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCapacity.Location = new System.Drawing.Point(68, 268);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(253, 22);
+            this.txtCapacity.Size = new System.Drawing.Size(191, 20);
             this.txtCapacity.TabIndex = 21;
             this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
             // 
@@ -152,38 +146,34 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(87, 297);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(65, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 23);
+            this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 20;
             this.label6.Text = "Capacity";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(91, 231);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Location = new System.Drawing.Point(68, 188);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(253, 22);
+            this.txtDescription.Size = new System.Drawing.Size(191, 20);
             this.txtDescription.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 198);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(65, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.Size = new System.Drawing.Size(88, 18);
             this.label3.TabIndex = 18;
             this.label3.Text = "Description";
             // 
             // txtRoomNumber
             // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(91, 140);
-            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRoomNumber.Location = new System.Drawing.Point(68, 114);
             this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(253, 22);
+            this.txtRoomNumber.Size = new System.Drawing.Size(191, 20);
             this.txtRoomNumber.TabIndex = 17;
             this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
             // 
@@ -191,19 +181,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(87, 107);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(65, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 23);
+            this.label2.Size = new System.Drawing.Size(109, 18);
             this.label2.TabIndex = 16;
             this.label2.Text = "Room Number";
             // 
             // frmManage_rm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1240, 560);
+            this.ClientSize = new System.Drawing.Size(930, 455);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCapacity);
@@ -217,7 +206,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
             this.Load += new System.EventHandler(this.frmManage_rm_Load);

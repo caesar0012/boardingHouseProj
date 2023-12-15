@@ -175,7 +175,10 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Select * from lease_tbl";
+                string query = "select r1.Room_number\r\n" +
+                    "from Room as r1\r\n" +
+                    "left join lease_tbl as l1\r\n" +
+                    "on r1.Room_id = l1.lease_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -183,7 +186,7 @@ namespace boardingHouseProj
 
                     while (reader.Read()) {
 
-                        cmbRoomNum.Items.Add(reader["room_id"]);
+                        cmbRoomNum.Items.Add(reader["Room_number"]);
                     
                     }
                 }
@@ -206,22 +209,32 @@ namespace boardingHouseProj
 
                 selectedRow.Selected = true;
 
-                // selectedRow.Cells["clmnRoom"].Value?.ToString();
-
-                string assignedBed = selectedRow.Cells["assign_bed"].Value.ToString();
-
-                txtBed.Text = assignedBed;
-                cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value.ToString();
-                txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
-
-                if (DateTime.TryParse(selectedRow.Cells["StartLease"].Value?.ToString(), 
-                    out DateTime startDate) && DateTime.TryParse
-                    (selectedRow.Cells["EndLease"].Value?.ToString(), out DateTime endDate)){ //value?.string checks if the cell is null
+                if (dgAssignTenant.Columns.Contains("Tenant_id"))
+                {
+                    txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+                }
+                if (dgAssignTenant.Columns.Contains("assign_bed"))
+                {
+                    txtBed.Text = selectedRow.Cells["assign_bed"].Value?.ToString();
+                }
+                if (dgAssignTenant.Columns.Contains("StartLease") && dgAssignTenant.Columns.Contains("EndLease"))
+                {
+                    if (DateTime.TryParse(selectedRow.Cells["StartLease"].Value?.ToString(),
+                   out DateTime startDate) && DateTime.TryParse
+                   (selectedRow.Cells["EndLease"].Value?.ToString(), out DateTime endDate))
+                    { //value?.string checks if the cell is null
 
                         dtStartLease.Value = startDate;
                         dtEndLease.Value = endDate;
 
+                    }
                 }
+
+
+                cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
+               
+
+               
             }
         }
 
@@ -232,30 +245,45 @@ namespace boardingHouseProj
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTenant_id.Text)) {
-
+            if (string.IsNullOrEmpty(txtTenant_id.Text))
+            {
                 MessageBox.Show("Please input the tenant_id");
             }
-            if (dtEndLease.Value < dtStartLease.Value)
+            else if (dtEndLease.Value < dtStartLease.Value)
             {
-
-                MessageBox.Show("End Lease should be after the Start Lease: ", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("End Lease should be after the Start Lease.", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
-
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
                     connect.Open();
 
-                    string query = "Update lease_tbl set";
+                    string query = "UPDATE lease_tbl SET room_id = @roomID, assign_bed = @assignBed, StartLease = @strtLease, EndLease = @EndLease " +
+                                   "WHERE Tenant_id = @tenant_id";
 
-                    using (SqlCommand cmd = new SqlCommand()) { 
-                    
-                    
-                    
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        DateTime startDt = dtStartLease.Value;
+                        DateTime endDt = dtEndLease.Value;
+
+                        cmd.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenant_id.Text));
+                        cmd.Parameters.AddWithValue("@roomID", int.Parse(cmbRoomNum.Text));
+                        cmd.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
+                        cmd.Parameters.AddWithValue("@strtLease", startDt.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@EndLease", endDt.ToString("yyyy-MM-dd"));
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Update Success");
                     }
                 }
             }
+        }
+
+        private void cmbRoomNum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

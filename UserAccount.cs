@@ -165,5 +165,10 @@ namespace boardingHouseProj
         {
             txtUserName_KeyDown(sender, e);
         }
+
+        private void userAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

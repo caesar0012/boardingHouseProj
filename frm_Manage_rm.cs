@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace boardingHouseProj
         public frmManage_rm()
         {
             InitializeComponent();
-            gridRoom.DataError += dataGridView1_DataError;
+            dgRoom.DataError += dataGridView1_DataError;
 
         }
 
@@ -31,35 +32,35 @@ namespace boardingHouseProj
         public static string roomNum = "";
         private void showData()
         {
-            DataTable dt = new DataTable();
 
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            try
             {
+                    string query = "Select Room_number, Description, Price, Capacity, Status from Room; ";
 
-                connect.Open();
-
-                string query1 = "Select Room_number, Description, Availability, Price, Status from Room; ";
-
-                SqlCommand cmd = new SqlCommand(query1, connect);
-
-                int rowsCount = 0;
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
-                    while (reader.Read())
+                    connect.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
 
-                        rowsCount++;
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
 
-                        gridRoom.Rows.Add(reader["Room_number"], reader["Description"], reader["Availability"], reader["Price"], reader["Status"]);
+                            DataTable dt = new DataTable();
 
+                            dt.Load(reader);
+                            dgRoom.DataSource = dt;
+                        }
                     }
-                    reader.Close();
                 }
-                gridRoom.Sort(gridRoom.Columns["clmnRoom"], ListSortDirection.Ascending);
             }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message); //Shows the message in messagebox for whats the error
 
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace boardingHouseProj
                     }
                 }
 
-                gridRoom.CellEndEdit += gridRoom_CellEndEdit;
+                dgRoom.CellEndEdit += gridRoom_CellEndEdit;
             }
             else if (txtRoomNumber.Text != roomNum)
             {
@@ -141,7 +142,7 @@ namespace boardingHouseProj
                 MessageBox.Show("Invalid room Number");
 
             }
-            gridRoom.Rows.Clear();
+            dgRoom.Rows.Clear();
             showData();
         }
 
@@ -165,7 +166,7 @@ namespace boardingHouseProj
             // Check if the clicked cell is not in the header row
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                DataGridViewRow selectedRow = gridRoom.Rows[e.RowIndex];
+                DataGridViewRow selectedRow = dgRoom.Rows[e.RowIndex];
 
                 // Select the entire row
                 selectedRow.Selected = true;

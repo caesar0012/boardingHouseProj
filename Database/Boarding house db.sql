@@ -75,6 +75,8 @@ Create Table lease_tbl(
 
 );
 
+drop table lease_tbl
+
 Select * from lease_tbl
 
 use BoardingHouse

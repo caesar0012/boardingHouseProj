@@ -54,6 +54,7 @@ namespace boardingHouseProj
                             dgRoom.DataSource = dt;
                         }
                     }
+                    dgRoom.Sort(dgRoom.Columns["Room_number"], System.ComponentModel.ListSortDirection.Ascending);
                 }
             }
             catch (Exception ex)
@@ -136,7 +137,7 @@ namespace boardingHouseProj
                             cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
                             cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
                             cmd.Parameters.AddWithValue("@capacity", int.Parse(txtCapacity.Text));
-                            cmd.Parameters.AddWithValue("@price", cmbStatus.Text);
+                            cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                             cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
 
                             cmd.ExecuteNonQuery();

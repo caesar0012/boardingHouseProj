@@ -36,7 +36,7 @@ namespace boardingHouseProj
 
             try
             {
-                    string query = "Select Room_number, Description, Price, Capacity, Status from Room; ";
+                string query = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room;";
 
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
@@ -71,109 +71,86 @@ namespace boardingHouseProj
 
         private void btnAdd_Click(object sender, EventArgs e) //needs rework
         {
-            if (string.IsNullOrEmpty(txtRoomNumber.Text)) {
+            if (String.IsNullOrEmpty(txtRoomNumber.Text))
+            {
 
-                MessageBox.Show("Please Input room number");
-                return;
+                MessageBox.Show("Please Input Room Number");
+
+            }
+            else if (string.IsNullOrEmpty(cmbGender.Text))
+            {
+
+                MessageBox.Show("Please Select Gender Allowed to the Room");
+
+            }
+            else if (string.IsNullOrEmpty(txtCapacity.Text))
+            {
+
+                MessageBox.Show("Please Input Capacity for the Room");
+
+            }
+            else if (string.IsNullOrEmpty(txtPrice.Text))
+            {
+
+                MessageBox.Show("Please Input Price for the Room");
+
+            } else if (cmbStatus.SelectedIndex == -1 || cmbStatus.Text == null) {
+
+                cmbGender.SelectedIndex = 0; //Select it by Available as default
             
             }
-            else if (txtRoomNumber.Text == roomNum)
-            {
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
+            else {//
+
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
 
                     connect.Open();
 
-                    string query = "Update Room set Description = @desc, Capacity = @capacity, Price = @price, Status = @stats where Room_number = @roomNum";
+                    if (roomNum == txtRoomNumber.Text) {
 
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
-                    {
+                        string queryUpdate = "Update Room set Description = @desc, allowed_gender = @gender, Capacity = @cap, " +
+                            "Price = @price, Status = @status where Room_number = @roomNum";
 
-                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
-                        cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
-                        cmd.Parameters.AddWithValue("@capacity", int.Parse(txtCapacity.Text));
-                        cmd.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
-                        cmd.Parameters.AddWithValue("@stats", stats); ;
-
-
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Update Success");
-
-                        dgRoom.Rows.Clear();
-                        showData();
-                    }
-                }
-
-                dgRoom.CellEndEdit += gridRoom_CellEndEdit;
-            }
-            else if (txtRoomNumber.Text != roomNum)
-            {
-                if (string.IsNullOrEmpty(txtCapacity.Text) && string.IsNullOrEmpty(txtDescription.Text) && string.IsNullOrEmpty(txtPrice.Text)) {
-
-                    MessageBox.Show("");
-                
-                }
-                try {
-
-                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                    {
-
-                        connect.Close();
-                        connect.Open();
-
-                        int room_number = int.Parse(txtRoomNumber.Text);
-                        string description = txtDescription.Text;
-                        int capacity = int.Parse(txtCapacity.Text);
-                        double price = double.Parse((txtPrice.Text));
-                        string status = "Available";
-
-                        string query = "Insert into Room(Room_number, Description, Capacity, Price, Status) values " +
-                            "(@Room_number, @Description, @Capacity, @Price, @Status)";
-
-                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        using (SqlCommand cmd = new SqlCommand(queryUpdate, connect))
                         {
-
-                            cmd.Parameters.AddWithValue("@Room_number", room_number);
-                            cmd.Parameters.AddWithValue("@Description", description);
-                        //    cmd.Parameters.AddWithValue("@Availability", capacity);
-                            cmd.Parameters.AddWithValue("@Capacity", capacity);
-                            cmd.Parameters.AddWithValue("@Price", price);
-                            cmd.Parameters.AddWithValue("@Status", status); //Replace this with sql query
+                            cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                            cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
+                            cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
+                            cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                            cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
+                            cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
 
                             cmd.ExecuteNonQuery();
 
-                            MessageBox.Show("Room Added successfully");
+                            MessageBox.Show("Update Successfully");
 
-                            connect.Close();
+                        }
+
+                    } else if (roomNum != txtRoomNumber.Text) {
+
+                        string queryAdd = "INSERT INTO Room (Room_number, Description, allowed_gender, Capacity, Price, Status)VALUES" +
+                            "(@roomNum, @desc, @gender, @capacity, @price, @status)";
+                        
+                        using (SqlCommand cmd = new SqlCommand(queryAdd, connect)) {
+
+                            cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+                            cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                            cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
+                            cmd.Parameters.AddWithValue("@capacity", int.Parse(txtCapacity.Text));
+                            cmd.Parameters.AddWithValue("@price", cmbStatus.Text);
+                            cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
+
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Room Added Succesfully");
 
                         }
                     }
                 }
-                catch (Exception ex) {
 
-                    MessageBox.Show(ex.Message);
-
-                }
-
-
-            }
-            else
-            {
-
-                MessageBox.Show("Invalid room Number");
-
-            }
-            try
-            {
-
-                dgRoom.Rows.Clear();
                 showData();
 
-            }
-            catch { 
-            
-            }
+            }//
+
         }
 
         private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -221,6 +198,8 @@ namespace boardingHouseProj
                     txtDescription.Text = desc;
                     txtCapacity.Text = capacity;
                     txtPrice.Text = price;
+                    cmbGender.Text = selectedRow.Cells["Allowed Gender"].Value?.ToString();
+                    cmbStatus.Text = selectedRow.Cells["Status"].Value?.ToString();
                 }
                 else
                 {

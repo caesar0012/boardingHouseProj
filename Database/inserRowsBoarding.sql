@@ -161,4 +161,6 @@ left join lease_tbl as l1
 on r1.Room_id = l1.lease_id
 
 
- 
+ select * from Employee_acc
+
+ Select Room_number, Description, allowed_gender, Price, Capacity, Status from Room;

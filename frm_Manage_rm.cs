@@ -120,6 +120,8 @@ namespace boardingHouseProj
                             cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
                             cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
 
+                            OpenMaintenance();
+
                             cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Update Successfully");
@@ -140,6 +142,8 @@ namespace boardingHouseProj
                             cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                             cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
 
+                            OpenMaintenance();
+
                             cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Room Added Succesfully");
@@ -147,9 +151,7 @@ namespace boardingHouseProj
                         }
                     }
                 }
-
                 showData();
-
             }//
 
         }
@@ -207,8 +209,6 @@ namespace boardingHouseProj
                     MessageBox.Show("One or more cell values are null.");
                 }
             }
-
-
         }
 
 
@@ -231,21 +231,22 @@ namespace boardingHouseProj
             txtRoomNumber_KeyPress(sender, e);
         }
 
-        private void gridRoom_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            
-        }
-
-        private void gridRoom_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnPayment_Click(object sender, EventArgs e)
         {
             frmPayment f1 = new frmPayment();
             f1.ShowDialog();
         }
+
+        private void OpenMaintenance() {
+
+            if (cmbStatus.Text != "Available") {
+
+                MaintenanceRequest m1 = new MaintenanceRequest();
+                m1.ShowDialog();
+            
+            
+            }
+        }
     }
-    }
+}
    

@@ -149,7 +149,7 @@ namespace boardingHouseProj
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
-                cmd.Parameters.AddWithValue("emp_id", 10); //change this for employee_id from login.cs
+                cmd.Parameters.AddWithValue("emp_id", frmLogin.employee_id); //change this for employee_id from login.cs
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

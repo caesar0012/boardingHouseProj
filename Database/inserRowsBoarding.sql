@@ -102,65 +102,11 @@ VALUES
 	
 select * from Room
 
-Select r1.Room_number, r1.Description,r1.Capacity, t1.Tenant_id, t1.FirstName, l1.Lease_id from Room as r1
-right join Tenant as t1 
-on r1.Room_id = t1.Tenant_id 
-full join lease_tbl as l1
-on l1.Lease_id = t1.Tenant_id where l1.Lease_id is null
 
---No room Tenant query
-select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease
- from Tenant as t1
- left join Room as r1
- on r1.Room_id = t1.Tenant_id
- left join lease_tbl as l1
- on r1.Room_id = l1.lease_id where Room_number is null
-
- --Female Room Only
- 
- select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity
- from Tenant as t1
- left join Room as r1
- on r1.Room_id = t1.Tenant_id
- left join lease_tbl as l1
- on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Female' and t1.Archive = 0
- GROUP BY 
-    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;
-
---Male only room
- select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity
- from Tenant as t1
- left join Room as r1
- on r1.Room_id = t1.Tenant_id
- RIGHT join lease_tbl as l1
- on r1.Room_id = l1.lease_id where t1.Archive = 0
- GROUP BY 
-    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;
-
-
-
-select 
-	t1.Tenant_id ,
-	(t1.FirstName + ' ' + t1.LastName) as Name, 
-	Gender, 
-	l1.room_id as Room_number, 
-	l1.assign_bed as Assign_bed  from Tenant 
-as t1 
-left join lease_tbl as l1
-on t1.Tenant_id = l1.lease_id
-
-
- Select * from Tenant
-
- Select * from Room
- Select * from lease_tbl
-
-select r1.Room_number
-from Room as r1
-left join lease_tbl as l1
-on r1.Room_id = l1.lease_id
 
 
  select * from Employee_acc
 
- Select Room_number, Description, allowed_gender, Price, Capacity, Status from Room;
+Select FirstName + ' ' + LastName as Name 
+from Tenant where Archive = 0
+ORDER by FirstName + ' ' + LastName by ASC

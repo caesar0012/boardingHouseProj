@@ -18,7 +18,7 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        public static int employee_id = 14;
+        public static int employee_id = 10;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,7 @@ namespace boardingHouseProj
                     int count = (int)cmd.ExecuteScalar();
 
                     int retrievedEmployeeID = (int)cmd.ExecuteScalar();
-                    employee_id = retrievedEmployeeID;
+                  //  employee_id = retrievedEmployeeID;
 
                     return count > 0;
 

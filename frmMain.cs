@@ -17,8 +17,7 @@ namespace boardingHouseProj
     {
         public frmMain()
         {
-            InitializeComponent();          
-            
+            InitializeComponent();
 
         }
 
@@ -29,50 +28,58 @@ namespace boardingHouseProj
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            loadProfile();
+            LoadProfile();
         }
 
-        private void loadProfile() {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+        private void LoadProfile()
+        {
+            try
             {
-
-                connect.Open();
-
-                string query = "Select * from Employee_acc where Employee_id = @emp_id";
-
-                SqlCommand cmd = new SqlCommand(query, connect);
-                cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString))
                 {
+                    connection.Open();
 
-                    if (reader.Read())
+                    string query = "SELECT * FROM Employee_acc WHERE Employee_id = @emp_id";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if (int.TryParse(reader[0].ToString(), out int intNumValue))
+                        command.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            frmLogin.employee_id = intNumValue;
-                        }
+                            if (reader.Read())
+                            {
+                                if (int.TryParse(reader["Employee_id"].ToString(), out int employeeId))
+                                {
+                                    frmLogin.employee_id = employeeId;
+                                }
 
-                        byte[] img = (byte[])(reader["ProfilePic"]);
+                                byte[] img = reader["ProfilePic"] as byte[];
 
-                        if (img == null)
-                        {
-
-                            profileMain.Image = null;
-
-                        }
-                        else
-                        {
-
-                            MemoryStream ms = new MemoryStream(img);
-                            profileMain.Image = Image.FromStream(ms);
-
+                                if (img == null)
+                                {
+                                    profileMain.Image = null;
+                                }
+                                else
+                                {
+                                    using (MemoryStream ms = new MemoryStream(img))
+                                    {
+                                        profileMain.Image = Image.FromStream(ms);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                // Handle exceptions appropriately (e.g., log or display an error message)
+                MessageBox.Show($"Error loading profile: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private void btnAccount_Click(object sender, EventArgs e)
         {

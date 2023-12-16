@@ -117,12 +117,22 @@ Create Table Payment(
 Create table Maintenance(
 	
 	Maintenance_id int primary key identity(1,1),
-	Tenant_id int,
 	Employee_id int,
 	Details varchar(45),
 	Date_added datetime default getdate(),
 	Archive smallint default 0
+
 );
 
+CREATE TABLE TenantRequest (
 
-drop table lease_tbl
+    Request_id INT PRIMARY KEY IDENTITY(1,1),
+	Employee_id int,
+    Tenant_id INT,
+    Details VARCHAR(255),
+    Date_added DATETIME DEFAULT GETDATE(),
+	Due date,
+	Archive int DEFAULT 0
+
+);
+

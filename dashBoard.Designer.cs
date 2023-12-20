@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReserve = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -42,6 +43,19 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "DashBoard";
             // 
+            // btnReserve
+            // 
+            this.btnReserve.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnReserve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserve.Location = new System.Drawing.Point(59, 334);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(126, 31);
+            this.btnReserve.TabIndex = 11;
+            this.btnReserve.Text = "Tenant Reservation";
+            this.btnReserve.UseVisualStyleBackColor = false;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
+            // 
             // dashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +63,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(898, 377);
+            this.Controls.Add(this.btnReserve);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dashBoard";
@@ -61,5 +76,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReserve;
     }
 }

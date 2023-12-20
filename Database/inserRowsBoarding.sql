@@ -76,15 +76,7 @@ VALUES
 ('Georgiana', 'Lee', 'Male', 9012345678, 'Emergency9', 1098765432, 'Sibling', 'School9', 'Address9', NULL, 0),
 ('Holistic', 'Nguyen', 'Female', 9876543210, 'Emergency10', 9876543210, 'Family', 'School10', 'Address10', NULL, 0);
 
-Select * from Tenant
 
-select * from Employee_acc
-
-use BoardingHouse
-
-select * from lease_tbl
-
-DROP table lease_tbl
 
 INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease)
 VALUES
@@ -99,39 +91,3 @@ VALUES
     (9, 15, 9, 9, '2023-09-01', '2024-04-30'),
     (10, 13, 10, 10, '2023-10-01', '2024-03-31');
 
-	
-select * from Room
-
-
-use BoardingHouse
-
- select * from Employee_acc
-
-Select FirstName + ' ' + LastName as Name 
-from Tenant where Archive = 0
-ORDER by FirstName + ' ' + LastName by ASC
-
-
-Select * from TenantRequest
-
-Select * from lease_tbl
-
-Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Contact, r1.room_number, r1.allowed_gender, l1.assign_bed
-from Tenant as t1
-left join Room as r1
-on t1.Tenant_id = r1.room_id
-left join lease_tbl as l1
-on t1.Tenant_id = l1.lease_id
-where t1.archive = 0 and t1.Tenant_id = 1
-
-Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, r1.Room_number, l1.assign_bed
-from Tenant as t1
-left join Room as r1
-on t1.Tenant_id = r1.Room_id
-left join lease_tbl as l1
-on r1.Room_id = l1.lease_id where t1.FirstName + ' ' + LastName = 'John Doe'
-
-
-Select * from Room
-
-Select * from TenantRequest

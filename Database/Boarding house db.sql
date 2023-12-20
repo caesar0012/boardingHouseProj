@@ -63,6 +63,8 @@ Create table Room(
 
 alter table  Room add FOREIGN key(Employee_id) references Employee_acc(Employee_id)
 
+drop table lease_tbl
+
 Create Table lease_tbl(
 	
 	lease_id int primary key identity(1,1),
@@ -70,10 +72,14 @@ Create Table lease_tbl(
 	Employee_id int,
 	room_id int,
 	assign_bed int,
+	MonthlyPayment decimal,
+	DepositAmount DECIMAL,
 	StartLease date,
 	EndLease date NULL
 
 );
+
+
 
 drop table lease_tbl
 
@@ -146,3 +152,7 @@ Select * from Tenant
 Select t1.Tenant_id
 from Tenant as t1
 where t1.FirstName + ' ' + t1.Lastname = 'John Doe'
+
+Select l1.lease_id, r1.Room_number
+from lease_tbl as l1
+left JOIN Room as r1

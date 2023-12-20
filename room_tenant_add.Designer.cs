@@ -185,7 +185,6 @@
             this.cmbRoomNum.Name = "cmbRoomNum";
             this.cmbRoomNum.Size = new System.Drawing.Size(200, 21);
             this.cmbRoomNum.TabIndex = 13;
-            this.cmbRoomNum.SelectedIndexChanged += new System.EventHandler(this.cmbRoomNum_SelectedIndexChanged);
             // 
             // btnUpdate
             // 

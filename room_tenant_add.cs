@@ -28,6 +28,7 @@ namespace boardingHouseProj
         }
 
         string tent_id;
+        string roomieNum;
 
         //this method is default load the list to the form
         private void loadList()
@@ -233,6 +234,7 @@ namespace boardingHouseProj
                 cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
                 lblTenantID.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
                 tent_id = lblTenantID.Text;
+                roomieNum = cmbRoomNum.Text;
                
             }
         }
@@ -259,7 +261,22 @@ namespace boardingHouseProj
                     connect.Open();
 
                     //Tenant_id, room, id, bed, monthly payment, deposit, start lease, endlease
-                    string query = "Update lease_tbl room_id";
+                    string query = "Update lease_tbl set room_id = @roomNum, assign_bed = @bedNum, MonthlyPayment = @monthly, " +
+                        "DepositAmount = @deposit, StartLease = @startLease, EndLease = @endLease where Tenant_id = @tenantNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                        cmd.Parameters.AddWithValue("@roomNum", roomieNum);
+                        cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
+                        cmd.Parameters.AddWithValue("@monthly", txtMonthlyPayment.Text);
+                        cmd.Parameters.AddWithValue("@deposit", txtDeposit.Text);
+                        cmd.Parameters.AddWithValue("@startLease", dtStartLease);
+                        cmd.Parameters.AddWithValue("@endLease", dtEndLease);
+                        cmd.Parameters.AddWithValue("@tenantNum", txtTenantId.Text);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+
                 }
             }
             room_tenant_add_Load(sender, e);

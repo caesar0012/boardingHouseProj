@@ -1,13 +1,5 @@
 use BoardingHouse
 
-
-Select Employee_id, FirstName from Employee_acc
-Union all
-Select Tenant.Tenant_id, FirstName from Tenant
-order by Employee_id asc
-
-
-
 create Table Employee_acc(
 
 	Employee_id int primary key identity(1,1),
@@ -44,9 +36,6 @@ create table Tenant(
 
 );
 
-drop table Room
-
-Select * from Room
 
 Create table Room(
 	
@@ -57,13 +46,13 @@ Create table Room(
 	Capacity int,
 	Price decimal(10,2),
 	Status varchar(30) DEFAULT 'Available',
-	Employee_id int default 0
+	Employee_id int default 0,
+
+	FOREIGN key(Employee_id) REFERENCES Employee_acc(Employee_id)
 
 );
 
-alter table  Room add FOREIGN key(Employee_id) references Employee_acc(Employee_id)
 
-drop table lease_tbl
 
 Create Table lease_tbl(
 	
@@ -75,48 +64,26 @@ Create Table lease_tbl(
 	MonthlyPayment decimal,
 	DepositAmount DECIMAL,
 	StartLease date,
-	EndLease date NULL
+	EndLease date NULL,
 
+	FOREIGN key (Tenant_id) REFERENCES Tenant(Tenant_id),
+	FOREIGN key (Employee_id) REFERENCES Employee_acc(Employee_id),
+	FOREIGN KEy (Room_id) REFERENCES Room(Room_id)
 );
-
-
-
-drop table lease_tbl
-
-Select * from lease_tbl
-
-use BoardingHouse
-
-alter table lease_tbl
-	add FOREIGN key(Employee_id) references Employee_acc(Employee_id)
-
-alter table lease_tbl
-	add FOREIGN key(Tenant_id) references Tenant(Tenant_id)
-
-alter table lease_tbl
-	add FOREIGN key(room_id) references Room(Room_id)
-
-select * from lease_tbl
-
-truncate table lease_tbl
-
--- Select t1.Tenant_id ,(t1.FirstName + ' ' + t1.LastName) as Name, Gender,  lease1.room_id from Tenant as t1
--- 	inner join lease_tbl as lease1
--- 	on  t1.Tenant_id = lease1.lease_id where ;
- 
--- Insert 10 rows into the Tenant table
-
-
-
 
 Create Table Payment(
 	
 	Payment_id int primary key identity(1,1),
+	Employee_id int,
 	lease_id int,
 	PaymentDate datetime default getdate(),
-	Employee_id int,
-	balance decimal(10,2) default 0,
-	Amount_paid decimal(10,2) default 0
+	Amount_paid decimal(10,2) default 0,
+	Payment_type VARCHAR(10),
+	AddOnAmount decimal,
+	OutstandingBalance decimal(10,2) default 0,
+
+	FOREIGN KEY(Employee_id) REFERENCES Employee_acc(Employee_id),
+	FOREIGN Key(lease_id) REFERENCES lease_tbl(lease_id)
 
 );
 
@@ -126,11 +93,10 @@ Create table Maintenance(
 	Employee_id int,
 	Details varchar(45),
 	Date_added datetime default getdate(),
-	Archive smallint default 0
-
+	Archive smallint default 0,
+	
+	FOREIGN key(Employee_id) REFERENCES Employee_acc(Employee_id)
 );
-
-drop table TenantRequest
 
 CREATE TABLE TenantRequest (
 
@@ -139,25 +105,11 @@ CREATE TABLE TenantRequest (
     Tenant_id INT,
     Details VARCHAR(255),
     Date_added DATETIME DEFAULT GETDATE(),
-	Archive int DEFAULT 0
+	Archive int DEFAULT 0,
+
+	FOREIGN key(Employee_id) REFERENCES Employee_acc(Employee_id),
+	FOREIGN key(Tenant_id) REFERENCES Tenant(Tenant_id)
 
 );
 
-Select * from TenantRequest
 
-use BoardingHouse
-
-Select * from Tenant
-
-Select t1.Tenant_id
-from Tenant as t1
-where t1.FirstName + ' ' + t1.Lastname = 'John Doe'
-
-Select l1.lease_id, r1.Room_number
-from lease_tbl as l1
-left JOIN Room as r1
-on l1.room_id = r1.Room_number where l1.lease_id = 1
-
-select * from lease_tbl
-
-use BoardingHouse

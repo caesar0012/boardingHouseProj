@@ -70,7 +70,6 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add Room";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnPayment
             // 

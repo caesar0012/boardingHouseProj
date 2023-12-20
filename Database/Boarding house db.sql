@@ -124,6 +124,8 @@ Create table Maintenance(
 
 );
 
+drop table TenantRequest
+
 CREATE TABLE TenantRequest (
 
     Request_id INT PRIMARY KEY IDENTITY(1,1),
@@ -131,8 +133,14 @@ CREATE TABLE TenantRequest (
     Tenant_id INT,
     Details VARCHAR(255),
     Date_added DATETIME DEFAULT GETDATE(),
-	Due date,
 	Archive int DEFAULT 0
 
 );
 
+Select * from TenantRequest
+
+Select * from Tenant
+
+Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name
+from Tenant as t1
+where t1.FirstName + ' ' + t1.Lastname = 'John Doe'

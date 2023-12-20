@@ -103,10 +103,33 @@ VALUES
 select * from Room
 
 
-
+use BoardingHouse
 
  select * from Employee_acc
 
 Select FirstName + ' ' + LastName as Name 
 from Tenant where Archive = 0
 ORDER by FirstName + ' ' + LastName by ASC
+
+
+Select * from TenantRequest
+
+Select * from lease_tbl
+
+Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Contact, r1.room_number, r1.allowed_gender, l1.assign_bed
+from Tenant as t1
+left join Room as r1
+on t1.Tenant_id = r1.room_id
+left join lease_tbl as l1
+on t1.Tenant_id = l1.lease_id
+where t1.archive = 0 and t1.Tenant_id = 1
+
+Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, r1.Room_number, l1.assign_bed
+from Tenant as t1
+left join Room as r1
+on t1.Tenant_id = r1.Room_id
+left join lease_tbl as l1
+on r1.Room_id = l1.lease_id where t1.Tenant_id = 1
+
+
+Select * from Room

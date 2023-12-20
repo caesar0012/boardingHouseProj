@@ -129,7 +129,9 @@ from Tenant as t1
 left join Room as r1
 on t1.Tenant_id = r1.Room_id
 left join lease_tbl as l1
-on r1.Room_id = l1.lease_id where t1.Tenant_id = 1
+on r1.Room_id = l1.lease_id where t1.FirstName + ' ' + LastName = 'John Doe'
 
 
 Select * from Room
+
+Select * from TenantRequest

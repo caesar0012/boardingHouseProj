@@ -139,8 +139,10 @@ CREATE TABLE TenantRequest (
 
 Select * from TenantRequest
 
+use BoardingHouse
+
 Select * from Tenant
 
-Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name
+Select t1.Tenant_id
 from Tenant as t1
 where t1.FirstName + ' ' + t1.Lastname = 'John Doe'

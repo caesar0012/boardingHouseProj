@@ -156,3 +156,8 @@ where t1.FirstName + ' ' + t1.Lastname = 'John Doe'
 Select l1.lease_id, r1.Room_number
 from lease_tbl as l1
 left JOIN Room as r1
+on l1.room_id = r1.Room_number where l1.lease_id = 1
+
+select * from lease_tbl
+
+use BoardingHouse

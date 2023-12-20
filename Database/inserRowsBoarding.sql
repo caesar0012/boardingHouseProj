@@ -91,3 +91,24 @@ VALUES
     (9, 15, 9, 9, '2023-09-01', '2024-04-30'),
     (10, 13, 10, 10, '2023-10-01', '2024-03-31');
 
+truncate table lease_tbl
+
+Select * from lease_tbl
+
+select * from Tenant
+
+--name, gender, room_number, bed assign, monthly, deposit, start, ane
+
+Select t1.FirstName + ' ' + t1.LastName as Name, 
+    t1.Gender,
+    r1.room_number,
+    l1.assign_bed,
+    l1.MonthlyPayment,
+    l1.DepositAmount
+FROM Tenant as t1
+left join Room as r1
+on t1.Tenant_id = r1.Room_id
+left JOIN lease_tbl as l1
+on r1.Room_id = l1.room_id
+
+Select * from lease_tbl

@@ -94,3 +94,87 @@ VALUES
 
 
 --name, gender, room_number, bed assign, monthly, deposit, start, ane
+
+Select l1.Room_id as lease_Room_id, r1.Room_number
+from lease_tbl as l1
+left join Room as r1
+on l1.room_id = r1.Room_id
+
+Select * from lease_tbl
+
+Select * from Tenant
+
+SELECT t1.Tenant_id,
+       t1.FirstName + ' ' + t1.LastName as Name,
+       t1.Gender,
+       r1.room_number,
+       l1.assign_bed, 
+       l1.MonthlyPayment,
+       l1.DepositAmount
+FROM Tenant as t1
+LEFT JOIN Room as r1 ON t1.Tenant_id = r1.Room_id
+LEFT JOIN lease_tbl as l1 ON r1.Room_id = l1.room_id;
+
+Select t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment, l1.DepositAmount
+from Tenant as t1
+left join Room as r1
+on t1.tenant_id = r1.Room_id
+left join lease_tbl as l1
+on t1.Tenant_id = l1.lease_id
+
+SELECT t1.Tenant_id,
+       t1.FirstName + ' ' + t1.LastName AS Name,
+	   r1.room_number,
+	   l1.assign_bed,
+	   l1.MonthlyPayment,
+	   l1.DepositAmount,
+	   l1.StartLease,
+	   l1.EndLease
+FROM Tenant AS t1
+LEFT JOIN Lease_tbl AS l1 
+ON t1.Tenant_id = l1.Tenant_id
+left join Room as r1
+on t1.Tenant_id = r1.Room_id
+
+Select * from lease_tbl
+
+Select r1.Room_id, r1.Room_number, l1.Room_id as l1room_id
+	from Room as r1
+	left join lease_tbl as l1
+	on l1.Lease_id = r1.Room_id
+
+
+
+
+Select distinct l1.room_id, r1.Room_number
+	from lease_tbl as l1
+	left join Room as r1
+	on r1.Room_id = l1.room_id
+	where r1.Room_id = 1
+
+Select room_id  from lease_tbl
+
+
+Select * from lease_tbl
+
+Select * from 
+
+SELECT t1.Tenant_id,
+                t1.FirstName + ' ' + t1.LastName AS Name,
+                r1.room_number,
+                l1.assign_bed,
+                l1.MonthlyPayment,
+                l1.DepositAmount,
+                l1.StartLease,
+                l1.EndLease
+                FROM Tenant AS t1
+                LEFT JOIN Lease_tbl AS l1
+                ON t1.Tenant_id = l1.Tenant_id
+                left join Room as r1
+                on t1.Tenant_id = r1.Room_id
+
+Select * from lease_tbl
+
+Select * from Tenant
+
+				

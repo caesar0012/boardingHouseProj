@@ -21,82 +21,53 @@ namespace boardingHouseProj
         public room_tenant_add()
         {
             InitializeComponent();
+            loadComboRoom();
         }
         private void btnClose_Click(object sender, EventArgs e) //close the exe
         {
             this.Close();
         }
 
-        string tent_id;
-        string roomieNum;
-
         //this method is default load the list to the form
         private void loadList()
         {
-            loadFilter("Select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, \r\n    t1.Gender,\r\n    r1.room_number,\r\n    l1.assign_bed,\r\n    l1.MonthlyPayment,\r\n    l1.DepositAmount\r\nFROM Tenant as t1\r\nleft join Room as r1\r\non t1.Tenant_id = r1.Room_id\r\nleft JOIN lease_tbl as l1\r\non r1.Room_id = l1.room_id");
+            loadFilter("SELECT t1.Tenant_id,\r\n       " +
+                "t1.FirstName + ' ' + t1.LastName AS Name,\r\n\t   " +
+                "r1.room_number,\r\n\t   " +
+                "l1.assign_bed,\r\n\t   " +
+                "l1.MonthlyPayment,\r\n\t   " +
+                "l1.DepositAmount,\r\n\t   " +
+                "l1.StartLease,\r\n\t   " +
+                "l1.EndLease\r\n" +
+                "FROM Tenant AS t1\r\n" +
+                "LEFT JOIN Lease_tbl AS l1 \r\n" +
+                "ON t1.Tenant_id = l1.Tenant_id\r\n" +
+                "left join Room as r1\r\n" +
+                "on t1.Tenant_id = r1.Room_id");
         }
-        private void txtTenant_id_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) { //if Keys.Enter was detected it activate the search button
-
-                btnSearch_Click(sender, e);
-            
-            }
-        }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-                    connect.Open();
-
-                    string query = "SELECT t1.Tenant_id, " +
-                                   "(t1.FirstName + ' ' + t1.LastName) AS Name, " +
-                                   "Gender, l1.room_id AS Room_number, " +
-                                   "l1.assign_bed AS Assign_bed, l1.StartLease, l1.EndLease " +
-                                   "FROM Tenant AS t1 " +
-                                   "LEFT JOIN lease_tbl AS l1 ON t1.Tenant_id = l1.lease_id " +
-                                   "WHERE t1.Tenant_id = @tenant_id";
-
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
-                    {
-                        if (int.TryParse(txtTenantId.Text, out int tenantId)) //if parsing is success it passes to tenantId
-                        {
-                            cmd.Parameters.AddWithValue("@tenant_id", tenantId);
-
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                DataTable dt = new DataTable();
-                                dt.Load(reader);
-
-                                dgAssignTenant.DataSource = dt;
-                            }
-                        }
-                        else
-                        {
-                            // Handle the case where txtTenant_id.Text is not a valid integer.
-                            MessageBox.Show("Please enter a valid Tenant ID.");
-                        }
-                    }
-                }
-
-                loadDate()
-;
-            }
-            catch (Exception ex)
-            {
-                // Handle and log the exception appropriately.
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-
 
         private void room_tenant_add_Load(object sender, EventArgs e)
         {
             loadList();
-            loadRoomAvailable();
-            
+
+        }
+        private void loadComboRoom() {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                string query = "Select Room_number from Room";
+                
+                connect.Open();
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) {
+
+                    while (reader.Read()) {
+
+                        cmbRoomNum.Items.Add(reader["Room_number"].ToString());
+                    
+                    }
+                }
+            }
         }
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,37 +140,6 @@ namespace boardingHouseProj
             }
         }
 
-        private void loadRoomAvailable() {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-
-                connect.Open();
-
-                string query = "select r1.Room_number\r\n" +
-                    "from Room as r1\r\n" +
-                    "left join lease_tbl as l1\r\n" +
-                    "on r1.Room_id = l1.lease_id";
-
-                SqlCommand cmd = new SqlCommand(query, connect);
-
-                using (SqlDataReader reader = cmd.ExecuteReader()) {
-
-                    while (reader.Read()) {
-
-                        cmbRoomNum.Items.Add(reader["Room_number"]);
-                    
-                    }
-                }
-            }
-        }
-
-        private void loadDate() {
-
-/*            DateTime selectedDate = dtEndLease.Value;
-            MessageBox.Show($"{selectedDate:yyyy-MM-dd}");
-
-*/
-        }
 
         private void dgAssignTenant_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -233,8 +173,6 @@ namespace boardingHouseProj
 
                 cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
                 lblTenantID.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
-                tent_id = lblTenantID.Text;
-                roomieNum = cmbRoomNum.Text;
                
             }
         }
@@ -264,17 +202,23 @@ namespace boardingHouseProj
                     string query = "Update lease_tbl set room_id = @roomNum, assign_bed = @bedNum, MonthlyPayment = @monthly, " +
                         "DepositAmount = @deposit, StartLease = @startLease, EndLease = @endLease where Tenant_id = @tenantNum";
 
+                    DateTime startDt = dtStartLease.Value;
+                    DateTime endDt = dtEndLease.Value;
+
                     using (SqlCommand cmd = new SqlCommand(query, connect)) {
-                        cmd.Parameters.AddWithValue("@roomNum", roomieNum);
-                        cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
-                        cmd.Parameters.AddWithValue("@monthly", txtMonthlyPayment.Text);
-                        cmd.Parameters.AddWithValue("@deposit", txtDeposit.Text);
-                        cmd.Parameters.AddWithValue("@startLease", dtStartLease);
-                        cmd.Parameters.AddWithValue("@endLease", dtEndLease);
-                        cmd.Parameters.AddWithValue("@tenantNum", txtTenantId.Text);
+
+
+                        cmd.Parameters.AddWithValue("@roomNum", takeRoomNumber());
+                        cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
+                        cmd.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
+                        cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
+                        cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@tenantNum", int.Parse(txtTenantId.Text));
 
                         cmd.ExecuteNonQuery();
 
+                        MessageBox.Show("Update Sucess");
                     }
 
                 }
@@ -283,29 +227,39 @@ namespace boardingHouseProj
 
         }
 
-        private int setRoomNum() {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+        private int takeRoomNumber()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
                 connect.Open();
 
-                string query = "Select l1.lease_id, r1.Room_number\r\n" +
-                    "from lease_tbl as l1\r\n" +
-                    "left JOIN Room as r1\r\n" +
-                    "on l1.room_id = r1.Room_number where l1.lease_id = @";
+                string query = "SELECT DISTINCT l1.room_id, r1.Room_number " +
+                               "FROM lease_tbl AS l1 " +
+                               "LEFT JOIN Room AS r1 ON r1.Room_id = l1.room_id " +
+                               "WHERE r1.Room_number = @RoomNum";
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) { 
-                    
-                    
-                
-                
-                
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@RoomNum", int.Parse(cmbRoomNum.Text));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Assuming Room_number is of type int, use GetInt32 instead of GetString
+                            return reader.GetInt32(0);
+                        }
+                        else
+                        {
+                            // Return 0 when no data is found
+                            return 0;
+                        }
+                    }
                 }
-
-            
             }
-
-            return 0;
-        
         }
+
+
+
     }
 }

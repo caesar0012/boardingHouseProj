@@ -250,7 +250,7 @@ namespace boardingHouseProj
                 } else if (IsRoomFull()) {
 
                     MessageBox.Show("Room is full");
-                
+
                 }
                 else
                 {
@@ -396,7 +396,5 @@ namespace boardingHouseProj
                 return availableCapacity == 0;
             }
         }
-
-
     }
 }

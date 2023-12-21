@@ -172,7 +172,7 @@ namespace boardingHouseProj
 
 
                 cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
-                lblTenantID.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+                lblSample.Text = TakeRoomNumber().ToString();
                
             }
         }
@@ -208,7 +208,7 @@ namespace boardingHouseProj
                     using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
 
-                        cmd.Parameters.AddWithValue("@roomNum", takeRoomNumber());
+                        cmd.Parameters.AddWithValue("@roomNum", TakeRoomNumber());
                         cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
                         cmd.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
                         cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
@@ -227,39 +227,52 @@ namespace boardingHouseProj
 
         }
 
-        private int takeRoomNumber()
+        private int TakeRoomNumber()
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            try
             {
-                connect.Open();
-
-                string query = "SELECT DISTINCT l1.room_id, r1.Room_number " +
-                               "FROM lease_tbl AS l1 " +
-                               "LEFT JOIN Room AS r1 ON r1.Room_id = l1.room_id " +
-                               "WHERE r1.Room_number = @RoomNum";
-
-                using (SqlCommand cmd = new SqlCommand(query, connect))
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@RoomNum", int.Parse(cmbRoomNum.Text));
+                    connect.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    string query = "Select Room_id \r\n" +
+                        "from Room\r\n" +
+                        "where Room_number = @RoomNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
-                        if (reader.Read())
+                        // Check if cmbRoomNum.Text is a valid integer before parsing
+                        if (int.TryParse(cmbRoomNum.Text, out int roomNum))
                         {
-                            // Assuming Room_number is of type int, use GetInt32 instead of GetString
-                            return reader.GetInt32(0);
-                        }
-                        else
-                        {
-                            // Return 0 when no data is found
-                            return 0;
+                            cmd.Parameters.AddWithValue("@RoomNum", roomNum);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    // Assuming Room_id is of type int, use GetInt32 instead of GetString
+                                    return reader.GetInt32(0); // Use index 0 for Room_id
+                                }
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                // Handle the exception (log, display, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            // Return a default value when no data is found or an error occurs
+            return 0;
         }
 
 
 
+        private void txtTenantId_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

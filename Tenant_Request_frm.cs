@@ -84,7 +84,8 @@ namespace boardingHouseProj
                 connect.Open();
 
                 string query = "Select FirstName + ' ' + LastName as Name \r\n" +
-                    "from Tenant \r\nwhere Archive = 0\r\n" +
+                    "from Tenant \r\n" +
+                    "where Archive = 0\r\n" +
                     "ORDER by FirstName + ' ' + LastName ASC";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {

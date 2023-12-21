@@ -85,29 +85,32 @@ VALUES
     (29, 61, 32, 9, '2023-09-01', '2024-04-30'),
     (34, 67, 32, 10, '2023-10-01', '2024-03-31');
 
-use BoardingHouse
-
-Select * from lease_tbl
-
-UPDATE lease_tbl 
-SET room_id = 38
-WHERE Tenant_id = 21;
-
-Select t1.Tenant_id,
-	t1.FirstName + ' ' + t1.LastName as Name,
-	t1.Gender,
-	l1.room_id,
-	l1.assign_bed
-from tenant as t1
-left join lease_tbl as l1
-on t1.Tenant_id = l1.Tenant_id
-left join Room as r1
-on l1.room_id = r1.Room_id
-
-Select * from Employee_acc
-
-Select * from lease_tbl
-Select * from Tenant
+SELECT
+    r1.Room_number,
+    r1.Description,
+    r1.allowed_gender as 'Gender Allowed',
+    r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',
+    r1.Capacity
+FROM
+    Room as r1
+LEFT JOIN
+    lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Female'
+GROUP BY
+    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity
 
 
-use BoardingHouse
+SELECT
+    r1.Room_number,
+    r1.Allowed_gender AS 'Gender Allowed',
+    (r1.Capacity - COALESCE(COUNT(l1.lease_id), 0)) AS 'Available',
+    r1.Capacity
+FROM Room AS r1
+LEFT JOIN lease_tbl AS l1 ON l1.room_id = r1.Room_id
+WHERE r1.Room_number = 102
+GROUP BY r1.Room_number, r1.Allowed_gender, r1.Capacity;
+
+
+
+Use BoardingHouse
+
+Select * from Room

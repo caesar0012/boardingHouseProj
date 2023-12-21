@@ -22,6 +22,8 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             loadComboRoom();
+
+
         }
         private void btnClose_Click(object sender, EventArgs e) //close the exe
         {
@@ -78,11 +80,18 @@ namespace boardingHouseProj
 
             } else if (cmbFilter.SelectedIndex == 1) { //Available Room
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as " +
-                    "'Gender Allowed', r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n " +
-                    "from Tenant " + "as t1\r\n left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n " +
-                    "RIGHT join lease_tbl " + "as l1\r\n on r1.Room_id = l1.lease_id where t1.Archive = 0\r\n " +
-                    "GROUP BY \r\n    r1.Room_number, " + "r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter("SELECT\r\n    " +
+                    "r1.Room_number,\r\n    " +
+                    "r1.Description,\r\n   " +
+                    " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
+                    "r1.Capacity\r\n" +
+                    "FROM\r\n   " +
+                    "Room as r1\r\n" +
+                    "LEFT JOIN\r\n    " +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id\r\n" +
+                    "GROUP BY\r\n    " +
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
 
             }
             else if (cmbFilter.SelectedIndex == 2) //Tenant without Room
@@ -97,19 +106,33 @@ namespace boardingHouseProj
             else if (cmbFilter.SelectedIndex == 3) //Female Room
             {
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', " +
-                    "r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n " +
-                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
-                    "on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Female' and t1.Archive = 0\r\n " +
-                    "GROUP BY \r\n    r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter("SELECT\r\n    " +
+                    "r1.Room_number,\r\n    " +
+                    "r1.Description,\r\n   " +
+                    " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
+                    "r1.Capacity\r\n" +
+                    "FROM\r\n   " +
+                    "Room as r1\r\n" +
+                    "LEFT JOIN\r\n    " +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Female'\r\n" +
+                    "GROUP BY\r\n    " +
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
 
             } else if (cmbFilter.SelectedIndex == 4) { //Male Room 
 
-                loadFilter(" select r1.Room_number, r1.Description, r1.allowed_gender as 'Gender Allowed', " +
-                    "r1.Capacity -count (l1.lease_id)as 'Available', r1.Capacity\r\n from Tenant as t1\r\n " +
-                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
-                    "on r1.Room_id = l1.lease_id where r1.allowed_gender = 'Male' and t1.Archive = 0\r\n GROUP BY \r\n    " +
-                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity;");
+                loadFilter("SELECT\r\n    " +
+                    "r1.Room_number,\r\n    " +
+                    "r1.Description,\r\n   " +
+                    " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
+                    "r1.Capacity\r\n" +
+                    "FROM\r\n   " +
+                    "Room as r1\r\n" +
+                    "LEFT JOIN\r\n    " +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Male  '\r\n" +
+                    "GROUP BY\r\n    " +
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
 
             }
         }
@@ -168,7 +191,10 @@ namespace boardingHouseProj
                         dtEndLease.Value = endDate;
 
                     }
+
                 }
+                txtMonthlyPayment.Text = selectedRow.Cells["MonthlyPayment"].Value.ToString();
+                txtDeposit.Text = selectedRow.Cells["DepositAmount"].Value.ToString();
 
 
                 cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
@@ -184,87 +210,102 @@ namespace boardingHouseProj
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTenantId.Text))
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
             {
-                MessageBox.Show("Please input the tenant_id");
-            }
-            else if (dtEndLease.Value < dtStartLease.Value)
-            {
-                MessageBox.Show("End Lease should be after the Start Lease.", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
+                connect.Open();
+
+                string query = "SELECT COUNT(*) FROM Lease_tbl WHERE Tenant_id = @tenant_id";
+
                 DateTime startDt = dtStartLease.Value;
                 DateTime endDt = dtEndLease.Value;
+
                 int roomNum1 = TakeRoomNumber();
 
+                if (string.IsNullOrEmpty(txtTenantId.Text)) {
 
-                if (roomNum1 == 0)
-                { //create insert code to the sql
+                    MessageBox.Show("Please Select Tenant ID from the table");
 
-                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                    {
-                        connect.Open();
+                } else if (string.IsNullOrEmpty(cmbRoomNum.Text)) {
 
-                        string query = "INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease) VALUES " +
-                                       "(@tenant_id, @empID, @room_id, @assignBed, @startLease, @endLease)";
-
-                        using (SqlCommand cmd = new SqlCommand(query, connect))
-                        {
-                            cmd.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
-                            cmd.Parameters.AddWithValue("@empID", frmLogin.employee_id);
-                            cmd.Parameters.AddWithValue("@room_id", roomNum1);
-                            cmd.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
-                            cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
-                            cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
-
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
+                    MessageBox.Show("Please Select Room Number");
 
                 }
-                else { //updates the sql table if there's a record
+                else if (string.IsNullOrEmpty(txtBed.Text))
+                {
 
-                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                    MessageBox.Show("Please Select Bed Number");
+
+                }
+                else if (string.IsNullOrEmpty(txtMonthlyPayment.Text))
+                {
+
+                    MessageBox.Show("Please Input Monthly Payment of the Tenant");
+
+                }
+                else if (string.IsNullOrEmpty(txtDeposit.Text))
+                {
+
+                    MessageBox.Show("Please insert deposit amount of the Tenant");
+
+                } else if (IsRoomFull()) {
+
+                    MessageBox.Show("Room is full");
+                
+                }
+                else
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
-                        connect.Open();
+                        cmd.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
+                        int existLease = (int)cmd.ExecuteScalar();
 
-                        //Tenant_id, Employee_id, room_id, assign_bed, MonthlyPayment, DepositAmount, StartLease, EndLease
-                        string query = "Update lease_tbl set room_id = @roomNum, assign_bed = @bedNum, MonthlyPayment = @monthly, " +
-                            "DepositAmount = @deposit, StartLease = @startLease, EndLease = @endLease where Tenant_id = @tenantNum";
-
-                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        if (existLease > 0)
                         {
-                            if (roomNum1 == 0)
+                            query = "UPDATE lease_tbl SET room_id = @roomId, assign_bed = @assignBed, " +
+                                    "MonthlyPayment = @monthly, DepositAmount = @deposit WHERE Tenant_id = @tenantID";
+
+                            using (SqlCommand cmd1 = new SqlCommand(query, connect))
                             {
+                                cmd1.Parameters.AddWithValue("@roomId", roomNum1);
+                                cmd1.Parameters.AddWithValue("@assignBed", txtBed.Text);
+                                cmd1.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
+                                cmd1.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
+                                cmd1.Parameters.AddWithValue("@tenantID", int.Parse(txtTenantId.Text));
 
-                                roomNum1 = int.Parse(cmbRoomNum.Text);
-
-                            }
-                            else
-                            {
-
-                                cmd.Parameters.AddWithValue("@roomNum", roomNum1);
-
+                                cmd1.ExecuteNonQuery();
                             }
 
-                            cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
-                            cmd.Parameters.AddWithValue("@monthly", txtMonthlyPayment.Text);
-                            cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
-                            cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
-                            cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
-                            cmd.Parameters.AddWithValue("@tenantNum", int.Parse(txtTenantId.Text));
-
-                            cmd.ExecuteNonQuery();
-
+                            MessageBox.Show("Update Bro");
                         }
+                        else
+                        {
+                            query = "INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, " +
+                                    "MonthlyPayment, DepositAmount, StartLease, EndLease) " +
+                                    "VALUES (@tenant_id, @emp_id, @room_id, @assignBed, @monthly, @Deposit, @start, @end)";
 
+                            using (SqlCommand command = new SqlCommand(query, connect))
+                            {
+                                command.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
+                                command.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                                command.Parameters.AddWithValue("@room_id", roomNum1);
+                                command.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
+                                command.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
+                                command.Parameters.AddWithValue("@Deposit", double.Parse(txtDeposit.Text));
+                                command.Parameters.AddWithValue("@start", startDt);
+                                command.Parameters.AddWithValue("@end", endDt);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Create Bro");
+                        }
                     }
                 }
             }
-                            MessageBox.Show("Update Sucess");
-            room_tenant_add_Load(sender, e);//refresh the grid
+
+            loadList();
         }
+
 
         private int TakeRoomNumber()
         {
@@ -313,5 +354,49 @@ namespace boardingHouseProj
         {
            
         }
+
+        private void txtBed_KeyDown(object sender, KeyEventArgs e) // txt Bed only accepts number
+        {
+            // Allow only numeric input and control characters (like Backspace)
+            if (!(char.IsControl((char)e.KeyCode) || char.IsDigit((char)e.KeyCode)))
+            {
+                e.SuppressKeyPress = true; // Suppress the key press
+            }
+        }
+
+        private bool IsRoomFull()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+                string query = "SELECT " +
+                               "r1.Room_number, " +
+                               "r1.Allowed_gender AS 'Gender Allowed', " +
+                               "(r1.Capacity - COALESCE(COUNT(l1.lease_id), 0)) AS 'Available', " +
+                               "r1.Capacity " +
+                               "FROM Room AS r1 " +
+                               "LEFT JOIN lease_tbl AS l1 ON l1.room_id = r1.Room_id " +
+                               "WHERE r1.Room_number = @room_num " +
+                               "GROUP BY r1.Room_number, r1.Allowed_gender, r1.Capacity;";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+                cmd.Parameters.AddWithValue("@room_num", cmbRoomNum.Text);
+
+                int availableCapacity = 0;
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        // Assuming 'Available' is an int, use GetInt32 method
+                        availableCapacity = reader.GetInt32(reader.GetOrdinal("Available"));
+                    }
+                }
+
+                return availableCapacity == 0;
+            }
+        }
+
+
     }
 }

@@ -61,5 +61,10 @@ namespace boardingHouseProj
         {
             this.Close();
         }
+
+        private void add_room_frm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

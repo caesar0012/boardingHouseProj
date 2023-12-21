@@ -165,6 +165,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "add_room_frm";
             this.Text = "designManagement";
+            this.Load += new System.EventHandler(this.add_room_frm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

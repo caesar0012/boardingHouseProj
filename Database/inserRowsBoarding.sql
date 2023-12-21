@@ -41,17 +41,18 @@ VALUES ('Isabella', 'Rodriguez', NULL, 4444444444, 'isabellarodriguez', 'passwor
 
 INSERT INTO Room (Room_number, Description, allowed_gender, Capacity, Price, Status, Employee_id)
 VALUES 
-(1011, 'Standard Single', 'Male', 5, 75.00, 'Available', 1),
-(102, 'Deluxe Double', 'Female', 10, 120.00, 'Available', 1),
-(103, 'Executive Suite', 'Male', 10, 200.00, 'Available', 1),
-(201, 'Standard Twin', 'Female', 10, 90.00, 'Available', 1),
-(202, 'Family Room', 'Male', 10, 150.00, 'Available', 1),
-(203, 'Luxury Suite', 'Female', 20, 250.00, 'Available', 1),
-(301, 'Honeymoon Suite', 'Male', 20, 180.00, 'Available', 1),
-(302, 'Penthouse', 'Female', 10, 400.00, 'Available', 1),
-(303, 'Accessible Room', 'Male', 20, 100.00, 'Available', 1),
-(401, 'VIP Suite', 'Female', 15, 300.00, 'Available', 1);
+(1011, 'Standard Single', 'Male', 5, 75.00, 'Available', 60),
+(102, 'Deluxe Double', 'Female', 10, 120.00, 'Available', 63),
+(103, 'Executive Suite', 'Male', 10, 200.00, 'Available', 72),
+(201, 'Standard Twin', 'Female', 10, 90.00, 'Available', 61),
+(202, 'Family Room', 'Male', 10, 150.00, 'Available', 61),
+(203, 'Luxury Suite', 'Female', 20, 250.00, 'Available', 64),
+(301, 'Honeymoon Suite', 'Male', 20, 180.00, 'Available', 65),
+(302, 'Penthouse', 'Female', 10, 400.00, 'Available', 61),
+(303, 'Accessible Room', 'Male', 20, 100.00, 'Available', 61),
+(401, 'VIP Suite', 'Female', 15, 300.00, 'Available', 61);
 
+Select * from Employee_acc
 
 INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
 VALUES
@@ -73,17 +74,40 @@ VALUES
 
 INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease)
 VALUES
-    (11, 1, 1, 1, '2023-01-01', '2024-12-31'),
-    (2, 2, 6, 2, '2023-02-01', '2024-11-30'),
-    (3, 2, 7, 3, '2023-03-01', '2024-10-31'),
-    (4, 2, 8, 4, '2023-04-01', '2024-09-30'),
-    (5, 4, 9, 5, '2023-05-01', '2024-08-31'),
-    (6, 4, 10, 6, '2023-06-01', '2024-07-31'),
-    (7, 5, 10, 7, '2023-07-01', '2024-06-30'),
-    (8, 10, 10, 8, '2023-08-01', '2024-05-31'),
-    (9, 1, 1, 9, '2023-09-01', '2024-04-30'),
-    (10, 7, 1, 10, '2023-10-01', '2024-03-31');
+    (21, 61, 32, 1, '2023-01-01', '2024-12-31'),
+    (22, 62, 36, 2, '2023-02-01', '2024-11-30'),
+    (23, 62, 37, 3, '2023-03-01', '2024-10-31'),
+    (24, 62, 38, 4, '2023-04-01', '2024-09-30'),
+    (25, 64, 39, 5, '2023-05-01', '2024-08-31'),
+    (26, 64, 38, 6, '2023-06-01', '2024-07-31'),
+    (27, 65, 38, 7, '2023-07-01', '2024-06-30'),
+    (28, 60, 38, 8, '2023-08-01', '2024-05-31'),
+    (29, 61, 32, 9, '2023-09-01', '2024-04-30'),
+    (34, 67, 32, 10, '2023-10-01', '2024-03-31');
+
+use BoardingHouse
+
+Select * from lease_tbl
+
+UPDATE lease_tbl 
+SET room_id = 38
+WHERE Tenant_id = 21;
+
+Select t1.Tenant_id,
+	t1.FirstName + ' ' + t1.LastName as Name,
+	t1.Gender,
+	l1.room_id,
+	l1.assign_bed
+from tenant as t1
+left join lease_tbl as l1
+on t1.Tenant_id = l1.Tenant_id
+left join Room as r1
+on l1.room_id = r1.Room_id
+
+Select * from Employee_acc
+
+Select * from lease_tbl
+Select * from Tenant
 
 
-
-				
+use BoardingHouse

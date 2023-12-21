@@ -2,7 +2,7 @@ use BoardingHouse
 
 create Table Employee_acc(
 
-	Employee_id int primary key identity(1,1),
+	Employee_id int primary key identity(60,1),
 	FirstName varchar(45),
 	Lastname varchar(45),
 	ProfilePic varbinary(max),
@@ -21,7 +21,7 @@ create Table Employee_acc(
 
 create table Tenant(
 
-	Tenant_id int primary key identity(1,1),
+	Tenant_id int primary key identity(20,1),
 	FirstName varchar(45),
 	Lastname varchar(45),
 	Gender varchar(10),
@@ -39,7 +39,7 @@ create table Tenant(
 
 Create table Room(
 	
-	Room_id int primary key identity(1,1),
+	Room_id int primary key identity(30,1),
 	Room_number int unique,
 	Description varchar(50),
 	allowed_gender varchar(10),
@@ -56,7 +56,7 @@ Create table Room(
 
 Create Table lease_tbl(
 	
-	lease_id int primary key identity(1,1),
+	lease_id int primary key identity(40,1),
 	Tenant_id int unique,
 	Employee_id int,
 	room_id int,
@@ -73,7 +73,7 @@ Create Table lease_tbl(
 
 Create Table Payment(
 	
-	Payment_id int primary key identity(1,1),
+	Payment_id int primary key identity(50,1),
 	Employee_id int,
 	lease_id int,
 	PaymentDate datetime default getdate(),
@@ -89,7 +89,7 @@ Create Table Payment(
 
 Create table Maintenance(
 	
-	Maintenance_id int primary key identity(1,1),
+	Maintenance_id int primary key identity(70,1),
 	Employee_id int,
 	Details varchar(45),
 	Date_added datetime default getdate(),
@@ -100,7 +100,7 @@ Create table Maintenance(
 
 CREATE TABLE TenantRequest (
 
-    Request_id INT PRIMARY KEY IDENTITY(1,1),
+    Request_id INT PRIMARY KEY IDENTITY(80,1),
 	Employee_id int,
     Tenant_id INT,
     Details VARCHAR(255),

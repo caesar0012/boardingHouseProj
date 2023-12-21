@@ -43,7 +43,7 @@ namespace boardingHouseProj
                 "LEFT JOIN Lease_tbl AS l1 \r\n" +
                 "ON t1.Tenant_id = l1.Tenant_id\r\n" +
                 "left join Room as r1\r\n" +
-                "on t1.Tenant_id = r1.Room_id");
+                "on l1.room_id = r1.Room_id");
         }
 
         private void room_tenant_add_Load(object sender, EventArgs e)
@@ -194,37 +194,76 @@ namespace boardingHouseProj
             }
             else
             {
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-                    connect.Open();
-
-                    //Tenant_id, room, id, bed, monthly payment, deposit, start lease, endlease
-                    string query = "Update lease_tbl set room_id = @roomNum, assign_bed = @bedNum, MonthlyPayment = @monthly, " +
-                        "DepositAmount = @deposit, StartLease = @startLease, EndLease = @endLease where Tenant_id = @tenantNum";
-
-                    DateTime startDt = dtStartLease.Value;
-                    DateTime endDt = dtEndLease.Value;
-
-                    using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                DateTime startDt = dtStartLease.Value;
+                DateTime endDt = dtEndLease.Value;
+                int roomNum1 = TakeRoomNumber();
 
 
-                        cmd.Parameters.AddWithValue("@roomNum", TakeRoomNumber());
-                        cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
-                        cmd.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
-                        cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
-                        cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
-                        cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
-                        cmd.Parameters.AddWithValue("@tenantNum", int.Parse(txtTenantId.Text));
+                if (roomNum1 == 0)
+                { //create insert code to the sql
 
-                        cmd.ExecuteNonQuery();
+                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                    {
+                        connect.Open();
 
-                        MessageBox.Show("Update Sucess");
+                        string query = "INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, StartLease, EndLease) VALUES " +
+                                       "(@tenant_id, @empID, @room_id, @assignBed, @startLease, @endLease)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
+                            cmd.Parameters.AddWithValue("@empID", frmLogin.employee_id);
+                            cmd.Parameters.AddWithValue("@room_id", roomNum1);
+                            cmd.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
+                            cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
+                            cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
+
+                            cmd.ExecuteNonQuery();
+                        }
                     }
 
                 }
-            }
-            room_tenant_add_Load(sender, e);
+                else { //updates the sql table if there's a record
 
+                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                    {
+                        connect.Open();
+
+                        //Tenant_id, Employee_id, room_id, assign_bed, MonthlyPayment, DepositAmount, StartLease, EndLease
+                        string query = "Update lease_tbl set room_id = @roomNum, assign_bed = @bedNum, MonthlyPayment = @monthly, " +
+                            "DepositAmount = @deposit, StartLease = @startLease, EndLease = @endLease where Tenant_id = @tenantNum";
+
+                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        {
+                            if (roomNum1 == 0)
+                            {
+
+                                roomNum1 = int.Parse(cmbRoomNum.Text);
+
+                            }
+                            else
+                            {
+
+                                cmd.Parameters.AddWithValue("@roomNum", roomNum1);
+
+                            }
+
+                            cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
+                            cmd.Parameters.AddWithValue("@monthly", txtMonthlyPayment.Text);
+                            cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
+                            cmd.Parameters.AddWithValue("@startLease", startDt.ToString("yyyy-MM-dd"));
+                            cmd.Parameters.AddWithValue("@endLease", endDt.ToString("yyyy-MM-dd"));
+                            cmd.Parameters.AddWithValue("@tenantNum", int.Parse(txtTenantId.Text));
+
+                            cmd.ExecuteNonQuery();
+
+                        }
+
+                    }
+                }
+            }
+                            MessageBox.Show("Update Sucess");
+            room_tenant_add_Load(sender, e);//refresh the grid
         }
 
         private int TakeRoomNumber()

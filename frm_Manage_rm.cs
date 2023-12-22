@@ -164,8 +164,81 @@ namespace boardingHouseProj
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string roomNumber = txtRoomNumber.Text;
 
+            if (RoomExists(roomNumber))
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
+                    
+                    connect.Open();
+
+                    string query = "Update Room set Description = @desc, allowed_gender = @gender," +
+                        "Capacity = @cap, Price = @price, Status = @stats where Room_number = @roomNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                        cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
+                        cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
+                        cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                        cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
+                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+                    MessageBox.Show("Room Updated");
+                    
+            }
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
+                    
+                    connect.Open();
+
+                    string query = "Insert into Room(Room_number, Description, allowed_gender, Capacity, Price, Status, Employee_id) values " +
+                        "(@roomNum, @desc, @gender, @cap, @price, @stats, @emp_id)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+                        cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
+                        cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
+                        cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                        cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
+                        cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                    MessageBox.Show("Room Added");
+            }
+            frmManage_rm_Load(sender, e);
         }
+
+        private bool RoomExists(string roomNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectSql.connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM Room WHERE Room_number = @RoomNumber";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+
+
+
     }
 }
    

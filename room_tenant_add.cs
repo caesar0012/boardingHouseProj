@@ -35,6 +35,7 @@ namespace boardingHouseProj
         {
             loadFilter("SELECT t1.Tenant_id,\r\n       " +
                 "t1.FirstName + ' ' + t1.LastName AS Name,\r\n\t   " +
+                "t1.Gender," +
                 "r1.room_number,\r\n\t   " +
                 "l1.assign_bed,\r\n\t   " +
                 "l1.MonthlyPayment,\r\n\t   " +
@@ -84,6 +85,7 @@ namespace boardingHouseProj
                     "r1.Room_number,\r\n    " +
                     "r1.Description,\r\n   " +
                     " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Price," +
                     "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
                     "r1.Capacity\r\n" +
                     "FROM\r\n   " +
@@ -91,7 +93,7 @@ namespace boardingHouseProj
                     "LEFT JOIN\r\n    " +
                     "lease_tbl as l1 ON l1.room_id = r1.Room_id\r\n" +
                     "GROUP BY\r\n    " +
-                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
             }
             else if (cmbFilter.SelectedIndex == 2) //Tenant without Room
@@ -110,6 +112,7 @@ namespace boardingHouseProj
                     "r1.Room_number,\r\n    " +
                     "r1.Description,\r\n   " +
                     " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Price," +
                     "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
                     "r1.Capacity\r\n" +
                     "FROM\r\n   " +
@@ -117,7 +120,7 @@ namespace boardingHouseProj
                     "LEFT JOIN\r\n    " +
                     "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Female'\r\n" +
                     "GROUP BY\r\n    " +
-                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
             } else if (cmbFilter.SelectedIndex == 4) { //Male Room 
 
@@ -125,6 +128,7 @@ namespace boardingHouseProj
                     "r1.Room_number,\r\n    " +
                     "r1.Description,\r\n   " +
                     " r1.allowed_gender as 'Gender Allowed',\r\n    " +
+                    "r1.Price," +
                     "r1.Capacity - COALESCE(COUNT(l1.lease_id), 0) as 'Available',\r\n    " +
                     "r1.Capacity\r\n" +
                     "FROM\r\n   " +
@@ -132,7 +136,7 @@ namespace boardingHouseProj
                     "LEFT JOIN\r\n    " +
                     "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Male  '\r\n" +
                     "GROUP BY\r\n    " +
-                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Capacity");
+                    "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
             }
         }
@@ -166,40 +170,51 @@ namespace boardingHouseProj
 
         private void dgAssignTenant_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) {
+            try {
 
-                DataGridViewRow selectedRow = dgAssignTenant.Rows[e.RowIndex];
-
-                selectedRow.Selected = true;
-
-                if (dgAssignTenant.Columns.Contains("Tenant_id"))
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    txtTenantId.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
-                }
-                if (dgAssignTenant.Columns.Contains("assign_bed"))
-                {
-                    txtBed.Text = selectedRow.Cells["assign_bed"].Value?.ToString();
-                }
-                if (dgAssignTenant.Columns.Contains("StartLease") && dgAssignTenant.Columns.Contains("EndLease"))
-                {
-                    if (DateTime.TryParse(selectedRow.Cells["StartLease"].Value?.ToString(),
-                   out DateTime startDate) && DateTime.TryParse
-                   (selectedRow.Cells["EndLease"].Value?.ToString(), out DateTime endDate))
-                    { //value?.string checks if the cell is null
 
-                        dtStartLease.Value = startDate;
-                        dtEndLease.Value = endDate;
+                    DataGridViewRow selectedRow = dgAssignTenant.Rows[e.RowIndex];
+
+                    selectedRow.Selected = true;
+
+                    if (dgAssignTenant.Columns.Contains("Tenant_id"))
+                    {
+                        txtTenantId.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+                    }
+                    if (dgAssignTenant.Columns.Contains("assign_bed"))
+                    {
+                        txtBed.Text = selectedRow.Cells["assign_bed"].Value?.ToString();
+                    }
+                    if (dgAssignTenant.Columns.Contains("StartLease") && dgAssignTenant.Columns.Contains("EndLease"))
+                    {
+                        if (DateTime.TryParse(selectedRow.Cells["StartLease"].Value?.ToString(),
+                       out DateTime startDate) && DateTime.TryParse
+                       (selectedRow.Cells["EndLease"].Value?.ToString(), out DateTime endDate))
+                        { //value?.string checks if the cell is null
+
+                            dtStartLease.Value = startDate;
+                            dtEndLease.Value = endDate;
+
+                        }
 
                     }
+                    txtMonthlyPayment.Text = selectedRow.Cells["MonthlyPayment"].Value.ToString();
+                    txtDeposit.Text = selectedRow.Cells["DepositAmount"].Value.ToString();
+
+
+                    cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
+                    lblSample.Text = selectedRow.Cells["Name"].Value?.ToString();
+                    lblGender.Text = selectedRow.Cells["Gender"].Value?.ToString();
 
                 }
-                txtMonthlyPayment.Text = selectedRow.Cells["MonthlyPayment"].Value.ToString();
-                txtDeposit.Text = selectedRow.Cells["DepositAmount"].Value.ToString();
 
-
-                cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
-                lblSample.Text = TakeRoomNumber().ToString();
-               
+            }
+            catch{ 
+            
+                //Do nothing
+            
             }
         }
 
@@ -251,6 +266,10 @@ namespace boardingHouseProj
 
                     MessageBox.Show("Room is full");
 
+                } else if (!CheckBed()) {
+
+                   // MessageBox.Show("Bed Taken");
+                
                 }
                 else
                 {
@@ -262,7 +281,8 @@ namespace boardingHouseProj
                         if (existLease > 0)
                         {
                             query = "UPDATE lease_tbl SET room_id = @roomId, assign_bed = @assignBed, " +
-                                    "MonthlyPayment = @monthly, DepositAmount = @deposit WHERE Tenant_id = @tenantID";
+                                    "MonthlyPayment = @monthly, DepositAmount = @deposit, StartLease = @startLease," +
+                                    "EndLease = @endLease WHERE Tenant_id = @tenantID";
 
                             using (SqlCommand cmd1 = new SqlCommand(query, connect))
                             {
@@ -271,6 +291,8 @@ namespace boardingHouseProj
                                 cmd1.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
                                 cmd1.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
                                 cmd1.Parameters.AddWithValue("@tenantID", int.Parse(txtTenantId.Text));
+                                cmd1.Parameters.AddWithValue("@startLease", dtStartLease.Value);
+                                cmd1.Parameters.AddWithValue("@endLease", dtEndLease.Value);
 
                                 cmd1.ExecuteNonQuery();
                             }
@@ -305,9 +327,7 @@ namespace boardingHouseProj
 
             loadList();
         }
-
-
-        private int TakeRoomNumber()
+        private int TakeRoomNumber() //convert room_number into room id
         {
             try
             {
@@ -348,8 +368,6 @@ namespace boardingHouseProj
             return 0;
         }
 
-
-
         private void txtTenantId_TextChanged(object sender, EventArgs e)
         {
            
@@ -364,7 +382,7 @@ namespace boardingHouseProj
             }
         }
 
-        private bool IsRoomFull()
+        private bool IsRoomFull() //checks if the room is full capacity
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
             {
@@ -394,6 +412,45 @@ namespace boardingHouseProj
                 }
 
                 return availableCapacity == 0;
+            }
+        }
+
+        private bool CheckBed()//checks if there's already taken bed
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                try
+                {
+                    connect.Open();
+
+                    string query = "SELECT COUNT(*) FROM lease_tbl WHERE room_id = @room_id AND assign_bed = @bedNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        int roomID = TakeRoomNumber();
+
+                        cmd.Parameters.AddWithValue("@room_id", roomID);
+                        cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count > 1)
+                        {
+                            MessageBox.Show("Bed already taken");
+                            return false;
+                        }
+                        else { 
+                        
+                        return true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception (log it, show an error message, etc.)
+                    MessageBox.Show("Error: " + ex.Message);
+                    return false; // or throw the exception again if you want to propagate it
+                }
             }
         }
     }

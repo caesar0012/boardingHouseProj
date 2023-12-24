@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -209,7 +209,6 @@ namespace boardingHouseProj
                     lblGender.Text = selectedRow.Cells["Gender"].Value?.ToString();
 
                 }
-
             }
             catch{ 
             

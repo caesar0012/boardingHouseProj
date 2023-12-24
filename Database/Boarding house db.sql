@@ -80,12 +80,14 @@ Create Table Payment(
 	Amount_paid decimal(10,2) default 0,
 	Payment_type VARCHAR(10),
 	AddOnAmount decimal,
+	AddOnDetails varchar(45),
 	OutstandingBalance decimal(10,2) default 0,
 
 	FOREIGN KEY(Employee_id) REFERENCES Employee_acc(Employee_id),
 	FOREIGN Key(lease_id) REFERENCES lease_tbl(lease_id)
 
 );
+
 
 Create table Maintenance(
 	

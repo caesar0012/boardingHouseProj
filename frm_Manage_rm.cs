@@ -147,7 +147,7 @@ namespace boardingHouseProj
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            frmPayment f1 = new frmPayment();
+            Payment_Frm f1 = new Payment_Frm();
             f1.ShowDialog();
         }
 
@@ -165,9 +165,45 @@ namespace boardingHouseProj
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string roomNumber = txtRoomNumber.Text;
-
-            if (RoomExists(roomNumber))
+            if (string.IsNullOrEmpty(txtRoomNumber.Text))
             {
+
+                MessageBox.Show("Please Input Room Number of the Room");
+
+            }
+            else if (string.IsNullOrEmpty(txtDescription.Text))
+            {
+
+                MessageBox.Show("Please Input Description of the Room");
+
+
+            }
+            else if (string.IsNullOrEmpty(cmbGender.Text))
+            {
+
+                MessageBox.Show("Please Select a Gender for the Room");
+
+            }
+            else if (string.IsNullOrEmpty(txtCapacity.Text))
+            {
+
+                MessageBox.Show("Please Input Capacity of the Room");
+
+            }
+            else if (string.IsNullOrEmpty(txtPrice.Text))
+            {
+
+                MessageBox.Show("Please Input Price of the Room");
+
+
+            }
+            else if (string.IsNullOrEmpty(cmbStatus.Text))
+            {
+
+                MessageBox.Show("Please Select Status of the Room");
+
+            }
+            else if (RoomExists(roomNumber)){
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
                     
                     connect.Open();
@@ -237,7 +273,7 @@ namespace boardingHouseProj
             }
         }
 
-
+        
 
     }
 }

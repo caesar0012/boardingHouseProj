@@ -110,11 +110,11 @@
             this.dgRoom.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgRoom.Location = new System.Drawing.Point(315, 47);
+            this.dgRoom.Location = new System.Drawing.Point(294, 49);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.RowHeadersWidth = 51;
-            this.dgRoom.Size = new System.Drawing.Size(580, 373);
+            this.dgRoom.Size = new System.Drawing.Size(603, 373);
             this.dgRoom.TabIndex = 11;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
             this.dgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);

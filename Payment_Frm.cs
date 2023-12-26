@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,14 @@ namespace boardingHouseProj
 {
     public partial class Payment_Frm : Form
     {
+        private object e;
+
         public Payment_Frm()
         {
             InitializeComponent();
+
+            gcashPanel.BringToFront();
+            gcashPanel.Enabled = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -25,19 +31,10 @@ namespace boardingHouseProj
 
         private void Payment_Frm_Load(object sender, EventArgs e)
         {
-            FilterLoad("Select \r\n    " +
-                "t1.Tenant_id, \r\n    " +
-                "t1.FirstName + ' ' + t1.LastName as Name,\r\n    " +
-                "t1.Gender,\r\n    " +
-                "r1.Room_number,\r\n    " +
-                "l1.assign_bed, l1.MonthlyPayment as Rent\r\n    " +
-                "From Tenant as t1\r\n" +
-                "left join lease_tbl as l1\r\n" +
-                "on t1.Tenant_id = l1.Tenant_id\r\n" +
-                "left join Room as r1\r\n" +
-                "on l1.room_id = r1.Room_id\r\n" +
-                "left join Payment as p1\r\n" +
-                "on l1.Tenant_id = t1.Tenant_id");
+            FilterLoad("Select\r\n\tt1.Tenant_id,\r\n\tt1.FirstName + ' ' + t1.LastName as Name,\r\n\tt1.Gender,\r\n\tr1.Room_number,\r\n\tl1.assign_bed, l1.MonthlyPayment as Rent\r\nFrom Tenant as t1\r\nleft join lease_tbl as l1\r\non t1.Tenant_id = l1.Tenant_id\r\nleft join Room as r1\r\non l1.room_id = r1.Room_id\r\nleft join Payment as p1\r\non l1.Tenant_id = t1.Tenant_id\r\ngroup by\r\nt1.Tenant_id, t1.FirstName, t1.LastName, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment;");
+
+            //loadListBox();
+
         }
 
         private void FilterLoad(string query)
@@ -87,86 +84,183 @@ namespace boardingHouseProj
                 DataGridViewRow selectedRow = dgPayment.Rows[e.RowIndex];
                 selectedRow.Selected = true;
 
-                txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+             //   txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
                 txtTenantName.Text = selectedRow.Cells["Name"].Value?.ToString();
-                txtPayment.Text = selectedRow.Cells["Rent"].Value?.ToString();
+                txtRent.Text = selectedRow.Cells["Rent"].Value?.ToString();
 
 
-                /*txtDetailsAddon.Text = selectedRow.Cells["Rent"].Value?.ToString();
-                txtAddOnsPrice.Text = selectedRow.Cells["Rent"].Value?.ToString();*/
+                //txtDetailsAddon.Text = selectedRow.Cells["Rent"].Value?.ToString();
+                // txtAddOnsPrice.Text = selectedRow.Cells["Rent"].Value?.ToString();
+
+
+                //loadListBox();
+
+                
             }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            PaymentInsert();
+            DialogResult result = MessageBox.Show("Do you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(txtTenantName.Text)) {
+
+                    MessageBox.Show("Please Select Tenant Name");
+
+                } else if (string.IsNullOrEmpty(txtPayment.Text)) {
+
+                    MessageBox.Show("Please Insert Payment Amount");
+
+                }
+                else
+                {
+
+                    if (cmbPaymentType.Text == "GCash") {
+
+                        gcashPayment();
+                        updateAddOn();
+
+                    } else if (cmbPaymentType.Text == "Cash") {
+
+                        PaymentInsert();
+                        updateAddOn();
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Please Select Payment Type");
+                        return;
+
+                    }
+                }
+            }
+            else
+            {
+                // User clicked No
+                // Perform the action you want when the user chooses No
+            }
+
         }
 
 
         private void PaymentInsert() {
 
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
 
                 connect.Open();
 
                 int setLease = getLease_id();
 
-                string query = "Insert into Payment(Employee_id, lease_id, Amount_paid, Payment_type, AddOnAmount, OutstandingBalance, AddOnDetails) values" +
-                    "(@emp_id, @lease_id, @amount, @paymentType, @addOnAmount, @OutstandingBalance, @addOnDetail)";
+                string query = "Insert into Payment(Employee_id, lease_id, Amount_paid, Payment_type)values" +
+                    "(@emp_id, @leaseID, @AmountPaid, @PaymentType)";
 
-                SqlCommand cmd = new SqlCommand(query, connect);
+                using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
-                cmd.Parameters.AddWithValue("@lease_id", setLease);
+                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@leaseID", setLease);
+                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
+                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
 
-                if (string.IsNullOrEmpty(txtPayment.Text)) {
+                    cmd.ExecuteNonQuery();
 
-                    cmd.Parameters.AddWithValue("@amount", 0);
-
+                    MessageBox.Show("Transaction Success");
                 }
-                else
-                {
-
-                    cmd.Parameters.AddWithValue("@amount", double.Parse(txtPayment.Text));
-
-                }
-
-                if (cmbPaymentType.SelectedIndex == -1)
-                {
-                    // No item selected, set the parameter value to NULL or another default value
-                    cmd.Parameters.AddWithValue("@paymentType", DBNull.Value);
-                }
-                else
-                {
-                    // Item selected, use the selected text
-                    cmd.Parameters.AddWithValue("@paymentType", cmbPaymentType.SelectedText);
-                }
-
-                if (string.IsNullOrEmpty(txtAddOnsPrice.Text))
-                {
-                    // No item selected, set the parameter value to NULL or another default value
-                    cmd.Parameters.AddWithValue("@addOnAmount", DBNull.Value);
-                }
-                else
-                {
-                    // Item selected, use the selected text
-                    cmd.Parameters.AddWithValue("@addOnAmount", double.Parse(txtAddOnsPrice.Text));
-                }
-
-
-                
-                cmd.Parameters.AddWithValue("@OutstandingBalance", 0);
-                cmd.Parameters.AddWithValue("@addOnDetail", txtDetailsAddon.Text);
-
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Success");
-                
-            
             }
         }
 
-        private int getLease_id() { //The use of the method is for the insert rows of the Payment Table 
+        private void gcashPayment()
+        {
+            if (string.IsNullOrEmpty(txtName.Text)) {
+
+                MessageBox.Show("Please Insert Name");
+
+            } else if (string.IsNullOrEmpty(txtContact.Text)) {
+
+                MessageBox.Show("Please Insert Contact No");
+
+            }
+            else if (string.IsNullOrEmpty(txtRef.Text))
+            {
+
+                MessageBox.Show("Please Insert reference");
+
+            }
+            else
+            {
+                try {
+
+                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                    {
+
+                        connect.Open();
+
+                        int setLease = getLease_id();
+
+                        string query = "Insert into Payment(Employee_id, lease_id, Amount_paid, Payment_type, SenderName, Contact, Reference)values" +
+                            "(@emp_id, @leaseID, @AmountPaid, @PaymentType, @SName, @contactNo, @Reference)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, connect))
+                        {
+
+                            cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                            cmd.Parameters.AddWithValue("@leaseID", setLease);
+                            cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
+                            cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                            cmd.Parameters.AddWithValue("@SName", txtName.Text);
+                            cmd.Parameters.AddWithValue("@contactNo", long.Parse(txtContact.Text));
+                            cmd.Parameters.AddWithValue("@Reference", long.Parse(txtRef.Text));
+
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Transaction Success");
+                        }
+                    }
+
+                }
+                catch (Exception ex) {
+
+                    MessageBox.Show("Error Insert Gcash" + ex.Message);
+                
+                }
+            
+            }
+
+            
+        }
+
+        private void updateAddOn() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                string query = "Update Addon set Archive = 1\r\n" +
+                    "where AddOnDetails = @details and lease_id = @ID";
+
+                connect.Open();
+
+                int ID = getLease_id();
+
+                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                    foreach (string item in clbAddOns.CheckedItems) {
+
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@details", item);
+                        cmd.Parameters.AddWithValue("@ID", ID);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+            }
+        }
+
+
+
+       private int getLease_id() { //The use of the method is for the insert rows of the Payment Table 
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
 
@@ -177,13 +271,12 @@ namespace boardingHouseProj
                     "from Tenant as t1\r\n" +
                     "left join lease_tbl as l1\r\n" +
                     "on t1.Tenant_id = l1.Tenant_id\r\n" +
-                    "where l1.lease_id is not null and t1.archive = 0 and t1.Tenant_id = @tent_id";
+                    "where l1.lease_id is not null and t1.archive = 0 and t1.FirstName + ' ' + t1.LastName = @name";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
-                if (int.TryParse(txtTenant_id.Text, out int num1))
-                {
-                    cmd.Parameters.AddWithValue("@tent_id", num1);
+                
+                    cmd.Parameters.AddWithValue("@name", txtTenantName.Text);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -193,9 +286,153 @@ namespace boardingHouseProj
                             return reader.GetInt32(0); // Use index 0 for Room_id
                         }
                     }
-                }
+                
             }
             return 0;
+        }
+
+        private void loadListBox() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
+                connect.Open();
+
+                string query = "Select \r\n\t" +
+                    "a1.AddOnDetails,\r\n\t" +
+                    "a1.AddonAmount\r\n" +
+                    "from Addon as a1\r\n" +
+                    "left join lease_tbl as l1\r\n" +
+                    "on l1.lease_id = a1.lease_id\r\n" +
+                    "where l1.lease_id = @leaseId and a1.Archive = 0";
+
+                int ID = getLease_id();
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                cmd.Parameters.AddWithValue("@leaseId", ID);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    clbAddOns.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        clbAddOns.Items.Add(reader["AddOnDetails"]);
+
+                    }
+
+                }
+            }
+
+        }
+
+        private void txtTenantName_TextChanged(object sender, EventArgs e)
+        {
+            label2.Text = getLease_id().ToString();
+            loadListBox();
+        }
+
+        private void clbAddOns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            txtTotal.Text = TotalPay().ToString();
+
+        }
+
+        private double TotalPay() {
+
+            try
+            {
+                double num1 = 0;
+
+                num1 = double.Parse(txtRent.Text);
+
+                return num1 + calculateTotalCheck();
+            }
+            catch {
+
+                return calculateTotalCheck();
+            
+            }
+
+        }
+
+        private double calculateTotalCheck()
+        {
+            double totalAmount = 0.0;
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+
+                string query = "SELECT a1.AddonAmount " +
+                               "FROM Addon AS a1 " +
+                               "LEFT JOIN lease_tbl AS l1 " +
+                               "ON l1.lease_id = a1.lease_id " +
+                               "WHERE l1.lease_id = @leaseID AND a1.AddOnDetails = @Details";
+
+                int ID = getLease_id();
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    foreach (string item in clbAddOns.CheckedItems)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@leaseID", ID);
+                        cmd.Parameters.AddWithValue("@Details", item);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null && double.TryParse(result.ToString(), out double price))
+                        {
+                            totalAmount += price;
+                        }
+                        else
+                        {
+                            // Handle the case where the AddonAmount is not a valid double
+                            Console.WriteLine($"Invalid AddonAmount for item {item}");
+                        }
+                    }
+                }
+            }
+
+            // Output the total sum before returning
+            Console.WriteLine($"Total sum of AddonAmount values: {totalAmount}");
+
+            return totalAmount;
+        }
+
+        private void txtPayment_TextChanged(object sender, EventArgs e)
+        {
+            txtTotal.Text = TotalPay().ToString();
+        }
+
+        private void cmbPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbPaymentType.Text == "GCash")
+            {
+                gcashPanel.Enabled = true;
+                gcashPanel.SendToBack();
+                
+
+            }
+            else {
+
+                gcashPanel.BringToFront();
+                gcashPanel.Enabled = false;
+
+            }
+        }
+
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the entered character is a digit or a control key (e.g., backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If not a digit, suppress the keypress event
+                e.Handled = true;
+            }
         }
     }
 }

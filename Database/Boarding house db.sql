@@ -71,23 +71,38 @@ Create Table lease_tbl(
 	FOREIGN KEy (Room_id) REFERENCES Room(Room_id)
 );
 
-Create Table Payment(
-	
-	Payment_id int primary key identity(50,1),
-	Employee_id int,
-	lease_id int,
-	PaymentDate datetime default getdate(),
-	Amount_paid decimal(10,2) default 0,
-	Payment_type VARCHAR(10),
-	AddOnAmount decimal,
-	AddOnDetails varchar(45),
-	OutstandingBalance decimal(10,2) default 0,
+CREATE TABLE Payment (
 
-	FOREIGN KEY(Employee_id) REFERENCES Employee_acc(Employee_id),
-	FOREIGN Key(lease_id) REFERENCES lease_tbl(lease_id)
+    Payment_id INT PRIMARY KEY IDENTITY(1,1),
+    Employee_id INT,
+    Lease_id INT,
+    PaymentDate DATETIME DEFAULT GETDATE(),
+    Amount_paid DECIMAL(10,2) DEFAULT 0,
+    Payment_type VARCHAR(10),
+	SenderName varchar(45),
+	Contact bigint,
+	Reference bigint,
+	archive smallint DEFAULT 0,
+    CONSTRAINT FK_Employee FOREIGN KEY (Employee_id) REFERENCES Employee_acc(Employee_id),
+    CONSTRAINT FK_Lease FOREIGN KEY (Lease_id) REFERENCES Lease_tbl(Lease_id)
 
 );
 
+CREATE TABLE Addon (
+
+    Addon_id INT PRIMARY KEY IDENTITY(75,1),
+	lease_id int,
+	emp_id int,
+    AddOnAmount DECIMAL(10,2),
+    AddOnDetails VARCHAR(45),
+	Date date DEFAULT getdate(),
+	Archive TINYINT DEFAULT 0,
+	FOREIGN key (lease_id) references lease_tbl(lease_id),
+	FOREIGN key(emp_id) REFERENCES Employee_acc(Employee_id)
+
+);
+
+drop table addon
 
 Create table Maintenance(
 	
@@ -113,5 +128,3 @@ CREATE TABLE TenantRequest (
 	FOREIGN key(Tenant_id) REFERENCES Tenant(Tenant_id)
 
 );
-
-

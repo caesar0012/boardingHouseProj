@@ -30,6 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.btnReserve = new System.Windows.Forms.Button();
+            this.btnAddon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -56,6 +57,18 @@
             this.btnReserve.UseVisualStyleBackColor = false;
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
+            // btnAddon
+            // 
+            this.btnAddon.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddon.Location = new System.Drawing.Point(233, 334);
+            this.btnAddon.Name = "btnAddon";
+            this.btnAddon.Size = new System.Drawing.Size(126, 31);
+            this.btnAddon.TabIndex = 12;
+            this.btnAddon.Text = "Add On";
+            this.btnAddon.UseVisualStyleBackColor = false;
+            // 
             // dashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +76,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(898, 377);
+            this.Controls.Add(this.btnAddon);
             this.Controls.Add(this.btnReserve);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -77,5 +91,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnReserve;
+        private System.Windows.Forms.Button btnAddon;
     }
 }

@@ -86,9 +86,18 @@ namespace boardingHouseProj
 
                 MessageBox.Show("Please Emergency Contact Name");
 
+            } else if (cbFemale.Checked == false && cbMale.Checked == false) {
+
+                MessageBox.Show("Please Select Gender");
+
+            } else if (cbFemale.Checked == true && cbMale.Checked == true) {
+
+                MessageBox.Show("Please One Gender");
+
             }
             else
             {
+
                 try
                 {
                     string firstname = txtFirstname.Text;
@@ -114,13 +123,25 @@ namespace boardingHouseProj
                             }
                         }
 
-                        string query = "INSERT INTO Tenant (FirstName, Lastname, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic) " +
-                            "VALUES (@FirstName, @Lastname, @Contact, @Emergency_name, @Emergency_Contact, @Relationship, @School, @Address, @Document_pic)";
+                        string query = "INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic) " +
+                            "VALUES (@FirstName, @Lastname, @gender, @Contact, @Emergency_name, @Emergency_Contact, @Relationship, @School, @Address, @Document_pic)";
 
                         using (SqlCommand cmd = new SqlCommand(query, connect))
                         {
                             cmd.Parameters.AddWithValue("@FirstName", firstname);
                             cmd.Parameters.AddWithValue("@Lastname", lastName);
+
+                            if (cbMale.Checked)
+                            {
+
+                                cmd.Parameters.AddWithValue("@gender", "Male");
+
+                            }
+                            else {
+
+                                cmd.Parameters.AddWithValue("@gender", "Female");
+
+                            }
                             cmd.Parameters.AddWithValue("@Contact", contact);
                             cmd.Parameters.AddWithValue("@Emergency_name", emergencyName);
                             cmd.Parameters.AddWithValue("@Emergency_Contact", emergency_contact);
@@ -142,6 +163,11 @@ namespace boardingHouseProj
 
 
             }
+        }
+
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

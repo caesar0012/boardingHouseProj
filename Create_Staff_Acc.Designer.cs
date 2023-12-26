@@ -66,6 +66,7 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(37, 151);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(221, 20);
@@ -123,6 +124,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(669, 151);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(222, 20);
@@ -153,6 +155,7 @@
             // 
             // txtAnswerQuestion
             // 
+            this.txtAnswerQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswerQuestion.Location = new System.Drawing.Point(35, 391);
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
             this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 20);
@@ -160,6 +163,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(371, 260);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(222, 20);
@@ -168,6 +172,7 @@
             // 
             // txtConfirmPass
             // 
+            this.txtConfirmPass.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPass.Location = new System.Drawing.Point(668, 260);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(221, 20);
@@ -176,6 +181,7 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(371, 151);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(221, 20);
@@ -183,6 +189,7 @@
             // 
             // cmbRole
             // 
+            this.cmbRole.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Manager",
@@ -190,7 +197,7 @@
             "Cashier"});
             this.cmbRole.Location = new System.Drawing.Point(37, 259);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(221, 21);
+            this.cmbRole.Size = new System.Drawing.Size(221, 23);
             this.cmbRole.TabIndex = 21;
             // 
             // label9
@@ -205,6 +212,7 @@
             // 
             // cmbQuestionPass
             // 
+            this.cmbQuestionPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbQuestionPass.FormattingEnabled = true;
             this.cmbQuestionPass.Items.AddRange(new object[] {
             "Birth Place",
@@ -212,12 +220,13 @@
             "Favorite Team"});
             this.cmbQuestionPass.Location = new System.Drawing.Point(35, 345);
             this.cmbQuestionPass.Name = "cmbQuestionPass";
-            this.cmbQuestionPass.Size = new System.Drawing.Size(223, 21);
+            this.cmbQuestionPass.Size = new System.Drawing.Size(223, 22);
             this.cmbQuestionPass.TabIndex = 14;
             this.cmbQuestionPass.Text = "Confirm";
             // 
             // txtContact
             // 
+            this.txtContact.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(370, 345);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(222, 20);
@@ -248,6 +257,7 @@
             // 
             this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(668, 345);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(223, 31);
@@ -298,6 +308,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Create_Staff_Acc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Load += new System.EventHandler(this.Create_Staff_Acc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

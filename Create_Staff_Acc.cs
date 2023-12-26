@@ -188,6 +188,9 @@ namespace boardingHouseProj
 
             }
 
-        
+        private void Create_Staff_Acc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

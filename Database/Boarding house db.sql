@@ -102,7 +102,7 @@ CREATE TABLE Addon (
 
 );
 
-drop table addon
+
 
 Create table Maintenance(
 	

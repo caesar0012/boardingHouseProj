@@ -302,6 +302,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmCustomer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_tenantDoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

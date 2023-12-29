@@ -168,6 +168,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="staff_Class.cs" />
+    <Compile Include="Staff_Module_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Module_Frm.Designer.cs">
+      <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tenant_Request_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="room_tenant_add.resx">
       <DependentUpon>room_tenant_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Module_Frm.resx">
+      <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant_Request_frm.resx">
       <DependentUpon>Tenant_Request_frm.cs</DependentUpon>

@@ -34,13 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer01 = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.btnTenant = new System.Windows.Forms.Button();
             this.btnRoom = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.profileMain = new boardingHouseProj.RoundPictureBox();
-            this.timer01 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,10 +87,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.btnDashBoard);
-            this.panel1.Controls.Add(this.btnTenant);
-            this.panel1.Controls.Add(this.btnRoom);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.profileMain);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label1);
@@ -97,6 +96,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 154);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // timer01
+            // 
+            this.timer01.Enabled = true;
+            this.timer01.Interval = 1;
+            this.timer01.Tick += new System.EventHandler(this.frmMain_Load);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnTenant);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnRoom);
+            this.flowLayoutPanel1.Controls.Add(this.btnDashBoard);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(144, 59);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(666, 58);
+            this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnDashBoard
             // 
@@ -104,13 +124,12 @@
             this.btnDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashBoard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashBoard.Location = new System.Drawing.Point(75, 68);
+            this.btnDashBoard.Location = new System.Drawing.Point(501, 3);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(160, 48);
-            this.btnDashBoard.TabIndex = 9;
+            this.btnDashBoard.TabIndex = 13;
             this.btnDashBoard.Text = "DashBoard";
             this.btnDashBoard.UseVisualStyleBackColor = false;
-            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
             // btnTenant
             // 
@@ -118,13 +137,12 @@
             this.btnTenant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTenant.Location = new System.Drawing.Point(265, 68);
+            this.btnTenant.Location = new System.Drawing.Point(3, 3);
             this.btnTenant.Name = "btnTenant";
             this.btnTenant.Size = new System.Drawing.Size(160, 48);
-            this.btnTenant.TabIndex = 8;
+            this.btnTenant.TabIndex = 12;
             this.btnTenant.Text = "Tenant";
             this.btnTenant.UseVisualStyleBackColor = false;
-            this.btnTenant.Click += new System.EventHandler(this.btnTenant_Click);
             // 
             // btnRoom
             // 
@@ -132,13 +150,12 @@
             this.btnRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoom.Location = new System.Drawing.Point(463, 68);
+            this.btnRoom.Location = new System.Drawing.Point(335, 3);
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.Size = new System.Drawing.Size(160, 48);
-            this.btnRoom.TabIndex = 7;
+            this.btnRoom.TabIndex = 11;
             this.btnRoom.Text = "Room";
             this.btnRoom.UseVisualStyleBackColor = false;
-            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // button1
             // 
@@ -146,32 +163,25 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(670, 68);
+            this.button1.Location = new System.Drawing.Point(169, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 48);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Employee";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // profileMain
             // 
             this.profileMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.profileMain.Image = ((System.Drawing.Image)(resources.GetObject("profileMain.Image")));
             this.profileMain.Location = new System.Drawing.Point(872, 41);
-            this.profileMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profileMain.Margin = new System.Windows.Forms.Padding(2);
             this.profileMain.Name = "profileMain";
             this.profileMain.Size = new System.Drawing.Size(110, 98);
             this.profileMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profileMain.TabIndex = 0;
             this.profileMain.TabStop = false;
             this.profileMain.Click += new System.EventHandler(this.profileMain_Click);
-            // 
-            // timer01
-            // 
-            this.timer01.Enabled = true;
-            this.timer01.Interval = 1;
-            this.timer01.Tick += new System.EventHandler(this.frmMain_Load);
             // 
             // frmMain
             // 
@@ -188,6 +198,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -198,12 +209,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnTenant;
-        private System.Windows.Forms.Button btnRoom;
-        private System.Windows.Forms.Button btnDashBoard;
         private RoundPictureBox profileMain;
         private System.Windows.Forms.Timer timer01;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnTenant;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRoom;
+        private System.Windows.Forms.Button btnDashBoard;
     }
 }
 

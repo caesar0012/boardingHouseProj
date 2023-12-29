@@ -164,7 +164,6 @@ namespace boardingHouseProj
 
             }
         }
-
         private void frmCustomer_Load(object sender, EventArgs e)
         {
 

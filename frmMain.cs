@@ -19,6 +19,8 @@ namespace boardingHouseProj
         bool drag = false;
         Point start_point = new Point(0,0);
 
+        bool menuExpand, TenantCollapse, StaffCollapse, roomClps;
+
         public frmMain()
         {
             InitializeComponent();
@@ -85,49 +87,6 @@ namespace boardingHouseProj
 
 
 
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            Create_Staff_Acc staff1 = new Create_Staff_Acc();
-            staff1.TopLevel = false;
-            staff1.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(staff1);
-            staff1.BringToFront();
-            staff1.Show();
-        }
-
-        void showReservation() {
-
-            frmCustomer c1 = new frmCustomer();
-            c1.TopLevel = false;
-            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(c1);
-            c1.BringToFront();
-            c1.Show();
-
-        }
-
-        private void btnRoom_Click(object sender, EventArgs e)
-        {
-            frmManage_rm rm1 = new frmManage_rm();
-            rm1.TopLevel = false;
-            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(rm1);
-            rm1.BringToFront();
-            rm1.Show();
-        }
-
-        private void btnTenant_Click(object sender, EventArgs e)
-        {
-            frmCustomer c1 = new frmCustomer();
-            c1.TopLevel = false;
-            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(c1);
-            c1.BringToFront();
-            c1.Show();
-        }
 
         private void profileMain_Click(object sender, EventArgs e)
         {
@@ -136,22 +95,9 @@ namespace boardingHouseProj
             u1.TopLevel = false;
             u1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
             u1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(u1);
+            this.Controls.Add(u1);
             u1.BringToFront();
             u1.Show();
-
-        }
-
-        private void btnDashBoard_Click(object sender, EventArgs e)
-        {
-            dashBoard d1 = new dashBoard();
-
-            d1.TopLevel = false;
-            d1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            d1.Dock = DockStyle.Fill; // Optional to fill the panel
-            panelMain.Controls.Add(d1);
-            d1.BringToFront();
-            d1.Show();
 
         }
 
@@ -166,6 +112,123 @@ namespace boardingHouseProj
             drag = false;
         }
 
+        private void btnShowTenant_Click(object sender, EventArgs e)
+        {
+            TimeTenant.Start();
+        }
+
+        private void TimeTenant_Tick(object sender, EventArgs e)
+        {
+            int change = TenantCollapse ? -10 : 10;
+
+            flpTenant.Height += change;
+
+            if ((TenantCollapse && flpTenant.Height <= flpTenant.MinimumSize.Height) ||
+                (!TenantCollapse && flpTenant.Height >= flpTenant.MaximumSize.Height))
+            {
+                TenantCollapse = !TenantCollapse;
+                TimeTenant.Stop();
+            }
+        }
+
+        private void btnShowRoom_Click(object sender, EventArgs e)
+        {
+            TimeRoom.Start();
+        }
+
+        private void TimeRoom_Tick(object sender, EventArgs e)
+        {
+            int change = roomClps ? -10 : 10;
+
+            flpRoom.Height += change;
+
+            if ((roomClps && flpRoom.Height <= flpRoom.MinimumSize.Height) ||
+                (!roomClps && flpRoom.Height >= flpRoom.MaximumSize.Height))
+            {
+                roomClps = !roomClps;
+                TimeRoom.Stop();
+            }
+        }
+
+        private void btnShowStaff_Click(object sender, EventArgs e)
+        {
+            TimeStaff.Start();
+        }
+
+        private void TimeStaff_Tick(object sender, EventArgs e)
+        {
+            int change = StaffCollapse ? -10 : 10;
+
+            flpStaff.Height += change;
+
+            if ((StaffCollapse && flpStaff.Height <= flpStaff.MinimumSize.Height) ||
+                (!StaffCollapse && flpStaff.Height >= flpStaff.MaximumSize.Height))
+            {
+                StaffCollapse = !StaffCollapse;
+                TimeStaff.Stop();
+            }
+        }
+
+        private void btnDashBoard_Click_1(object sender, EventArgs e)
+        {
+            dashBoard d1 = new dashBoard();
+
+            d1.TopLevel = false;
+            d1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(d1);
+            d1.BringToFront();
+            d1.Show();
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            room_tenant_add r1 = new room_tenant_add();
+            r1.TopLevel = false;
+            r1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            r1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(r1);
+            r1.BringToFront();
+            r1.Show();
+        }
+
+        private void btnManageRoom_Click(object sender, EventArgs e)
+        {
+            frmManage_rm rm1 = new frmManage_rm();
+            rm1.TopLevel = false;
+            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(rm1);
+            rm1.BringToFront();
+            rm1.Show();
+        }
+
+        private void btnCreateTenant_Click(object sender, EventArgs e)
+        {
+            Create_Staff_Acc staff1 = new Create_Staff_Acc();
+            staff1.TopLevel = false;
+            staff1.Dock = DockStyle.Fill;
+            this.Controls.Add(staff1);
+            staff1.BringToFront();
+            staff1.Show();
+
+        }
+
+        private void btnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            frmCustomer c1 = new frmCustomer();
+            c1.TopLevel = false;
+            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            c1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(c1);
+            c1.BringToFront();
+            c1.Show();
+        }
+
+        private void btnManageTenant_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (drag)
@@ -175,5 +238,35 @@ namespace boardingHouseProj
 
             }
         }
+
+        private void timeNavi_Tick(object sender, EventArgs e)
+        {
+            const int StepSize = 10;
+
+            if (menuExpand)
+            {
+                flpMain.Width -= StepSize;
+            }
+            else
+            {
+                flpMain.Width += StepSize;
+            }
+
+            bool isAtMinimumSize = (flpMain.Width == flpMain.MinimumSize.Width);
+            bool isAtMaximumSize = (flpMain.Width == flpMain.MaximumSize.Width);
+
+            if (isAtMinimumSize || isAtMaximumSize)
+            {
+                menuExpand = !menuExpand;
+                timeNavi.Stop();
+            }
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            timeNavi.Start();
+        }
     }
 }
+    

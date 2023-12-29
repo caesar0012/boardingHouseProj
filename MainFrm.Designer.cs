@@ -39,25 +39,25 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(137, 435);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(131, 435);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(137, 0);
+            this.panel1.Location = new System.Drawing.Point(131, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(859, 78);
+            this.panel1.Size = new System.Drawing.Size(865, 78);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(137, 78);
+            this.panel2.Location = new System.Drawing.Point(131, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(859, 357);
+            this.panel2.Size = new System.Drawing.Size(865, 357);
             this.panel2.TabIndex = 1;
             // 
             // MainFrm

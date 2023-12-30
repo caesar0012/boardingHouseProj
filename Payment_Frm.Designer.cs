@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPayment = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtRef = new System.Windows.Forms.TextBox();
             this.gcashPanel = new System.Windows.Forms.Panel();
+            this.btnAddOn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPayment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,25 +60,25 @@
             // 
             this.dgPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPayment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgPayment.EnableHeadersVisualStyles = false;
-            this.dgPayment.Location = new System.Drawing.Point(357, 32);
+            this.dgPayment.Location = new System.Drawing.Point(357, 52);
             this.dgPayment.Name = "dgPayment";
             this.dgPayment.RowHeadersVisible = false;
             this.dgPayment.Size = new System.Drawing.Size(561, 367);
@@ -101,7 +102,7 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Location = new System.Drawing.Point(252, 221);
+            this.btnConfirm.Location = new System.Drawing.Point(57, 463);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.TabIndex = 16;
@@ -151,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(536, 426);
+            this.label7.Location = new System.Drawing.Point(536, 446);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 16);
             this.label7.TabIndex = 29;
@@ -159,7 +160,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(576, 422);
+            this.txtTotal.Location = new System.Drawing.Point(576, 442);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(203, 20);
             this.txtTotal.TabIndex = 28;
@@ -280,12 +281,26 @@
             this.gcashPanel.Size = new System.Drawing.Size(291, 100);
             this.gcashPanel.TabIndex = 42;
             // 
+            // btnAddOn
+            // 
+            this.btnAddOn.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOn.Location = new System.Drawing.Point(183, 464);
+            this.btnAddOn.Name = "btnAddOn";
+            this.btnAddOn.Size = new System.Drawing.Size(123, 23);
+            this.btnAddOn.TabIndex = 43;
+            this.btnAddOn.Text = "Add On";
+            this.btnAddOn.UseVisualStyleBackColor = false;
+            this.btnAddOn.Click += new System.EventHandler(this.btnAddOn_Click);
+            // 
             // Payment_Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 455);
+            this.ClientSize = new System.Drawing.Size(930, 498);
+            this.Controls.Add(this.btnAddOn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtRef);
             this.Controls.Add(this.label8);
@@ -342,5 +357,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtRef;
         private System.Windows.Forms.Panel gcashPanel;
+        private System.Windows.Forms.Button btnAddOn;
     }
 }

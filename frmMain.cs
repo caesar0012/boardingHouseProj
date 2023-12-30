@@ -19,7 +19,7 @@ namespace boardingHouseProj
         bool drag = false;
         Point start_point = new Point(0,0);
 
-        bool menuExpand, TenantCollapse, StaffCollapse, roomClps;
+        bool menuExpand, TenantCollapse, StaffCollapse, roomClps, AdminCollpse;
 
         public frmMain()
         {
@@ -226,7 +226,44 @@ namespace boardingHouseProj
 
         private void btnManageTenant_Click(object sender, EventArgs e)
         {
+            room_tenant_add r1 = new room_tenant_add();
+            r1.TopLevel = false;
+            r1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            r1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(r1);
+            r1.BringToFront();
+            r1.Show();
+        }
 
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payment_Frm p1 = new Payment_Frm();
+            p1.TopLevel = false;
+            p1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            p1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(p1);
+            p1.BringToFront();
+            p1.Show();
+
+        }
+
+        private void btnShowAdmin_Click(object sender, EventArgs e)
+        {
+            TimeAdmin.Start();
+        }
+
+        private void TimeAdmin_Tick(object sender, EventArgs e)
+        {
+            int change = AdminCollpse ? -10 : 10;
+
+            flpAdmin.Height += change;
+
+            if ((AdminCollpse && flpAdmin.Height <= flpAdmin.MinimumSize.Height) ||
+                (!AdminCollpse && flpAdmin.Height >= flpAdmin.MaximumSize.Height))
+            {
+                AdminCollpse = !AdminCollpse;
+                TimeAdmin.Stop();
+            }
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

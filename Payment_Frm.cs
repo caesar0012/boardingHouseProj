@@ -434,5 +434,12 @@ namespace boardingHouseProj
                 e.Handled = true;
             }
         }
+
+        private void btnAddOn_Click(object sender, EventArgs e)
+        {
+            AddOnFrm a1 = new AddOnFrm();
+
+            a1.Show();
+        }
     }
 }

@@ -24,7 +24,13 @@ namespace boardingHouseProj
             {
                 connect.Open();
 
-                string query = "SELECT * FROM Tenant";
+                string query = "Select \r\n\t" +
+                    "e1.Employee_id as ID,\r\n\t" +
+                    "e1.FirstName + ' ' + e1.LastName as Name,\r\n\t" +
+                    "e1.userName,\r\n\t" +
+                    "e1.Role," +
+                    "e1.password\r\n\t" +
+                    "from Employee_acc as e1";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -46,6 +52,25 @@ namespace boardingHouseProj
         private void ManageTenantFrm_Load(object sender, EventArgs e)
         {
             loadTenant();
+        }
+
+        private void dgTenant_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgTenant_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgTenant.Rows[e.RowIndex];
+
+                selectedRow.Selected = true;
+
+                txtID.Text = selectedRow.Cells["Name"].Value.ToString();
+
+
+            }
         }
     }
 }

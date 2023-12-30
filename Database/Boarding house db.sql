@@ -18,6 +18,14 @@ create Table Employee_acc(
 
 );
 
+Select 
+	e1.Employee_id,
+	e1.FirstName + ' ' + e1.LastName as Name,
+	e1.userName,
+	e1.Role,
+	e1.Archive
+from Employee_acc as e1
+
 
 create table Tenant(
 

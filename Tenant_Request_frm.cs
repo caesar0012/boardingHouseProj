@@ -60,7 +60,7 @@ namespace boardingHouseProj
                         using (SqlCommand cmd = new SqlCommand(query, connect))
                         {
 
-                            cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                            cmd.Parameters.AddWithValue("@emp_id", frmLogin.staff_id);
                             cmd.Parameters.AddWithValue("@tenant_id", tenant_id);
                             cmd.Parameters.AddWithValue("@details", txtDetails.Text);
 

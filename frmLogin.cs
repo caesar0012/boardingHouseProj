@@ -18,7 +18,7 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        public static int employee_id = 61;
+        public static int staff_id = 61;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace boardingHouseProj
                 connect.Open();
 
                 //collate mean it was case sensitive comparision for user and pass
-                string query = "SELECT COUNT(*) FROM Employee_acc WHERE userName COLLATE latin1_general_cs_as = @user01 AND password COLLATE latin1_general_cs_as = @pass01 AND Archive = 0";
+                string query = "SELECT COUNT(*) FROM Staff_acc WHERE userName COLLATE latin1_general_cs_as = @user01 AND password COLLATE latin1_general_cs_as = @pass01 AND Archive = 0";
 
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
@@ -56,7 +56,7 @@ namespace boardingHouseProj
 
                     int count = (int)cmd.ExecuteScalar();
 
-                    int retrievedEmployeeID = (int)cmd.ExecuteScalar();
+                    int retrievedStaffID = (int)cmd.ExecuteScalar();
                   //  employee_id = retrievedEmployeeID;
 
                     return count > 0;

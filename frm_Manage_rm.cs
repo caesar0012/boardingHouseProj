@@ -233,8 +233,8 @@ namespace boardingHouseProj
                     
                     connect.Open();
 
-                    string query = "Insert into Room(Room_number, Description, allowed_gender, Capacity, Price, Status, Employee_id) values " +
-                        "(@roomNum, @desc, @gender, @cap, @price, @stats, @emp_id)";
+                    string query = "Insert into Room(Room_number, Description, allowed_gender, Capacity, Price, Status, staff_id) values " +
+                        "(@roomNum, @desc, @gender, @cap, @price, @stats, @staff_id)";
 
                     using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
@@ -244,7 +244,7 @@ namespace boardingHouseProj
                         cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
                         cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                         cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
-                        cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                        cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
                         cmd.ExecuteNonQuery();
                     }

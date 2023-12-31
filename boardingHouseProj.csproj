@@ -126,12 +126,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainFrm.Designer.cs">
-      <DependentUpon>MainFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManageTenantFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +180,12 @@
     <Compile Include="Staff_Module_Frm.Designer.cs">
       <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TenantManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenantManage.Designer.cs">
+      <DependentUpon>TenantManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenantPopUp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,9 +234,6 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainFrm.resx">
-      <DependentUpon>MainFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManageTenantFrm.resx">
       <DependentUpon>ManageTenantFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff_Module_Frm.resx">
       <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenantManage.resx">
+      <DependentUpon>TenantManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TenantPopUp.resx">
       <DependentUpon>TenantPopUp.cs</DependentUpon>

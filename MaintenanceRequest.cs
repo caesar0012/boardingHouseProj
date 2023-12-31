@@ -34,12 +34,12 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Insert into Maintenance(Employee_id, Details) values" +
-                    "(@emp_id, @details)";
+                string query = "Insert into Maintenance(staff_id, Details) values" +
+                    "(@staff_id, @details)";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@details", txtDescription.Text);
 
                     cmd.ExecuteNonQuery();

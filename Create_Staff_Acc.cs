@@ -103,7 +103,7 @@ namespace boardingHouseProj
                             }
                         }
 
-                        string query = "insert into Employee_acc(FirstName, Lastname, ProfilePic, Contact, userName, password," +
+                        string query = "insert into Staff_acc(FirstName, Lastname, ProfilePic, Contact, userName, password," +
                             "forgotQuestion, forgotAnswer, Role) values (@FirstName, @Lastname, @ProfilePic, @Contact, @userName, @password," +
                             "@forgotQuestion, @forgotAnswer, @Role)";
 

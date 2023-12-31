@@ -55,13 +55,13 @@ namespace boardingHouseProj
 
                 int leaseID = GetLeaseID();
 
-                string query = "Insert into Addon(lease_id, emp_id, addOnAmount, AddonDetails) values" +
-                    "(@lease_id, @emp_id, @addAmount, @addDetails)";
+                string query = "Insert into Addon(lease_id, staff_id, addOnAmount, AddonDetails) values" +
+                    "(@lease_id, @staff_id, @addAmount, @addDetails)";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)){
 
                     cmd.Parameters.AddWithValue("@lease_id", leaseID);
-                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@addAmount", double.Parse(txtPrice.Text));
                     cmd.Parameters.AddWithValue("@addDetails", txtDetails.Text);
 

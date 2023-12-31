@@ -27,8 +27,8 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Update Employee_acc set ProfilePic = @profile ,UserName = @user, Password = @pass, ForgotQuestion = @forgQuestion, ForgotAnswer = @forgotAnswer, Contact = @contact " +
-                    "where Employee_id = @emp_id";
+                string query = "Update Staff_acc set ProfilePic = @profile ,UserName = @user, Password = @pass, ForgotQuestion = @forgQuestion, ForgotAnswer = @forgotAnswer, Contact = @contact " +
+                    "where staff_id = @staff_id";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
@@ -49,7 +49,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@forgQuestion", cmbQuestionPass.Text);
                     cmd.Parameters.AddWithValue("@forgotAnswer", txtAnswerQuestion.Text);
                     cmd.Parameters.AddWithValue("@contact", txtContact.Text);
-                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -63,10 +63,10 @@ namespace boardingHouseProj
             {
                 connect.Open();
 
-                string query = "Select * from Employee_acc where Employee_id = @emp_id";
+                string query = "Select * from Staff_acc where staff_id = @staff_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
-                cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -145,11 +145,11 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Select * from Employee_acc where Employee_id = @emp_id";
+                string query = "Select * from Staff_acc where staff_id = @staff_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
-                cmd.Parameters.AddWithValue("emp_id", frmLogin.employee_id); //change this for employee_id from login.cs
+                cmd.Parameters.AddWithValue("staff_id", frmLogin.staff_id); //change this for employee_id from login.cs
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

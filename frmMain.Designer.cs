@@ -39,8 +39,12 @@
             this.btnManageRoom = new System.Windows.Forms.Button();
             this.flpTenant = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShowTenant = new System.Windows.Forms.Button();
-            this.btnManageTenant = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
             this.btnCreateTenant = new System.Windows.Forms.Button();
+            this.flpAdmin = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnShowAdmin = new System.Windows.Forms.Button();
+            this.btnActivities = new System.Windows.Forms.Button();
+            this.btnBackReco = new System.Windows.Forms.Button();
             this.flpStaff = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShowStaff = new System.Windows.Forms.Button();
             this.btnManageStaff = new System.Windows.Forms.Button();
@@ -52,19 +56,15 @@
             this.TimeTenant = new System.Windows.Forms.Timer(this.components);
             this.TimeRoom = new System.Windows.Forms.Timer(this.components);
             this.TimeStaff = new System.Windows.Forms.Timer(this.components);
-            this.flpAdmin = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnShowAdmin = new System.Windows.Forms.Button();
-            this.btnActivities = new System.Windows.Forms.Button();
-            this.btnBackReco = new System.Windows.Forms.Button();
-            this.btnPayment = new System.Windows.Forms.Button();
             this.TimeAdmin = new System.Windows.Forms.Timer(this.components);
+            this.btnManageTenant = new System.Windows.Forms.Button();
             this.profileMain = new boardingHouseProj.RoundPictureBox();
             this.flpMain.SuspendLayout();
             this.flpRoom.SuspendLayout();
             this.flpTenant.SuspendLayout();
+            this.flpAdmin.SuspendLayout();
             this.flpStaff.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flpAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,10 +72,11 @@
             // 
             this.flpMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flpMain.Controls.Add(this.btnMenu);
-            this.flpMain.Controls.Add(this.btnDashBoard);
+            this.flpMain.Controls.Add(this.flpStaff);
             this.flpMain.Controls.Add(this.flpRoom);
-            this.flpMain.Controls.Add(this.flpTenant);
+            this.flpMain.Controls.Add(this.btnDashBoard);
             this.flpMain.Controls.Add(this.flpAdmin);
+            this.flpMain.Controls.Add(this.flpTenant);
             this.flpMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMain.Location = new System.Drawing.Point(0, 87);
             this.flpMain.MaximumSize = new System.Drawing.Size(186, 501);
@@ -112,7 +113,7 @@
             this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashBoard.Location = new System.Drawing.Point(3, 59);
+            this.btnDashBoard.Location = new System.Drawing.Point(3, 171);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(180, 54);
             this.btnDashBoard.TabIndex = 13;
@@ -126,7 +127,7 @@
             this.flpRoom.Controls.Add(this.btnShowRoom);
             this.flpRoom.Controls.Add(this.btnReservation);
             this.flpRoom.Controls.Add(this.btnManageRoom);
-            this.flpRoom.Location = new System.Drawing.Point(1, 117);
+            this.flpRoom.Location = new System.Drawing.Point(1, 113);
             this.flpRoom.Margin = new System.Windows.Forms.Padding(1);
             this.flpRoom.MaximumSize = new System.Drawing.Size(179, 140);
             this.flpRoom.MinimumSize = new System.Drawing.Size(179, 54);
@@ -190,12 +191,12 @@
             this.flpTenant.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flpTenant.Controls.Add(this.btnShowTenant);
             this.flpTenant.Controls.Add(this.btnPayment);
-            this.flpTenant.Controls.Add(this.btnManageTenant);
             this.flpTenant.Controls.Add(this.btnCreateTenant);
+            this.flpTenant.Controls.Add(this.btnManageTenant);
             this.flpTenant.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flpTenant.Location = new System.Drawing.Point(1, 173);
+            this.flpTenant.Location = new System.Drawing.Point(1, 285);
             this.flpTenant.Margin = new System.Windows.Forms.Padding(1);
-            this.flpTenant.MaximumSize = new System.Drawing.Size(179, 179);
+            this.flpTenant.MaximumSize = new System.Drawing.Size(179, 180);
             this.flpTenant.MinimumSize = new System.Drawing.Size(179, 54);
             this.flpTenant.Name = "flpTenant";
             this.flpTenant.Size = new System.Drawing.Size(179, 54);
@@ -219,31 +220,31 @@
             this.btnShowTenant.UseVisualStyleBackColor = false;
             this.btnShowTenant.Click += new System.EventHandler(this.btnShowTenant_Click);
             // 
-            // btnManageTenant
+            // btnPayment
             // 
-            this.btnManageTenant.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnManageTenant.BackColor = System.Drawing.Color.Transparent;
-            this.btnManageTenant.FlatAppearance.BorderSize = 0;
-            this.btnManageTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageTenant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnManageTenant.Location = new System.Drawing.Point(3, 103);
-            this.btnManageTenant.Name = "btnManageTenant";
-            this.btnManageTenant.Size = new System.Drawing.Size(176, 34);
-            this.btnManageTenant.TabIndex = 12;
-            this.btnManageTenant.Text = "Reservation";
-            this.btnManageTenant.UseVisualStyleBackColor = false;
-            this.btnManageTenant.Click += new System.EventHandler(this.btnManageTenant_Click);
+            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnPayment.BackColor = System.Drawing.Color.DarkGray;
+            this.btnPayment.FlatAppearance.BorderSize = 0;
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnPayment.Location = new System.Drawing.Point(3, 63);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(176, 34);
+            this.btnPayment.TabIndex = 15;
+            this.btnPayment.Text = "Payment";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnCreateTenant
             // 
             this.btnCreateTenant.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCreateTenant.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCreateTenant.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCreateTenant.FlatAppearance.BorderSize = 0;
             this.btnCreateTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateTenant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCreateTenant.Location = new System.Drawing.Point(3, 143);
+            this.btnCreateTenant.Location = new System.Drawing.Point(3, 103);
             this.btnCreateTenant.Name = "btnCreateTenant";
             this.btnCreateTenant.Size = new System.Drawing.Size(176, 34);
             this.btnCreateTenant.TabIndex = 14;
@@ -251,18 +252,83 @@
             this.btnCreateTenant.UseVisualStyleBackColor = false;
             this.btnCreateTenant.Click += new System.EventHandler(this.btnCreateTenant_Click);
             // 
+            // flpAdmin
+            // 
+            this.flpAdmin.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.flpAdmin.Controls.Add(this.btnShowAdmin);
+            this.flpAdmin.Controls.Add(this.btnActivities);
+            this.flpAdmin.Controls.Add(this.btnBackReco);
+            this.flpAdmin.Location = new System.Drawing.Point(1, 229);
+            this.flpAdmin.Margin = new System.Windows.Forms.Padding(1);
+            this.flpAdmin.MaximumSize = new System.Drawing.Size(179, 140);
+            this.flpAdmin.MinimumSize = new System.Drawing.Size(179, 54);
+            this.flpAdmin.Name = "flpAdmin";
+            this.flpAdmin.Size = new System.Drawing.Size(179, 54);
+            this.flpAdmin.TabIndex = 16;
+            // 
+            // btnShowAdmin
+            // 
+            this.btnShowAdmin.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnShowAdmin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnShowAdmin.FlatAppearance.BorderSize = 0;
+            this.btnShowAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAdmin.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnShowAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAdmin.Image")));
+            this.btnShowAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowAdmin.Location = new System.Drawing.Point(3, 3);
+            this.btnShowAdmin.MinimumSize = new System.Drawing.Size(160, 54);
+            this.btnShowAdmin.Name = "btnShowAdmin";
+            this.btnShowAdmin.Size = new System.Drawing.Size(176, 54);
+            this.btnShowAdmin.TabIndex = 10;
+            this.btnShowAdmin.Text = "Admin";
+            this.btnShowAdmin.UseVisualStyleBackColor = false;
+            this.btnShowAdmin.Click += new System.EventHandler(this.btnShowAdmin_Click);
+            // 
+            // btnActivities
+            // 
+            this.btnActivities.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnActivities.BackColor = System.Drawing.Color.Transparent;
+            this.btnActivities.FlatAppearance.BorderSize = 0;
+            this.btnActivities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivities.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivities.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnActivities.Location = new System.Drawing.Point(3, 63);
+            this.btnActivities.Name = "btnActivities";
+            this.btnActivities.Size = new System.Drawing.Size(176, 31);
+            this.btnActivities.TabIndex = 11;
+            this.btnActivities.Text = "Activities";
+            this.btnActivities.UseVisualStyleBackColor = false;
+            this.btnActivities.Click += new System.EventHandler(this.btnActivities_Click);
+            // 
+            // btnBackReco
+            // 
+            this.btnBackReco.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBackReco.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackReco.FlatAppearance.BorderSize = 0;
+            this.btnBackReco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackReco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackReco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnBackReco.Location = new System.Drawing.Point(3, 100);
+            this.btnBackReco.Name = "btnBackReco";
+            this.btnBackReco.Size = new System.Drawing.Size(176, 34);
+            this.btnBackReco.TabIndex = 12;
+            this.btnBackReco.Text = "Backup and Recovery";
+            this.btnBackReco.UseVisualStyleBackColor = false;
+            this.btnBackReco.Click += new System.EventHandler(this.btnBackReco_Click);
+            // 
             // flpStaff
             // 
             this.flpStaff.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flpStaff.Controls.Add(this.btnShowStaff);
             this.flpStaff.Controls.Add(this.btnManageStaff);
             this.flpStaff.Controls.Add(this.btnCreateEmployee);
-            this.flpStaff.Location = new System.Drawing.Point(690, 175);
+            this.flpStaff.Location = new System.Drawing.Point(1, 57);
             this.flpStaff.Margin = new System.Windows.Forms.Padding(1);
             this.flpStaff.MaximumSize = new System.Drawing.Size(179, 140);
             this.flpStaff.MinimumSize = new System.Drawing.Size(179, 54);
             this.flpStaff.Name = "flpStaff";
-            this.flpStaff.Size = new System.Drawing.Size(179, 140);
+            this.flpStaff.Size = new System.Drawing.Size(179, 54);
             this.flpStaff.TabIndex = 15;
             // 
             // btnShowStaff
@@ -298,6 +364,7 @@
             this.btnManageStaff.TabIndex = 11;
             this.btnManageStaff.Text = "Manage Staff";
             this.btnManageStaff.UseVisualStyleBackColor = false;
+            this.btnManageStaff.Click += new System.EventHandler(this.btnManageStaff_Click);
             // 
             // btnCreateEmployee
             // 
@@ -350,7 +417,7 @@
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(781, 28);
+            this.btnExit.Location = new System.Drawing.Point(906, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
@@ -360,7 +427,7 @@
             // 
             // timeNavi
             // 
-            this.timeNavi.Interval = 10;
+            this.timeNavi.Interval = 5;
             this.timeNavi.Tick += new System.EventHandler(this.timeNavi_Tick);
             // 
             // TimeTenant
@@ -378,89 +445,26 @@
             this.TimeStaff.Interval = 10;
             this.TimeStaff.Tick += new System.EventHandler(this.TimeStaff_Tick);
             // 
-            // flpAdmin
-            // 
-            this.flpAdmin.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.flpAdmin.Controls.Add(this.btnShowAdmin);
-            this.flpAdmin.Controls.Add(this.btnActivities);
-            this.flpAdmin.Controls.Add(this.btnBackReco);
-            this.flpAdmin.Location = new System.Drawing.Point(1, 229);
-            this.flpAdmin.Margin = new System.Windows.Forms.Padding(1);
-            this.flpAdmin.MaximumSize = new System.Drawing.Size(179, 140);
-            this.flpAdmin.MinimumSize = new System.Drawing.Size(179, 54);
-            this.flpAdmin.Name = "flpAdmin";
-            this.flpAdmin.Size = new System.Drawing.Size(179, 54);
-            this.flpAdmin.TabIndex = 16;
-            // 
-            // btnShowAdmin
-            // 
-            this.btnShowAdmin.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowAdmin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnShowAdmin.FlatAppearance.BorderSize = 0;
-            this.btnShowAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAdmin.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnShowAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAdmin.Image")));
-            this.btnShowAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowAdmin.Location = new System.Drawing.Point(3, 3);
-            this.btnShowAdmin.MinimumSize = new System.Drawing.Size(160, 54);
-            this.btnShowAdmin.Name = "btnShowAdmin";
-            this.btnShowAdmin.Size = new System.Drawing.Size(176, 54);
-            this.btnShowAdmin.TabIndex = 10;
-            this.btnShowAdmin.Text = "Admin";
-            this.btnShowAdmin.UseVisualStyleBackColor = false;
-            this.btnShowAdmin.Click += new System.EventHandler(this.btnShowAdmin_Click);
-            // 
-            // btnActivities
-            // 
-            this.btnActivities.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnActivities.BackColor = System.Drawing.Color.Transparent;
-            this.btnActivities.FlatAppearance.BorderSize = 0;
-            this.btnActivities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActivities.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActivities.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnActivities.Location = new System.Drawing.Point(3, 63);
-            this.btnActivities.Name = "btnActivities";
-            this.btnActivities.Size = new System.Drawing.Size(176, 31);
-            this.btnActivities.TabIndex = 11;
-            this.btnActivities.Text = "Activities";
-            this.btnActivities.UseVisualStyleBackColor = false;
-            // 
-            // btnBackReco
-            // 
-            this.btnBackReco.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnBackReco.BackColor = System.Drawing.Color.Transparent;
-            this.btnBackReco.FlatAppearance.BorderSize = 0;
-            this.btnBackReco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackReco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackReco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnBackReco.Location = new System.Drawing.Point(3, 100);
-            this.btnBackReco.Name = "btnBackReco";
-            this.btnBackReco.Size = new System.Drawing.Size(176, 34);
-            this.btnBackReco.TabIndex = 12;
-            this.btnBackReco.Text = "Backup and Recovery";
-            this.btnBackReco.UseVisualStyleBackColor = false;
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnPayment.BackColor = System.Drawing.Color.DarkGray;
-            this.btnPayment.FlatAppearance.BorderSize = 0;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnPayment.Location = new System.Drawing.Point(3, 63);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(176, 34);
-            this.btnPayment.TabIndex = 15;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-            // 
             // TimeAdmin
             // 
             this.TimeAdmin.Interval = 10;
             this.TimeAdmin.Tick += new System.EventHandler(this.TimeAdmin_Tick);
+            // 
+            // btnManageTenant
+            // 
+            this.btnManageTenant.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnManageTenant.BackColor = System.Drawing.Color.DarkGray;
+            this.btnManageTenant.FlatAppearance.BorderSize = 0;
+            this.btnManageTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageTenant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnManageTenant.Location = new System.Drawing.Point(3, 143);
+            this.btnManageTenant.Name = "btnManageTenant";
+            this.btnManageTenant.Size = new System.Drawing.Size(176, 34);
+            this.btnManageTenant.TabIndex = 16;
+            this.btnManageTenant.Text = "Manage Tenant";
+            this.btnManageTenant.UseVisualStyleBackColor = false;
+            this.btnManageTenant.Click += new System.EventHandler(this.btnManageTenant_Click_1);
             // 
             // profileMain
             // 
@@ -483,7 +487,6 @@
             this.ClientSize = new System.Drawing.Size(995, 588);
             this.Controls.Add(this.flpMain);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flpStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -492,10 +495,10 @@
             this.flpMain.ResumeLayout(false);
             this.flpRoom.ResumeLayout(false);
             this.flpTenant.ResumeLayout(false);
+            this.flpAdmin.ResumeLayout(false);
             this.flpStaff.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flpAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -505,7 +508,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpMain;
         private System.Windows.Forms.Button btnDashBoard;
-        private System.Windows.Forms.Button btnManageTenant;
         private System.Windows.Forms.Button btnShowStaff;
         private System.Windows.Forms.Button btnShowRoom;
         private System.Windows.Forms.Panel panel1;
@@ -532,6 +534,7 @@
         private System.Windows.Forms.Button btnBackReco;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Timer TimeAdmin;
+        private System.Windows.Forms.Button btnManageTenant;
     }
 }
 

@@ -54,7 +54,7 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Select count(*) from Employee_acc where userName COLLATE latin1_general_cs_as = @user and forgotQuestion = @forgotQ and forgotAnswer = @forgotAns and Archive = 0";
+                string query = "Select count(*) from Staff_acc where userName COLLATE latin1_general_cs_as = @user and forgotQuestion = @forgotQ and forgotAnswer = @forgotAns and Archive = 0";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {

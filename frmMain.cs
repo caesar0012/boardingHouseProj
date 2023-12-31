@@ -45,19 +45,19 @@ namespace boardingHouseProj
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Employee_acc WHERE Employee_id = @emp_id";
+                    string query = "SELECT * FROM Staff_acc WHERE Staff_id = @Staff_id";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                        command.Parameters.AddWithValue("@Staff_id", frmLogin.staff_id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                if (int.TryParse(reader["Employee_id"].ToString(), out int employeeId))
+                                if (int.TryParse(reader["Staff_id"].ToString(), out int Staff_id))
                                 {
-                                    frmLogin.employee_id = employeeId;
+                                    frmLogin.staff_id = Staff_id;
                                 }
 
                                 byte[] img = reader["ProfilePic"] as byte[];
@@ -153,6 +153,7 @@ namespace boardingHouseProj
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
             TimeStaff.Start();
+            
         }
 
         private void TimeStaff_Tick(object sender, EventArgs e)
@@ -178,6 +179,8 @@ namespace boardingHouseProj
             this.Controls.Add(d1);
             d1.BringToFront();
             d1.Show();
+
+            timeNavi.Start();
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
@@ -189,6 +192,9 @@ namespace boardingHouseProj
             this.Controls.Add(r1);
             r1.BringToFront();
             r1.Show();
+
+            TimeRoom.Start();
+            timeNavi.Start();
         }
 
         private void btnManageRoom_Click(object sender, EventArgs e)
@@ -200,9 +206,28 @@ namespace boardingHouseProj
             this.Controls.Add(rm1);
             rm1.BringToFront();
             rm1.Show();
+
+            TimeRoom.Start();
+            timeNavi.Start();
         }
 
         private void btnCreateTenant_Click(object sender, EventArgs e)
+        {
+
+            frmCustomer c1 = new frmCustomer();
+            c1.TopLevel = false;
+            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            c1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(c1);
+            c1.BringToFront();
+            c1.Show();
+
+            TimeTenant.Start();
+            timeNavi.Start();
+
+        }
+
+        private void btnCreateEmployee_Click(object sender, EventArgs e)
         {
             Create_Staff_Acc staff1 = new Create_Staff_Acc();
             staff1.TopLevel = false;
@@ -211,28 +236,13 @@ namespace boardingHouseProj
             staff1.BringToFront();
             staff1.Show();
 
-        }
-
-        private void btnCreateEmployee_Click(object sender, EventArgs e)
-        {
-            frmCustomer c1 = new frmCustomer();
-            c1.TopLevel = false;
-            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(c1);
-            c1.BringToFront();
-            c1.Show();
+            TimeStaff.Start();
+            timeNavi.Start();
         }
 
         private void btnManageTenant_Click(object sender, EventArgs e)
         {
-            room_tenant_add r1 = new room_tenant_add();
-            r1.TopLevel = false;
-            r1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            r1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(r1);
-            r1.BringToFront();
-            r1.Show();
+
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -245,11 +255,46 @@ namespace boardingHouseProj
             p1.BringToFront();
             p1.Show();
 
+            TimeTenant.Start();
+            timeNavi.Start();
+
         }
 
         private void btnShowAdmin_Click(object sender, EventArgs e)
         {
             TimeAdmin.Start();
+        }
+
+        private void btnBackReco_Click(object sender, EventArgs e)
+        {
+            TimeAdmin.Start();
+            timeNavi.Start();
+        }
+
+        private void btnManageStaff_Click(object sender, EventArgs e)
+        {
+            ManageTenantFrm m1 = new ManageTenantFrm();
+            m1.TopLevel = false;
+            m1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            m1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(m1);
+            m1.BringToFront();
+            m1.Show();
+
+            TimeStaff.Start();
+            timeNavi.Start();
+        }
+
+        private void btnActivities_Click(object sender, EventArgs e)
+        {
+            TimeAdmin.Start();
+            timeNavi.Start();
+        }
+
+        private void btnManageTenant_Click_1(object sender, EventArgs e)
+        {
+            TimeTenant.Start();
+            timeNavi.Start();
         }
 
         private void TimeAdmin_Tick(object sender, EventArgs e)

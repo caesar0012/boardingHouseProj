@@ -31,7 +31,21 @@ namespace boardingHouseProj
 
         private void Payment_Frm_Load(object sender, EventArgs e)
         {
-            FilterLoad("Select\r\n\tt1.Tenant_id,\r\n\tt1.FirstName + ' ' + t1.LastName as Name,\r\n\tt1.Gender,\r\n\tr1.Room_number,\r\n\tl1.assign_bed, l1.MonthlyPayment as Rent\r\nFrom Tenant as t1\r\nleft join lease_tbl as l1\r\non t1.Tenant_id = l1.Tenant_id\r\nleft join Room as r1\r\non l1.room_id = r1.Room_id\r\nleft join Payment as p1\r\non l1.Tenant_id = t1.Tenant_id\r\ngroup by\r\nt1.Tenant_id, t1.FirstName, t1.LastName, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment;");
+            FilterLoad("Select\r\n\t" +
+                "t1.Tenant_id,\r\n\t" +
+                "t1.FirstName + ' ' + t1.LastName as Name,\r\n\t" +
+                "t1.Gender,\r\n\t" +
+                "r1.Room_number,\r\n\t" +
+                "l1.assign_bed, l1.MonthlyPayment as Rent\r\n" +
+                "From Tenant as t1\r\n" +
+                "left join lease_tbl as l1\r\n" +
+                "on t1.Tenant_id = l1.Tenant_id\r\n" +
+                "left join Room as r1\r\n" +
+                "on l1.room_id = r1.Room_id\r\n" +
+                "left join Payment as p1\r\n" +
+                "on l1.Tenant_id = t1.Tenant_id\r\n" +
+                "group by\r\n" +
+                "t1.Tenant_id, t1.FirstName, t1.LastName, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment;");
 
             //loadListBox();
 
@@ -155,12 +169,12 @@ namespace boardingHouseProj
 
                 int setLease = getLease_id();
 
-                string query = "Insert into Payment(Employee_id, lease_id, Amount_paid, Payment_type)values" +
-                    "(@emp_id, @leaseID, @AmountPaid, @PaymentType)";
+                string query = "Insert into Payment(staff_id, lease_id, Amount_paid, Payment_type)values" +
+                    "(@staff_id, @leaseID, @AmountPaid, @PaymentType)";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@leaseID", setLease);
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
                     cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
@@ -200,13 +214,13 @@ namespace boardingHouseProj
 
                         int setLease = getLease_id();
 
-                        string query = "Insert into Payment(Employee_id, lease_id, Amount_paid, Payment_type, SenderName, Contact, Reference)values" +
-                            "(@emp_id, @leaseID, @AmountPaid, @PaymentType, @SName, @contactNo, @Reference)";
+                        string query = "Insert into Payment(staff_id, lease_id, Amount_paid, Payment_type, SenderName, Contact, Reference)values" +
+                            "(@staff_id, @leaseID, @AmountPaid, @PaymentType, @SName, @contactNo, @Reference)";
 
                         using (SqlCommand cmd = new SqlCommand(query, connect))
                         {
 
-                            cmd.Parameters.AddWithValue("@emp_id", frmLogin.employee_id);
+                            cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                             cmd.Parameters.AddWithValue("@leaseID", setLease);
                             cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
                             cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);

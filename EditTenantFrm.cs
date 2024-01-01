@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,19 +20,10 @@ namespace boardingHouseProj
             btnRestore.Visible = false;
         }
 
-        static int tenantID = 0;
+        public static int tenantID = 0;
         private void TenantManage_Load(object sender, EventArgs e)
         {
-            loadGrid();
-        }
-
-        private void loadGrid() {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-
-                connect.Open();
-
-                string query = "Select \r\n    " +
+            string query = "Select \r\n    " +
                     "Tenant_id as ID,\r\n    " +
                     "FirstName + ' ' + LastName as Name,\r\n    " +
                     "Gender,\r\n    " +
@@ -42,6 +34,15 @@ namespace boardingHouseProj
                     "School,\r\n    " +
                     "Address\r\n" +
                     "from Tenant where Archive = 0";
+
+            loadGrid(query);
+        }
+
+        private void loadGrid(string query) {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -119,9 +120,20 @@ namespace boardingHouseProj
 
                 string query = "Update Tenant set FirstName = @Fname, LastName = @LName, Gender = @gender, Contact = @contact," +
                     "Emergency_name = @emergeName, Emergency_contact = @emergeCon, Relationship = @relation, School = @school," +
-                    "Address = @address where Tenant_id = @tnt_id";
+                    "Address = @address, Document_pic = @docs where Tenant_id = @tnt_id";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+
+                    byte[] imageData = null;
+                    if (imgFilePath != null && imgFilePath != "")
+                    {
+                        using (FileStream fileStream = new FileStream(imgFilePath, FileMode.Open, FileAccess.Read))
+                        {
+                            imageData = new byte[fileStream.Length];
+                            fileStream.Read(imageData, 0, imageData.Length);
+                        }
+                    }
 
                     cmd.Parameters.AddWithValue("@Fname", txtFirstName.Text);
                     cmd.Parameters.AddWithValue("@LName", txtLastName.Text);
@@ -132,6 +144,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@relation", txtRelationship.Text);
                     cmd.Parameters.AddWithValue("@school", txtSchool.Text);
                     cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@docs", imageData);
                     cmd.Parameters.AddWithValue("@tnt_id", tenantID);
 
                     cmd.ExecuteNonQuery();
@@ -181,18 +194,107 @@ namespace boardingHouseProj
         {
             if (cmbArchive.Text == "Default")
             {
+                btnUpdate.Enabled = true;
 
                 btnRestore.Visible = false;
                 btnDel.Visible = true;
 
+                TenantManage_Load(sender, e);
+
             }
             else {
 
+                btnUpdate.Enabled = false;
+
                 btnDel.Visible = false;
                 btnRestore.Visible = true;
-            
-            
+
+                string query = "Select \r\n    " +
+                    "Tenant_id as ID,\r\n    " +
+                    "FirstName + ' ' + LastName as Name,\r\n    " +
+                    "Gender,\r\n    " +
+                    "Contact,\r\n    " +
+                    "Emergency_name,\r\n    " +
+                    "Emergency_contact, \r\n    " +
+                    "Relationship,\r\n    " +
+                    "School,\r\n    " +
+                    "Address\r\n" +
+                    "from Tenant where Archive = 1";
+
+                loadGrid(query); //function for showing datagrid from sql
+
             }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to restore " + txtFirstName.Text + " " + txtLastName.Text
+                + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the result
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
+
+                    connect.Open();
+
+                    string query = "Update Tenant set Archive = 0 where Tenant_id = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+
+                        cmd.Parameters.AddWithValue("@id", tenantID);
+
+                        cmd.ExecuteNonQuery();
+
+                        loadGrid("Select \r\n    " +
+                    "Tenant_id as ID,\r\n    " +
+                    "FirstName + ' ' + LastName as Name,\r\n    " +
+                    "Gender,\r\n    " +
+                    "Contact,\r\n    " +
+                    "Emergency_name,\r\n    " +
+                    "Emergency_contact, \r\n    " +
+                    "Relationship,\r\n    " +
+                    "School,\r\n    " +
+                    "Address\r\n" +
+                    "from Tenant where Archive = 1");
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+        string imgFilePath = "";
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //instance of Openfile dialog so I dont have to open filedialog on the designer
+                OpenFileDialog ofdProfile = new OpenFileDialog();
+
+                //this filters the file that profile picture can accept
+                ofdProfile.Filter = "png files(*.png) | *.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+
+                //if the picture was selected it the filepath will be pass to the imgFilePath
+                if (ofdProfile.ShowDialog() == DialogResult.OK)
+                {
+                    imgFilePath = ofdProfile.FileName.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            ViewFileTenant vft = new ViewFileTenant();
+            vft.ShowDialog();
         }
     }
 }

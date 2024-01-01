@@ -168,6 +168,11 @@ namespace boardingHouseProj
         {
 
         }
+
+        private void pb_tenantDoc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

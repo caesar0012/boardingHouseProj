@@ -171,6 +171,7 @@
             this.pb_tenantDoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_tenantDoc.TabIndex = 28;
             this.pb_tenantDoc.TabStop = false;
+            this.pb_tenantDoc.Click += new System.EventHandler(this.pb_tenantDoc_Click);
             // 
             // label2
             // 

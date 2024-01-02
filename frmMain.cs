@@ -293,6 +293,16 @@ namespace boardingHouseProj
 
         private void btnManageTenant_Click_1(object sender, EventArgs e)
         {
+            EditTenantFrm e1 = new EditTenantFrm();
+
+            e1.TopLevel = false;
+            e1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            e1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(e1);
+            e1.BringToFront();
+            e1.Show();
+
+
             TimeTenant.Start();
             timeNavi.Start();
         }

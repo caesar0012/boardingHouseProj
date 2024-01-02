@@ -128,6 +128,11 @@ namespace boardingHouseProj
 
         private void txtRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
+
+        }
+
+        private void txtCapacity_KeyPress(object sender, KeyPressEventArgs e)
+        {
             // Check if the key is not a control key, a digit, or a minus sign
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
             {
@@ -138,11 +143,6 @@ namespace boardingHouseProj
             {
                 e.Handled = true; // Ignore the '-' key
             }
-        }
-
-        private void txtCapacity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            txtRoomNumber_KeyPress(sender, e);
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace boardingHouseProj
                         cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
                         cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                         cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
-                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+                        cmd.Parameters.AddWithValue("@roomNum", txtRoomNumber.Text);
 
                         cmd.ExecuteNonQuery();
 
@@ -238,7 +238,7 @@ namespace boardingHouseProj
 
                     using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                        cmd.Parameters.AddWithValue("@roomNum", int.Parse(txtRoomNumber.Text));
+                        cmd.Parameters.AddWithValue("@roomNum", txtRoomNumber.Text);
                         cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
                         cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
@@ -272,9 +272,6 @@ namespace boardingHouseProj
                 }
             }
         }
-
-        
-
     }
 }
    

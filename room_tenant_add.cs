@@ -300,14 +300,14 @@ namespace boardingHouseProj
                         }
                         else
                         {
-                            query = "INSERT INTO lease_tbl (Tenant_id, Employee_id, room_id, assign_bed, " +
+                            query = "INSERT INTO lease_tbl (Tenant_id, Staff_id, room_id, assign_bed, " +
                                     "MonthlyPayment, DepositAmount, StartLease, EndLease) " +
-                                    "VALUES (@tenant_id, @emp_id, @room_id, @assignBed, @monthly, @Deposit, @start, @end)";
+                                    "VALUES (@tenant_id, @staff_id, @room_id, @assignBed, @monthly, @Deposit, @start, @end)";
 
                             using (SqlCommand command = new SqlCommand(query, connect))
                             {
                                 command.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
-                                command.Parameters.AddWithValue("@emp_id", frmLogin.staff_id);
+                                command.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                                 command.Parameters.AddWithValue("@room_id", roomNum1);
                                 command.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
                                 command.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
@@ -433,7 +433,7 @@ namespace boardingHouseProj
 
                         int count = (int)cmd.ExecuteScalar();
 
-                        if (count > 1)
+                        if (count == 1)
                         {
                             MessageBox.Show("Bed already taken");
                             return false;

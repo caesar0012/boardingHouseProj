@@ -148,18 +148,13 @@ namespace boardingHouseProj
         private void btnPayment_Click(object sender, EventArgs e)
         {
             Payment_Frm f1 = new Payment_Frm();
-            f1.ShowDialog();
-        }
+            f1.TopLevel = false;
+            f1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(f1);
+            f1.BringToFront();
 
-        private void OpenMaintenance() {
 
-            if (cmbStatus.Text != "Available") {
-
-                MaintenanceRequest m1 = new MaintenanceRequest();
-                m1.ShowDialog();
-            
-            
-            }
+            f1.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -217,7 +212,20 @@ namespace boardingHouseProj
                         cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
                         cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
                         cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
-                        cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
+
+                        if (cmbStatus.Text == "Available")
+                        {
+
+                            cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
+
+                        }
+                        else {
+
+                            MaintenanceRequest m1 = new MaintenanceRequest();
+                            m1.ShowDialog();
+                            cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
+
+                        }
                         cmd.Parameters.AddWithValue("@roomNum", txtRoomNumber.Text);
 
                         cmd.ExecuteNonQuery();
@@ -271,6 +279,11 @@ namespace boardingHouseProj
                     return count > 0;
                 }
             }
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

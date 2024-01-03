@@ -452,5 +452,17 @@ namespace boardingHouseProj
                 }
             }
         }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payment_Frm f1 = new Payment_Frm();
+            f1.TopLevel = false;
+            f1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(f1);
+            f1.BringToFront();
+
+
+            f1.Show();
+        }
     }
 }

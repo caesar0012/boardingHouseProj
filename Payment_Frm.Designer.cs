@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPayment = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -44,15 +44,13 @@
             this.clbAddOns = new System.Windows.Forms.CheckedListBox();
             this.txtTenantName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPayment = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtContact = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtRef = new System.Windows.Forms.TextBox();
-            this.gcashPanel = new System.Windows.Forms.Panel();
+            this.txtPayable = new System.Windows.Forms.TextBox();
             this.btnAddOn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtReceived = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPayment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,28 +58,30 @@
             // 
             this.dgPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPayment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgPayment.EnableHeadersVisualStyles = false;
-            this.dgPayment.Location = new System.Drawing.Point(357, 52);
+            this.dgPayment.Location = new System.Drawing.Point(359, 66);
+            this.dgPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgPayment.Name = "dgPayment";
             this.dgPayment.RowHeadersVisible = false;
-            this.dgPayment.Size = new System.Drawing.Size(561, 367);
+            this.dgPayment.RowHeadersWidth = 51;
+            this.dgPayment.Size = new System.Drawing.Size(839, 452);
             this.dgPayment.TabIndex = 0;
             this.dgPayment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPayment_CellClick);
             this.dgPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPayment_CellContentClick);
@@ -90,9 +90,10 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(853, 3);
+            this.btnClose.Location = new System.Drawing.Point(1137, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -102,9 +103,10 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Location = new System.Drawing.Point(57, 463);
+            this.btnConfirm.Location = new System.Drawing.Point(16, 572);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(100, 28);
             this.btnConfirm.TabIndex = 16;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -114,9 +116,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 52);
+            this.label2.Location = new System.Drawing.Point(15, 77);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(103, 19);
             this.label2.TabIndex = 20;
             this.label2.Text = "Tenant Name";
             // 
@@ -124,9 +127,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Location = new System.Drawing.Point(16, 11);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 24);
+            this.label5.Size = new System.Drawing.Size(129, 32);
             this.label5.TabIndex = 25;
             this.label5.Text = "Payment";
             // 
@@ -134,17 +138,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 102);
+            this.label6.Location = new System.Drawing.Point(12, 126);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 16);
+            this.label6.Size = new System.Drawing.Size(42, 19);
             this.label6.TabIndex = 27;
             this.label6.Text = "Rent";
             // 
             // txtRent
             // 
-            this.txtRent.Location = new System.Drawing.Point(12, 127);
+            this.txtRent.Location = new System.Drawing.Point(16, 156);
+            this.txtRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRent.Name = "txtRent";
-            this.txtRent.Size = new System.Drawing.Size(203, 20);
+            this.txtRent.Size = new System.Drawing.Size(269, 22);
             this.txtRent.TabIndex = 26;
             this.txtRent.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
             // 
@@ -152,17 +158,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(536, 446);
+            this.label7.Location = new System.Drawing.Point(876, 554);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 16);
+            this.label7.Size = new System.Drawing.Size(41, 19);
             this.label7.TabIndex = 29;
             this.label7.Text = "Total";
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(576, 442);
+            this.txtTotal.Location = new System.Drawing.Point(929, 549);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(203, 20);
+            this.txtTotal.Size = new System.Drawing.Size(269, 22);
             this.txtTotal.TabIndex = 28;
             // 
             // cmbPaymentType
@@ -171,9 +179,10 @@
             this.cmbPaymentType.Items.AddRange(new object[] {
             "Cash",
             "GCash"});
-            this.cmbPaymentType.Location = new System.Drawing.Point(228, 71);
+            this.cmbPaymentType.Location = new System.Drawing.Point(13, 47);
+            this.cmbPaymentType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbPaymentType.Name = "cmbPaymentType";
-            this.cmbPaymentType.Size = new System.Drawing.Size(123, 21);
+            this.cmbPaymentType.Size = new System.Drawing.Size(163, 24);
             this.cmbPaymentType.TabIndex = 30;
             this.cmbPaymentType.Text = "Payment Type";
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
@@ -182,26 +191,29 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 165);
+            this.label3.Location = new System.Drawing.Point(12, 203);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.Size = new System.Drawing.Size(126, 19);
             this.label3.TabIndex = 22;
             this.label3.Text = "Add Ons Details";
             // 
             // clbAddOns
             // 
             this.clbAddOns.FormattingEnabled = true;
-            this.clbAddOns.Location = new System.Drawing.Point(10, 193);
+            this.clbAddOns.Location = new System.Drawing.Point(13, 238);
+            this.clbAddOns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clbAddOns.Name = "clbAddOns";
-            this.clbAddOns.Size = new System.Drawing.Size(203, 94);
+            this.clbAddOns.Size = new System.Drawing.Size(269, 106);
             this.clbAddOns.TabIndex = 32;
             this.clbAddOns.SelectedIndexChanged += new System.EventHandler(this.clbAddOns_SelectedIndexChanged);
             // 
             // txtTenantName
             // 
-            this.txtTenantName.Location = new System.Drawing.Point(12, 71);
+            this.txtTenantName.Location = new System.Drawing.Point(16, 100);
+            this.txtTenantName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenantName.Name = "txtTenantName";
-            this.txtTenantName.Size = new System.Drawing.Size(205, 20);
+            this.txtTenantName.Size = new System.Drawing.Size(272, 22);
             this.txtTenantName.TabIndex = 33;
             this.txtTenantName.TextChanged += new System.EventHandler(this.txtTenantName_TextChanged);
             // 
@@ -209,106 +221,97 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 302);
+            this.label1.Location = new System.Drawing.Point(12, 360);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(128, 19);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Payment";
+            this.label1.Text = "Amount Payable";
             // 
-            // txtPayment
+            // txtPayable
             // 
-            this.txtPayment.Location = new System.Drawing.Point(12, 327);
-            this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(203, 20);
-            this.txtPayment.TabIndex = 34;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 368);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(78, 367);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(203, 20);
-            this.txtName.TabIndex = 36;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 398);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "Contact";
-            // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(78, 397);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(203, 20);
-            this.txtContact.TabIndex = 38;
-            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 426);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 16);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Reference";
-            // 
-            // txtRef
-            // 
-            this.txtRef.Location = new System.Drawing.Point(78, 425);
-            this.txtRef.Name = "txtRef";
-            this.txtRef.Size = new System.Drawing.Size(203, 20);
-            this.txtRef.TabIndex = 40;
-            // 
-            // gcashPanel
-            // 
-            this.gcashPanel.Location = new System.Drawing.Point(3, 353);
-            this.gcashPanel.Name = "gcashPanel";
-            this.gcashPanel.Size = new System.Drawing.Size(291, 100);
-            this.gcashPanel.TabIndex = 42;
+            this.txtPayable.Location = new System.Drawing.Point(16, 390);
+            this.txtPayable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPayable.Name = "txtPayable";
+            this.txtPayable.Size = new System.Drawing.Size(269, 22);
+            this.txtPayable.TabIndex = 34;
             // 
             // btnAddOn
             // 
             this.btnAddOn.BackColor = System.Drawing.Color.IndianRed;
             this.btnAddOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddOn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOn.Location = new System.Drawing.Point(183, 464);
+            this.btnAddOn.Location = new System.Drawing.Point(124, 572);
+            this.btnAddOn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddOn.Name = "btnAddOn";
-            this.btnAddOn.Size = new System.Drawing.Size(123, 23);
+            this.btnAddOn.Size = new System.Drawing.Size(164, 28);
             this.btnAddOn.TabIndex = 43;
             this.btnAddOn.Text = "Add On";
             this.btnAddOn.UseVisualStyleBackColor = false;
             this.btnAddOn.Click += new System.EventHandler(this.btnAddOn_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 428);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 19);
+            this.label10.TabIndex = 45;
+            this.label10.Text = "Amount Received";
+            // 
+            // txtReceived
+            // 
+            this.txtReceived.Location = new System.Drawing.Point(16, 458);
+            this.txtReceived.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReceived.Name = "txtReceived";
+            this.txtReceived.Size = new System.Drawing.Size(269, 22);
+            this.txtReceived.TabIndex = 44;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 499);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 19);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Change Due:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(17, 529);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(269, 22);
+            this.textBox2.TabIndex = 46;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(486, 554);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Payment_Frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 498);
+            this.ClientSize = new System.Drawing.Size(1240, 613);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtReceived);
             this.Controls.Add(this.btnAddOn);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtRef);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtContact);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPayment);
+            this.Controls.Add(this.txtPayable);
             this.Controls.Add(this.txtTenantName);
             this.Controls.Add(this.clbAddOns);
             this.Controls.Add(this.cmbPaymentType);
@@ -322,8 +325,8 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgPayment);
-            this.Controls.Add(this.gcashPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Payment_Frm";
             this.Text = "frmPayment";
             this.Load += new System.EventHandler(this.Payment_Frm_Load);
@@ -349,14 +352,12 @@
         private System.Windows.Forms.CheckedListBox clbAddOns;
         private System.Windows.Forms.TextBox txtTenantName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPayment;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtContact;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtRef;
-        private System.Windows.Forms.Panel gcashPanel;
+        private System.Windows.Forms.TextBox txtPayable;
         private System.Windows.Forms.Button btnAddOn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtReceived;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

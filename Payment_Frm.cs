@@ -19,9 +19,6 @@ namespace boardingHouseProj
         public Payment_Frm()
         {
             InitializeComponent();
-
-            gcashPanel.BringToFront();
-            gcashPanel.Enabled = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -123,7 +120,7 @@ namespace boardingHouseProj
 
                     MessageBox.Show("Please Select Tenant Name");
 
-                } else if (string.IsNullOrEmpty(txtPayment.Text)) {
+                } else if (string.IsNullOrEmpty(txtPayable.Text)) {
 
                     MessageBox.Show("Please Insert Payment Amount");
 
@@ -176,7 +173,7 @@ namespace boardingHouseProj
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@leaseID", setLease);
-                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
+                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayable.Text));
                     cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
 
                     cmd.ExecuteNonQuery();
@@ -188,7 +185,7 @@ namespace boardingHouseProj
 
         private void gcashPayment()
         {
-            if (string.IsNullOrEmpty(txtName.Text)) {
+          /*  if (string.IsNullOrEmpty(txtName.Text)) {
 
                 MessageBox.Show("Please Insert Name");
 
@@ -222,7 +219,7 @@ namespace boardingHouseProj
 
                             cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                             cmd.Parameters.AddWithValue("@leaseID", setLease);
-                            cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayment.Text));
+                            cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayable.Text));
                             cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
                             cmd.Parameters.AddWithValue("@SName", txtName.Text);
                             cmd.Parameters.AddWithValue("@contactNo", long.Parse(txtContact.Text));
@@ -241,7 +238,7 @@ namespace boardingHouseProj
                 
                 }
             
-            }
+            }*/
 
             
         }
@@ -426,15 +423,15 @@ namespace boardingHouseProj
         {
             if (cmbPaymentType.Text == "GCash")
             {
-                gcashPanel.Enabled = true;
-                gcashPanel.SendToBack();
+                GcashForm g1 = new GcashForm();
+                g1.ShowDialog();
                 
 
             }
             else {
 
-                gcashPanel.BringToFront();
-                gcashPanel.Enabled = false;
+                //do nothing
+                return;
 
             }
         }
@@ -454,6 +451,13 @@ namespace boardingHouseProj
             AddOnFrm a1 = new AddOnFrm();
 
             a1.Show();
+        }
+
+        public static string Name;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtReceived.Text = this.Name;
         }
     }
 }

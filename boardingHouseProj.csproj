@@ -174,11 +174,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="staff_Class.cs" />
-    <Compile Include="Staff_Module_Frm.cs">
+    <Compile Include="GcashForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff_Module_Frm.Designer.cs">
-      <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
+    <Compile Include="GcashForm.Designer.cs">
+      <DependentUpon>GcashForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditTenantFrm.cs">
       <SubType>Form</SubType>
@@ -271,8 +271,8 @@
     <EmbeddedResource Include="room_tenant_add.resx">
       <DependentUpon>room_tenant_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff_Module_Frm.resx">
-      <DependentUpon>Staff_Module_Frm.cs</DependentUpon>
+    <EmbeddedResource Include="GcashForm.resx">
+      <DependentUpon>GcashForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditTenantFrm.resx">
       <DependentUpon>EditTenantFrm.cs</DependentUpon>

@@ -57,7 +57,7 @@ namespace boardingHouseProj
                     int count = (int)cmd.ExecuteScalar();
 
                     int retrievedStaffID = (int)cmd.ExecuteScalar();
-                  //  employee_id = retrievedEmployeeID;
+                //    staff_id = retrievedStaffID;
 
                     return count > 0;
 

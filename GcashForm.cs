@@ -29,12 +29,45 @@ namespace boardingHouseProj
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Payment_Frm p1 = new Payment_Frm();
-            
-            Payment_Frm.Name = txtName.Text;
+
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+
+                MessageBox.Show("Please Enter Name");
 
 
-            this.Hide();
+            }
+            else if (string.IsNullOrEmpty(txtContact.Text))
+            {
+
+                MessageBox.Show("Please Enter Contact");
+
+            }
+            else if (string.IsNullOrEmpty(txtRef.Text))
+            {
+
+                MessageBox.Show("Please Enter Reference");
+
+            }
+            else {
+
+                DialogResult result = MessageBox.Show("Do you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Payment_Frm p1 = new Payment_Frm();
+
+                    Payment_Frm.GName = txtName.Text;
+                    Payment_Frm.Contact = long.Parse(txtContact.Text);
+                    Payment_Frm.Reference = long.Parse(txtRef.Text);
+
+                    this.Dispose();
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }

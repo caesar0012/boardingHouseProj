@@ -24,7 +24,14 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "Select FirstName + ' ' + LastName as Name from Tenant";
+                string query = "Select\r\n\t" +
+                    "t1.Tenant_id,\r\n\t" +
+                    "t1.FirstName + ' ' + t1.LastName as Name,\r\n\t" +
+                    "l1.lease_id\r\n" +
+                    "from Tenant as t1\r\n" +
+                    "left join lease_tbl as l1\r\n" +
+                    "on t1.Tenant_id = l1.Tenant_id\r\n" +
+                    "where l1.lease_id is not null";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -40,11 +47,6 @@ namespace boardingHouseProj
                 
                 }
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

@@ -59,6 +59,7 @@
             this.TimeRoom = new System.Windows.Forms.Timer(this.components);
             this.TimeStaff = new System.Windows.Forms.Timer(this.components);
             this.TimeAdmin = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flpMain.SuspendLayout();
             this.flpStaff.SuspendLayout();
             this.flpRoom.SuspendLayout();
@@ -479,6 +480,11 @@
             this.TimeAdmin.Interval = 10;
             this.TimeAdmin.Tick += new System.EventHandler(this.TimeAdmin_Tick);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.btnLoad_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,6 +541,7 @@
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Timer TimeAdmin;
         private System.Windows.Forms.Button btnManageTenant;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

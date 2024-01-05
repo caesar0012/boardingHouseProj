@@ -14,6 +14,7 @@ namespace boardingHouseProj
 {
     public partial class UserSettings : Form
     {
+
         public UserSettings()
         {
             InitializeComponent();

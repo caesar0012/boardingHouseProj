@@ -15,9 +15,9 @@ namespace boardingHouseProj
 {
     public partial class frmMain : Form
     {
-
+        
         bool drag = false;
-        Point start_point = new Point(0,0);
+        Point start_point = new Point(0, 0);
 
         bool menuExpand, TenantCollapse, StaffCollapse, roomClps, AdminCollpse;
 
@@ -26,7 +26,6 @@ namespace boardingHouseProj
             InitializeComponent();
 
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,8 +34,8 @@ namespace boardingHouseProj
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadProfile();
-        }
 
+        }
         private void LoadProfile()
         {
             try
@@ -98,7 +97,6 @@ namespace boardingHouseProj
             this.Controls.Add(u1);
             u1.BringToFront();
             u1.Show();
-
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -302,9 +300,18 @@ namespace boardingHouseProj
             e1.BringToFront();
             e1.Show();
 
-
             TimeTenant.Start();
             timeNavi.Start();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            frmMain_Load(sender, e);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            btnLoad_Click(sender, e);
         }
 
         private void TimeAdmin_Tick(object sender, EventArgs e)

@@ -9,13 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace boardingHouseProj
 {
     public partial class Payment_Frm : Form
     {
-        private object e;
-
+        public static string GName;
+        public static long Contact;
+        public static long Reference;
         public Payment_Frm()
         {
             InitializeComponent();
@@ -67,6 +69,8 @@ namespace boardingHouseProj
                         }
 
                         dgPayment.DataSource = dt;
+                        dgPayment.AllowUserToAddRows = false;
+
                     }
                 }
             }
@@ -120,7 +124,7 @@ namespace boardingHouseProj
 
                     MessageBox.Show("Please Select Tenant Name");
 
-                } else if (string.IsNullOrEmpty(txtPayable.Text)) {
+                } else if (string.IsNullOrEmpty(txtReceived.Text)) {
 
                     MessageBox.Show("Please Insert Payment Amount");
 
@@ -149,10 +153,10 @@ namespace boardingHouseProj
             }
             else
             {
-                // User clicked No
-                // Perform the action you want when the user chooses No
+                return;
             }
-
+            Payment_Frm_Load(sender, e);
+            loadListBox();
         }
 
 
@@ -173,7 +177,7 @@ namespace boardingHouseProj
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@leaseID", setLease);
-                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayable.Text));
+                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
                     cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
 
                     cmd.ExecuteNonQuery();
@@ -185,65 +189,35 @@ namespace boardingHouseProj
 
         private void gcashPayment()
         {
-          /*  if (string.IsNullOrEmpty(txtName.Text)) {
-
-                MessageBox.Show("Please Insert Name");
-
-            } else if (string.IsNullOrEmpty(txtContact.Text)) {
-
-                MessageBox.Show("Please Insert Contact No");
-
-            }
-            else if (string.IsNullOrEmpty(txtRef.Text))
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
             {
 
-                MessageBox.Show("Please Insert reference");
+                connect.Open();
 
+                int setLease = getLease_id();
+
+                string query = "Insert into Payment(staff_id, lease_id, Amount_paid, Payment_type, SenderName, Contact, Reference)values" +
+                    "(@staff_id, @leaseID, @AmountPaid, @PaymentType, @SName, @contactNo, @Reference)";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
+                    cmd.Parameters.AddWithValue("@leaseID", setLease);
+                    cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
+                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@SName", GName);
+                    cmd.Parameters.AddWithValue("@contactNo", Contact);
+                    cmd.Parameters.AddWithValue("@Reference", Reference);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Transaction Success");
+                }
             }
-            else
-            {
-                try {
-
-                    using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                    {
-
-                        connect.Open();
-
-                        int setLease = getLease_id();
-
-                        string query = "Insert into Payment(staff_id, lease_id, Amount_paid, Payment_type, SenderName, Contact, Reference)values" +
-                            "(@staff_id, @leaseID, @AmountPaid, @PaymentType, @SName, @contactNo, @Reference)";
-
-                        using (SqlCommand cmd = new SqlCommand(query, connect))
-                        {
-
-                            cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
-                            cmd.Parameters.AddWithValue("@leaseID", setLease);
-                            cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtPayable.Text));
-                            cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
-                            cmd.Parameters.AddWithValue("@SName", txtName.Text);
-                            cmd.Parameters.AddWithValue("@contactNo", long.Parse(txtContact.Text));
-                            cmd.Parameters.AddWithValue("@Reference", long.Parse(txtRef.Text));
-
-                            cmd.ExecuteNonQuery();
-
-                            MessageBox.Show("Transaction Success");
-                        }
-                    }
-
-                }
-                catch (Exception ex) {
-
-                    MessageBox.Show("Error Insert Gcash" + ex.Message);
-                
-                }
-            
-            }*/
-
-            
         }
 
-        private void updateAddOn() {
+        private void updateAddOn() {//sets the add on to dissapers if payment success
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
 
@@ -269,35 +243,40 @@ namespace boardingHouseProj
             }
         }
 
-
-
-       private int getLease_id() { //The use of the method is for the insert rows of the Payment Table 
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-
+        private int getLease_id()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
                 connect.Open();
 
-                string query = "Select \r\n\t" +
-                    "l1.Lease_id\r\n" +
-                    "from Tenant as t1\r\n" +
-                    "left join lease_tbl as l1\r\n" +
-                    "on t1.Tenant_id = l1.Tenant_id\r\n" +
-                    "where l1.lease_id is not null and t1.archive = 0 and t1.FirstName + ' ' + t1.LastName = @name";
+                string query = "Select l1.Lease_id from Tenant as t1 " +
+                               "left join lease_tbl as l1 on t1.Tenant_id = l1.Tenant_id " +
+                               "where t1.FirstName + ' ' + t1.LastName = @name";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
-                
-                    cmd.Parameters.AddWithValue("@name", txtTenantName.Text);
+                cmd.Parameters.AddWithValue("@name", txtTenantName.Text);
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
                     {
-                        if (reader.Read())
+                        // Check if the value is DBNull.Value before trying to get the integer
+                        if (reader.IsDBNull(0))
                         {
-                            // Assuming Room_id is of type int, use GetInt32 instead of GetString
-                            return reader.GetInt32(0); // Use index 0 for Room_id
+                            // Handle the case where the value is null (DBNull)
+                            // In this example, I'm throwing an InvalidOperationException.
+                            return 0;
                         }
+
+                        // Assuming Lease_id is of type int, use GetInt32 instead of GetString
+                        return reader.GetInt32(0); // Use index 0 for Lease_id
                     }
-                
+                    else
+                    {
+                        //do nothing
+                    }
+                }
             }
             return 0;
         }
@@ -348,7 +327,7 @@ namespace boardingHouseProj
         {
 
             txtTotal.Text = TotalPay().ToString();
-
+            txtTotalAdd.Text = calculateTotalCheck().ToString();
         }
 
         private double TotalPay() {
@@ -436,16 +415,6 @@ namespace boardingHouseProj
             }
         }
 
-        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Check if the entered character is a digit or a control key (e.g., backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // If not a digit, suppress the keypress event
-                e.Handled = true;
-            }
-        }
-
         private void btnAddOn_Click(object sender, EventArgs e)
         {
             AddOnFrm a1 = new AddOnFrm();
@@ -453,11 +422,23 @@ namespace boardingHouseProj
             a1.Show();
         }
 
-        public static string Name;
-
-        private void button1_Click(object sender, EventArgs e)
+        private void txtReceived_TextChanged(object sender, EventArgs e)
         {
-            txtReceived.Text = this.Name;
+            txtChange.Text = changePayment().ToString();
+        }
+
+        private double changePayment() {
+
+            if (string.IsNullOrEmpty(txtReceived.Text))
+            {
+                return 0;
+
+            }
+            else {
+
+                return double.Parse(txtReceived.Text) - double.Parse(txtTotal.Text);
+
+            }
         }
     }
 }

@@ -102,3 +102,19 @@ VALUES (40, 60, 50.00, 'Internet Service'),
        (46, 69, 55.00, 'Utilities Package'),
        (47, 70, 15.00, 'Key Replacement'),
        (48, 60, 90.00, 'Security Deposit');
+
+--views
+create view receiptView as 
+Select 
+	p1.Payment_id,
+	p1.Staff_id,
+	p1.PaymentDate as DateTime,
+	t1.FirstName + ' ' + t1.LastName as Tenant,
+	l1.lease_id,
+	p1.Amount_paid
+from Payment as p1
+left join lease_tbl as l1
+on l1.lease_id = p1.Lease_id
+left join Tenant as t1
+on t1.Tenant_id = l1.Tenant_id 
+where p1.archive = 0

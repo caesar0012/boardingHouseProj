@@ -437,8 +437,14 @@ namespace boardingHouseProj
             else {
 
                 return double.Parse(txtReceived.Text) - double.Parse(txtTotal.Text);
-
+                
             }
+        }
+
+        private void btnReceipt_Click(object sender, EventArgs e)
+        {
+            ReceiptForm r1 = new ReceiptForm();
+            r1.ShowDialog();
         }
     }
 }

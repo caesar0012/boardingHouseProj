@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BoardingHouseConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BoardingHouseConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.boardingHouseProj.Properties.Settings.GlobalReference.Default.BoardingHouseConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="receiptViewTableAdapter" GeneratorDataComponentClassName="receiptViewTableAdapter" Name="receiptView" UserDataComponentName="receiptViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BoardingHouseConnectionString1 (Settings)" DbObjectName="BoardingHouse.dbo.receiptView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Payment_id, Staff_id, DateTime, Tenant, lease_id, Amount_paid FROM dbo.receiptView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Payment_id" DataSetColumn="Payment_id" />
+              <Mapping SourceColumn="Staff_id" DataSetColumn="Staff_id" />
+              <Mapping SourceColumn="DateTime" DataSetColumn="DateTime" />
+              <Mapping SourceColumn="Tenant" DataSetColumn="Tenant" />
+              <Mapping SourceColumn="lease_id" DataSetColumn="lease_id" />
+              <Mapping SourceColumn="Amount_paid" DataSetColumn="Amount_paid" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="receiptView" msprop:Generator_RowEvHandlerName="receiptViewRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptViewRowDeleted" msprop:Generator_RowDeletingName="receiptViewRowDeleting" msprop:Generator_RowEvArgName="receiptViewRowChangeEvent" msprop:Generator_TablePropName="receiptView" msprop:Generator_RowChangedName="receiptViewRowChanged" msprop:Generator_RowChangingName="receiptViewRowChanging" msprop:Generator_TableClassName="receiptViewDataTable" msprop:Generator_RowClassName="receiptViewRow" msprop:Generator_TableVarName="tablereceiptView" msprop:Generator_UserTableName="receiptView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Payment_id" msprop:Generator_ColumnPropNameInRow="Payment_id" msprop:Generator_ColumnPropNameInTable="Payment_idColumn" msprop:Generator_ColumnVarNameInTable="columnPayment_id" msprop:Generator_UserColumnName="Payment_id" type="xs:int" />
+              <xs:element name="Staff_id" msprop:Generator_ColumnPropNameInRow="Staff_id" msprop:Generator_ColumnPropNameInTable="Staff_idColumn" msprop:Generator_ColumnVarNameInTable="columnStaff_id" msprop:Generator_UserColumnName="Staff_id" type="xs:int" minOccurs="0" />
+              <xs:element name="DateTime" msprop:Generator_ColumnPropNameInRow="DateTime" msprop:Generator_ColumnPropNameInTable="DateTimeColumn" msprop:Generator_ColumnVarNameInTable="columnDateTime" msprop:Generator_UserColumnName="DateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Tenant" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Tenant" msprop:Generator_ColumnPropNameInTable="TenantColumn" msprop:Generator_ColumnVarNameInTable="columnTenant" msprop:Generator_UserColumnName="Tenant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="91" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lease_id" msprop:Generator_ColumnPropNameInRow="lease_id" msprop:Generator_ColumnPropNameInTable="lease_idColumn" msprop:Generator_ColumnVarNameInTable="columnlease_id" msprop:Generator_UserColumnName="lease_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount_paid" msprop:Generator_ColumnPropNameInRow="Amount_paid" msprop:Generator_ColumnPropNameInTable="Amount_paidColumn" msprop:Generator_ColumnVarNameInTable="columnAmount_paid" msprop:Generator_UserColumnName="Amount_paid" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

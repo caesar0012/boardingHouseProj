@@ -17,21 +17,22 @@ namespace boardingHouseProj
         public ReceiptForm()
         {
             InitializeComponent();
+
         }
+        public static int numRow = 2;
 
         private void ReceiptForm_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            ReportDataSource rcInfo = new ReportDataSource("DataSet1", ReceiptInfo());
+            ReportDataSource rcInfo = new ReportDataSource("DataSet1", ReceiptInfo(numRow));
             reportViewer1.LocalReport.DataSources.Add(rcInfo);
         }
 
-        private DataTable ReceiptInfo()
+        private DataTable ReceiptInfo(int paymentId)
         {
             DataTable dt = new DataTable();
 
@@ -41,10 +42,12 @@ namespace boardingHouseProj
                 {
                     connect.Open();
 
-                    string query = "SELECT * FROM receiptView WHERE Payment_id = 1";
+                    string query = "SELECT * FROM receiptView WHERE Payment_id = @ID";
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
+                        cmd.Parameters.AddWithValue("@ID", paymentId);
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             // Check if the reader has rows before loading data
@@ -71,6 +74,41 @@ namespace boardingHouseProj
             }
 
             return dt;
+        }
+
+        private int takeLastRow()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+
+                string query = "SELECT TOP 1 Payment_id FROM Payment ORDER BY Payment_id DESC";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+
+                    }
+
+                    // If no rows were returned, handle it accordingly
+                    return 0;
+                }
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

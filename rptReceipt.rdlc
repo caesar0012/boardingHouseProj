@@ -227,10 +227,8 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Amount Received:</Value>
-                    <Style>
-                      <FontSize>8pt</FontSize>
-                    </Style>
+                    <Value>Amount:</Value>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />

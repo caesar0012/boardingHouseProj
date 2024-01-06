@@ -118,3 +118,5 @@ on l1.lease_id = p1.Lease_id
 left join Tenant as t1
 on t1.Tenant_id = l1.Tenant_id 
 where p1.archive = 0
+
+

@@ -19,10 +19,11 @@ namespace boardingHouseProj
             InitializeComponent();
 
         }
-        public static int numRow = 2;
+        public static int numRow = 1;
 
         private void ReceiptForm_Load(object sender, EventArgs e)
         {
+            reportViewer1.Clear();
             this.reportViewer1.RefreshReport();
         }
 
@@ -74,41 +75,6 @@ namespace boardingHouseProj
             }
 
             return dt;
-        }
-
-        private int takeLastRow()
-        {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-            {
-                connect.Open();
-
-                string query = "SELECT TOP 1 Payment_id FROM Payment ORDER BY Payment_id DESC";
-
-                using (SqlCommand cmd = new SqlCommand(query, connect))
-                {
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        return Convert.ToInt32(result);
-
-                    }
-
-                    // If no rows were returned, handle it accordingly
-                    return 0;
-                }
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
     }

@@ -95,6 +95,12 @@
     <Compile Include="forgotPassFrms.Designer.cs">
       <DependentUpon>forgotPassFrms.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivitiesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivitiesFrm.Designer.cs">
+      <DependentUpon>ActivitiesFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,12 @@
     <Compile Include="Tenant_Request_frm.Designer.cs">
       <DependentUpon>Tenant_Request_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransactionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionFrm.Designer.cs">
+      <DependentUpon>TransactionFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="user1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forgotPassFrms.resx">
       <DependentUpon>forgotPassFrms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivitiesFrm.resx">
+      <DependentUpon>ActivitiesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
@@ -285,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant_Request_frm.resx">
       <DependentUpon>Tenant_Request_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionFrm.resx">
+      <DependentUpon>TransactionFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user1.resx">
       <DependentUpon>user1.cs</DependentUpon>

@@ -98,7 +98,8 @@ namespace boardingHouseProj
 
                     if (dgTenant.Columns[e.ColumnIndex] is DataGridViewImageColumn)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to delete " + txtFirstName.Text + " " + txtLastName.Text + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult result = MessageBox.Show("Do you want to delete " + txtFirstName.Text + " " + txtLastName.Text + "?"
+                            , "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         // Check the user's choice
                         if (result == DialogResult.Yes)

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPayment = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -40,7 +40,6 @@
             this.txtRent = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.cmbPaymentType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.clbAddOns = new System.Windows.Forms.CheckedListBox();
             this.txtTenantName = new System.Windows.Forms.TextBox();
@@ -52,32 +51,34 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
             this.btnReceipt = new System.Windows.Forms.Button();
+            this.cbCash = new System.Windows.Forms.CheckBox();
+            this.cbGcash = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPayment)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPayment
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dgPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dgPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPayment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPayment.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgPayment.EnableHeadersVisualStyles = false;
             this.dgPayment.Location = new System.Drawing.Point(359, 66);
             this.dgPayment.Margin = new System.Windows.Forms.Padding(4);
@@ -176,20 +177,6 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(269, 22);
             this.txtTotal.TabIndex = 28;
-            // 
-            // cmbPaymentType
-            // 
-            this.cmbPaymentType.FormattingEnabled = true;
-            this.cmbPaymentType.Items.AddRange(new object[] {
-            "Cash",
-            "GCash"});
-            this.cmbPaymentType.Location = new System.Drawing.Point(359, 554);
-            this.cmbPaymentType.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbPaymentType.Name = "cmbPaymentType";
-            this.cmbPaymentType.Size = new System.Drawing.Size(163, 24);
-            this.cmbPaymentType.TabIndex = 30;
-            this.cmbPaymentType.Text = "Payment Type";
-            this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -308,12 +295,37 @@
             this.btnReceipt.UseVisualStyleBackColor = false;
             this.btnReceipt.Click += new System.EventHandler(this.btnReceipt_Click);
             // 
+            // cbCash
+            // 
+            this.cbCash.AutoSize = true;
+            this.cbCash.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCash.Location = new System.Drawing.Point(66, 315);
+            this.cbCash.Name = "cbCash";
+            this.cbCash.Size = new System.Drawing.Size(59, 20);
+            this.cbCash.TabIndex = 49;
+            this.cbCash.Text = "Cash";
+            this.cbCash.UseVisualStyleBackColor = true;
+            // 
+            // cbGcash
+            // 
+            this.cbGcash.AutoSize = true;
+            this.cbGcash.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGcash.Location = new System.Drawing.Point(147, 315);
+            this.cbGcash.Name = "cbGcash";
+            this.cbGcash.Size = new System.Drawing.Size(69, 20);
+            this.cbGcash.TabIndex = 50;
+            this.cbGcash.Text = "GCash";
+            this.cbGcash.UseVisualStyleBackColor = true;
+            this.cbGcash.CheckedChanged += new System.EventHandler(this.cbGcash_CheckedChanged);
+            // 
             // Payment_Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1240, 613);
+            this.Controls.Add(this.cbGcash);
+            this.Controls.Add(this.cbCash);
             this.Controls.Add(this.btnReceipt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtChange);
@@ -324,7 +336,6 @@
             this.Controls.Add(this.txtTotalAdd);
             this.Controls.Add(this.txtTenantName);
             this.Controls.Add(this.clbAddOns);
-            this.Controls.Add(this.cmbPaymentType);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label6);
@@ -357,7 +368,6 @@
         private System.Windows.Forms.TextBox txtRent;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckedListBox clbAddOns;
         private System.Windows.Forms.TextBox txtTenantName;
@@ -369,5 +379,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.Button btnReceipt;
+        private System.Windows.Forms.CheckBox cbCash;
+        private System.Windows.Forms.CheckBox cbGcash;
     }
 }

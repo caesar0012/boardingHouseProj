@@ -70,6 +70,12 @@
     <Compile Include="acc_prac01.Designer.cs">
       <DependentUpon>acc_prac01.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackupAndRestoreFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupAndRestoreFrm.Designer.cs">
+      <DependentUpon>BackupAndRestoreFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectSql.cs" />
     <Compile Include="add_room_frm.cs">
       <SubType>Form</SubType>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="add_room_frm.resx">
       <DependentUpon>add_room_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupAndRestoreFrm.resx">
+      <DependentUpon>BackupAndRestoreFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashBoard.resx">
       <DependentUpon>dashBoard.cs</DependentUpon>

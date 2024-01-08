@@ -53,8 +53,6 @@ Create table Room(
 
 );
 
-
-
 Create Table lease_tbl(
 	
 	lease_id int primary key identity(40,1),
@@ -102,7 +100,6 @@ CREATE TABLE Addon (
 	FOREIGN key(Staff_id) REFERENCES Staff_acc(Staff_id)
 
 );
-
 
 
 Create table Maintenance(

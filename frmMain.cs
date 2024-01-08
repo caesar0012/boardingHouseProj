@@ -113,6 +113,7 @@ namespace boardingHouseProj
         private void btnShowTenant_Click(object sender, EventArgs e)
         {
             TimeTenant.Start();
+            timeNavi.Start();
         }
 
         private void TimeTenant_Tick(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace boardingHouseProj
         private void btnShowRoom_Click(object sender, EventArgs e)
         {
             TimeRoom.Start();
+            timeNavi.Start();
         }
 
         private void TimeRoom_Tick(object sender, EventArgs e)
@@ -151,7 +153,8 @@ namespace boardingHouseProj
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
             TimeStaff.Start();
-            
+            timeNavi.Start();
+
         }
 
         private void TimeStaff_Tick(object sender, EventArgs e)
@@ -261,6 +264,7 @@ namespace boardingHouseProj
         private void btnShowAdmin_Click(object sender, EventArgs e)
         {
             TimeAdmin.Start();
+            timeNavi.Start();
         }
 
         private void btnBackReco_Click(object sender, EventArgs e)
@@ -285,6 +289,15 @@ namespace boardingHouseProj
 
         private void btnActivities_Click(object sender, EventArgs e)
         {
+            ActivitiesFrm a1 = new ActivitiesFrm();
+
+            a1.TopLevel = false;
+            a1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            a1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(a1);
+            a1.BringToFront();
+            a1.Show();
+
             TimeAdmin.Start();
             timeNavi.Start();
         }
@@ -312,6 +325,20 @@ namespace boardingHouseProj
         private void timer1_Tick(object sender, EventArgs e)
         {
             btnLoad_Click(sender, e);
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            Payment_Frm e1 = new Payment_Frm();
+
+            e1.TopLevel = false;
+            e1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
+            e1.Dock = DockStyle.Fill; // Optional to fill the panel
+            this.Controls.Add(e1);
+            e1.BringToFront();
+            e1.Show();
+
+            timeNavi.Start();
         }
 
         private void TimeAdmin_Tick(object sender, EventArgs e)

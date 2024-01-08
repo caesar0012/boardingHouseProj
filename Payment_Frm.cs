@@ -21,6 +21,7 @@ namespace boardingHouseProj
         public Payment_Frm()
         {
             InitializeComponent();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -30,23 +31,22 @@ namespace boardingHouseProj
 
         private void Payment_Frm_Load(object sender, EventArgs e)
         {
-            FilterLoad("Select\r\n\t" +
+            FilterLoad("SELECT\r\n\t" +
                 "t1.Tenant_id,\r\n\t" +
-                "t1.FirstName + ' ' + t1.LastName as Name,\r\n\t" +
+                "t1.FirstName + ' ' + t1.LastName AS Name,\r\n\t" +
                 "t1.Gender,\r\n\t" +
                 "r1.Room_number,\r\n\t" +
-                "l1.assign_bed, l1.MonthlyPayment as Rent\r\n" +
-                "From Tenant as t1\r\n" +
-                "left join lease_tbl as l1\r\n" +
-                "on t1.Tenant_id = l1.Tenant_id\r\n" +
-                "left join Room as r1\r\n" +
-                "on l1.room_id = r1.Room_id\r\n" +
-                "left join Payment as p1\r\n" +
-                "on l1.Tenant_id = t1.Tenant_id\r\n" +
-                "group by\r\n" +
+                "l1.assign_bed, l1.MonthlyPayment AS Rent\r\n" +
+                "FROM Tenant AS t1\r\n" +
+                "LEFT JOIN lease_tbl AS l1\r\n" +
+                "ON t1.Tenant_id = l1.Tenant_id\r\n" +
+                "LEFT JOIN Room AS r1\r\n" +
+                "ON l1.room_id = r1.Room_id\r\n" +
+                "LEFT JOIN Payment AS p1\r\n" +
+                "ON l1.Tenant_id = t1.Tenant_id\r\n" +
+                "WHERE l1.Lease_id IS NOT NULL\r\n" + // Added space before "group by"
+                "GROUP BY\r\n" +
                 "t1.Tenant_id, t1.FirstName, t1.LastName, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment;");
-
-            //loadListBox();
 
         }
 
@@ -91,7 +91,6 @@ namespace boardingHouseProj
 
 
         }
-
         private void dgPayment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >=0) {
@@ -132,12 +131,12 @@ namespace boardingHouseProj
                 else
                 {
 
-                    if (cmbPaymentType.Text == "GCash") {
+                    if (cbGcash.Checked) {
 
                         gcashPayment();
                         updateAddOn();
 
-                    } else if (cmbPaymentType.Text == "Cash") {
+                    } else if (cbCash.Checked) {
 
                         PaymentInsert();
                         updateAddOn();
@@ -176,9 +175,20 @@ namespace boardingHouseProj
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
-                    cmd.Parameters.AddWithValue("@leaseID", setLease);
+                    if (setLease == 0)
+                    {
+
+                        cmd.Parameters.AddWithValue("@leaseID", DBNull.Value);
+
+                    }
+                    else
+                    {
+
+                        cmd.Parameters.AddWithValue("@leaseID", setLease);
+
+                    }
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
-                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@PaymentType", "Cash");
 
                     cmd.ExecuteNonQuery();
 
@@ -203,9 +213,20 @@ namespace boardingHouseProj
                 {
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
-                    cmd.Parameters.AddWithValue("@leaseID", setLease);
+
+                    if (setLease == 0)
+                    {
+
+                        cmd.Parameters.AddWithValue("@leaseID", DBNull.Value);
+
+                    }
+                    else {
+
+                        cmd.Parameters.AddWithValue("@leaseID", setLease);
+
+                    }
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
-                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@PaymentType", "GCash");
                     cmd.Parameters.AddWithValue("@SName", GName);
                     cmd.Parameters.AddWithValue("@contactNo", Contact);
                     cmd.Parameters.AddWithValue("@Reference", Reference);
@@ -398,23 +419,6 @@ namespace boardingHouseProj
             txtTotal.Text = TotalPay().ToString();
         }
 
-        private void cmbPaymentType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbPaymentType.Text == "GCash")
-            {
-                GcashForm g1 = new GcashForm();
-                g1.ShowDialog();
-                
-
-            }
-            else {
-
-                //do nothing
-                return;
-
-            }
-        }
-
         private void btnAddOn_Click(object sender, EventArgs e)
         {
             AddOnFrm a1 = new AddOnFrm();
@@ -429,16 +433,37 @@ namespace boardingHouseProj
 
         private double changePayment() {
 
-            if (string.IsNullOrEmpty(txtReceived.Text))
-            {
-                return 0;
+            try {
+                if (string.IsNullOrEmpty(txtReceived.Text))
+                {
+                    return 0;
 
+                }
+                else
+                {
+
+                    return double.Parse(txtReceived.Text) - double.Parse(txtTotal.Text);
+
+                }
             }
-            else {
-
-                return double.Parse(txtReceived.Text) - double.Parse(txtTotal.Text);
-
+            catch { 
+                
+                //do nothing
+            
             }
+            return 0;
+        }
+
+        private void btnReceipt_Click(object sender, EventArgs e)
+        {
+            TransactionFrm t1 = new TransactionFrm();
+            t1.Show();
+        }
+
+        private void cbGcash_CheckedChanged(object sender, EventArgs e)
+        {
+            GcashForm g1 = new GcashForm();
+            g1.ShowDialog();
         }
     }
 }

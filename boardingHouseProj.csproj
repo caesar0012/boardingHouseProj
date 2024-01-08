@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,24 +90,22 @@
     <Compile Include="dashBoard.Designer.cs">
       <DependentUpon>dashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSet2.Designer.cs">
+    <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsInvoice.cs">
-      <DependentUpon>dsInvoice.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsInvoice.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsInvoice.xsd</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="forgotPassFrms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forgotPassFrms.Designer.cs">
       <DependentUpon>forgotPassFrms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActivitiesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivitiesFrm.Designer.cs">
+      <DependentUpon>ActivitiesFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
@@ -170,6 +169,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="receiptClass.cs" />
+    <Compile Include="ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="room_tenant_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="Tenant_Request_frm.Designer.cs">
       <DependentUpon>Tenant_Request_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransactionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionFrm.Designer.cs">
+      <DependentUpon>TransactionFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="user1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forgotPassFrms.resx">
       <DependentUpon>forgotPassFrms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivitiesFrm.resx">
+      <DependentUpon>ActivitiesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
@@ -276,7 +291,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="room_tenant_add.resx">
       <DependentUpon>room_tenant_add.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,11 +303,15 @@
     <EmbeddedResource Include="EditTenantFrm.resx">
       <DependentUpon>EditTenantFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptReceipt.rdlc" />
     <EmbeddedResource Include="TenantPopUp.resx">
       <DependentUpon>TenantPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant_Request_frm.resx">
       <DependentUpon>Tenant_Request_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionFrm.resx">
+      <DependentUpon>TransactionFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user1.resx">
       <DependentUpon>user1.cs</DependentUpon>
@@ -301,29 +322,20 @@
     <EmbeddedResource Include="ViewFileTenant.resx">
       <DependentUpon>ViewFileTenant.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet2.xsc">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="DataSet2.xsd">
+    <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet2.xss">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="dsInvoice.xsc">
-      <DependentUpon>dsInvoice.xsd</DependentUpon>
-    </None>
-    <None Include="dsInvoice.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsInvoice.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsInvoice.xss">
-      <DependentUpon>dsInvoice.xsd</DependentUpon>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\receiptClass.datasource" />
+    <None Include="Properties\DataSources\ReceiptForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

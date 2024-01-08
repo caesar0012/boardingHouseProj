@@ -42,7 +42,6 @@ namespace boardingHouseProj
 
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
-                connect.Close();
                 connect.Open();
 
                 //collate mean it was case sensitive comparision for user and pass

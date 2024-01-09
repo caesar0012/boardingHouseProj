@@ -119,4 +119,6 @@ left join Tenant as t1
 on t1.Tenant_id = l1.Tenant_id 
 where p1.archive = 0
 
+select * from receiptView
 
+use BoardingHouse

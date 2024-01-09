@@ -18,6 +18,15 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             btnRestore.Visible = false;
+            txtAddress.MaxLength = 50;
+            txtContact.MaxLength = 11;
+            txtEmergencyName.MaxLength = 20;
+            txtEmergeNumber.MaxLength = 11;
+            txtFirstName.MaxLength = 15;
+            txtLastName.MaxLength = 15;
+            txtRelationship.MaxLength = 15;
+            txtSchool.MaxLength = 45;
+
         }
 
         public static int tenantID = 0;
@@ -186,9 +195,17 @@ namespace boardingHouseProj
 
                         cmd.ExecuteNonQuery();
 
-                        using (SqlCommand cmd1 = new SqlCommand()) { 
-                        
-                        
+                        string query2 = "update lease_tbl \r\n" +
+                                "set room_id = null, \r\n" +
+                                "assign_bed = null,\r\n" +
+                                "MonthlyPayment = null\r\n" +
+                                "where Tenant_id = @tntID";
+
+                        using (SqlCommand cmd1 = new SqlCommand(query2, connect)) {
+
+
+                            cmd1.Parameters.AddWithValue("@tntID", tenantID);
+                            cmd1.ExecuteNonQuery();
                         
                         }
 
@@ -323,6 +340,24 @@ namespace boardingHouseProj
             txtSchool.Clear();
             cmbGender.Text = "";
         
+        }
+
+        private void txtEmergeNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If it's not a digit and not a control key, suppress the key press
+                e.Handled = true;
+            }
+        }
+
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If it's not a digit and not a control key, suppress the key press
+                e.Handled = true;
+            }
         }
     }
 }

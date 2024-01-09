@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManage_rm));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.dgRoom = new System.Windows.Forms.DataGridView();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,46 +59,48 @@
             this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 33);
+            this.label1.Size = new System.Drawing.Size(204, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Room Management";
+            this.label1.Text = "Manage Room";
             // 
-            // btnAdd
+            // btnConfirm
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(97, 398);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 24);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Confirm";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(97, 398);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(91, 24);
+            this.btnConfirm.TabIndex = 12;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgRoom
             // 
             this.dgRoom.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRoom.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgRoom.Location = new System.Drawing.Point(300, 70);
@@ -163,6 +166,7 @@
             // 
             // txtRoomNumber
             // 
+            this.txtRoomNumber.Enabled = false;
             this.txtRoomNumber.Location = new System.Drawing.Point(53, 76);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(191, 20);
@@ -289,10 +293,10 @@
             this.Controls.Add(this.txtRoomNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgRoom);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRecover);
+            this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
@@ -306,7 +310,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.DataGridView dgRoom;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label4;

@@ -45,7 +45,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
             this.dgTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -109,7 +109,7 @@
             // 
             // TransactionFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(564, 409);
@@ -118,7 +118,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "TransactionFrm";
-            this.Text = "TrasanctionFrm";
+            this.Text = "Transaction";
             this.Load += new System.EventHandler(this.TrasanctionFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).EndInit();
             this.ResumeLayout(false);

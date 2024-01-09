@@ -18,6 +18,9 @@ namespace boardingHouseProj
         public UserSettings()
         {
             InitializeComponent();
+            txtContact.MaxLength = 11;
+            txtUserName.MaxLength = 15;
+            txtAnswerQuestion.MaxLength = 20;
         }
 
         string imgFilePath = null;

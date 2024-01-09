@@ -180,12 +180,14 @@ namespace boardingHouseProj
             this.Controls.Add(d1);
             d1.BringToFront();
             d1.Show();
-
-            timeNavi.Start();
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
+
+            TimeRoom.Start();
+            timeNavi.Start();
+
             room_tenant_add r1 = new room_tenant_add();
             r1.TopLevel = false;
             r1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
@@ -193,9 +195,6 @@ namespace boardingHouseProj
             this.Controls.Add(r1);
             r1.BringToFront();
             r1.Show();
-
-            TimeRoom.Start();
-            timeNavi.Start();
         }
 
         private void btnManageRoom_Click(object sender, EventArgs e)
@@ -341,7 +340,6 @@ namespace boardingHouseProj
             e1.BringToFront();
             e1.Show();
 
-            timeNavi.Start();
         }
 
         private void TimeAdmin_Tick(object sender, EventArgs e)

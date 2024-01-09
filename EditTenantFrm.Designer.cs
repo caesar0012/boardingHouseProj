@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTenantFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -79,16 +79,16 @@
             // 
             // dgTenant
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgTenant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTenant.EnableHeadersVisualStyles = false;
             this.dgTenant.Location = new System.Drawing.Point(421, 75);
@@ -114,6 +114,7 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(150, 20);
             this.txtContact.TabIndex = 15;
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
             // label4
             // 
@@ -176,6 +177,7 @@
             this.txtEmergeNumber.Name = "txtEmergeNumber";
             this.txtEmergeNumber.Size = new System.Drawing.Size(150, 20);
             this.txtEmergeNumber.TabIndex = 24;
+            this.txtEmergeNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmergeNumber_KeyPress);
             // 
             // label6
             // 
@@ -223,10 +225,10 @@
             // 
             // btnView
             // 
-            this.btnView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnView.BackColor = System.Drawing.Color.IndianRed;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Location = new System.Drawing.Point(518, 25);
+            this.btnView.Location = new System.Drawing.Point(485, 23);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(78, 23);
             this.btnView.TabIndex = 27;
@@ -262,7 +264,7 @@
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(164, 399);
+            this.btnUpdate.Location = new System.Drawing.Point(155, 384);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(78, 23);
             this.btnUpdate.TabIndex = 30;

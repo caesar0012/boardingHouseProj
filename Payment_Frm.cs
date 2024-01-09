@@ -31,22 +31,21 @@ namespace boardingHouseProj
 
         private void Payment_Frm_Load(object sender, EventArgs e)
         {
-            FilterLoad("SELECT\r\n\t" +
-                "t1.Tenant_id,\r\n\t" +
-                "t1.FirstName + ' ' + t1.LastName AS Name,\r\n\t" +
-                "t1.Gender,\r\n\t" +
-                "r1.Room_number,\r\n\t" +
-                "l1.assign_bed, l1.MonthlyPayment AS Rent\r\n" +
+            
+            FilterLoad("SELECT\r\n    " +
+                "t1.Tenant_id,\r\n    " +
+                "t1.FirstName + ' ' + t1.LastName AS Name,\r\n    " +
+                "t1.Gender,\r\n    " +
+                "l1.lease_id,\r\n    " +
+                "r1.Room_number as Room,\r\n    " +
+                "l1.assign_bed as 'Bed Assign', \r\n    " +
+                "l1.MonthlyPayment AS Rent\r\n" +
                 "FROM Tenant AS t1\r\n" +
-                "LEFT JOIN lease_tbl AS l1\r\n" +
-                "ON t1.Tenant_id = l1.Tenant_id\r\n" +
-                "LEFT JOIN Room AS r1\r\n" +
-                "ON l1.room_id = r1.Room_id\r\n" +
-                "LEFT JOIN Payment AS p1\r\n" +
-                "ON l1.Tenant_id = t1.Tenant_id\r\n" +
-                "WHERE l1.Lease_id IS NOT NULL\r\n" + // Added space before "group by"
-                "GROUP BY\r\n" +
-                "t1.Tenant_id, t1.FirstName, t1.LastName, t1.Gender, r1.Room_number, l1.assign_bed, l1.MonthlyPayment;");
+                "left join lease_tbl as l1\r\n" +
+                "on t1.Tenant_id = l1.Tenant_id\r\n" +
+                "left join Room as r1\r\n" +
+                "on l1.Room_id = r1.Room_id\r\n" +
+                "where l1.lease_id is not null");
 
         }
 
@@ -80,17 +79,6 @@ namespace boardingHouseProj
             
             }
         }
-
-        private void dgPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow selectedRow = dgPayment.Rows[e.RowIndex];
-
-            selectedRow.Selected = true;
-
-       //     string tent_id = selectedRow.Cells["Tenant_id"].Value?.ToString();
-
-
-        }
         private void dgPayment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >=0) {
@@ -98,18 +86,9 @@ namespace boardingHouseProj
                 DataGridViewRow selectedRow = dgPayment.Rows[e.RowIndex];
                 selectedRow.Selected = true;
 
-             //   txtTenant_id.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
                 txtTenantName.Text = selectedRow.Cells["Name"].Value?.ToString();
                 txtRent.Text = selectedRow.Cells["Rent"].Value?.ToString();
 
-
-                //txtDetailsAddon.Text = selectedRow.Cells["Rent"].Value?.ToString();
-                // txtAddOnsPrice.Text = selectedRow.Cells["Rent"].Value?.ToString();
-
-
-                //loadListBox();
-
-                
             }
         }
 
@@ -175,18 +154,8 @@ namespace boardingHouseProj
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
-                    if (setLease == 0)
-                    {
+                    cmd.Parameters.AddWithValue("@leaseID", setLease);
 
-                        cmd.Parameters.AddWithValue("@leaseID", DBNull.Value);
-
-                    }
-                    else
-                    {
-
-                        cmd.Parameters.AddWithValue("@leaseID", setLease);
-
-                    }
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
                     cmd.Parameters.AddWithValue("@PaymentType", "Cash");
 
@@ -214,17 +183,10 @@ namespace boardingHouseProj
 
                     cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
-                    if (setLease == 0)
-                    {
 
-                        cmd.Parameters.AddWithValue("@leaseID", DBNull.Value);
 
-                    }
-                    else {
+                    cmd.Parameters.AddWithValue("@leaseID", setLease);
 
-                        cmd.Parameters.AddWithValue("@leaseID", setLease);
-
-                    }
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
                     cmd.Parameters.AddWithValue("@PaymentType", "GCash");
                     cmd.Parameters.AddWithValue("@SName", GName);
@@ -340,7 +302,6 @@ namespace boardingHouseProj
 
         private void txtTenantName_TextChanged(object sender, EventArgs e)
         {
-            label2.Text = getLease_id().ToString();
             loadListBox();
         }
 

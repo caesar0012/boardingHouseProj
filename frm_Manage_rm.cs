@@ -53,6 +53,7 @@ namespace boardingHouseProj
 
                             dt.Load(reader);
                             dgRoom.DataSource = dt;
+                            dgRoom.AllowUserToAddRows = false;
                         }
                     }
                     dgRoom.Sort(dgRoom.Columns["Room_number"], System.ComponentModel.ListSortDirection.Ascending);
@@ -308,6 +309,7 @@ namespace boardingHouseProj
                 string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
                 showData(query1);
             }
+            clear();
         }
 
         private void cmbDefault_SelectedIndexChanged(object sender, EventArgs e)
@@ -320,6 +322,7 @@ namespace boardingHouseProj
 
                 string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
                 showData(query1);
+                btnConfirm.Enabled = false;
 
             }
             else {
@@ -327,30 +330,76 @@ namespace boardingHouseProj
                 btnDelete.Show();
             
                 frmManage_rm_Load(sender, e);
+                btnConfirm.Enabled = true;
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            if (string.IsNullOrEmpty(txtRoomNumber.Text)) {
+
+                return;
+            
+            }
+
+            DialogResult result = MessageBox.Show("Archiving a room will remove all the tenant, Continue?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-
-                connect.Open();
-
-                string query = "Update Room set Archive = 1 where room_number = @roomNum";
-
-                using (SqlCommand cmd = new SqlCommand(query, connect))
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
 
-                    cmd.Parameters.AddWithValue("roomNum", txtRoomNumber.Text);
-                    cmd.ExecuteNonQuery();
+                    connect.Open();
 
-                    MessageBox.Show("Archive Success");
+                    string query = "Update Room set Archive = 1 where room_number = @roomNum";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+
+                        cmd.Parameters.AddWithValue("roomNum", txtRoomNumber.Text);
+
+                        string roomNum = txtRoomNumber.Text;
+
+                        cmd.ExecuteNonQuery();
+
+                        string query1 = "update l1 set\r\n    " +
+                            "l1.room_id = null,\r\n    " +
+                            "l1.assign_bed = null\r\n" +
+                            "from Lease_tbl as l1\r\n" +
+                            "left join Room as r1\r\n" +
+                            "on l1.Room_id = r1.Room_id\r\n" +
+                            "where r1.Room_number = @rmNum";
+
+                        using (SqlCommand cmd1 = new SqlCommand(query1, connect)) {
+
+                            cmd1.Parameters.AddWithValue("@rmNum", roomNum);
+                            cmd1.ExecuteNonQuery();
+                        
+                        }
+
+                            MessageBox.Show("Archive Success");
+
+                    }
+
+                    frmManage_rm_Load(sender, e);
+                    clear();
                 }
-                frmManage_rm_Load(sender, e);
-                
-
             }
+            else
+            {
+                return;
+            }
+        }
+
+        void clear() {
+
+            txtRoomNumber.Clear();
+            txtCapacity.Clear();
+            txtDescription.Clear();
+            txtPrice.Clear();
+            cmbStatus.Text = "";
+            cmbGender.Text = "";
+        
         }
     }
 }

@@ -155,11 +155,17 @@ namespace boardingHouseProj
 
                 }
             }
+            clear();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtFirstName.Text))
+            {
+                MessageBox.Show("Please Select Tenant To archive");
+                return;
 
+            }
             DialogResult result = MessageBox.Show("Do you want to Archive " + txtFirstName.Text + " " + txtLastName.Text 
                 + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -180,7 +186,13 @@ namespace boardingHouseProj
 
                         cmd.ExecuteNonQuery();
 
-                        TenantManage_Load(sender, e);
+                        using (SqlCommand cmd1 = new SqlCommand()) { 
+                        
+                        
+                        
+                        }
+
+                            TenantManage_Load(sender, e);
                     }
                 }
             }
@@ -188,6 +200,7 @@ namespace boardingHouseProj
             {
                 return;
             }
+            clear();
         }
 
         private void cmbArchive_SelectedIndexChanged(object sender, EventArgs e)
@@ -266,6 +279,7 @@ namespace boardingHouseProj
             {
                 return;
             }
+            clear();
         }
         string imgFilePath = "";
         private void btnUpload_Click(object sender, EventArgs e)
@@ -295,6 +309,20 @@ namespace boardingHouseProj
         {
             ViewFileTenant vft = new ViewFileTenant();
             vft.ShowDialog();
+        }
+
+        void clear() {
+
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtAddress.Clear();
+            txtContact.Clear();
+            txtEmergencyName.Clear();
+            txtEmergeNumber.Clear();
+            txtRelationship.Clear();
+            txtSchool.Clear();
+            cmbGender.Text = "";
+        
         }
     }
 }

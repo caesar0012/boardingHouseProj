@@ -271,11 +271,14 @@ namespace boardingHouseProj
         {
             TimeAdmin.Start();
             timeNavi.Start();
+            BackupAndRestoreFrm b1 = new BackupAndRestoreFrm();
+            this.Hide();
+            b1.Show();
         }
 
         private void btnManageStaff_Click(object sender, EventArgs e)
         {
-            ManageTenantFrm m1 = new ManageTenantFrm();
+            ManageStaffFrm m1 = new ManageStaffFrm();
             m1.TopLevel = false;
             m1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
             m1.Dock = DockStyle.Fill; // Optional to fill the panel

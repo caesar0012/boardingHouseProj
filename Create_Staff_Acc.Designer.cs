@@ -66,10 +66,10 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(37, 151);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(221, 20);
+            this.txtLastName.Size = new System.Drawing.Size(221, 22);
             this.txtLastName.TabIndex = 1;
             // 
             // label2
@@ -96,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(665, 222);
+            this.label5.Location = new System.Drawing.Point(665, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 12;
@@ -106,7 +106,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(367, 222);
+            this.label6.Location = new System.Drawing.Point(367, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 24);
             this.label6.TabIndex = 10;
@@ -124,18 +124,18 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(669, 151);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(222, 20);
+            this.txtUserName.Size = new System.Drawing.Size(222, 22);
             this.txtUserName.TabIndex = 7;
             this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Location = new System.Drawing.Point(444, 380);
+            this.btnConfirm.Location = new System.Drawing.Point(442, 384);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(97, 31);
             this.btnConfirm.TabIndex = 13;
@@ -147,7 +147,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 306);
+            this.label8.Location = new System.Drawing.Point(31, 287);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 24);
             this.label8.TabIndex = 15;
@@ -155,56 +155,56 @@
             // 
             // txtAnswerQuestion
             // 
-            this.txtAnswerQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswerQuestion.Location = new System.Drawing.Point(35, 391);
+            this.txtAnswerQuestion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswerQuestion.Location = new System.Drawing.Point(35, 372);
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
-            this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 20);
+            this.txtAnswerQuestion.Size = new System.Drawing.Size(222, 22);
             this.txtAnswerQuestion.TabIndex = 16;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(371, 260);
+            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(371, 241);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(222, 20);
+            this.txtPassword.Size = new System.Drawing.Size(222, 22);
             this.txtPassword.TabIndex = 17;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPass.Location = new System.Drawing.Point(668, 260);
+            this.txtConfirmPass.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPass.Location = new System.Drawing.Point(668, 241);
             this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.Size = new System.Drawing.Size(221, 20);
+            this.txtConfirmPass.Size = new System.Drawing.Size(221, 22);
             this.txtConfirmPass.TabIndex = 18;
             this.txtConfirmPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmPass_KeyDown);
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(371, 151);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(221, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(221, 22);
             this.txtFirstName.TabIndex = 19;
             // 
             // cmbRole
             // 
-            this.cmbRole.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Manager",
             "Admin",
             "Cashier"});
-            this.cmbRole.Location = new System.Drawing.Point(37, 259);
+            this.cmbRole.Location = new System.Drawing.Point(37, 240);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(221, 23);
+            this.cmbRole.Size = new System.Drawing.Size(221, 24);
             this.cmbRole.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(33, 222);
+            this.label9.Location = new System.Drawing.Point(33, 203);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 24);
             this.label9.TabIndex = 22;
@@ -212,24 +212,24 @@
             // 
             // cmbQuestionPass
             // 
-            this.cmbQuestionPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbQuestionPass.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbQuestionPass.FormattingEnabled = true;
             this.cmbQuestionPass.Items.AddRange(new object[] {
             "Birth Place",
             "Favorite Hero",
             "Favorite Team"});
-            this.cmbQuestionPass.Location = new System.Drawing.Point(35, 345);
+            this.cmbQuestionPass.Location = new System.Drawing.Point(35, 326);
             this.cmbQuestionPass.Name = "cmbQuestionPass";
-            this.cmbQuestionPass.Size = new System.Drawing.Size(223, 22);
+            this.cmbQuestionPass.Size = new System.Drawing.Size(223, 24);
             this.cmbQuestionPass.TabIndex = 14;
             this.cmbQuestionPass.Text = "Confirm";
             // 
             // txtContact
             // 
-            this.txtContact.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(370, 345);
+            this.txtContact.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContact.Location = new System.Drawing.Point(370, 326);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(222, 20);
+            this.txtContact.Size = new System.Drawing.Size(222, 22);
             this.txtContact.TabIndex = 24;
             this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
@@ -237,7 +237,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(366, 307);
+            this.label4.Location = new System.Drawing.Point(366, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 24);
             this.label4.TabIndex = 23;
@@ -247,7 +247,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(666, 307);
+            this.label10.Location = new System.Drawing.Point(666, 288);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 24);
             this.label10.TabIndex = 25;
@@ -258,7 +258,7 @@
             this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.Location = new System.Drawing.Point(668, 345);
+            this.btnUpload.Location = new System.Drawing.Point(668, 326);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(223, 31);
             this.btnUpload.TabIndex = 26;
@@ -282,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 455);
+            this.ClientSize = new System.Drawing.Size(930, 433);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label10);

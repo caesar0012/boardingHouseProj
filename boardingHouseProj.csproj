@@ -131,11 +131,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageTenantFrm.cs">
+    <Compile Include="ManageStaffFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageTenantFrm.Designer.cs">
-      <DependentUpon>ManageTenantFrm.cs</DependentUpon>
+    <Compile Include="ManageStaffFrm.Designer.cs">
+      <DependentUpon>ManageStaffFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment_Frm.cs">
       <SubType>Form</SubType>
@@ -264,8 +264,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageTenantFrm.resx">
-      <DependentUpon>ManageTenantFrm.cs</DependentUpon>
+    <EmbeddedResource Include="ManageStaffFrm.resx">
+      <DependentUpon>ManageStaffFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment_Frm.resx">
       <DependentUpon>Payment_Frm.cs</DependentUpon>

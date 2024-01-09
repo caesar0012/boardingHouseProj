@@ -25,6 +25,9 @@ namespace boardingHouseProj
 
 
         }
+
+        static string tnantID;
+
         private void btnClose_Click(object sender, EventArgs e) //close the exe
         {
             this.Close();
@@ -91,7 +94,7 @@ namespace boardingHouseProj
                     "FROM\r\n   " +
                     "Room as r1\r\n" +
                     "LEFT JOIN\r\n    " +
-                    "lease_tbl as l1 ON l1.room_id = r1.Room_id\r\n" +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.Archive = 0" +
                     "GROUP BY\r\n    " +
                     "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
@@ -99,10 +102,21 @@ namespace boardingHouseProj
             else if (cmbFilter.SelectedIndex == 2) //Tenant without Room
             {
 
-                loadFilter("select t1.Tenant_id, t1.FirstName + ' ' + t1.LastName as Name, t1.Gender, " +
-                    "r1.Room_number, l1.assign_bed, l1.StartLease, l1.EndLease\r\n from Tenant as t1\r\n " +
-                    "left join Room as r1\r\n on r1.Room_id = t1.Tenant_id\r\n left join lease_tbl as l1\r\n " +
-                    "on r1.Room_id = l1.lease_id where Room_number is null");
+                loadFilter("select \r\n\t" +
+                    "t1.Tenant_id,\r\n\t" +
+                    "t1.FirstName + ' ' + t1.LastName as Name,\r\n\t" +
+                    "t1.Gender,\r\n\t" +
+                    "r1.Room_number, \r\n\t" +
+                    "l1.assign_bed, \r\n\t" +
+                    "l1.StartLease, \r\n\t" +
+                    "l1.EndLease\r\n" +
+                    "from Tenant as t1\r\n" +
+                    "left join lease_tbl as l1\r\n" +
+                    "on t1.Tenant_id = l1.Tenant_id\r\n" +
+                    "left join Room as r1\r\n" +
+                    "on l1.room_id = r1.Room_id\r\n" +
+                    "where r1.Room_number is null" +
+                    "and t1.archive = 0");
 
             }
             else if (cmbFilter.SelectedIndex == 3) //Female Room
@@ -118,7 +132,7 @@ namespace boardingHouseProj
                     "FROM\r\n   " +
                     "Room as r1\r\n" +
                     "LEFT JOIN\r\n    " +
-                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Female'\r\n" +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Female' and r1.Archive = 0" +
                     "GROUP BY\r\n    " +
                     "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
@@ -134,7 +148,7 @@ namespace boardingHouseProj
                     "FROM\r\n   " +
                     "Room as r1\r\n" +
                     "LEFT JOIN\r\n    " +
-                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Male  '\r\n" +
+                    "lease_tbl as l1 ON l1.room_id = r1.Room_id where r1.allowed_gender = 'Male' and r1.Archive = 0\r\n" +
                     "GROUP BY\r\n    " +
                     "r1.Room_number, r1.Description, r1.allowed_gender, r1.Price, r1.Capacity");
 
@@ -181,7 +195,7 @@ namespace boardingHouseProj
 
                     if (dgAssignTenant.Columns.Contains("Tenant_id"))
                     {
-                        txtTenantId.Text = selectedRow.Cells["Tenant_id"].Value?.ToString();
+                        tnantID = selectedRow.Cells["Tenant_id"].Value?.ToString();
                     }
                     if (dgAssignTenant.Columns.Contains("assign_bed"))
                     {
@@ -205,8 +219,8 @@ namespace boardingHouseProj
 
 
                     cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
-                    lblSample.Text = selectedRow.Cells["Name"].Value?.ToString();
-                    lblGender.Text = selectedRow.Cells["Gender"].Value?.ToString();
+                    txtName.Text = selectedRow.Cells["Name"].Value?.ToString();
+                    txtGender.Text = selectedRow.Cells["Gender"].Value?.ToString();
 
                 }
             }
@@ -235,11 +249,7 @@ namespace boardingHouseProj
 
                 int roomNum1 = TakeRoomNumber();
 
-                if (string.IsNullOrEmpty(txtTenantId.Text)) {
-
-                    MessageBox.Show("Please Select Tenant ID from the table");
-
-                } else if (string.IsNullOrEmpty(cmbRoomNum.Text)) {
+                if (string.IsNullOrEmpty(cmbRoomNum.Text)) {
 
                     MessageBox.Show("Please Select Room Number");
 
@@ -267,14 +277,14 @@ namespace boardingHouseProj
 
                 } else if (!CheckBed()) {
 
-                   // MessageBox.Show("Bed Taken");
+                    
                 
                 }
                 else
                 {
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
-                        cmd.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
+                        cmd.Parameters.AddWithValue("@tenant_id", tnantID);
                         int existLease = (int)cmd.ExecuteScalar();
 
                         if (existLease > 0)
@@ -289,7 +299,7 @@ namespace boardingHouseProj
                                 cmd1.Parameters.AddWithValue("@assignBed", txtBed.Text);
                                 cmd1.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));
                                 cmd1.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
-                                cmd1.Parameters.AddWithValue("@tenantID", int.Parse(txtTenantId.Text));
+                                cmd1.Parameters.AddWithValue("@tenantID", int.Parse(tnantID));
                                 cmd1.Parameters.AddWithValue("@startLease", dtStartLease.Value);
                                 cmd1.Parameters.AddWithValue("@endLease", dtEndLease.Value);
 
@@ -306,7 +316,7 @@ namespace boardingHouseProj
 
                             using (SqlCommand command = new SqlCommand(query, connect))
                             {
-                                command.Parameters.AddWithValue("@tenant_id", int.Parse(txtTenantId.Text));
+                                command.Parameters.AddWithValue("@tenant_id", int.Parse(tnantID));
                                 command.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                                 command.Parameters.AddWithValue("@room_id", roomNum1);
                                 command.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));

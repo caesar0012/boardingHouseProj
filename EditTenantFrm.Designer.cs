@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTenantFrm));
-            this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.dgTenant = new System.Windows.Forms.DataGridView();
@@ -61,19 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgTenant)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(157, 399);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Close";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -93,16 +79,16 @@
             // 
             // dgTenant
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgTenant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTenant.EnableHeadersVisualStyles = false;
             this.dgTenant.Location = new System.Drawing.Point(421, 75);
@@ -238,9 +224,9 @@
             // btnView
             // 
             this.btnView.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnView.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnView.BackColor = System.Drawing.Color.IndianRed;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Location = new System.Drawing.Point(53, 368);
+            this.btnView.Location = new System.Drawing.Point(518, 25);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(78, 23);
             this.btnView.TabIndex = 27;
@@ -276,7 +262,7 @@
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(267, 368);
+            this.btnUpdate.Location = new System.Drawing.Point(164, 399);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(78, 23);
             this.btnUpdate.TabIndex = 30;
@@ -307,7 +293,7 @@
             this.btnDel.FlatAppearance.BorderSize = 0;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(747, 12);
+            this.btnDel.Location = new System.Drawing.Point(775, 12);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(44, 45);
             this.btnDel.TabIndex = 33;
@@ -320,7 +306,7 @@
             this.cmbArchive.Items.AddRange(new object[] {
             "Default",
             "Archive"});
-            this.cmbArchive.Location = new System.Drawing.Point(594, 25);
+            this.cmbArchive.Location = new System.Drawing.Point(622, 25);
             this.cmbArchive.Name = "cmbArchive";
             this.cmbArchive.Size = new System.Drawing.Size(121, 21);
             this.cmbArchive.TabIndex = 34;
@@ -333,7 +319,7 @@
             this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
-            this.btnRestore.Location = new System.Drawing.Point(747, 12);
+            this.btnRestore.Location = new System.Drawing.Point(775, 12);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(44, 45);
             this.btnRestore.TabIndex = 35;
@@ -346,9 +332,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(914, 434);
-            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.cmbArchive);
-            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnUpdate);
@@ -372,7 +356,8 @@
             this.Controls.Add(this.dgTenant);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnRestore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditTenantFrm";
             this.Text = "TenantManage";
@@ -384,8 +369,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.DataGridView dgTenant;

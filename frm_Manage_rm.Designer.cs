@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManage_rm));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPayment = new System.Windows.Forms.Button();
             this.dgRoom = new System.Windows.Forms.DataGridView();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +46,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbDefault = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRecover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,26 +67,13 @@
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(36, 394);
+            this.btnAdd.Location = new System.Drawing.Point(97, 398);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 36);
+            this.btnAdd.Size = new System.Drawing.Size(91, 24);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add Room";
+            this.btnAdd.Text = "Confirm";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(162, 394);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(104, 36);
-            this.btnPayment.TabIndex = 13;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // dgRoom
             // 
@@ -91,26 +81,26 @@
             this.dgRoom.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgRoom.Location = new System.Drawing.Point(294, 49);
+            this.dgRoom.Location = new System.Drawing.Point(300, 70);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.RowHeadersWidth = 51;
@@ -237,12 +227,55 @@
             this.cmbStatus.TabIndex = 27;
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
+            // cmbDefault
+            // 
+            this.cmbDefault.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDefault.FormattingEnabled = true;
+            this.cmbDefault.Items.AddRange(new object[] {
+            "Default",
+            "Archive"});
+            this.cmbDefault.Location = new System.Drawing.Point(533, 12);
+            this.cmbDefault.Name = "cmbDefault";
+            this.cmbDefault.Size = new System.Drawing.Size(121, 24);
+            this.cmbDefault.TabIndex = 29;
+            this.cmbDefault.Text = "Default";
+            this.cmbDefault.SelectedIndexChanged += new System.EventHandler(this.cmbDefault_SelectedIndexChanged);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(691, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(47, 48);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnRecover
+            // 
+            this.btnRecover.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecover.FlatAppearance.BorderSize = 0;
+            this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecover.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecover.Image = ((System.Drawing.Image)(resources.GetObject("btnRecover.Image")));
+            this.btnRecover.Location = new System.Drawing.Point(691, 8);
+            this.btnRecover.Name = "btnRecover";
+            this.btnRecover.Size = new System.Drawing.Size(57, 46);
+            this.btnRecover.TabIndex = 31;
+            this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
+            // 
             // frmManage_rm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(930, 455);
+            this.Controls.Add(this.cmbDefault);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label5);
@@ -256,9 +289,10 @@
             this.Controls.Add(this.txtRoomNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgRoom);
-            this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRecover);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
@@ -273,7 +307,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.DataGridView dgRoom;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label4;
@@ -287,5 +320,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbDefault;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnRecover;
     }
 }

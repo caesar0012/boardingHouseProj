@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class ManageTenantFrm : Form
+    public partial class ManageStaffFrm : Form
     {
-        public ManageTenantFrm()
+        public ManageStaffFrm()
         {
             InitializeComponent();
             btnRestore.Visible = false;
@@ -76,7 +76,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@arch", num1);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Success");
-                
+
                 }
             }
         }
@@ -107,6 +107,7 @@ namespace boardingHouseProj
                             deleteClick(1); //sets the archive flag to 1
                             dgTenant.Rows.Clear();
                             ManageTenantFrm_Load(sender, e);
+                            clear();
                         }
                         else
                         {
@@ -231,6 +232,29 @@ namespace boardingHouseProj
             FilterData(query);
 
             deleteClick(0);
+
+            dgTenant.Rows.Clear();
+
+            string query1 = "SELECT " +
+           "s1.Staff_id AS ID, " +
+           "s1.FirstName + ' ' + s1.LastName AS Name, " +
+           "s1.userName, " +
+           "s1.password, " +
+           "s1.Role " +
+           "FROM Staff_acc AS s1 where Archive = 1";
+            FilterData(query1);
+
+        }
+
+        void clear() {
+
+            txtID.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPassword.Clear();
+            txtUserName.Clear();
+            cmbRole.Text = "";
+        
         }
     }
 }

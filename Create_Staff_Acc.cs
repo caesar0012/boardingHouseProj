@@ -19,6 +19,14 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             //WindowState = FormWindowState.Maximized;
+            txtFirstName.MaxLength = 25;
+            txtLastName.MaxLength = 25;
+            txtUserName.MaxLength = 20;
+            txtPassword.MaxLength = 25;
+            txtConfirmPass.MaxLength = 25;
+            txtAnswerQuestion.MaxLength = 25;
+
+            
 
         }
         string imgFilePath = null;

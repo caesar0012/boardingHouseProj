@@ -1,6 +1,6 @@
 ﻿namespace boardingHouseProj
 {
-    partial class ManageTenantFrm
+    partial class ManageStaffFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageTenantFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStaffFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -70,6 +70,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(59, 85);
             this.txtID.Name = "txtID";
@@ -188,7 +189,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(849, 11);
+            this.btnClose.Location = new System.Drawing.Point(858, 2);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 26);
@@ -300,18 +301,19 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Location = new System.Drawing.Point(708, 12);
+            this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
+            this.btnRestore.Location = new System.Drawing.Point(720, 2);
             this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(70, 25);
+            this.btnRestore.Size = new System.Drawing.Size(70, 50);
             this.btnRestore.TabIndex = 16;
-            this.btnRestore.Text = "Restore";
             this.btnRestore.UseVisualStyleBackColor = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click_1);
             // 
-            // ManageTenantFrm
+            // ManageStaffFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +338,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ManageTenantFrm";
+            this.Name = "ManageStaffFrm";
             this.Text = "ManageTenantFrm";
             this.Load += new System.EventHandler(this.ManageTenantFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTenant)).EndInit();

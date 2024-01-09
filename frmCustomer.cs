@@ -18,6 +18,16 @@ namespace boardingHouseProj
         public frmCustomer()
         {
             InitializeComponent();
+            txtFirstname.MaxLength = 20;
+            txtLastName.MaxLength = 20;
+            txtEmergencyName.MaxLength = 40;
+            txtContact.MaxLength = 11;
+            txtEmergencyContact.MaxLength = 11;
+            txtEmergencyName.MaxLength = 40;
+            txtRelationship.MaxLength = 15;
+            txtSchool.MaxLength = 40;
+            txtAddress.MaxLength = 40;
+
         }
         string imgFilePath = "";
 
@@ -164,17 +174,21 @@ namespace boardingHouseProj
 
             }
         }
-        private void frmCustomer_Load(object sender, EventArgs e)
-        {
 
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit or a control key
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If not a digit or a control key, set the Handled property to true
+                // to prevent the character from being entered into the TextBox
+                e.Handled = true;
+            }
         }
 
-        private void pb_tenantDoc_Click(object sender, EventArgs e)
+        private void txtEmergencyContact_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            txtContact_KeyPress(sender, e);
         }
     }
-
-
-    
 }

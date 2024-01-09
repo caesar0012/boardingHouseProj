@@ -21,22 +21,23 @@ namespace boardingHouseProj
         {
             InitializeComponent();
             dgRoom.DataError += dataGridView1_DataError;
+            btnRecover.Hide();
 
         }
 
         private void frmManage_rm_Load(object sender, EventArgs e)
         {
-            showData();
+            string query = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 0;";
+            showData(query);
         }
 
         private static string stats;
         public static string roomNum = "";
-        private void showData()
+        private void showData(string query)
         {
 
             try
             {
-                string query = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room;";
 
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
@@ -284,6 +285,72 @@ namespace boardingHouseProj
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRecover_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
+                connect.Open();
+
+                string query = "Update Room set Archive = 0 where room_number = @roomNum";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+
+                    cmd.Parameters.AddWithValue("roomNum", txtRoomNumber.Text);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Recover Success");
+                }
+
+                string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
+                showData(query1);
+            }
+        }
+
+        private void cmbDefault_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDefault.Text == "Archive")
+            {
+
+                btnRecover.Show();
+                btnDelete.Hide();
+
+                string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
+                showData(query1);
+
+            }
+            else {
+                btnRecover.Hide();
+                btnDelete.Show();
+            
+                frmManage_rm_Load(sender, e);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+
+                connect.Open();
+
+                string query = "Update Room set Archive = 1 where room_number = @roomNum";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+
+                    cmd.Parameters.AddWithValue("roomNum", txtRoomNumber.Text);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Archive Success");
+                }
+                frmManage_rm_Load(sender, e);
+                
+
+            }
         }
     }
 }

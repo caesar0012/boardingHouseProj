@@ -60,44 +60,51 @@
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(373, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 24);
+            this.label1.Size = new System.Drawing.Size(182, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Personal Information";
+            this.label1.Text = "Tenant Information";
             // 
             // txtFirstname
             // 
+            this.txtFirstname.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.Location = new System.Drawing.Point(55, 108);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(257, 32);
+            this.txtFirstname.Size = new System.Drawing.Size(257, 22);
             this.txtFirstname.TabIndex = 1;
             // 
             // txtLastName
             // 
+            this.txtLastName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(352, 108);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(257, 32);
+            this.txtLastName.Size = new System.Drawing.Size(257, 22);
             this.txtLastName.TabIndex = 3;
             // 
             // txtRelationship
             // 
+            this.txtRelationship.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRelationship.Location = new System.Drawing.Point(667, 211);
             this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(220, 32);
+            this.txtRelationship.Size = new System.Drawing.Size(220, 22);
             this.txtRelationship.TabIndex = 8;
             // 
             // txtEmergencyContact
             // 
+            this.txtEmergencyContact.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmergencyContact.Location = new System.Drawing.Point(56, 211);
             this.txtEmergencyContact.Name = "txtEmergencyContact";
-            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 32);
+            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 22);
             this.txtEmergencyContact.TabIndex = 7;
+            this.txtEmergencyContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmergencyContact_KeyPress);
             // 
             // txtContact
             // 
+            this.txtContact.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(668, 108);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(220, 32);
+            this.txtContact.Size = new System.Drawing.Size(220, 22);
             this.txtContact.TabIndex = 6;
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
             // label4
             // 
@@ -171,7 +178,6 @@
             this.pb_tenantDoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_tenantDoc.TabIndex = 28;
             this.pb_tenantDoc.TabStop = false;
-            this.pb_tenantDoc.Click += new System.EventHandler(this.pb_tenantDoc_Click);
             // 
             // label2
             // 
@@ -185,9 +191,10 @@
             // 
             // txtSchool
             // 
+            this.txtSchool.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSchool.Location = new System.Drawing.Point(667, 297);
             this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(220, 32);
+            this.txtSchool.Size = new System.Drawing.Size(220, 22);
             this.txtSchool.TabIndex = 29;
             // 
             // label3
@@ -202,9 +209,10 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(667, 382);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(220, 32);
+            this.txtAddress.Size = new System.Drawing.Size(220, 22);
             this.txtAddress.TabIndex = 31;
             // 
             // btnConfirm
@@ -232,9 +240,10 @@
             // 
             // txtEmergencyName
             // 
+            this.txtEmergencyName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmergencyName.Location = new System.Drawing.Point(352, 211);
             this.txtEmergencyName.Name = "txtEmergencyName";
-            this.txtEmergencyName.Size = new System.Drawing.Size(257, 32);
+            this.txtEmergencyName.Size = new System.Drawing.Size(257, 22);
             this.txtEmergencyName.TabIndex = 34;
             // 
             // cbMale
@@ -303,7 +312,6 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmCustomer";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_tenantDoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

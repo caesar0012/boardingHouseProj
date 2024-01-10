@@ -177,39 +177,39 @@ namespace boardingHouseProj
             if (string.IsNullOrEmpty(txtRoomNumber.Text))
             {
 
-                MessageBox.Show("Please Input Room Number of the Room");
+                MessageBox.Show("Please Input Room Number of the Room.");
 
             }
             else if (string.IsNullOrEmpty(txtDescription.Text))
             {
 
-                MessageBox.Show("Please Input Description of the Room");
+                MessageBox.Show("Please Input Description of the Room.");
 
 
             }
             else if (string.IsNullOrEmpty(cmbGender.Text))
             {
 
-                MessageBox.Show("Please Select a Gender for the Room");
+                MessageBox.Show("Please Select a Gender for the Room.");
 
             }
             else if (string.IsNullOrEmpty(txtCapacity.Text))
             {
 
-                MessageBox.Show("Please Input Capacity of the Room");
+                MessageBox.Show("Please Input Capacity of the Room.");
 
             }
             else if (string.IsNullOrEmpty(txtPrice.Text))
             {
 
-                MessageBox.Show("Please Input Price of the Room");
+                MessageBox.Show("Please Input Price of the Room.");
 
 
             }
             else if (string.IsNullOrEmpty(cmbStatus.Text))
             {
 
-                MessageBox.Show("Please Select Status of the Room");
+                MessageBox.Show("Please Select Status of the Room.");
 
             }
             else if (RoomExists(roomNumber)){
@@ -246,7 +246,7 @@ namespace boardingHouseProj
 
                     }
                 }
-                    MessageBox.Show("Room Updated");
+                    MessageBox.Show("The Room has been Updated Succesfully.");
                     
             }
             else
@@ -271,7 +271,7 @@ namespace boardingHouseProj
                         cmd.ExecuteNonQuery();
                     }
                 }
-                    MessageBox.Show("Room Added");
+                    MessageBox.Show("The Room has been Added Succesfully.");
             }
             frmManage_rm_Load(sender, e);
         }
@@ -315,7 +315,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("roomNum", txtRoomNumber.Text);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Recover Success");
+                    MessageBox.Show("Recover Successfully.");
                 }
 
                 string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
@@ -389,7 +389,7 @@ namespace boardingHouseProj
                         
                         }
 
-                            MessageBox.Show("Archive Success");
+                            MessageBox.Show("Archive Successfully.");
 
                     }
 

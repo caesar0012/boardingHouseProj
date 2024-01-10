@@ -74,7 +74,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@staffID", ID);
                     cmd.Parameters.AddWithValue("@arch", num1);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Deleted Successfully.");
 
                 }
             }
@@ -190,7 +190,7 @@ namespace boardingHouseProj
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Update Success");
+                    MessageBox.Show("Update Successfully.");
 
                 }
             }

@@ -30,7 +30,7 @@ namespace boardingHouseProj
         {
             if (txtPassword.Text != txtConfirmPass.Text) {
 
-                MessageBox.Show("Password does not match");
+                MessageBox.Show("Password does not match.");
 
                 return;
             }
@@ -77,7 +77,7 @@ namespace boardingHouseProj
                     cmd.ExecuteNonQuery();
                 }
             }
-            MessageBox.Show("Update Success");
+            MessageBox.Show("Updated Successfully.");
         }
 
         private void loadProfile()

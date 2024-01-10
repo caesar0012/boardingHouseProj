@@ -75,7 +75,7 @@ namespace boardingHouseProj
             }
             catch {
 
-                MessageBox.Show("Datagrid failed to load");
+                MessageBox.Show("Datagrid failed to load.");
             
             }
         }
@@ -100,11 +100,11 @@ namespace boardingHouseProj
             {
                 if (string.IsNullOrEmpty(txtTenantName.Text)) {
 
-                    MessageBox.Show("Please Select Tenant Name");
+                    MessageBox.Show("Please Select a Tenant Name!");
 
                 } else if (string.IsNullOrEmpty(txtReceived.Text)) {
 
-                    MessageBox.Show("Please Insert Payment Amount");
+                    MessageBox.Show("Please Insert a Payment Amount!");
 
                 }
                 else
@@ -123,7 +123,7 @@ namespace boardingHouseProj
                     else
                     {
 
-                        MessageBox.Show("Please Select Payment Type");
+                        MessageBox.Show("Please Select a Payment Type!");
                         return;
 
                     }
@@ -161,7 +161,7 @@ namespace boardingHouseProj
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Transaction Success");
+                    MessageBox.Show("Transaction Successfully");
                 }
             }
         }
@@ -195,7 +195,7 @@ namespace boardingHouseProj
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Transaction Success");
+                    MessageBox.Show("Transaction Successfully.");
                 }
             }
         }

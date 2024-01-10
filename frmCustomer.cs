@@ -54,55 +54,55 @@ namespace boardingHouseProj
             if (string.IsNullOrEmpty(txtFirstname.Text))
             {
 
-                MessageBox.Show("Pls input firstname");
+                MessageBox.Show("Please Input your FirstName!");
 
             }
             else if (string.IsNullOrEmpty(txtLastName.Text))
             {
 
-                MessageBox.Show("Please input lastname");
+                MessageBox.Show("Please Input your LastName!");
 
             }
             else if (string.IsNullOrEmpty(txtContact.Text))
             {
 
-                MessageBox.Show("Please input your own Contact Number");
+                MessageBox.Show("Please Input your Contact Number!");
 
             }
             else if (string.IsNullOrEmpty(txtEmergencyContact.Text))
             {
 
-                MessageBox.Show("Please input emergency contact");
+                MessageBox.Show("Please Input Emergency Contact!");
 
             }
             else if (string.IsNullOrEmpty(txtRelationship.Text))
             {
 
-                MessageBox.Show("Please input your relationship");
+                MessageBox.Show("Please Input your Relationship!");
 
             }
             else if (string.IsNullOrEmpty(txtSchool.Text))
             {
 
-                MessageBox.Show("Please input the school you attend");
+                MessageBox.Show("Please Input the School you Attend!");
 
             }
             else if (string.IsNullOrEmpty(txtAddress.Text))
             {
 
-                MessageBox.Show("Please Input your address");
+                MessageBox.Show("Please Input your Address!");
 
             } else if (string.IsNullOrEmpty(txtEmergencyName.Text)) {
 
-                MessageBox.Show("Please Emergency Contact Name");
+                MessageBox.Show("Please Input Emergency Contact Name!");
 
             } else if (cbFemale.Checked == false && cbMale.Checked == false) {
 
-                MessageBox.Show("Please Select Gender");
+                MessageBox.Show("Please Select a Gender!");
 
             } else if (cbFemale.Checked == true && cbMale.Checked == true) {
 
-                MessageBox.Show("Please One Gender");
+                MessageBox.Show("Please Select One Gender!");
 
             }
             else
@@ -162,7 +162,7 @@ namespace boardingHouseProj
 
                             cmd.ExecuteNonQuery();
 
-                            MessageBox.Show("Done inserting customer personal info");
+                            MessageBox.Show("Inserting Personal Information Succesfully.");
                         }
                     }
                 }
@@ -199,8 +199,7 @@ namespace boardingHouseProj
             txtRelationship.Clear();
             txtSchool.Clear();
             cbFemale.Checked = false;
-            cbMale.Checked = false;
-            
+            cbMale.Checked = false;          
 
         }
 

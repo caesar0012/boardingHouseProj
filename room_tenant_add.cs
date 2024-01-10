@@ -251,29 +251,29 @@ namespace boardingHouseProj
 
                 if (string.IsNullOrEmpty(cmbRoomNum.Text)) {
 
-                    MessageBox.Show("Please Select Room Number");
+                    MessageBox.Show("Please Select a Room Number!");
 
                 }
                 else if (string.IsNullOrEmpty(txtBed.Text))
                 {
 
-                    MessageBox.Show("Please Select Bed Number");
+                    MessageBox.Show("Please Select a Bed Number!");
 
                 }
                 else if (string.IsNullOrEmpty(txtMonthlyPayment.Text))
                 {
 
-                    MessageBox.Show("Please Input Monthly Payment of the Tenant");
+                    MessageBox.Show("Please Input Monthly Payment of the Tenant!");
 
                 }
                 else if (string.IsNullOrEmpty(txtDeposit.Text))
                 {
 
-                    MessageBox.Show("Please insert deposit amount of the Tenant");
+                    MessageBox.Show("Please Insert the deposit amount of the Tenant!");
 
                 } else if (IsRoomFull()) {
 
-                    MessageBox.Show("Room is full");
+                    MessageBox.Show("Room is fully Occupied.");
 
                 } else if (!CheckBed()) {
 
@@ -306,7 +306,7 @@ namespace boardingHouseProj
                                 cmd1.ExecuteNonQuery();
                             }
 
-                            MessageBox.Show("Update Done");
+                            MessageBox.Show("Updated Successfully.");
                         }
                         else
                         {
@@ -328,7 +328,7 @@ namespace boardingHouseProj
                                 command.ExecuteNonQuery();
                             }
 
-                            MessageBox.Show("Create Success");
+                            MessageBox.Show("Created Successfully.");
                         }
                     }
                 }
@@ -445,7 +445,7 @@ namespace boardingHouseProj
 
                         if (count == 1)
                         {
-                            MessageBox.Show("Bed already taken");
+                            MessageBox.Show("Bed has been already taken.");
                             return false;
                         }
                         else { 

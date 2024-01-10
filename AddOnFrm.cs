@@ -69,7 +69,7 @@ namespace boardingHouseProj
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Submit Success");
+                    MessageBox.Show("Submit Successfully.");
                 }
             }
         }

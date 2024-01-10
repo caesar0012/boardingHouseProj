@@ -33,20 +33,20 @@ namespace boardingHouseProj
             if (string.IsNullOrEmpty(txtName.Text))
             {
 
-                MessageBox.Show("Please Enter Name");
+                MessageBox.Show("Please Enter a Name!");
 
 
             }
             else if (string.IsNullOrEmpty(txtContact.Text))
             {
 
-                MessageBox.Show("Please Enter Contact");
+                MessageBox.Show("Please Enter a Contact Number!");
 
             }
             else if (string.IsNullOrEmpty(txtRef.Text))
             {
 
-                MessageBox.Show("Please Enter Reference");
+                MessageBox.Show("Please Enter a Reference!");
 
             }
             else {

@@ -158,7 +158,7 @@ namespace boardingHouseProj
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Update Success");
+                    MessageBox.Show("Update Successfully.");
 
                     TenantManage_Load(sender, e);
 
@@ -171,7 +171,7 @@ namespace boardingHouseProj
         {
             if (string.IsNullOrEmpty(txtFirstName.Text))
             {
-                MessageBox.Show("Please Select Tenant To archive");
+                MessageBox.Show("Please Select a Tenant to archive.");
                 return;
 
             }

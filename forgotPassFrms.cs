@@ -30,7 +30,7 @@ namespace boardingHouseProj
             if (authen(txtUserName.Text, cmbForgotPassQuest.Text, txtAnswer.Text))
             {
 
-                MessageBox.Show("Success");
+                MessageBox.Show("Login Successfully.");
                 
                 frmMain m1 = new frmMain();
                 this.Hide();
@@ -39,7 +39,7 @@ namespace boardingHouseProj
             }
             else {
 
-                MessageBox.Show("User not found");
+                MessageBox.Show("User not found.");
             
             }
         }

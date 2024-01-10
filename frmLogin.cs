@@ -18,8 +18,8 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        public static string staff_id = "61";
-        public static string role = "Admin";
+        public static string staff_id = "67";
+        public static string role = "Manager";
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace boardingHouseProj
             }
             else
             {
-                MessageBox.Show("Failed Login");
+                MessageBox.Show("Failed Login. Please Try Again.");
             }
         }
 
@@ -69,11 +69,11 @@ namespace boardingHouseProj
                         {
                             if (reader.Read())
                             {
-                                // Assuming 'retrievedStaffID' is of type string
+                              /*  // Assuming 'retrievedStaffID' is of type string
                                 staff_id = reader["Staff_id"].ToString();
 
                                 // Assuming 'retriveRole' is a string, update it accordingly if it's not
-                                role = reader["Role"].ToString();
+                                role = reader["Role"].ToString();*/
                             }
                         }
 

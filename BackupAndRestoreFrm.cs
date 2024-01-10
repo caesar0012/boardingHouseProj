@@ -31,7 +31,7 @@ namespace boardingHouseProj
                     
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Backup Success");
+                    MessageBox.Show("Backup Successfully.");
 
             }
         }
@@ -83,7 +83,7 @@ namespace boardingHouseProj
                     SqlCommand cmd3 = new SqlCommand(str3, connect);
                     cmd3.ExecuteNonQuery();
 
-                    MessageBox.Show("Restore Done");
+                    MessageBox.Show("Restored Successfully.");
                     connect.Close();
                 }
                 catch (Exception ex)

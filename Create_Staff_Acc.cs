@@ -38,42 +38,42 @@ namespace boardingHouseProj
             if (string.IsNullOrEmpty(txtFirstName.Text))
             {
 
-                MessageBox.Show("Pls input firstname");
+                MessageBox.Show("Please Input your FirstName!");
 
             }
             else if (string.IsNullOrEmpty(txtLastName.Text))
             {
 
-                MessageBox.Show("Pls input lastName");
+                MessageBox.Show("Please Input your LastName!");
 
             }
             else if (string.IsNullOrEmpty(txtPassword.Text))
             {
 
-                MessageBox.Show("Pls input password");
+                MessageBox.Show("Please Input a Password!");
 
             } 
             else if (txtPassword.Text != txtConfirmPass.Text) {
 
-                MessageBox.Show("Password does not match");
+                MessageBox.Show("Password does not match!");
 
             }
             else if (string.IsNullOrEmpty(cmbQuestionPass.Text))
             {
 
-                MessageBox.Show("Pls input Question for password");
+                MessageBox.Show("Please input Question for password");
 
             }
             else if (string.IsNullOrEmpty(cmbRole.Text))
             {
 
-                MessageBox.Show("Pls input Role");
+                MessageBox.Show("Please Input a Role!");
 
             }
             else if (string.IsNullOrEmpty(txtContact.Text))
             {
 
-                MessageBox.Show("Pls input Contact");
+                MessageBox.Show("Please Input Contact Number!");
 
             }
             else if (string.IsNullOrEmpty(txtAnswerQuestion.Text))
@@ -81,7 +81,7 @@ namespace boardingHouseProj
                 MessageBox.Show("Pls input answer for forgot question");
             }
             else if (string.IsNullOrEmpty(txtUserName.Text)) {
-                MessageBox.Show("Pls Input username");
+                MessageBox.Show("Please Input your Username!");
             }
             else
             {
@@ -129,7 +129,7 @@ namespace boardingHouseProj
 
                             cmd.ExecuteNonQuery();
 
-                            MessageBox.Show("Insert Success");
+                            MessageBox.Show("Insert Successfully.");
 
                         }
                     }

@@ -308,7 +308,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Create_Staff_Acc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Load += new System.EventHandler(this.Create_Staff_Acc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

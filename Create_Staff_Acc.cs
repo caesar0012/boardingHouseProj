@@ -139,6 +139,7 @@ namespace boardingHouseProj
                     MessageBox.Show(ex.Message);
                 }
             }//
+            clear();
         }
         private void btnUpload_Click(object sender, EventArgs e)
         {
@@ -195,10 +196,21 @@ namespace boardingHouseProj
             }
 
             }
-
-        private void Create_Staff_Acc_Load(object sender, EventArgs e)
-        {
+        void clear() { 
+        
+            txtUserName.Clear();
+            txtAnswerQuestion.Clear();
+            txtContact.Clear();
+            txtConfirmPass.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPassword.Clear();
+            cmbQuestionPass.Text = "";
+            cmbRole.Text = "";
+            
 
         }
+            
+
     }
 }

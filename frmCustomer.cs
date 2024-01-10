@@ -170,9 +170,8 @@ namespace boardingHouseProj
                 {
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
-
-
             }
+            clear();
         }
 
         private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,5 +189,21 @@ namespace boardingHouseProj
         {
             txtContact_KeyPress(sender, e);
         }
+        void clear()
+        {
+            txtAddress.Clear();
+            txtContact.Clear();
+            txtEmergencyContact.Clear();
+            txtEmergencyName.Clear();
+            txtFirstname.Clear();
+            txtLastName.Clear();
+            txtRelationship.Clear();
+            txtSchool.Clear();
+            cbFemale.Checked = false;
+            cbMale.Checked = false;
+            
+
+        }
+
     }
 }

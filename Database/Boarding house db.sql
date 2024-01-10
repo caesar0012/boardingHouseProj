@@ -127,4 +127,3 @@ CREATE TABLE TenantRequest (
 
 );
 
-USE BoardingHouse;

@@ -42,7 +42,10 @@ namespace boardingHouseProj
 
             ofd.Filter = "Backup Files (*.bak)|*.bak";
             ofd.Title = "Database Restore";
-            ofd.InitialDirectory = @"C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup";
+
+            // edward @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup";
+
+            ofd.InitialDirectory = @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {

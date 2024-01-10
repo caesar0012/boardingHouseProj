@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPayment = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -87,18 +86,6 @@
             this.dgPayment.Size = new System.Drawing.Size(629, 367);
             this.dgPayment.TabIndex = 0;
             this.dgPayment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPayment_CellClick);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(853, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnConfirm
             // 
@@ -279,7 +266,7 @@
             this.cbCash.AutoSize = true;
             this.cbCash.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCash.Location = new System.Drawing.Point(50, 256);
-            this.cbCash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCash.Margin = new System.Windows.Forms.Padding(2);
             this.cbCash.Name = "cbCash";
             this.cbCash.Size = new System.Drawing.Size(51, 18);
             this.cbCash.TabIndex = 49;
@@ -291,7 +278,7 @@
             this.cbGcash.AutoSize = true;
             this.cbGcash.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGcash.Location = new System.Drawing.Point(110, 256);
-            this.cbGcash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGcash.Margin = new System.Windows.Forms.Padding(2);
             this.cbGcash.Name = "cbGcash";
             this.cbGcash.Size = new System.Drawing.Size(59, 18);
             this.cbGcash.TabIndex = 50;
@@ -325,7 +312,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgPayment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment_Frm";
@@ -340,7 +326,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgPayment;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;

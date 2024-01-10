@@ -115,7 +115,7 @@ namespace boardingHouseProj
                     "on t1.Tenant_id = l1.Tenant_id\r\n" +
                     "left join Room as r1\r\n" +
                     "on l1.room_id = r1.Room_id\r\n" +
-                    "where r1.Room_number is null" +
+                    "where r1.Room_number is null " +
                     "and t1.archive = 0");
 
             }
@@ -306,7 +306,7 @@ namespace boardingHouseProj
                                 cmd1.ExecuteNonQuery();
                             }
 
-                            MessageBox.Show("Update Bro");
+                            MessageBox.Show("Update Done");
                         }
                         else
                         {
@@ -328,7 +328,7 @@ namespace boardingHouseProj
                                 command.ExecuteNonQuery();
                             }
 
-                            MessageBox.Show("Create Bro");
+                            MessageBox.Show("Create Success");
                         }
                     }
                 }

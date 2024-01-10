@@ -45,7 +45,6 @@
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbShow = new System.Windows.Forms.ComboBox();
             this.dgTenant = new System.Windows.Forms.DataGridView();
@@ -186,19 +185,6 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(858, 2);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(70, 26);
-            this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -325,7 +311,6 @@
             this.Controls.Add(this.dgTenant);
             this.Controls.Add(this.cmbShow);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbRole);
@@ -364,7 +349,6 @@
         private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbShow;
         private System.Windows.Forms.DataGridView dgTenant;

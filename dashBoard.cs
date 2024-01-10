@@ -18,6 +18,42 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
+        int totalBed, availBed;
+
+        void totalBed1() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = "Select Count(assign_bed) as TotalBed from lease_tbl";
+
+                string query1 = "Select SUM(Capacity) as TotalBed from Room";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                    label7.Text = cmd.ExecuteScalar().ToString();
+
+                    totalBed = int.Parse(label7.Text);
+
+                }
+                using (SqlCommand cmd1 = new SqlCommand(query1, connect)) { 
+                    
+                    string num1 = cmd1.ExecuteScalar().ToString(); 
+
+                    int num2 = int.Parse(num1);
+
+                    availBed = num2 - totalBed;
+
+                    lblBeds.Text = availBed.ToString();
+                    
+                
+                }
+
+
+            }
+        }
+
         void TotalRoom()
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
@@ -52,8 +88,9 @@ namespace boardingHouseProj
             {
                 connect.Open();
 
-                string query = "SELECT COUNT(DISTINCT Tenant_id) " +
-                    "FROM Tenant where Archive = 0;";
+                string query = "Select count(lease_id) from lease_tbl\r\n    " +
+                    "where room_id is not null and " +
+                    "assign_bed is not null";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
@@ -78,63 +115,12 @@ namespace boardingHouseProj
         {
             TotalRoom();
             totalTenant();
+            totalBed1();
         }
 
-        private void cmbEarning_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (cmbEarning.Text == "Month")
-            {
-
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-                    connect.Open();
-
-                    string query = "SELECT ISNULL(SUM(amount_paid), 0) AS TotalAmountPaid\r\nFROM Payment\r\nWHERE YEAR(PaymentDate) = YEAR(GETDATE());\r\n";
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
-                    {
-                        // Use ExecuteScalar to retrieve a single value
-                        object result = cmd.ExecuteScalar();
-
-                        // Check if the result is not null before converting to string
-                        if (result != null)
-                        {
-                            lblEarnings.Text = result.ToString();
-                        }
-                        else
-                        {
-                            // Handle the case where the result is null (no rooms found)
-                            lblEarnings.Text = "0";
-                        }
-                    }
-                }
-            }
-            else {
-
-                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
-                {
-                    connect.Open();
-
-                    string query = "SELECT ISNULL(SUM(amount_paid), 0) AS TotalAmountPaid " +
-                       "FROM Payment " +
-                       "WHERE Month(PaymentDate) = Month(GETDATE());";
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
-                    {
-                        // Use ExecuteScalar to retrieve a single value
-                        object result = cmd.ExecuteScalar();
-
-                        // Check if the result is not null before converting to string
-                        if (result != null)
-                        {
-                            lblEarnings.Text = result.ToString();
-                        }
-                        else
-                        {
-                            // Handle the case where the result is null (no rooms found)
-                            lblEarnings.Text = "0";
-                        }
-                    }
-                }
-            }
+            this.Close();
         }
     }
 }

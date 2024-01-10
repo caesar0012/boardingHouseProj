@@ -139,7 +139,6 @@ namespace boardingHouseProj
                     MessageBox.Show(ex.Message);
                 }
             }//
-            clear();
         }
         private void btnUpload_Click(object sender, EventArgs e)
         {
@@ -210,7 +209,15 @@ namespace boardingHouseProj
             
 
         }
-            
 
+        private void btnClear(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

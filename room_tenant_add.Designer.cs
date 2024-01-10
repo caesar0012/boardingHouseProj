@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.dgAssignTenant = new System.Windows.Forms.DataGridView();
             this.dtStartLease = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,18 +63,6 @@
             this.label1.Size = new System.Drawing.Size(217, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tenant Reservation";
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(843, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgAssignTenant
             // 
@@ -301,7 +288,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtStartLease);
             this.Controls.Add(this.dgAssignTenant);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtGender);
@@ -318,7 +304,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgAssignTenant;
         private System.Windows.Forms.DateTimePicker dtStartLease;
         private System.Windows.Forms.Label label3;

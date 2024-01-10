@@ -171,7 +171,6 @@ namespace boardingHouseProj
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
-            clear();
         }
 
         private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
@@ -205,5 +204,9 @@ namespace boardingHouseProj
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
     }
 }

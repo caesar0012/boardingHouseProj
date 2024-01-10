@@ -39,48 +39,57 @@
             this.lblOccu = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cmbEarning = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblEarnings = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblBeds = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 7);
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(374, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 25);
+            this.label2.Size = new System.Drawing.Size(132, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "DashBoard";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.pbRoom);
             this.panel2.Controls.Add(this.lblRoom);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(46, 60);
+            this.panel2.Location = new System.Drawing.Point(42, 98);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 118);
+            this.panel2.Size = new System.Drawing.Size(377, 118);
             this.panel2.TabIndex = 12;
             // 
             // pbRoom
             // 
             this.pbRoom.Image = ((System.Drawing.Image)(resources.GetObject("pbRoom.Image")));
-            this.pbRoom.Location = new System.Drawing.Point(279, 17);
+            this.pbRoom.Location = new System.Drawing.Point(282, 17);
             this.pbRoom.Name = "pbRoom";
             this.pbRoom.Size = new System.Drawing.Size(84, 88);
-            this.pbRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbRoom.TabIndex = 18;
             this.pbRoom.TabStop = false;
             // 
@@ -88,34 +97,34 @@
             // 
             this.lblRoom.AutoSize = true;
             this.lblRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoom.Location = new System.Drawing.Point(51, 66);
+            this.lblRoom.Location = new System.Drawing.Point(25, 70);
             this.lblRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(15, 22);
+            this.lblRoom.Size = new System.Drawing.Size(55, 22);
             this.lblRoom.TabIndex = 16;
-            this.lblRoom.Text = " ";
+            this.lblRoom.Text = " Total";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 29);
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.Size = new System.Drawing.Size(76, 24);
             this.label3.TabIndex = 15;
             this.label3.Text = "Rooms";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lblOccu);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(49, 192);
+            this.panel3.Location = new System.Drawing.Point(42, 230);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(418, 118);
+            this.panel3.Size = new System.Drawing.Size(377, 118);
             this.panel3.TabIndex = 13;
             // 
             // pictureBox2
@@ -132,57 +141,55 @@
             // 
             this.lblOccu.AutoSize = true;
             this.lblOccu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOccu.Location = new System.Drawing.Point(12, 69);
+            this.lblOccu.Location = new System.Drawing.Point(22, 76);
             this.lblOccu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOccu.Name = "lblOccu";
-            this.lblOccu.Size = new System.Drawing.Size(15, 22);
+            this.lblOccu.Size = new System.Drawing.Size(50, 22);
             this.lblOccu.TabIndex = 17;
-            this.lblOccu.Text = " ";
+            this.lblOccu.Text = "Total";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 36);
+            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 18);
+            this.label4.Size = new System.Drawing.Size(115, 24);
             this.label4.TabIndex = 16;
             this.label4.Text = "Occupancy";
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel4.Controls.Add(this.cmbEarning);
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.lblEarnings);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(46, 326);
+            this.panel4.Location = new System.Drawing.Point(479, 230);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 118);
+            this.panel4.Size = new System.Drawing.Size(374, 118);
             this.panel4.TabIndex = 17;
             // 
-            // cmbEarning
+            // label7
             // 
-            this.cmbEarning.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEarning.FormattingEnabled = true;
-            this.cmbEarning.Items.AddRange(new object[] {
-            "Year",
-            "Month"});
-            this.cmbEarning.Location = new System.Drawing.Point(3, 3);
-            this.cmbEarning.Name = "cmbEarning";
-            this.cmbEarning.Size = new System.Drawing.Size(121, 23);
-            this.cmbEarning.TabIndex = 18;
-            this.cmbEarning.SelectedIndexChanged += new System.EventHandler(this.cmbEarning_SelectedIndexChanged);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(16, 65);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 22);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Total";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(287, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(287, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(79, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(79, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
@@ -200,13 +207,78 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 40);
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(16, 17);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 18);
+            this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Earnings";
+            this.label5.Text = "Total Bed";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.lblBeds);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(462, 28);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 118);
+            this.panel1.TabIndex = 20;
+            // 
+            // lblBeds
+            // 
+            this.lblBeds.AutoSize = true;
+            this.lblBeds.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeds.Location = new System.Drawing.Point(16, 70);
+            this.lblBeds.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBeds.Name = "lblBeds";
+            this.lblBeds.Size = new System.Drawing.Size(136, 22);
+            this.lblBeds.TabIndex = 20;
+            this.lblBeds.Text = "Available Beds";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(287, 29);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(79, 76);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 22);
+            this.label1.TabIndex = 17;
+            this.label1.Text = " ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 17);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 24);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Available Beds";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel5.Controls.Add(this.panel1);
+            this.panel5.Location = new System.Drawing.Point(17, 70);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(857, 324);
+            this.panel5.TabIndex = 22;
             // 
             // dashBoard
             // 
@@ -219,6 +291,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dashBoard";
             this.Text = "dashBoard";
@@ -232,6 +305,10 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +329,12 @@
         private System.Windows.Forms.PictureBox pbRoom;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cmbEarning;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblBeds;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel5;
     }
 }

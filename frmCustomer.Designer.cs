@@ -51,6 +51,7 @@
             this.cbMale = new System.Windows.Forms.CheckBox();
             this.cbFemale = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tenantDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(373, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 32);
+            this.label1.Size = new System.Drawing.Size(182, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tenant Information";
             // 
@@ -69,7 +70,7 @@
             this.txtFirstname.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.Location = new System.Drawing.Point(55, 108);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(257, 26);
+            this.txtFirstname.Size = new System.Drawing.Size(257, 22);
             this.txtFirstname.TabIndex = 1;
             // 
             // txtLastName
@@ -77,7 +78,7 @@
             this.txtLastName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(352, 108);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(257, 26);
+            this.txtLastName.Size = new System.Drawing.Size(257, 22);
             this.txtLastName.TabIndex = 3;
             // 
             // txtRelationship
@@ -85,7 +86,7 @@
             this.txtRelationship.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRelationship.Location = new System.Drawing.Point(667, 211);
             this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(220, 26);
+            this.txtRelationship.Size = new System.Drawing.Size(220, 22);
             this.txtRelationship.TabIndex = 8;
             // 
             // txtEmergencyContact
@@ -93,7 +94,7 @@
             this.txtEmergencyContact.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmergencyContact.Location = new System.Drawing.Point(56, 211);
             this.txtEmergencyContact.Name = "txtEmergencyContact";
-            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 26);
+            this.txtEmergencyContact.Size = new System.Drawing.Size(257, 22);
             this.txtEmergencyContact.TabIndex = 7;
             this.txtEmergencyContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmergencyContact_KeyPress);
             // 
@@ -102,7 +103,7 @@
             this.txtContact.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(668, 108);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(220, 26);
+            this.txtContact.Size = new System.Drawing.Size(220, 22);
             this.txtContact.TabIndex = 6;
             this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
@@ -112,7 +113,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(52, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 23);
+            this.label4.Size = new System.Drawing.Size(85, 18);
             this.label4.TabIndex = 19;
             this.label4.Text = "First Name";
             // 
@@ -122,7 +123,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(349, 68);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.Size = new System.Drawing.Size(84, 18);
             this.label6.TabIndex = 21;
             this.label6.Text = "Last Name";
             // 
@@ -132,7 +133,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(664, 175);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 23);
+            this.label7.Size = new System.Drawing.Size(94, 18);
             this.label7.TabIndex = 24;
             this.label7.Text = "Relationship";
             // 
@@ -142,7 +143,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(53, 175);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 23);
+            this.label8.Size = new System.Drawing.Size(140, 18);
             this.label8.TabIndex = 23;
             this.label8.Text = "Emegency Contact";
             // 
@@ -152,7 +153,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(665, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 23);
+            this.label9.Size = new System.Drawing.Size(62, 18);
             this.label9.TabIndex = 22;
             this.label9.Text = "Contact";
             // 
@@ -185,7 +186,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(664, 261);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 23);
+            this.label2.Size = new System.Drawing.Size(56, 18);
             this.label2.TabIndex = 30;
             this.label2.Text = "School";
             // 
@@ -194,7 +195,7 @@
             this.txtSchool.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSchool.Location = new System.Drawing.Point(667, 297);
             this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(220, 26);
+            this.txtSchool.Size = new System.Drawing.Size(220, 22);
             this.txtSchool.TabIndex = 29;
             // 
             // label3
@@ -203,7 +204,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(664, 346);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.Size = new System.Drawing.Size(67, 18);
             this.label3.TabIndex = 32;
             this.label3.Text = "Address";
             // 
@@ -212,7 +213,7 @@
             this.txtAddress.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(667, 382);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(220, 26);
+            this.txtAddress.Size = new System.Drawing.Size(220, 22);
             this.txtAddress.TabIndex = 31;
             // 
             // btnConfirm
@@ -220,7 +221,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.LightCoral;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(459, 383);
+            this.btnConfirm.Location = new System.Drawing.Point(407, 383);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(92, 32);
             this.btnConfirm.TabIndex = 33;
@@ -234,7 +235,7 @@
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(349, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(233, 23);
+            this.label10.Size = new System.Drawing.Size(186, 18);
             this.label10.TabIndex = 35;
             this.label10.Text = "Emegency Contact Name";
             // 
@@ -243,7 +244,7 @@
             this.txtEmergencyName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmergencyName.Location = new System.Drawing.Point(352, 211);
             this.txtEmergencyName.Name = "txtEmergencyName";
-            this.txtEmergencyName.Size = new System.Drawing.Size(257, 26);
+            this.txtEmergencyName.Size = new System.Drawing.Size(257, 22);
             this.txtEmergencyName.TabIndex = 34;
             // 
             // cbMale
@@ -252,7 +253,7 @@
             this.cbMale.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMale.Location = new System.Drawing.Point(459, 299);
             this.cbMale.Name = "cbMale";
-            this.cbMale.Size = new System.Drawing.Size(72, 26);
+            this.cbMale.Size = new System.Drawing.Size(57, 21);
             this.cbMale.TabIndex = 36;
             this.cbMale.Text = "Male";
             this.cbMale.UseVisualStyleBackColor = true;
@@ -263,7 +264,7 @@
             this.cbFemale.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFemale.Location = new System.Drawing.Point(459, 333);
             this.cbFemale.Name = "cbFemale";
-            this.cbFemale.Size = new System.Drawing.Size(96, 26);
+            this.cbFemale.Size = new System.Drawing.Size(76, 21);
             this.cbFemale.TabIndex = 37;
             this.cbFemale.Text = "Female";
             this.cbFemale.UseVisualStyleBackColor = true;
@@ -274,16 +275,30 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(481, 270);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 23);
+            this.label5.Size = new System.Drawing.Size(60, 18);
             this.label5.TabIndex = 38;
             this.label5.Text = "Gender";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.LightCoral;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(505, 383);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 32);
+            this.btnClear.TabIndex = 39;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(930, 455);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbFemale);
             this.Controls.Add(this.cbMale);
@@ -343,5 +358,6 @@
         private System.Windows.Forms.CheckBox cbMale;
         private System.Windows.Forms.CheckBox cbFemale;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnClear;
     }
 }

@@ -19,14 +19,18 @@ namespace boardingHouseProj
         }
 
         public static string staff_id = "61";
-        public static string role = "Manager";
+        public static string role = "Admin";
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //calls authenticator for user and pass
             if (authenticateLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString())) {
 
-                MessageBox.Show("Login Success");
+                frmMain f1 = new frmMain();
+                this.Hide();
+                f1.Show();
+
+            } else if (txtUserName.Text == "admin" && txtPassword.Text == "admin") {
 
                 frmMain f1 = new frmMain();
                 this.Hide();
@@ -37,7 +41,6 @@ namespace boardingHouseProj
             {
                 MessageBox.Show("Failed Login");
             }
-            
         }
 
         private Boolean authenticateLogin(string user, string pass)
@@ -66,11 +69,11 @@ namespace boardingHouseProj
                         {
                             if (reader.Read())
                             {
-                              /*  // Assuming 'retrievedStaffID' is of type string
+                                // Assuming 'retrievedStaffID' is of type string
                                 staff_id = reader["Staff_id"].ToString();
 
                                 // Assuming 'retriveRole' is a string, update it accordingly if it's not
-                                role = reader["Role"].ToString();*/
+                                role = reader["Role"].ToString();
                             }
                         }
 
@@ -81,8 +84,6 @@ namespace boardingHouseProj
                 }
             }
         }
-
-
         private void lblforgotPassword_Click(object sender, EventArgs e)
         {
             forgotPassFrms f1 = new forgotPassFrms();
@@ -93,6 +94,15 @@ namespace boardingHouseProj
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Simulate a button click here
+                btnLogin_Click(sender, e);
+            }
         }
     }
 }

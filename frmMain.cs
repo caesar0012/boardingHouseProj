@@ -49,15 +49,11 @@ namespace boardingHouseProj
                 flpTenant.Hide();
                 
             }
-        
-        
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadProfile();
-            
-
         }
         private void LoadProfile()
         {
@@ -105,17 +101,28 @@ namespace boardingHouseProj
             }
         }
 
+        private Form activeForm = null;
 
+        private void OpenForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm.Dispose();
+            }
+
+            activeForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void profileMain_Click(object sender, EventArgs e)
         {
-            UserSettings u1 = new UserSettings();
-
-            u1.TopLevel = false;
-            u1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            u1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(u1);
-            u1.BringToFront();
-            u1.Show();
+            OpenForm(new UserSettings());
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -192,13 +199,7 @@ namespace boardingHouseProj
 
         private void btnDashBoard_Click_1(object sender, EventArgs e)
         {
-            dashBoard d1 = new dashBoard();
-
-            d1.TopLevel = false;
-            d1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(d1);
-            d1.BringToFront();
-            d1.Show();
+            OpenForm(new dashBoard());
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
@@ -207,24 +208,12 @@ namespace boardingHouseProj
             TimeRoom.Start();
             timeNavi.Start();
 
-            room_tenant_add r1 = new room_tenant_add();
-            r1.TopLevel = false;
-            r1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            r1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(r1);
-            r1.BringToFront();
-            r1.Show();
+            OpenForm(new room_tenant_add());
         }
 
         private void btnManageRoom_Click(object sender, EventArgs e)
         {
-            frmManage_rm rm1 = new frmManage_rm();
-            rm1.TopLevel = false;
-            rm1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            rm1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(rm1);
-            rm1.BringToFront();
-            rm1.Show();
+            OpenForm(new frmManage_rm());
 
             TimeRoom.Start();
             timeNavi.Start();
@@ -232,51 +221,19 @@ namespace boardingHouseProj
 
         private void btnCreateTenant_Click(object sender, EventArgs e)
         {
-
-            frmCustomer c1 = new frmCustomer();
-            c1.TopLevel = false;
-            c1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            c1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(c1);
-            c1.BringToFront();
-            c1.Show();
+            OpenForm(new frmCustomer());
 
             TimeTenant.Start();
             timeNavi.Start();
-
         }
 
         private void btnCreateEmployee_Click(object sender, EventArgs e)
         {
-            Create_Staff_Acc staff1 = new Create_Staff_Acc();
-            staff1.TopLevel = false;
-            staff1.Dock = DockStyle.Fill;
-            this.Controls.Add(staff1);
-            staff1.BringToFront();
-            staff1.Show();
+            
+            OpenForm(new Create_Staff_Acc());
 
             TimeStaff.Start();
             timeNavi.Start();
-        }
-
-        private void btnManageTenant_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-            Payment_Frm p1 = new Payment_Frm();
-            p1.TopLevel = false;
-            p1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            p1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(p1);
-            p1.BringToFront();
-            p1.Show();
-
-            TimeTenant.Start();
-            timeNavi.Start();
-
         }
 
         private void btnShowAdmin_Click(object sender, EventArgs e)
@@ -290,19 +247,12 @@ namespace boardingHouseProj
             TimeAdmin.Start();
             timeNavi.Start();
             BackupAndRestoreFrm b1 = new BackupAndRestoreFrm();
-            this.Hide();
             b1.Show();
         }
 
         private void btnManageStaff_Click(object sender, EventArgs e)
         {
-            ManageStaffFrm m1 = new ManageStaffFrm();
-            m1.TopLevel = false;
-            m1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            m1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(m1);
-            m1.BringToFront();
-            m1.Show();
+            OpenForm(new ManageStaffFrm());
 
             TimeStaff.Start();
             timeNavi.Start();
@@ -310,14 +260,7 @@ namespace boardingHouseProj
 
         private void btnActivities_Click(object sender, EventArgs e)
         {
-            ActivitiesFrm a1 = new ActivitiesFrm();
-
-            a1.TopLevel = false;
-            a1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            a1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(a1);
-            a1.BringToFront();
-            a1.Show();
+            OpenForm(new ActivitiesFrm());
 
             TimeAdmin.Start();
             timeNavi.Start();
@@ -325,14 +268,7 @@ namespace boardingHouseProj
 
         private void btnManageTenant_Click_1(object sender, EventArgs e)
         {
-            EditTenantFrm e1 = new EditTenantFrm();
-
-            e1.TopLevel = false;
-            e1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            e1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(e1);
-            e1.BringToFront();
-            e1.Show();
+            OpenForm(new EditTenantFrm());
 
             TimeTenant.Start();
             timeNavi.Start();
@@ -350,16 +286,9 @@ namespace boardingHouseProj
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Payment_Frm e1 = new Payment_Frm();
-
-            e1.TopLevel = false;
-            e1.FormBorderStyle = FormBorderStyle.None; // Optional to remove form border
-            e1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(e1);
-            e1.BringToFront();
-            e1.Show();
-
+            OpenForm(new Payment_Frm());
         }
+
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Hide();

@@ -23,6 +23,18 @@ namespace boardingHouseProj
             dgRoom.DataError += dataGridView1_DataError;
             btnRecover.Hide();
 
+            checkRole();
+
+        }
+
+        void checkRole() {
+
+            if (frmLogin.role == "Manager") {
+
+                btnDelete.Hide();
+            
+            }
+        
         }
 
         private void frmManage_rm_Load(object sender, EventArgs e)

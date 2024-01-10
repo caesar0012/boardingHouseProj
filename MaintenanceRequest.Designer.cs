@@ -90,6 +90,7 @@
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MaintenanceRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintenanceRequest";
             this.Load += new System.EventHandler(this.MaintenanceRequest_Load);
             this.ResumeLayout(false);

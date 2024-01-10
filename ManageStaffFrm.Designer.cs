@@ -322,7 +322,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(930, 498);
-            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.dgTenant);
             this.Controls.Add(this.cmbShow);
             this.Controls.Add(this.label7);
@@ -340,6 +339,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnRestore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageStaffFrm";
             this.Text = "ManageTenantFrm";

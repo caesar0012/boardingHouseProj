@@ -24,8 +24,16 @@ namespace boardingHouseProj
         }
 
         string imgFilePath = null;
+
+        string pass01;
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (txtPassword.Text != txtConfirmPass.Text) {
+
+                MessageBox.Show("Password does not match");
+
+                return;
+            }
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
             {
 
@@ -49,7 +57,18 @@ namespace boardingHouseProj
 
                     cmd.Parameters.AddWithValue("@profile", imageData);
                     cmd.Parameters.AddWithValue("@user", txtUserName.Text);
-                    cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
+
+                    if (string.IsNullOrEmpty(txtPassword.Text))
+                    {
+
+                        cmd.Parameters.AddWithValue("@pass", pass01);
+
+                    }
+                    else {
+
+                        cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
+
+                    }
                     cmd.Parameters.AddWithValue("@forgQuestion", cmbQuestionPass.Text);
                     cmd.Parameters.AddWithValue("@forgotAnswer", txtAnswerQuestion.Text);
                     cmd.Parameters.AddWithValue("@contact", txtContact.Text);
@@ -80,7 +99,7 @@ namespace boardingHouseProj
 
                         if (img == null)
                         {
-                            dpBox.Image = null;
+                            
                         }
                         else
                         {
@@ -166,7 +185,7 @@ namespace boardingHouseProj
                         cmbQuestionPass.Text = reader["ForgotQuestion"].ToString();
                         txtAnswerQuestion.Text = reader["ForgotAnswer"].ToString();
                         txtContact.Text = reader["Contact"].ToString();
-
+                        pass01 = reader["password"].ToString();
                         txtLastName.Text = reader["FirstName"].ToString();
                         txtFirstName.Text = reader["Lastname"].ToString();
 

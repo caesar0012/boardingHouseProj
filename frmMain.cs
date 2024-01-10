@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,16 +25,38 @@ namespace boardingHouseProj
         public frmMain()
         {
             InitializeComponent();
-
+            roleCheck();
         }
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
+
+        void roleCheck() {
+
+            if (frmLogin.role == "Admin") {
+
+
+
+            } else if (frmLogin.role == "Manager") {
+
+                flpAdmin.Hide();
+                btnManageStaff.Hide();
+
+            }
+            else if (frmLogin.role == "Cashier")
+            {
+
+                flpAdmin.Hide();
+                flpRoom.Hide();
+                flpStaff.Hide();
+                flpTenant.Hide();
+                
+            }
+        
+        
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadProfile();
+            
 
         }
         private void LoadProfile()
@@ -54,16 +77,14 @@ namespace boardingHouseProj
                         {
                             if (reader.Read())
                             {
-                                if (int.TryParse(reader["Staff_id"].ToString(), out int Staff_id))
-                                {
-                                    frmLogin.staff_id = Staff_id;
-                                }
+                                // Assign the value from the reader to frmLogin.staff_id
+                                frmLogin.staff_id = reader["Staff_id"].ToString();
 
                                 byte[] img = reader["ProfilePic"] as byte[];
 
                                 if (img == null)
                                 {
-                                    profileMain.Image = null;
+                                    
                                 }
                                 else
                                 {
@@ -83,8 +104,6 @@ namespace boardingHouseProj
                 MessageBox.Show($"Error loading profile: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
 
         private void profileMain_Click(object sender, EventArgs e)
@@ -341,6 +360,12 @@ namespace boardingHouseProj
             e1.Show();
 
         }
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin l1 = new frmLogin();
+            l1.ShowDialog();
+        }
 
         private void TimeAdmin_Tick(object sender, EventArgs e)
         {
@@ -387,12 +412,6 @@ namespace boardingHouseProj
                 menuExpand = !menuExpand;
                 timeNavi.Stop();
             }
-
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            timeNavi.Start();
         }
     }
 }

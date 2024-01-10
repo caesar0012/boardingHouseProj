@@ -121,7 +121,7 @@
   <data name="pbRoom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAPJJREFUaEPtmbEJQjEURbOAYCXYiDu4iKUTuIDTCBaO8rGxsXYJLdxA7w0J30Lh
+        EAAACxABrSO9dQAAAPJJREFUaEPtmbEJQjEURbOAYCXYiDu4iKUTuIDTCBaO8rGxsXYJLdxA7w0J30Lh
         PUwCkXvgQPKLl3/E5pMghBDvzOEDPht7hzNYjBXk4BPcN5Jn8UyeXYwcso27NvCs6iFHeKnkAZImIVzf
         4KcX+UXO5GzSLIT/49JwpkIsKMSJQqwoxIlCrCjEiUKsKMSJQqyUDlnDAe7ibqS7EH6LcwZd8kGiu5Az
         5Ax+SE34INFdyBRu4CLuRroL+YZCrCjEiUKsKMSJQqwoxIlCrCjEiUKs/F1Ivgzl+prWJeXM/CNVuQzl
@@ -131,7 +131,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAXxJREFUaEPt2E0rRGEYh/FhwULkIygrYcFXQFmKNd+AT8DC2IuIjbJUdrJmKzYU
+        EAAACxABrSO9dQAAAXxJREFUaEPt2E0rRGEYh/FhwULkIygrYcFXQFmKNd+AT8DC2IuIjbJUdrJmKzYU
         VlJYKhtslLfrX7PQdM/0GOfhntxX/WqaOadzn+bMnJdSFEVRFEX5GsQqLvBcodcrGID72rGBN3zU8Ip1
         tMFl2olDWMNbDuByZzZhDVzPGlyl30S9w6kWHWb9cJN+2NagKZbhpktYQ6Y4h5ueYA2Z4hFusgb8Dje9
         wBowhdZ10y2sIVPcwE27sIZMsQM3TcIaMsUE3NSCE1iD1nMEreuqHtzDGtjygF64TJfo17AG/+oKri5N
@@ -143,7 +143,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABV9JREFUaEPtmVeIJUUUhq8554Ri1jXnCCbMCd01hwUTKKKYI+iLER+MiPlNQXww
+        EAAACxABrSO9dQAABV9JREFUaEPtmVeIJUUUhq8554Ri1jXnCCbMCd01hwUTKKKYI+iLER+MiPlNQXww
         I+YVBTGgLmtAX1wVRUVFRcWcv6+6S2ua7jvVd+ZOz+r+8HGr+nao01Xn1Knq3lz9zzQvbFVieY7SPOXv
         6vAG/FlieVVQ8ZxJp4XhOvgKvoXb4Vl4ApYveRKeAf/zHM+9FhaCSSON+AgOgwPgHfgLtoOo7cFjb4Pn
         HA5eozGTQg4T365GRO0INnpKqBWy7LEdQq2QxnwJnQ61NWEf0BdsoA4dNT/cAA65KJ19mfI3ymu8drFQ

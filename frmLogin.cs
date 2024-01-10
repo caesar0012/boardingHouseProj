@@ -18,7 +18,8 @@ namespace boardingHouseProj
             InitializeComponent();
         }
 
-        public static int staff_id = 61;
+        public static string staff_id = "61";
+        public static string role = "Manager";
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -30,6 +31,7 @@ namespace boardingHouseProj
                 frmMain f1 = new frmMain();
                 this.Hide();
                 f1.Show();
+
             }
             else
             {
@@ -38,38 +40,53 @@ namespace boardingHouseProj
             
         }
 
-        private Boolean authenticateLogin(string user, string pass) {
-
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+        private Boolean authenticateLogin(string user, string pass)
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
                 connect.Open();
 
-                //collate mean it was case sensitive comparision for user and pass
+                // collate means it was case-sensitive comparison for user and pass
                 string query = "SELECT COUNT(*) FROM Staff_acc WHERE userName COLLATE latin1_general_cs_as = @user01 AND password COLLATE latin1_general_cs_as = @pass01 AND Archive = 0";
 
-
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
-
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
                     cmd.Parameters.AddWithValue("@user01", user);
                     cmd.Parameters.AddWithValue("@pass01", pass);
 
                     int count = (int)cmd.ExecuteScalar();
 
-                    int retrievedStaffID = (int)cmd.ExecuteScalar();
-                //    staff_id = retrievedStaffID;
+                    if (count > 0)
+                    {
+                        // If login is successful, retrieve the staff ID and role
+                        query = "SELECT Staff_id, Role FROM Staff_acc WHERE userName COLLATE latin1_general_cs_as = @user01 AND password COLLATE latin1_general_cs_as = @pass01 AND Archive = 0";
+                        cmd.CommandText = query;
 
-                    return count > 0;
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                              /*  // Assuming 'retrievedStaffID' is of type string
+                                staff_id = reader["Staff_id"].ToString();
 
-            
+                                // Assuming 'retriveRole' is a string, update it accordingly if it's not
+                                role = reader["Role"].ToString();*/
+                            }
+                        }
+
+                        return true;
+                    }
+
+                    return false;
                 }
             }
-
         }
+
 
         private void lblforgotPassword_Click(object sender, EventArgs e)
         {
             forgotPassFrms f1 = new forgotPassFrms();
-            f1.ShowDialog();
+            f1.Show();
             this.Hide();
         }
 

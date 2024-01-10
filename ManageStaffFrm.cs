@@ -20,12 +20,11 @@ namespace boardingHouseProj
             btnRestore.Visible = false;
         }
 
-        static int ID;
+        static string ID;
 
 
         private void loadTenant()
         {
-
             string query = "SELECT " +
                            "s1.Staff_id AS ID, " +
                            "s1.FirstName + ' ' + s1.LastName AS Name, " +
@@ -51,10 +50,10 @@ namespace boardingHouseProj
                         // Assuming dgTenant is your DataGridView
                         dgTenant.Rows.Add(reader["ID"], reader["Name"], reader["userName"], reader["password"], reader["Role"]);
                     }
-                    dgTenant.AllowUserToAddRows = false;
                 }
             }
 
+                    dgTenant.AllowUserToAddRows = false;
         }
 
         private void ManageTenantFrm_Load(object sender, EventArgs e)
@@ -93,14 +92,19 @@ namespace boardingHouseProj
 
                     string num1 = selectedRow.Cells["clmnID"].Value?.ToString();
 
-                        ID = int.Parse(num1);
+                    ID = num1;
                         txtID.Text = ID.ToString();
 
                     if (dgTenant.Columns[e.ColumnIndex] is DataGridViewImageColumn)
                     {
                         DialogResult result = MessageBox.Show("Do you want to delete " + txtFirstName.Text + " " + txtLastName.Text + "?"
                             , "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                        if (ID == frmLogin.staff_id)
+                        {
+                            MessageBox.Show("You cannot delete your own account. Only administrators or other authorized users have the permission to delete accounts.",
+                                "Delete Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         // Check the user's choice
                         if (result == DialogResult.Yes)
                         {
@@ -108,6 +112,7 @@ namespace boardingHouseProj
                             dgTenant.Rows.Clear();
                             ManageTenantFrm_Load(sender, e);
                             clear();
+
                         }
                         else
                         {
@@ -215,6 +220,7 @@ namespace boardingHouseProj
                 dgTenant.Columns["clmnDel"].Visible = true;
                 ManageTenantFrm_Load(sender, e);
                 btnRestore.Visible = false;
+                btnUpdate.Enabled = true;
             }
         }
 

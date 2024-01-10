@@ -35,20 +35,20 @@
             this.btnShowStaff = new System.Windows.Forms.Button();
             this.btnManageStaff = new System.Windows.Forms.Button();
             this.btnCreateEmployee = new System.Windows.Forms.Button();
-            this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnShowRoom = new System.Windows.Forms.Button();
-            this.btnReservation = new System.Windows.Forms.Button();
-            this.btnManageRoom = new System.Windows.Forms.Button();
             this.flpTenant = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShowTenant = new System.Windows.Forms.Button();
             this.btnCreateTenant = new System.Windows.Forms.Button();
             this.btnManageTenant = new System.Windows.Forms.Button();
+            this.btnDashBoard = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
             this.flpAdmin = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShowAdmin = new System.Windows.Forms.Button();
             this.btnActivities = new System.Windows.Forms.Button();
             this.btnBackReco = new System.Windows.Forms.Button();
-            this.btnDashBoard = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
+            this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnShowRoom = new System.Windows.Forms.Button();
+            this.btnReservation = new System.Windows.Forms.Button();
+            this.btnManageRoom = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -61,9 +61,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flpMain.SuspendLayout();
             this.flpStaff.SuspendLayout();
-            this.flpRoom.SuspendLayout();
             this.flpTenant.SuspendLayout();
             this.flpAdmin.SuspendLayout();
+            this.flpRoom.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).BeginInit();
             this.SuspendLayout();
@@ -71,12 +71,12 @@
             // flpMain
             // 
             this.flpMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flpMain.Controls.Add(this.flpStaff);
             this.flpMain.Controls.Add(this.flpTenant);
-            this.flpMain.Controls.Add(this.btnDashBoard);
-            this.flpMain.Controls.Add(this.btnPay);
             this.flpMain.Controls.Add(this.flpAdmin);
             this.flpMain.Controls.Add(this.flpRoom);
+            this.flpMain.Controls.Add(this.btnPay);
+            this.flpMain.Controls.Add(this.btnDashBoard);
+            this.flpMain.Controls.Add(this.flpStaff);
             this.flpMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMain.Location = new System.Drawing.Point(0, 87);
             this.flpMain.MaximumSize = new System.Drawing.Size(186, 501);
@@ -89,9 +89,9 @@
             // 
             this.flpStaff.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flpStaff.Controls.Add(this.btnShowStaff);
-            this.flpStaff.Controls.Add(this.btnManageStaff);
             this.flpStaff.Controls.Add(this.btnCreateEmployee);
-            this.flpStaff.Location = new System.Drawing.Point(1, 1);
+            this.flpStaff.Controls.Add(this.btnManageStaff);
+            this.flpStaff.Location = new System.Drawing.Point(1, 289);
             this.flpStaff.Margin = new System.Windows.Forms.Padding(1);
             this.flpStaff.MaximumSize = new System.Drawing.Size(179, 140);
             this.flpStaff.MinimumSize = new System.Drawing.Size(179, 54);
@@ -126,7 +126,7 @@
             this.btnManageStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageStaff.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnManageStaff.Location = new System.Drawing.Point(3, 63);
+            this.btnManageStaff.Location = new System.Drawing.Point(3, 103);
             this.btnManageStaff.Name = "btnManageStaff";
             this.btnManageStaff.Size = new System.Drawing.Size(176, 31);
             this.btnManageStaff.TabIndex = 11;
@@ -142,78 +142,13 @@
             this.btnCreateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateEmployee.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCreateEmployee.Location = new System.Drawing.Point(3, 100);
+            this.btnCreateEmployee.Location = new System.Drawing.Point(3, 63);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
             this.btnCreateEmployee.Size = new System.Drawing.Size(176, 34);
             this.btnCreateEmployee.TabIndex = 12;
             this.btnCreateEmployee.Text = "Create Account";
             this.btnCreateEmployee.UseVisualStyleBackColor = false;
             this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
-            // 
-            // flpRoom
-            // 
-            this.flpRoom.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.flpRoom.Controls.Add(this.btnShowRoom);
-            this.flpRoom.Controls.Add(this.btnReservation);
-            this.flpRoom.Controls.Add(this.btnManageRoom);
-            this.flpRoom.Location = new System.Drawing.Point(1, 289);
-            this.flpRoom.Margin = new System.Windows.Forms.Padding(1);
-            this.flpRoom.MaximumSize = new System.Drawing.Size(179, 140);
-            this.flpRoom.MinimumSize = new System.Drawing.Size(179, 54);
-            this.flpRoom.Name = "flpRoom";
-            this.flpRoom.Size = new System.Drawing.Size(179, 54);
-            this.flpRoom.TabIndex = 16;
-            // 
-            // btnShowRoom
-            // 
-            this.btnShowRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnShowRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnShowRoom.FlatAppearance.BorderSize = 0;
-            this.btnShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnShowRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnShowRoom.Image")));
-            this.btnShowRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowRoom.Location = new System.Drawing.Point(3, 3);
-            this.btnShowRoom.Name = "btnShowRoom";
-            this.btnShowRoom.Size = new System.Drawing.Size(176, 54);
-            this.btnShowRoom.TabIndex = 11;
-            this.btnShowRoom.Text = "Room";
-            this.btnShowRoom.UseVisualStyleBackColor = false;
-            this.btnShowRoom.Click += new System.EventHandler(this.btnShowRoom_Click);
-            // 
-            // btnReservation
-            // 
-            this.btnReservation.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnReservation.BackColor = System.Drawing.Color.Transparent;
-            this.btnReservation.FlatAppearance.BorderSize = 0;
-            this.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReservation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnReservation.Location = new System.Drawing.Point(3, 63);
-            this.btnReservation.Name = "btnReservation";
-            this.btnReservation.Size = new System.Drawing.Size(176, 31);
-            this.btnReservation.TabIndex = 13;
-            this.btnReservation.Text = "Reservation";
-            this.btnReservation.UseVisualStyleBackColor = false;
-            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
-            // 
-            // btnManageRoom
-            // 
-            this.btnManageRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnManageRoom.BackColor = System.Drawing.Color.Transparent;
-            this.btnManageRoom.FlatAppearance.BorderSize = 0;
-            this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnManageRoom.Location = new System.Drawing.Point(3, 100);
-            this.btnManageRoom.Name = "btnManageRoom";
-            this.btnManageRoom.Size = new System.Drawing.Size(176, 34);
-            this.btnManageRoom.TabIndex = 14;
-            this.btnManageRoom.Text = "Manage Room";
-            this.btnManageRoom.UseVisualStyleBackColor = false;
-            this.btnManageRoom.Click += new System.EventHandler(this.btnManageRoom_Click);
             // 
             // flpTenant
             // 
@@ -222,7 +157,7 @@
             this.flpTenant.Controls.Add(this.btnCreateTenant);
             this.flpTenant.Controls.Add(this.btnManageTenant);
             this.flpTenant.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flpTenant.Location = new System.Drawing.Point(1, 57);
+            this.flpTenant.Location = new System.Drawing.Point(1, 1);
             this.flpTenant.Margin = new System.Windows.Forms.Padding(1);
             this.flpTenant.MaximumSize = new System.Drawing.Size(179, 140);
             this.flpTenant.MinimumSize = new System.Drawing.Size(179, 54);
@@ -280,13 +215,49 @@
             this.btnManageTenant.UseVisualStyleBackColor = false;
             this.btnManageTenant.Click += new System.EventHandler(this.btnManageTenant_Click_1);
             // 
+            // btnDashBoard
+            // 
+            this.btnDashBoard.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDashBoard.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDashBoard.FlatAppearance.BorderSize = 0;
+            this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashBoard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
+            this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashBoard.Location = new System.Drawing.Point(3, 231);
+            this.btnDashBoard.Name = "btnDashBoard";
+            this.btnDashBoard.Size = new System.Drawing.Size(180, 54);
+            this.btnDashBoard.TabIndex = 13;
+            this.btnDashBoard.Text = "           DashBoard";
+            this.btnDashBoard.UseVisualStyleBackColor = false;
+            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click_1);
+            // 
+            // btnPay
+            // 
+            this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnPay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPay.FlatAppearance.BorderSize = 0;
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
+            this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPay.Location = new System.Drawing.Point(3, 171);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(180, 54);
+            this.btnPay.TabIndex = 14;
+            this.btnPay.Text = "        Payment";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
             // flpAdmin
             // 
             this.flpAdmin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flpAdmin.Controls.Add(this.btnShowAdmin);
             this.flpAdmin.Controls.Add(this.btnActivities);
             this.flpAdmin.Controls.Add(this.btnBackReco);
-            this.flpAdmin.Location = new System.Drawing.Point(1, 233);
+            this.flpAdmin.Location = new System.Drawing.Point(1, 57);
             this.flpAdmin.Margin = new System.Windows.Forms.Padding(1);
             this.flpAdmin.MaximumSize = new System.Drawing.Size(179, 140);
             this.flpAdmin.MinimumSize = new System.Drawing.Size(179, 54);
@@ -345,41 +316,70 @@
             this.btnBackReco.UseVisualStyleBackColor = false;
             this.btnBackReco.Click += new System.EventHandler(this.btnBackReco_Click);
             // 
-            // btnDashBoard
+            // flpRoom
             // 
-            this.btnDashBoard.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDashBoard.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDashBoard.FlatAppearance.BorderSize = 0;
-            this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashBoard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
-            this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashBoard.Location = new System.Drawing.Point(3, 115);
-            this.btnDashBoard.Name = "btnDashBoard";
-            this.btnDashBoard.Size = new System.Drawing.Size(180, 54);
-            this.btnDashBoard.TabIndex = 13;
-            this.btnDashBoard.Text = "           DashBoard";
-            this.btnDashBoard.UseVisualStyleBackColor = false;
-            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click_1);
+            this.flpRoom.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.flpRoom.Controls.Add(this.btnShowRoom);
+            this.flpRoom.Controls.Add(this.btnReservation);
+            this.flpRoom.Controls.Add(this.btnManageRoom);
+            this.flpRoom.Location = new System.Drawing.Point(1, 113);
+            this.flpRoom.Margin = new System.Windows.Forms.Padding(1);
+            this.flpRoom.MaximumSize = new System.Drawing.Size(179, 140);
+            this.flpRoom.MinimumSize = new System.Drawing.Size(179, 54);
+            this.flpRoom.Name = "flpRoom";
+            this.flpRoom.Size = new System.Drawing.Size(179, 54);
+            this.flpRoom.TabIndex = 16;
             // 
-            // btnPay
+            // btnShowRoom
             // 
-            this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnPay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPay.FlatAppearance.BorderSize = 0;
-            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
-            this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(3, 175);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(180, 54);
-            this.btnPay.TabIndex = 14;
-            this.btnPay.Text = "        Payment";
-            this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            this.btnShowRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnShowRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnShowRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnShowRoom.FlatAppearance.BorderSize = 0;
+            this.btnShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnShowRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnShowRoom.Image")));
+            this.btnShowRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowRoom.Location = new System.Drawing.Point(3, 3);
+            this.btnShowRoom.Name = "btnShowRoom";
+            this.btnShowRoom.Size = new System.Drawing.Size(176, 54);
+            this.btnShowRoom.TabIndex = 11;
+            this.btnShowRoom.Text = "Room";
+            this.btnShowRoom.UseVisualStyleBackColor = false;
+            this.btnShowRoom.Click += new System.EventHandler(this.btnShowRoom_Click);
+            // 
+            // btnReservation
+            // 
+            this.btnReservation.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReservation.BackColor = System.Drawing.Color.Transparent;
+            this.btnReservation.FlatAppearance.BorderSize = 0;
+            this.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReservation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnReservation.Location = new System.Drawing.Point(3, 63);
+            this.btnReservation.Name = "btnReservation";
+            this.btnReservation.Size = new System.Drawing.Size(176, 31);
+            this.btnReservation.TabIndex = 13;
+            this.btnReservation.Text = "Reservation";
+            this.btnReservation.UseVisualStyleBackColor = false;
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
+            // 
+            // btnManageRoom
+            // 
+            this.btnManageRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnManageRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btnManageRoom.FlatAppearance.BorderSize = 0;
+            this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnManageRoom.Location = new System.Drawing.Point(3, 100);
+            this.btnManageRoom.Name = "btnManageRoom";
+            this.btnManageRoom.Size = new System.Drawing.Size(176, 34);
+            this.btnManageRoom.TabIndex = 14;
+            this.btnManageRoom.Text = "Manage Room";
+            this.btnManageRoom.UseVisualStyleBackColor = false;
+            this.btnManageRoom.Click += new System.EventHandler(this.btnManageRoom_Click);
             // 
             // panel1
             // 
@@ -420,9 +420,9 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Close";
+            this.btnExit.Text = "Logout";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // profileMain
             // 
@@ -482,9 +482,9 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.flpMain.ResumeLayout(false);
             this.flpStaff.ResumeLayout(false);
-            this.flpRoom.ResumeLayout(false);
             this.flpTenant.ResumeLayout(false);
             this.flpAdmin.ResumeLayout(false);
+            this.flpRoom.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileMain)).EndInit();

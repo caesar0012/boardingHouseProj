@@ -27,7 +27,6 @@ namespace boardingHouseProj
         }
 
         static string tnantID;
-
         private void btnClose_Click(object sender, EventArgs e) //close the exe
         {
             this.Close();
@@ -217,7 +216,6 @@ namespace boardingHouseProj
                     txtMonthlyPayment.Text = selectedRow.Cells["MonthlyPayment"].Value.ToString();
                     txtDeposit.Text = selectedRow.Cells["DepositAmount"].Value.ToString();
 
-
                     cmbRoomNum.Text = selectedRow.Cells["Room_number"].Value?.ToString();
                     txtName.Text = selectedRow.Cells["Name"].Value?.ToString();
                     txtGender.Text = selectedRow.Cells["Gender"].Value?.ToString();
@@ -277,8 +275,12 @@ namespace boardingHouseProj
 
                 } else if (!CheckBed()) {
 
-                    
-                
+
+
+                } else if (checkGender() != txtGender.Text) {
+
+                    MessageBox.Show("Please seperate male and female");
+
                 }
                 else
                 {
@@ -350,10 +352,7 @@ namespace boardingHouseProj
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
-                        // Check if cmbRoomNum.Text is a valid integer before parsing
-                        if (int.TryParse(cmbRoomNum.Text, out int roomNum))
-                        {
-                            cmd.Parameters.AddWithValue("@RoomNum", roomNum);
+                            cmd.Parameters.AddWithValue("@RoomNum", cmbRoomNum.Text);
 
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
@@ -363,7 +362,7 @@ namespace boardingHouseProj
                                     return reader.GetInt32(0); // Use index 0 for Room_id
                                 }
                             }
-                        }
+                        
                     }
                 }
             }
@@ -443,7 +442,7 @@ namespace boardingHouseProj
 
                         int count = (int)cmd.ExecuteScalar();
 
-                        if (count == 1)
+                        if (count > 1)
                         {
                             MessageBox.Show("Bed has been already taken.");
                             return false;
@@ -473,6 +472,25 @@ namespace boardingHouseProj
 
 
             f1.Show();
+        }
+
+        string checkGender()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+
+                string query = "SELECT allowed_gender FROM Room WHERE Room_number = @roomNum";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@roomNum", cmbRoomNum.Text);
+
+                    // Check if the result is null before calling ToString to avoid potential null reference exception
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : null;
+                }
+            }
         }
     }
 }

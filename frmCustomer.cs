@@ -104,6 +104,10 @@ namespace boardingHouseProj
 
                 MessageBox.Show("Please Select One Gender!");
 
+            } else if (pb_tenantDoc.Image == null) {
+
+                MessageBox.Show("Please upload the documents of the tenant");
+
             }
             else
             {
@@ -199,7 +203,9 @@ namespace boardingHouseProj
             txtRelationship.Clear();
             txtSchool.Clear();
             cbFemale.Checked = false;
-            cbMale.Checked = false;          
+            cbMale.Checked = false;
+            btnBrowse.Text = "Browse";
+            pb_tenantDoc.Image = null;
 
         }
 

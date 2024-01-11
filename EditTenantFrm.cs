@@ -129,7 +129,7 @@ namespace boardingHouseProj
 
                 string query = "Update Tenant set FirstName = @Fname, LastName = @LName, Gender = @gender, Contact = @contact," +
                     "Emergency_name = @emergeName, Emergency_contact = @emergeCon, Relationship = @relation, School = @school," +
-                    "Address = @address, Document_pic = @docs where Tenant_id = @tnt_id";
+                    "Address = @address where Tenant_id = @tnt_id";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
@@ -153,7 +153,6 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@relation", txtRelationship.Text);
                     cmd.Parameters.AddWithValue("@school", txtSchool.Text);
                     cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                    cmd.Parameters.AddWithValue("@docs", imageData);
                     cmd.Parameters.AddWithValue("@tnt_id", tenantID);
 
                     cmd.ExecuteNonQuery();

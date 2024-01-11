@@ -49,7 +49,7 @@ namespace boardingHouseProj
                 "LEFT JOIN Lease_tbl AS l1 \r\n" +
                 "ON t1.Tenant_id = l1.Tenant_id\r\n" +
                 "left join Room as r1\r\n" +
-                "on l1.room_id = r1.Room_id");
+                "on l1.room_id = r1.Room_id where t1.Archive = 0");
         }
 
         private void room_tenant_add_Load(object sender, EventArgs e)

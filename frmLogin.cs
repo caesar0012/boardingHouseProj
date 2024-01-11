@@ -19,7 +19,7 @@ namespace boardingHouseProj
         }
 
         public static string staff_id = "67";
-        public static string role = "Manager";
+        public static string role = "Admin";
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

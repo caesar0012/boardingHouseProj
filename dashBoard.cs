@@ -20,39 +20,57 @@ namespace boardingHouseProj
 
         int totalBed, availBed;
 
-        void totalBed1() {
+        void totalBed1()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
+                    connect.Open();
 
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                    string query = "Select Count(assign_bed) as TotalBed from lease_tbl";
+                    string query1 = "Select SUM(Capacity) as TotalBed from Room";
 
-                connect.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            label7.Text = result.ToString();
+                            totalBed = int.Parse(label7.Text);
+                        }
+                        else
+                        {
+                            // Handle the case where there are no assigned beds
+                            label7.Text = "0"; // Or any appropriate default value
+                            totalBed = 0;
+                        }
+                    }
 
-                string query = "Select Count(assign_bed) as TotalBed from lease_tbl";
-
-                string query1 = "Select SUM(Capacity) as TotalBed from Room";
-
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
-
-                    label7.Text = cmd.ExecuteScalar().ToString();
-
-                    totalBed = int.Parse(label7.Text);
-
+                    using (SqlCommand cmd1 = new SqlCommand(query1, connect))
+                    {
+                        object result1 = cmd1.ExecuteScalar();
+                        if (result1 != null)
+                        {
+                            string num1 = result1.ToString();
+                            int num2 = int.Parse(num1);
+                            availBed = num2 - totalBed;
+                            lblBeds.Text = availBed.ToString();
+                        }
+                        else
+                        {
+                            // Handle the case where there are no rooms or capacities
+                            lblBeds.Text = "N/A"; // Or any appropriate message
+                        }
+                    }
                 }
-                using (SqlCommand cmd1 = new SqlCommand(query1, connect)) { 
-                    
-                    string num1 = cmd1.ExecuteScalar().ToString(); 
+            }
+            catch{
 
-                    int num2 = int.Parse(num1);
-
-                    availBed = num2 - totalBed;
-
-                    lblBeds.Text = availBed.ToString();
-                    
-                
-                }
-
-
+                lblBeds.Text = "0";
             }
         }
+
 
         void TotalRoom()
         {

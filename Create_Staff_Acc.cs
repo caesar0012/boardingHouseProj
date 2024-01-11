@@ -206,6 +206,7 @@ namespace boardingHouseProj
             txtPassword.Clear();
             cmbQuestionPass.Text = "";
             cmbRole.Text = "";
+            dpBox.Image = null;
             
 
         }

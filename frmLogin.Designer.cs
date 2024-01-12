@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(506, 231);
+            this.label1.Location = new System.Drawing.Point(482, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 26);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(511, 259);
+            this.txtUserName.Location = new System.Drawing.Point(487, 259);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(255, 30);
@@ -63,7 +63,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(511, 349);
+            this.txtPassword.Location = new System.Drawing.Point(487, 351);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -75,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(506, 321);
+            this.label2.Location = new System.Drawing.Point(490, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 26);
             this.label2.TabIndex = 2;
@@ -87,7 +87,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.Location = new System.Drawing.Point(571, 443);
+            this.btnLogin.Location = new System.Drawing.Point(551, 444);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(129, 39);
@@ -99,20 +99,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(503, 77);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(468, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 92);
+            this.label3.Size = new System.Drawing.Size(292, 90);
             this.label3.TabIndex = 5;
             this.label3.Text = "Diaz Rodriguez \r\n Bording House\r\n";
             // 
             // lblforgotPassword
             // 
             this.lblforgotPassword.AutoSize = true;
-            this.lblforgotPassword.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.lblforgotPassword.BackColor = System.Drawing.Color.Beige;
             this.lblforgotPassword.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblforgotPassword.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblforgotPassword.Location = new System.Drawing.Point(546, 559);
+            this.lblforgotPassword.Location = new System.Drawing.Point(521, 559);
             this.lblforgotPassword.Name = "lblforgotPassword";
             this.lblforgotPassword.Size = new System.Drawing.Size(196, 25);
             this.lblforgotPassword.TabIndex = 6;
@@ -123,8 +123,8 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(788, 11);
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(739, 11);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(77, 32);
@@ -150,7 +150,7 @@
             this.btnShow.FlatAppearance.BorderSize = 0;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
-            this.btnShow.Location = new System.Drawing.Point(772, 349);
+            this.btnShow.Location = new System.Drawing.Point(756, 350);
             this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(45, 31);
@@ -162,9 +162,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BackColor = System.Drawing.Color.Beige;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(877, 593);
+            this.ClientSize = new System.Drawing.Size(828, 593);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
@@ -180,6 +180,7 @@
             this.Name = "btnSee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.btnSee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

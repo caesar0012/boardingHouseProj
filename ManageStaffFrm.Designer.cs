@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStaffFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(61, 135);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(264, 30);
             this.txtID.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(61, 221);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(263, 30);
             this.txtFirstName.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(60, 301);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(264, 30);
             this.txtLastName.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(60, 385);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(264, 30);
             this.txtUserName.TabIndex = 8;
@@ -144,7 +144,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(60, 468);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(264, 34);
             this.txtPassword.TabIndex = 10;
@@ -169,7 +169,7 @@
             "Manager",
             "Admin"});
             this.cmbRole.Location = new System.Drawing.Point(60, 553);
-            this.cmbRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRole.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(263, 34);
             this.cmbRole.TabIndex = 11;
@@ -218,7 +218,7 @@
             "Default",
             "Recovery"});
             this.cmbShow.Location = new System.Drawing.Point(761, 38);
-            this.cmbShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbShow.Margin = new System.Windows.Forms.Padding(4);
             this.cmbShow.Name = "cmbShow";
             this.cmbShow.Size = new System.Drawing.Size(204, 34);
             this.cmbShow.TabIndex = 1;
@@ -227,16 +227,16 @@
             // 
             // dgTenant
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.RosyBrown;
-            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgTenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTenant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgTenant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTenant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnID,
@@ -245,17 +245,17 @@
             this.clmnPass,
             this.clmnRole,
             this.clmnDel});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgTenant.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgTenant.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgTenant.EnableHeadersVisualStyles = false;
             this.dgTenant.Location = new System.Drawing.Point(406, 105);
-            this.dgTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgTenant.Margin = new System.Windows.Forms.Padding(4);
             this.dgTenant.Name = "dgTenant";
             this.dgTenant.RowHeadersVisible = false;
             this.dgTenant.RowHeadersWidth = 51;
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1398, 805);
             this.Controls.Add(this.dgTenant);
             this.Controls.Add(this.cmbShow);
@@ -351,7 +351,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageStaffFrm";
             this.Text = "ManageTenantFrm";
             this.Load += new System.EventHandler(this.ManageTenantFrm_Load);

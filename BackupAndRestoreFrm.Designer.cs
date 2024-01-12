@@ -41,10 +41,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(137, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 42);
+            this.label1.Size = new System.Drawing.Size(336, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Backup and Restore";
             // 
@@ -97,7 +97,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Khaki;
+            this.panel2.BackColor = System.Drawing.Color.Beige;
             this.panel2.Controls.Add(this.btnBackup);
             this.panel2.Controls.Add(this.btnRestore);
             this.panel2.Controls.Add(this.btnRestoreBrwse);
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(609, 333);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);

@@ -42,10 +42,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(105, 21);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(79, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(288, 46);
+            this.label3.Size = new System.Drawing.Size(306, 45);
             this.label3.TabIndex = 6;
             this.label3.Text = "Account Support";
             // 
@@ -127,7 +127,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(429, 9);
+            this.btnClose.Location = new System.Drawing.Point(423, 11);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 32);
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(508, 559);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cmbForgotPassQuest);

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManage_rm));
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -56,21 +56,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 33);
+            this.label1.Size = new System.Drawing.Size(255, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Room";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
+            this.btnConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(97, 398);
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(134, 585);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(91, 24);
+            this.btnConfirm.Size = new System.Drawing.Size(137, 42);
             this.btnConfirm.TabIndex = 12;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -79,168 +81,186 @@
             // dgRoom
             // 
             this.dgRoom.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
-            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgRoom.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgRoom.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRoom.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgRoom.Location = new System.Drawing.Point(300, 70);
+            this.dgRoom.Location = new System.Drawing.Point(400, 86);
+            this.dgRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.RowHeadersWidth = 51;
-            this.dgRoom.Size = new System.Drawing.Size(603, 373);
+            this.dgRoom.Size = new System.Drawing.Size(804, 541);
             this.dgRoom.TabIndex = 11;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
             this.dgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(53, 308);
+            this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(71, 439);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(191, 20);
+            this.txtPrice.Size = new System.Drawing.Size(253, 30);
             this.txtPrice.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 281);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(67, 409);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 18);
+            this.label4.Size = new System.Drawing.Size(59, 26);
             this.label4.TabIndex = 23;
             this.label4.Text = "Price";
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(53, 251);
+            this.txtCapacity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.Location = new System.Drawing.Point(71, 366);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(191, 20);
+            this.txtCapacity.Size = new System.Drawing.Size(253, 30);
             this.txtCapacity.TabIndex = 21;
             this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 224);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(67, 336);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.Size = new System.Drawing.Size(92, 26);
             this.label6.TabIndex = 20;
             this.label6.Text = "Capacity";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(53, 134);
+            this.txtDescription.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(71, 206);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(191, 20);
+            this.txtDescription.Size = new System.Drawing.Size(253, 30);
             this.txtDescription.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(50, 108);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 176);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(119, 26);
             this.label3.TabIndex = 18;
             this.label3.Text = "Description";
             // 
             // txtRoomNumber
             // 
             this.txtRoomNumber.Enabled = false;
-            this.txtRoomNumber.Location = new System.Drawing.Point(53, 76);
+            this.txtRoomNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomNumber.Location = new System.Drawing.Point(71, 116);
+            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(191, 20);
+            this.txtRoomNumber.Size = new System.Drawing.Size(253, 30);
             this.txtRoomNumber.TabIndex = 17;
             this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 49);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(67, 86);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 18);
+            this.label2.Size = new System.Drawing.Size(151, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Room Number";
             // 
             // cmbGender
             // 
+            this.cmbGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female",
             "None"});
-            this.cmbGender.Location = new System.Drawing.Point(53, 188);
-            this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbGender.Location = new System.Drawing.Point(71, 286);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(191, 21);
+            this.cmbGender.Size = new System.Drawing.Size(253, 30);
             this.cmbGender.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 167);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(67, 258);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 18);
+            this.label5.Size = new System.Drawing.Size(164, 26);
             this.label5.TabIndex = 26;
             this.label5.Text = "Gender Allowed";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(50, 337);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(67, 476);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.Size = new System.Drawing.Size(68, 26);
             this.label7.TabIndex = 28;
             this.label7.Text = "Status";
             // 
             // cmbStatus
             // 
+            this.cmbStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Available",
             "Under Renovation",
             "Destroyed",
             "Maintenance"});
-            this.cmbStatus.Location = new System.Drawing.Point(53, 359);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbStatus.Location = new System.Drawing.Point(71, 512);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(191, 21);
+            this.cmbStatus.Size = new System.Drawing.Size(253, 30);
             this.cmbStatus.TabIndex = 27;
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // cmbDefault
             // 
-            this.cmbDefault.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDefault.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDefault.FormattingEnabled = true;
             this.cmbDefault.Items.AddRange(new object[] {
             "Default",
             "Archive"});
-            this.cmbDefault.Location = new System.Drawing.Point(533, 12);
+            this.cmbDefault.Location = new System.Drawing.Point(715, 27);
+            this.cmbDefault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbDefault.Name = "cmbDefault";
-            this.cmbDefault.Size = new System.Drawing.Size(121, 24);
+            this.cmbDefault.Size = new System.Drawing.Size(160, 30);
             this.cmbDefault.TabIndex = 29;
             this.cmbDefault.Text = "Default";
             this.cmbDefault.SelectedIndexChanged += new System.EventHandler(this.cmbDefault_SelectedIndexChanged);
@@ -252,9 +272,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(691, 7);
+            this.btnDelete.Location = new System.Drawing.Point(1125, 15);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(47, 48);
+            this.btnDelete.Size = new System.Drawing.Size(63, 59);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -266,19 +287,20 @@
             this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecover.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecover.Image = ((System.Drawing.Image)(resources.GetObject("btnRecover.Image")));
-            this.btnRecover.Location = new System.Drawing.Point(691, 8);
+            this.btnRecover.Location = new System.Drawing.Point(1112, 17);
+            this.btnRecover.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRecover.Name = "btnRecover";
-            this.btnRecover.Size = new System.Drawing.Size(57, 46);
+            this.btnRecover.Size = new System.Drawing.Size(76, 57);
             this.btnRecover.TabIndex = 31;
             this.btnRecover.UseVisualStyleBackColor = false;
             this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // frmManage_rm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 455);
+            this.BackColor = System.Drawing.Color.Beige;
+            this.ClientSize = new System.Drawing.Size(1240, 659);
             this.Controls.Add(this.cmbDefault);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbStatus);
@@ -298,6 +320,7 @@
             this.Controls.Add(this.btnRecover);
             this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
             this.Load += new System.EventHandler(this.frmManage_rm_Load);

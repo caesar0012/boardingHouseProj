@@ -63,10 +63,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(499, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 46);
+            this.label2.Size = new System.Drawing.Size(207, 45);
             this.label2.TabIndex = 10;
             this.label2.Text = "Dashboard";
             // 
@@ -266,7 +266,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Khaki;
+            this.panel5.BackColor = System.Drawing.Color.Beige;
             this.panel5.Controls.Add(this.panel1);
             this.panel5.Location = new System.Drawing.Point(23, 86);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1197, 558);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

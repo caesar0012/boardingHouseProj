@@ -78,7 +78,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(505, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 22);
+            this.label1.Size = new System.Drawing.Size(185, 27);
             this.label1.TabIndex = 2;
             this.label1.Text = "Boarding House";
             // 
@@ -89,16 +89,16 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(489, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 22);
+            this.label2.Size = new System.Drawing.Size(239, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Management System";
             // 
             // loadBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(723, 244);
+            this.ClientSize = new System.Drawing.Size(747, 255);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbPic);
@@ -107,7 +107,7 @@
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "loadBar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loadBar";

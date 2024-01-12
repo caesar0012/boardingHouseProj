@@ -70,7 +70,7 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(50, 236);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(293, 34);
             this.txtLastName.TabIndex = 1;
@@ -134,7 +134,7 @@
             // 
             this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(890, 236);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(295, 34);
             this.txtUserName.TabIndex = 7;
@@ -146,7 +146,7 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Location = new System.Drawing.Point(494, 609);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(144, 38);
             this.btnConfirm.TabIndex = 13;
@@ -169,7 +169,7 @@
             // 
             this.txtAnswerQuestion.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswerQuestion.Location = new System.Drawing.Point(56, 506);
-            this.txtAnswerQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnswerQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnswerQuestion.Name = "txtAnswerQuestion";
             this.txtAnswerQuestion.Size = new System.Drawing.Size(295, 34);
             this.txtAnswerQuestion.TabIndex = 16;
@@ -178,7 +178,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(495, 354);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(295, 34);
             this.txtPassword.TabIndex = 17;
@@ -188,7 +188,7 @@
             // 
             this.txtConfirmPass.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPass.Location = new System.Drawing.Point(890, 354);
-            this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(293, 34);
             this.txtConfirmPass.TabIndex = 18;
@@ -198,7 +198,7 @@
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(494, 236);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(293, 34);
             this.txtFirstName.TabIndex = 19;
@@ -212,7 +212,7 @@
             "Admin",
             "Cashier"});
             this.cmbRole.Location = new System.Drawing.Point(50, 354);
-            this.cmbRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRole.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(293, 34);
             this.cmbRole.TabIndex = 21;
@@ -237,7 +237,7 @@
             "Favorite Hero",
             "Favorite Team"});
             this.cmbQuestionPass.Location = new System.Drawing.Point(55, 464);
-            this.cmbQuestionPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbQuestionPass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbQuestionPass.Name = "cmbQuestionPass";
             this.cmbQuestionPass.Size = new System.Drawing.Size(296, 34);
             this.cmbQuestionPass.TabIndex = 14;
@@ -247,7 +247,7 @@
             // 
             this.txtContact.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(494, 464);
-            this.txtContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(4);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(295, 34);
             this.txtContact.TabIndex = 24;
@@ -277,11 +277,11 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpload.BackColor = System.Drawing.Color.Silver;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(886, 464);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(297, 38);
             this.btnUpload.TabIndex = 26;
@@ -294,7 +294,7 @@
             this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dpBox.Image = ((System.Drawing.Image)(resources.GetObject("dpBox.Image")));
             this.dpBox.Location = new System.Drawing.Point(1104, 13);
-            this.dpBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dpBox.Margin = new System.Windows.Forms.Padding(4);
             this.dpBox.Name = "dpBox";
             this.dpBox.Size = new System.Drawing.Size(157, 135);
             this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -307,7 +307,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(647, 609);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 38);
             this.button1.TabIndex = 28;
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1303, 741);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dpBox);
@@ -345,7 +345,7 @@
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Create_Staff_Acc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).EndInit();

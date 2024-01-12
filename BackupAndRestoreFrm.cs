@@ -99,6 +99,11 @@ namespace boardingHouseProj
         {
             this.Dispose();
         }
+
+        private void BackupAndRestoreFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

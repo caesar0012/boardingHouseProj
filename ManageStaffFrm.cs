@@ -99,7 +99,7 @@ namespace boardingHouseProj
                     {
                         DialogResult result = MessageBox.Show("Do you want to delete " + txtFirstName.Text + " " + txtLastName.Text + "?"
                             , "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (ID == frmLogin.staff_id)
+                        if (ID == btnSee.staff_id)
                         {
                             MessageBox.Show("You cannot delete your own account. Only administrators or other authorized users have the permission to delete accounts.",
                                 "Delete Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

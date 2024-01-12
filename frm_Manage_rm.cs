@@ -29,7 +29,7 @@ namespace boardingHouseProj
 
         void checkRole() {
 
-            if (frmLogin.role == "Manager") {
+            if (btnSee.role == "Manager") {
 
                 btnDelete.Hide();
             
@@ -266,7 +266,7 @@ namespace boardingHouseProj
                         cmd.Parameters.AddWithValue("@cap", int.Parse(txtCapacity.Text));
                         cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                         cmd.Parameters.AddWithValue("@stats", cmbStatus.Text);
-                        cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
+                        cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
 
                         cmd.ExecuteNonQuery();
                     }

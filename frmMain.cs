@@ -30,17 +30,17 @@ namespace boardingHouseProj
 
         void roleCheck() {
 
-            if (frmLogin.role == "Admin") {
+            if (btnSee.role == "Admin") {
 
 
 
-            } else if (frmLogin.role == "Manager") {
+            } else if (btnSee.role == "Manager") {
 
                 flpAdmin.Hide();
                 btnManageStaff.Hide();
 
             }
-            else if (frmLogin.role == "Cashier")
+            else if (btnSee.role == "Cashier")
             {
 
                 flpAdmin.Hide();
@@ -67,14 +67,14 @@ namespace boardingHouseProj
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Staff_id", frmLogin.staff_id);
+                        command.Parameters.AddWithValue("@Staff_id", btnSee.staff_id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 // Assign the value from the reader to frmLogin.staff_id
-                                frmLogin.staff_id = reader["Staff_id"].ToString();
+                                btnSee.staff_id = reader["Staff_id"].ToString();
 
                                 byte[] img = reader["ProfilePic"] as byte[];
 
@@ -292,7 +292,7 @@ namespace boardingHouseProj
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            frmLogin l1 = new frmLogin();
+            btnSee l1 = new btnSee();
             l1.ShowDialog();
         }
 

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class frmLogin : Form
+    public partial class btnSee : Form
     {
-        public frmLogin()
+        public btnSee()
         {
             InitializeComponent();
         }
@@ -104,5 +104,19 @@ namespace boardingHouseProj
                 btnLogin_Click(sender, e);
             }
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                // If the password is currently visible, hide it
+                txtPassword.PasswordChar = '*'; 
+            }
+            else
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
     }
 }

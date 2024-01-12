@@ -39,7 +39,7 @@ namespace boardingHouseProj
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
+                    cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
                     cmd.Parameters.AddWithValue("@details", txtDescription.Text);
 
                     cmd.ExecuteNonQuery();

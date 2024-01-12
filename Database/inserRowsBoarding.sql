@@ -104,6 +104,8 @@ VALUES (40, 60, 50.00, 'Internet Service'),
        (48, 60, 90.00, 'Security Deposit');
 
 --views
+/*
+
 create view receiptView as 
 Select 
 	p1.Payment_id,
@@ -119,6 +121,4 @@ left join Tenant as t1
 on t1.Tenant_id = l1.Tenant_id 
 where p1.archive = 0
 
-select * from receiptView
-
-use BoardingHouse
+*/

@@ -29,33 +29,33 @@ namespace boardingHouseProj
                     connect.Open();
 
                     string query = "Select Count(assign_bed) as TotalBed from lease_tbl";
-                    string query1 = "Select SUM(Capacity) as TotalBed from Room";
+                    string query1 = "Select SUM(Capacity) as TotalBed from Room where Archive = 0"; //total bed
 
-                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    using (SqlCommand cmd = new SqlCommand(query1, connect))
                     {
                         object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        if (result != null) //count the overall total bed
                         {
-                            label7.Text = result.ToString();
-                            totalBed = int.Parse(label7.Text);
+                            totalBed = (int)result;
+                            lblBeds.Text = totalBed.ToString();
                         }
                         else
                         {
                             // Handle the case where there are no assigned beds
-                            label7.Text = "0"; // Or any appropriate default value
+                            lblTotalBed.Text = "0"; // Or any appropriate default value
                             totalBed = 0;
                         }
                     }
 
-                    using (SqlCommand cmd1 = new SqlCommand(query1, connect))
+                    using (SqlCommand cmd1 = new SqlCommand(query, connect))
                     {
-                        object result1 = cmd1.ExecuteScalar();
+                        object result1 = cmd1.ExecuteScalar(); //available bed minus total
                         if (result1 != null)
                         {
-                            string num1 = result1.ToString();
-                            int num2 = int.Parse(num1);
-                            availBed = num2 - totalBed;
-                            lblBeds.Text = availBed.ToString();
+                            availBed = (int)result1;
+                            int total  = totalBed - availBed;
+                            lblTotalBed.Text = total.ToString();
+
                         }
                         else
                         {

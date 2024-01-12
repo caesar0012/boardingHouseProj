@@ -129,7 +129,7 @@ namespace boardingHouseProj
             }
         }
 
-        private void dashBoard_Load(object sender, EventArgs e)
+        private void dashBoard_Load(object sender, EventArgs e) //this loads the calculation in dashboard
         {
             TotalRoom();
             totalTenant();

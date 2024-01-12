@@ -55,7 +55,7 @@ namespace boardingHouseProj
         {
             LoadProfile();
         }
-        private void LoadProfile()
+        private void LoadProfile() //
         {
             try
             {

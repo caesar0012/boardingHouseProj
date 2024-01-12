@@ -66,7 +66,7 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(481, 420);
@@ -177,7 +177,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.Silver;
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Location = new System.Drawing.Point(566, 593);

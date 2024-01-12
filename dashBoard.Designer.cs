@@ -39,12 +39,12 @@
             this.lblOccu = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTotalBed = new System.Windows.Forms.Label();
+            this.lblBeds = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblEarnings = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalBed = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBeds = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,12 +63,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(499, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 35);
+            this.label2.Size = new System.Drawing.Size(193, 46);
             this.label2.TabIndex = 10;
-            this.label2.Text = "DashBoard";
+            this.label2.Text = "Dashboard";
             // 
             // panel2
             // 
@@ -86,7 +86,7 @@
             // 
             this.pbRoom.Image = ((System.Drawing.Image)(resources.GetObject("pbRoom.Image")));
             this.pbRoom.Location = new System.Drawing.Point(376, 21);
-            this.pbRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRoom.Margin = new System.Windows.Forms.Padding(4);
             this.pbRoom.Name = "pbRoom";
             this.pbRoom.Size = new System.Drawing.Size(112, 108);
             this.pbRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -96,20 +96,20 @@
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoom.Location = new System.Drawing.Point(33, 86);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(69, 27);
+            this.lblRoom.Size = new System.Drawing.Size(77, 33);
             this.lblRoom.TabIndex = 16;
             this.lblRoom.Text = " Total";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 32);
+            this.label3.Size = new System.Drawing.Size(93, 33);
             this.label3.TabIndex = 15;
             this.label3.Text = "Rooms";
             // 
@@ -129,7 +129,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(372, 23);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(112, 108);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,20 +139,20 @@
             // lblOccu
             // 
             this.lblOccu.AutoSize = true;
-            this.lblOccu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOccu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOccu.Location = new System.Drawing.Point(29, 94);
             this.lblOccu.Name = "lblOccu";
-            this.lblOccu.Size = new System.Drawing.Size(62, 27);
+            this.lblOccu.Size = new System.Drawing.Size(71, 33);
             this.lblOccu.TabIndex = 17;
             this.lblOccu.Text = "Total";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 32);
+            this.label4.Size = new System.Drawing.Size(138, 33);
             this.label4.TabIndex = 16;
             this.label4.Text = "Occupancy";
             // 
@@ -169,21 +169,21 @@
             this.panel4.Size = new System.Drawing.Size(499, 145);
             this.panel4.TabIndex = 17;
             // 
-            // lblTotalBed
+            // lblBeds
             // 
-            this.lblTotalBed.AutoSize = true;
-            this.lblTotalBed.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBed.Location = new System.Drawing.Point(22, 85);
-            this.lblTotalBed.Name = "lblTotalBed";
-            this.lblTotalBed.Size = new System.Drawing.Size(62, 27);
-            this.lblTotalBed.TabIndex = 21;
-            this.lblTotalBed.Text = "Total";
+            this.lblBeds.AutoSize = true;
+            this.lblBeds.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeds.Location = new System.Drawing.Point(32, 79);
+            this.lblBeds.Name = "lblBeds";
+            this.lblBeds.Size = new System.Drawing.Size(71, 33);
+            this.lblBeds.TabIndex = 20;
+            this.lblBeds.Text = "Total";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(383, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(105, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -203,12 +203,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(21, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 32);
+            this.label5.Size = new System.Drawing.Size(123, 33);
             this.label5.TabIndex = 16;
             this.label5.Text = "Total Bed";
+            // 
+            // lblTotalBed
+            // 
+            this.lblTotalBed.AutoSize = true;
+            this.lblTotalBed.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBed.Location = new System.Drawing.Point(22, 85);
+            this.lblTotalBed.Name = "lblTotalBed";
+            this.lblTotalBed.Size = new System.Drawing.Size(71, 33);
+            this.lblTotalBed.TabIndex = 21;
+            this.lblTotalBed.Text = "Total";
             // 
             // panel1
             // 
@@ -223,21 +233,11 @@
             this.panel1.Size = new System.Drawing.Size(499, 145);
             this.panel1.TabIndex = 20;
             // 
-            // lblBeds
-            // 
-            this.lblBeds.AutoSize = true;
-            this.lblBeds.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBeds.Location = new System.Drawing.Point(32, 79);
-            this.lblBeds.Name = "lblBeds";
-            this.lblBeds.Size = new System.Drawing.Size(62, 27);
-            this.lblBeds.TabIndex = 20;
-            this.lblBeds.Text = "Total";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(383, 36);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(105, 94);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -257,19 +257,19 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(21, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 32);
+            this.label6.Size = new System.Drawing.Size(181, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "Available Beds";
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel5.BackColor = System.Drawing.Color.Khaki;
             this.panel5.Controls.Add(this.panel1);
             this.panel5.Location = new System.Drawing.Point(23, 86);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1143, 399);
             this.panel5.TabIndex = 22;
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1197, 558);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -287,7 +287,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dashBoard";
             this.Text = "dashBoard";
             this.Load += new System.EventHandler(this.dashBoard_Load);

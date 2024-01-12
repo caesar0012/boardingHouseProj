@@ -41,20 +41,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 12);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(137, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 27);
+            this.label1.Size = new System.Drawing.Size(312, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Backup and Restore";
             // 
             // btnBackup
             // 
-            this.btnBackup.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBackup.BackColor = System.Drawing.Color.Silver;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Location = new System.Drawing.Point(272, 22);
+            this.btnBackup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.Location = new System.Drawing.Point(370, 42);
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(85, 23);
+            this.btnBackup.Size = new System.Drawing.Size(126, 36);
             this.btnBackup.TabIndex = 4;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseVisualStyleBackColor = false;
@@ -62,11 +63,12 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRestore.BackColor = System.Drawing.Color.Silver;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Location = new System.Drawing.Point(272, 108);
+            this.btnRestore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Location = new System.Drawing.Point(370, 162);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(85, 23);
+            this.btnRestore.Size = new System.Drawing.Size(126, 36);
             this.btnRestore.TabIndex = 8;
             this.btnRestore.Text = "Restore";
             this.btnRestore.UseVisualStyleBackColor = false;
@@ -74,11 +76,12 @@
             // 
             // btnRestoreBrwse
             // 
-            this.btnRestoreBrwse.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRestoreBrwse.BackColor = System.Drawing.Color.Silver;
             this.btnRestoreBrwse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestoreBrwse.Location = new System.Drawing.Point(272, 63);
+            this.btnRestoreBrwse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoreBrwse.Location = new System.Drawing.Point(370, 102);
             this.btnRestoreBrwse.Name = "btnRestoreBrwse";
-            this.btnRestoreBrwse.Size = new System.Drawing.Size(85, 23);
+            this.btnRestoreBrwse.Size = new System.Drawing.Size(126, 36);
             this.btnRestoreBrwse.TabIndex = 6;
             this.btnRestoreBrwse.Text = "Browse";
             this.btnRestoreBrwse.UseVisualStyleBackColor = false;
@@ -86,31 +89,33 @@
             // 
             // txtRestore
             // 
-            this.txtRestore.Location = new System.Drawing.Point(24, 66);
+            this.txtRestore.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRestore.Location = new System.Drawing.Point(18, 102);
             this.txtRestore.Name = "txtRestore";
-            this.txtRestore.Size = new System.Drawing.Size(226, 20);
+            this.txtRestore.Size = new System.Drawing.Size(318, 34);
             this.txtRestore.TabIndex = 5;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.BackColor = System.Drawing.Color.Khaki;
             this.panel2.Controls.Add(this.btnBackup);
             this.panel2.Controls.Add(this.btnRestore);
             this.panel2.Controls.Add(this.btnRestoreBrwse);
             this.panel2.Controls.Add(this.txtRestore);
-            this.panel2.Location = new System.Drawing.Point(65, 69);
+            this.panel2.Location = new System.Drawing.Point(46, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(395, 161);
+            this.panel2.Size = new System.Drawing.Size(516, 227);
             this.panel2.TabIndex = 10;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
+            this.btnClose.BackColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(453, 3);
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(537, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(85, 23);
+            this.btnClose.Size = new System.Drawing.Size(69, 32);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -118,10 +123,10 @@
             // 
             // BackupAndRestoreFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(541, 264);
+            this.BackColor = System.Drawing.Color.Khaki;
+            this.ClientSize = new System.Drawing.Size(609, 333);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);

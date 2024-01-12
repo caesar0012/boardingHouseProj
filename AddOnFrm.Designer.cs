@@ -40,16 +40,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 89);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.Size = new System.Drawing.Size(75, 26);
             this.label1.TabIndex = 4;
             this.label1.Text = "Details";
             // 
             // txtDetails
             // 
-            this.txtDetails.Location = new System.Drawing.Point(23, 108);
+            this.txtDetails.Location = new System.Drawing.Point(25, 158);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(174, 85);
@@ -57,12 +57,12 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubmit.BackColor = System.Drawing.Color.Silver;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(73, 285);
+            this.btnSubmit.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(120, 439);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(152, 42);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -70,46 +70,48 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(23, 239);
+            this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(25, 312);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(174, 20);
+            this.txtPrice.Size = new System.Drawing.Size(248, 34);
             this.txtPrice.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 220);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 283);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Total Price";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 20);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.Size = new System.Drawing.Size(134, 26);
             this.label4.TabIndex = 11;
             this.label4.Text = "Tenant Name";
             // 
             // cmbTenantName
             // 
+            this.cmbTenantName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenantName.FormattingEnabled = true;
-            this.cmbTenantName.Location = new System.Drawing.Point(23, 50);
+            this.cmbTenantName.Location = new System.Drawing.Point(24, 62);
             this.cmbTenantName.Name = "cmbTenantName";
-            this.cmbTenantName.Size = new System.Drawing.Size(174, 22);
+            this.cmbTenantName.Size = new System.Drawing.Size(248, 34);
             this.cmbTenantName.TabIndex = 12;
             this.cmbTenantName.SelectedIndexChanged += new System.EventHandler(this.cmbTenantName_SelectedIndexChanged);
             // 
             // AddOnFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(223, 316);
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.ClientSize = new System.Drawing.Size(376, 542);
             this.Controls.Add(this.cmbTenantName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrice);

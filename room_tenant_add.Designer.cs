@@ -58,9 +58,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(390, 12);
+            this.label1.Location = new System.Drawing.Point(520, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 27);
+            this.label1.Size = new System.Drawing.Size(271, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tenant Reservation";
             // 
@@ -92,31 +93,34 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgAssignTenant.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgAssignTenant.EnableHeadersVisualStyles = false;
-            this.dgAssignTenant.Location = new System.Drawing.Point(285, 91);
+            this.dgAssignTenant.Location = new System.Drawing.Point(380, 112);
+            this.dgAssignTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgAssignTenant.Name = "dgAssignTenant";
             this.dgAssignTenant.ReadOnly = true;
             this.dgAssignTenant.RowHeadersVisible = false;
             this.dgAssignTenant.RowHeadersWidth = 51;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.MistyRose;
             this.dgAssignTenant.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgAssignTenant.Size = new System.Drawing.Size(614, 286);
+            this.dgAssignTenant.Size = new System.Drawing.Size(819, 352);
             this.dgAssignTenant.TabIndex = 3;
             this.dgAssignTenant.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAssignTenant_CellClick);
             // 
             // dtStartLease
             // 
-            this.dtStartLease.Location = new System.Drawing.Point(50, 346);
+            this.dtStartLease.Location = new System.Drawing.Point(67, 426);
+            this.dtStartLease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtStartLease.Name = "dtStartLease";
-            this.dtStartLease.Size = new System.Drawing.Size(200, 20);
+            this.dtStartLease.Size = new System.Drawing.Size(265, 22);
             this.dtStartLease.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 325);
+            this.label3.Location = new System.Drawing.Point(63, 400);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 18);
+            this.label3.Size = new System.Drawing.Size(113, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Start Lease";
             // 
@@ -124,9 +128,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 121);
+            this.label4.Location = new System.Drawing.Point(59, 149);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 18);
+            this.label4.Size = new System.Drawing.Size(62, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "Room";
             // 
@@ -134,9 +139,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 166);
+            this.label5.Location = new System.Drawing.Point(61, 204);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 18);
+            this.label5.Size = new System.Drawing.Size(51, 23);
             this.label5.TabIndex = 10;
             this.label5.Text = "Bed ";
             // 
@@ -144,35 +150,39 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 372);
+            this.label6.Location = new System.Drawing.Point(61, 458);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 18);
+            this.label6.Size = new System.Drawing.Size(104, 23);
             this.label6.TabIndex = 12;
             this.label6.Text = "End Lease";
             // 
             // dtEndLease
             // 
-            this.dtEndLease.Location = new System.Drawing.Point(49, 393);
+            this.dtEndLease.Location = new System.Drawing.Point(65, 484);
+            this.dtEndLease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtEndLease.Name = "dtEndLease";
-            this.dtEndLease.Size = new System.Drawing.Size(200, 20);
+            this.dtEndLease.Size = new System.Drawing.Size(265, 22);
             this.dtEndLease.TabIndex = 11;
             this.dtEndLease.ValueChanged += new System.EventHandler(this.dtEndLease_ValueChanged);
             // 
             // cmbRoomNum
             // 
             this.cmbRoomNum.FormattingEnabled = true;
-            this.cmbRoomNum.Location = new System.Drawing.Point(47, 142);
+            this.cmbRoomNum.Location = new System.Drawing.Point(63, 175);
+            this.cmbRoomNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbRoomNum.Name = "cmbRoomNum";
-            this.cmbRoomNum.Size = new System.Drawing.Size(200, 21);
+            this.cmbRoomNum.Size = new System.Drawing.Size(265, 24);
             this.cmbRoomNum.TabIndex = 13;
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.IndianRed;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(49, 424);
+            this.btnUpdate.Location = new System.Drawing.Point(65, 522);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -180,9 +190,10 @@
             // 
             // txtBed
             // 
-            this.txtBed.Location = new System.Drawing.Point(47, 196);
+            this.txtBed.Location = new System.Drawing.Point(63, 241);
+            this.txtBed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBed.Name = "txtBed";
-            this.txtBed.Size = new System.Drawing.Size(200, 20);
+            this.txtBed.Size = new System.Drawing.Size(265, 22);
             this.txtBed.TabIndex = 17;
             this.txtBed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBed_KeyDown);
             // 
@@ -195,10 +206,10 @@
             "Tenant without Room",
             "Female",
             "Male"});
-            this.cmbFilter.Location = new System.Drawing.Point(285, 65);
-            this.cmbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFilter.Location = new System.Drawing.Point(380, 80);
+            this.cmbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(138, 21);
+            this.cmbFilter.Size = new System.Drawing.Size(183, 24);
             this.cmbFilter.TabIndex = 18;
             this.cmbFilter.Text = "Default";
             this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
@@ -207,43 +218,48 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(44, 281);
+            this.label7.Location = new System.Drawing.Point(59, 346);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 18);
+            this.label7.Size = new System.Drawing.Size(148, 23);
             this.label7.TabIndex = 20;
             this.label7.Text = "Deposit Amount";
             // 
             // txtDeposit
             // 
-            this.txtDeposit.Location = new System.Drawing.Point(50, 302);
+            this.txtDeposit.Location = new System.Drawing.Point(67, 372);
+            this.txtDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDeposit.Name = "txtDeposit";
-            this.txtDeposit.Size = new System.Drawing.Size(200, 20);
+            this.txtDeposit.Size = new System.Drawing.Size(265, 22);
             this.txtDeposit.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(44, 219);
+            this.label8.Location = new System.Drawing.Point(59, 270);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 18);
+            this.label8.Size = new System.Drawing.Size(161, 23);
             this.label8.TabIndex = 22;
             this.label8.Text = "Monthly Payment";
             // 
             // txtMonthlyPayment
             // 
-            this.txtMonthlyPayment.Location = new System.Drawing.Point(47, 249);
+            this.txtMonthlyPayment.Location = new System.Drawing.Point(63, 306);
+            this.txtMonthlyPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMonthlyPayment.Name = "txtMonthlyPayment";
-            this.txtMonthlyPayment.Size = new System.Drawing.Size(200, 20);
+            this.txtMonthlyPayment.Size = new System.Drawing.Size(265, 22);
             this.txtMonthlyPayment.TabIndex = 21;
             // 
             // btnPayment
             // 
             this.btnPayment.BackColor = System.Drawing.Color.IndianRed;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Location = new System.Drawing.Point(174, 424);
+            this.btnPayment.Location = new System.Drawing.Point(232, 522);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnPayment.Size = new System.Drawing.Size(100, 28);
             this.btnPayment.TabIndex = 27;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = false;
@@ -253,25 +269,27 @@
             // 
             this.txtName.Enabled = false;
             this.txtName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtName.Location = new System.Drawing.Point(47, 65);
+            this.txtName.Location = new System.Drawing.Point(63, 80);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(202, 20);
+            this.txtName.Size = new System.Drawing.Size(268, 22);
             this.txtName.TabIndex = 28;
             // 
             // txtGender
             // 
             this.txtGender.Enabled = false;
-            this.txtGender.Location = new System.Drawing.Point(47, 98);
+            this.txtGender.Location = new System.Drawing.Point(63, 121);
+            this.txtGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(200, 20);
+            this.txtGender.Size = new System.Drawing.Size(265, 22);
             this.txtGender.TabIndex = 29;
             // 
             // room_tenant_add
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 455);
+            this.BackColor = System.Drawing.Color.Beige;
+            this.ClientSize = new System.Drawing.Size(1240, 560);
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMonthlyPayment);
@@ -292,6 +310,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtGender);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "room_tenant_add";
             this.Text = "room_option";
             this.Load += new System.EventHandler(this.room_tenant_add_Load);

@@ -153,7 +153,7 @@ namespace boardingHouseProj
 
                 using (SqlCommand cmd = new SqlCommand(query, connect)) {
 
-                    cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                     cmd.Parameters.AddWithValue("@leaseID", setLease);
 
                     cmd.Parameters.AddWithValue("@AmountPaid", double.Parse(txtReceived.Text));
@@ -181,7 +181,7 @@ namespace boardingHouseProj
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
 
-                    cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
 
 

@@ -56,7 +56,7 @@
             // 
             this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dpBox.Image = ((System.Drawing.Image)(resources.GetObject("dpBox.Image")));
-            this.dpBox.Location = new System.Drawing.Point(1053, 34);
+            this.dpBox.Location = new System.Drawing.Point(1022, 34);
             this.dpBox.Margin = new System.Windows.Forms.Padding(4);
             this.dpBox.Name = "dpBox";
             this.dpBox.Size = new System.Drawing.Size(157, 135);
@@ -66,9 +66,9 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnUpload.BackColor = System.Drawing.Color.Silver;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(481, 420);
             this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
@@ -177,13 +177,13 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(566, 593);
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(553, 518);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(168, 50);
+            this.btnConfirm.Size = new System.Drawing.Size(168, 39);
             this.btnConfirm.TabIndex = 36;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -247,7 +247,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 170);
+            this.label2.Location = new System.Drawing.Point(35, 170);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 33);
@@ -258,7 +258,7 @@
             // 
             this.txtLastName.Enabled = false;
             this.txtLastName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(35, 207);
+            this.txtLastName.Location = new System.Drawing.Point(33, 207);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(293, 34);
@@ -281,7 +281,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1257, 679);
+            this.ClientSize = new System.Drawing.Size(1245, 593);
             this.Controls.Add(this.dpBox);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label10);

@@ -52,13 +52,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.profileMain = new boardingHouseProj.RoundPictureBox();
             this.timeNavi = new System.Windows.Forms.Timer(this.components);
             this.TimeTenant = new System.Windows.Forms.Timer(this.components);
             this.TimeRoom = new System.Windows.Forms.Timer(this.components);
             this.TimeStaff = new System.Windows.Forms.Timer(this.components);
             this.TimeAdmin = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.profileMain = new boardingHouseProj.RoundPictureBox();
             this.flpMain.SuspendLayout();
             this.flpTenant.SuspendLayout();
             this.flpRoom.SuspendLayout();
@@ -407,7 +407,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1327, 106);
+            this.panel1.Size = new System.Drawing.Size(1378, 106);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -434,27 +434,14 @@
             this.btnExit.BackColor = System.Drawing.Color.Silver;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1221, 12);
+            this.btnExit.Location = new System.Drawing.Point(1265, 11);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 32);
+            this.btnExit.Size = new System.Drawing.Size(88, 38);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Logout";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
-            // 
-            // profileMain
-            // 
-            this.profileMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.profileMain.Image = ((System.Drawing.Image)(resources.GetObject("profileMain.Image")));
-            this.profileMain.Location = new System.Drawing.Point(9, 1);
-            this.profileMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.profileMain.Name = "profileMain";
-            this.profileMain.Size = new System.Drawing.Size(116, 97);
-            this.profileMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profileMain.TabIndex = 4;
-            this.profileMain.TabStop = false;
-            this.profileMain.Click += new System.EventHandler(this.profileMain_Click);
             // 
             // timeNavi
             // 
@@ -486,12 +473,25 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.btnLoad_Click);
             // 
+            // profileMain
+            // 
+            this.profileMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.profileMain.Image = ((System.Drawing.Image)(resources.GetObject("profileMain.Image")));
+            this.profileMain.Location = new System.Drawing.Point(9, 1);
+            this.profileMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profileMain.Name = "profileMain";
+            this.profileMain.Size = new System.Drawing.Size(116, 97);
+            this.profileMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profileMain.TabIndex = 4;
+            this.profileMain.TabStop = false;
+            this.profileMain.Click += new System.EventHandler(this.profileMain_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1327, 724);
+            this.ClientSize = new System.Drawing.Size(1378, 748);
             this.Controls.Add(this.flpMain);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

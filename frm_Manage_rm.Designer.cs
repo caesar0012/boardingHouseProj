@@ -69,8 +69,8 @@
             this.btnConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(134, 585);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirm.Location = new System.Drawing.Point(134, 563);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(137, 42);
             this.btnConfirm.TabIndex = 12;
@@ -106,11 +106,11 @@
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgRoom.Location = new System.Drawing.Point(400, 86);
-            this.dgRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgRoom.Margin = new System.Windows.Forms.Padding(4);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.RowHeadersWidth = 51;
-            this.dgRoom.Size = new System.Drawing.Size(804, 541);
+            this.dgRoom.Size = new System.Drawing.Size(804, 519);
             this.dgRoom.TabIndex = 11;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
             this.dgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);
@@ -119,7 +119,7 @@
             // 
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(71, 439);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(253, 30);
             this.txtPrice.TabIndex = 24;
@@ -138,8 +138,8 @@
             // txtCapacity
             // 
             this.txtCapacity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.Location = new System.Drawing.Point(71, 366);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCapacity.Location = new System.Drawing.Point(71, 357);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(253, 30);
             this.txtCapacity.TabIndex = 21;
@@ -149,7 +149,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(67, 336);
+            this.label6.Location = new System.Drawing.Point(67, 327);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 26);
@@ -159,8 +159,8 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(71, 206);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescription.Location = new System.Drawing.Point(71, 197);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(253, 30);
             this.txtDescription.TabIndex = 19;
@@ -169,7 +169,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 176);
+            this.label3.Location = new System.Drawing.Point(67, 167);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 26);
@@ -181,7 +181,7 @@
             this.txtRoomNumber.Enabled = false;
             this.txtRoomNumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomNumber.Location = new System.Drawing.Point(71, 116);
-            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(253, 30);
             this.txtRoomNumber.TabIndex = 17;
@@ -206,7 +206,7 @@
             "Male",
             "Female",
             "None"});
-            this.cmbGender.Location = new System.Drawing.Point(71, 286);
+            this.cmbGender.Location = new System.Drawing.Point(72, 277);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(253, 30);
@@ -216,7 +216,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(67, 258);
+            this.label5.Location = new System.Drawing.Point(67, 249);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(164, 26);
@@ -241,9 +241,8 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Available",
             "Under Renovation",
-            "Destroyed",
             "Maintenance"});
-            this.cmbStatus.Location = new System.Drawing.Point(71, 512);
+            this.cmbStatus.Location = new System.Drawing.Point(72, 504);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(253, 30);
@@ -258,7 +257,7 @@
             "Default",
             "Archive"});
             this.cmbDefault.Location = new System.Drawing.Point(715, 27);
-            this.cmbDefault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDefault.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDefault.Name = "cmbDefault";
             this.cmbDefault.Size = new System.Drawing.Size(160, 30);
             this.cmbDefault.TabIndex = 29;
@@ -273,7 +272,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.Location = new System.Drawing.Point(1125, 15);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(63, 59);
             this.btnDelete.TabIndex = 30;
@@ -288,7 +287,7 @@
             this.btnRecover.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecover.Image = ((System.Drawing.Image)(resources.GetObject("btnRecover.Image")));
             this.btnRecover.Location = new System.Drawing.Point(1112, 17);
-            this.btnRecover.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecover.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecover.Name = "btnRecover";
             this.btnRecover.Size = new System.Drawing.Size(76, 57);
             this.btnRecover.TabIndex = 31;
@@ -300,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1240, 659);
+            this.ClientSize = new System.Drawing.Size(1240, 629);
             this.Controls.Add(this.cmbDefault);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbStatus);
@@ -320,7 +319,7 @@
             this.Controls.Add(this.btnRecover);
             this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmManage_rm";
             this.Text = "frm_Manage_rm";
             this.Load += new System.EventHandler(this.frmManage_rm_Load);

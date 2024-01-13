@@ -52,17 +52,17 @@
             this.txtDetails.Location = new System.Drawing.Point(25, 158);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Size = new System.Drawing.Size(174, 85);
+            this.txtDetails.Size = new System.Drawing.Size(248, 85);
             this.txtDetails.TabIndex = 5;
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Silver;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(120, 439);
+            this.btnSubmit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(121, 398);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(152, 42);
+            this.btnSubmit.Size = new System.Drawing.Size(152, 37);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(376, 542);
+            this.ClientSize = new System.Drawing.Size(376, 461);
             this.Controls.Add(this.cmbTenantName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrice);

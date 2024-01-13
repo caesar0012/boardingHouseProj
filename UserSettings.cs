@@ -72,7 +72,7 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@forgQuestion", cmbQuestionPass.Text);
                     cmd.Parameters.AddWithValue("@forgotAnswer", txtAnswerQuestion.Text);
                     cmd.Parameters.AddWithValue("@contact", txtContact.Text);
-                    cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
+                    cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -89,7 +89,7 @@ namespace boardingHouseProj
                 string query = "Select * from Staff_acc where staff_id = @staff_id";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
-                cmd.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
+                cmd.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -172,7 +172,7 @@ namespace boardingHouseProj
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
-                cmd.Parameters.AddWithValue("staff_id", btnSee.staff_id); //change this for employee_id from login.cs
+                cmd.Parameters.AddWithValue("staff_id", frmLogin.staff_id); //change this for employee_id from login.cs
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

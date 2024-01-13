@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class btnSee : Form
+    public partial class frmLogin : Form
     {
-        public btnSee()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -24,13 +17,16 @@ namespace boardingHouseProj
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //calls authenticator for user and pass
-            if (authenticateLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString())) {
+            if (authenticateLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString()))
+            {
 
                 frmMain f1 = new frmMain();
                 this.Hide();
                 f1.Show();
 
-            } else if (txtUserName.Text == "admin" && txtPassword.Text == "admin") {
+            }
+            else if (txtUserName.Text == "admin" && txtPassword.Text == "admin")
+            {
 
                 frmMain f1 = new frmMain();
                 this.Hide();
@@ -69,11 +65,11 @@ namespace boardingHouseProj
                         {
                             if (reader.Read())
                             {
-                              /*  // Assuming 'retrievedStaffID' is of type string
-                                staff_id = reader["Staff_id"].ToString();
+                                /*  // Assuming 'retrievedStaffID' is of type string
+                                  staff_id = reader["Staff_id"].ToString();
 
-                                // Assuming 'retriveRole' is a string, update it accordingly if it's not
-                                role = reader["Role"].ToString();*/
+                                  // Assuming 'retriveRole' is a string, update it accordingly if it's not
+                                  role = reader["Role"].ToString();*/
                             }
                         }
 
@@ -110,7 +106,7 @@ namespace boardingHouseProj
             if (txtPassword.PasswordChar == '\0')
             {
                 // If the password is currently visible, hide it
-                txtPassword.PasswordChar = '*'; 
+                txtPassword.PasswordChar = '*';
             }
             else
             {

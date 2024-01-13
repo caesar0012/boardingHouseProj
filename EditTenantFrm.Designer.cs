@@ -256,7 +256,7 @@
             this.btnView.Location = new System.Drawing.Point(31, 405);
             this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(200, 30);
+            this.btnView.Size = new System.Drawing.Size(200, 37);
             this.btnView.TabIndex = 27;
             this.btnView.Text = "View File";
             this.btnView.UseVisualStyleBackColor = false;
@@ -279,10 +279,10 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Silver;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(264, 557);
+            this.btnUpdate.Location = new System.Drawing.Point(264, 516);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(104, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(104, 37);
             this.btnUpdate.TabIndex = 30;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -356,7 +356,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1333, 702);
+            this.ClientSize = new System.Drawing.Size(1333, 620);
             this.Controls.Add(this.cmbArchive);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label10);

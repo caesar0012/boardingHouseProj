@@ -43,7 +43,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 23);
+            this.label3.Location = new System.Drawing.Point(111, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 45);
             this.label3.TabIndex = 6;
@@ -53,11 +53,11 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(170, 447);
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(166, 405);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(164, 43);
+            this.btnLogin.Size = new System.Drawing.Size(144, 37);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -66,52 +66,52 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 120);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 33);
+            this.label4.Size = new System.Drawing.Size(104, 26);
             this.label4.TabIndex = 12;
             this.label4.Text = "Username";
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(47, 156);
+            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(43, 170);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(325, 34);
+            this.txtUserName.Size = new System.Drawing.Size(387, 30);
             this.txtUserName.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 217);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 224);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(320, 33);
+            this.label5.Size = new System.Drawing.Size(269, 26);
             this.label5.TabIndex = 14;
             this.label5.Text = "Forgot Password Questions";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 322);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(41, 311);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 33);
+            this.label7.Size = new System.Drawing.Size(84, 26);
             this.label7.TabIndex = 16;
             this.label7.Text = "Answer";
             // 
             // txtAnswer
             // 
-            this.txtAnswer.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.Location = new System.Drawing.Point(43, 358);
+            this.txtAnswer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.Location = new System.Drawing.Point(43, 340);
             this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.Size = new System.Drawing.Size(325, 34);
+            this.txtAnswer.Size = new System.Drawing.Size(387, 30);
             this.txtAnswer.TabIndex = 15;
             // 
             // cmbForgotPassQuest
             // 
-            this.cmbForgotPassQuest.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbForgotPassQuest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbForgotPassQuest.FormattingEnabled = true;
             this.cmbForgotPassQuest.Items.AddRange(new object[] {
             "Birth Place",
@@ -119,7 +119,7 @@
             "Favorite Team"});
             this.cmbForgotPassQuest.Location = new System.Drawing.Point(43, 253);
             this.cmbForgotPassQuest.Name = "cmbForgotPassQuest";
-            this.cmbForgotPassQuest.Size = new System.Drawing.Size(325, 34);
+            this.cmbForgotPassQuest.Size = new System.Drawing.Size(387, 30);
             this.cmbForgotPassQuest.TabIndex = 19;
             // 
             // btnClose
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(508, 559);
+            this.ClientSize = new System.Drawing.Size(508, 487);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cmbForgotPassQuest);
             this.Controls.Add(this.label7);

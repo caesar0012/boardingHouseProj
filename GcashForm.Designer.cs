@@ -103,7 +103,7 @@
             this.btnConfirm.FlatAppearance.BorderSize = 0;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(182, 248);
+            this.btnConfirm.Location = new System.Drawing.Point(219, 222);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(139, 36);
             this.btnConfirm.TabIndex = 52;
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(464, 306);
+            this.ClientSize = new System.Drawing.Size(461, 284);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtRef);

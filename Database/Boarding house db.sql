@@ -112,18 +112,3 @@ Create table Maintenance(
 	
 	FOREIGN key(Staff_id) REFERENCES Staff_acc(Staff_id)
 );
-
-CREATE TABLE TenantRequest (
-
-    Request_id INT PRIMARY KEY IDENTITY(80,1),
-	Staff_id int,
-    Tenant_id INT,
-    Details VARCHAR(255),
-    Date_added DATETIME DEFAULT GETDATE(),
-	Archive int DEFAULT 0,
-
-	FOREIGN key(Staff_id) REFERENCES Staff_acc(Staff_id),
-	FOREIGN key(Tenant_id) REFERENCES Tenant(Tenant_id)
-
-);
-

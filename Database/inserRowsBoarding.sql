@@ -64,19 +64,6 @@ VALUES
     (34, 67, 32, 10, '2023-10-01', '2024-03-31');
 
 
-
-INSERT INTO TenantRequest (Staff_id, Tenant_id, Details)
-VALUES (60, 21, 'Request details 1'),
-       (61, 22, 'Request details 3'),
-       (65, 20, 'Request details 4'),
-       (62, 21, 'Request details 5'),
-       (67, 24, 'Request details 6'),
-       (61, 28, 'Request details 7'),
-       (64, 28, 'Request details 8'),
-       (67, 31, 'Request details 9'),
-       (67, 31, 'Request details 10');
-
-
 INSERT INTO Maintenance (Staff_id, Details)
 VALUES (60, 'Maintenance details 1'),
        (65, 'Maintenance details 2'),

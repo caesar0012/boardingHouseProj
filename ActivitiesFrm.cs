@@ -35,11 +35,6 @@ namespace boardingHouseProj
                 "where r1.Room_id is not null\r\n" +
                 "order by s1.FirstName + ' ' + s1.Lastname");
         }
-
-        private void dgAct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
         private void filterLoad(string query) {
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) { 
@@ -156,7 +151,5 @@ namespace boardingHouseProj
 
             }
         }
-
-        
     }
 }

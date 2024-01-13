@@ -44,8 +44,11 @@ namespace boardingHouseProj
             ofd.Title = "Database Restore";
 
             // edward @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup";
+            // aeron @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup";  //16
+            //dapiton "C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup";
 
-            ofd.InitialDirectory = @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup";
+
+            ofd.InitialDirectory = @"C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\Backup";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -94,15 +97,9 @@ namespace boardingHouseProj
 
             }
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void BackupAndRestoreFrm_Load(object sender, EventArgs e)
-        {
-
         }
     }
     

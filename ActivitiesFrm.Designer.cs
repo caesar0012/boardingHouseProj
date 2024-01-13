@@ -60,7 +60,6 @@
             this.dgAct.RowTemplate.Height = 24;
             this.dgAct.Size = new System.Drawing.Size(931, 464);
             this.dgAct.TabIndex = 0;
-            this.dgAct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAct_CellContentClick);
             // 
             // cmbFilter
             // 

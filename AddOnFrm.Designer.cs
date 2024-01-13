@@ -104,7 +104,6 @@
             this.cmbTenantName.Name = "cmbTenantName";
             this.cmbTenantName.Size = new System.Drawing.Size(248, 34);
             this.cmbTenantName.TabIndex = 12;
-            this.cmbTenantName.SelectedIndexChanged += new System.EventHandler(this.cmbTenantName_SelectedIndexChanged);
             // 
             // AddOnFrm
             // 

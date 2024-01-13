@@ -17,7 +17,6 @@ namespace boardingHouseProj
         {
             InitializeComponent();
         }
-
         private void listTenant_Load(object sender, EventArgs e)
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
@@ -114,12 +113,6 @@ namespace boardingHouseProj
                 MessageBox.Show($"getLeaseID Error: {ex.Message}");
                 return 0; // Return a default value or throw the exception based on your requirements
             }
-        }
-
-
-        private void cmbTenantName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //txtDetails.Text = getLeaseID().ToString();
         }
     }
 }

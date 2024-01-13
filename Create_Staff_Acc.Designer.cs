@@ -50,8 +50,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpload = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dpBox = new boardingHouseProj.RoundPictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dpBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,7 +277,7 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpload.BackColor = System.Drawing.Color.Silver;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.Location = new System.Drawing.Point(886, 464);
@@ -288,6 +288,18 @@
             this.btnUpload.Text = "Select File";
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // dpBox
+            // 
+            this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dpBox.Image = ((System.Drawing.Image)(resources.GetObject("dpBox.Image")));
+            this.dpBox.Location = new System.Drawing.Point(1104, 13);
+            this.dpBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dpBox.Name = "dpBox";
+            this.dpBox.Size = new System.Drawing.Size(157, 135);
+            this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dpBox.TabIndex = 27;
+            this.dpBox.TabStop = false;
             // 
             // button1
             // 
@@ -302,18 +314,6 @@
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnClear);
-            // 
-            // dpBox
-            // 
-            this.dpBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dpBox.Image = ((System.Drawing.Image)(resources.GetObject("dpBox.Image")));
-            this.dpBox.Location = new System.Drawing.Point(1104, 13);
-            this.dpBox.Margin = new System.Windows.Forms.Padding(4);
-            this.dpBox.Name = "dpBox";
-            this.dpBox.Size = new System.Drawing.Size(157, 135);
-            this.dpBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dpBox.TabIndex = 27;
-            this.dpBox.TabStop = false;
             // 
             // Create_Staff_Acc
             // 

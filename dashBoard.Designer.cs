@@ -63,10 +63,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(499, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 46);
+            this.label2.Size = new System.Drawing.Size(207, 45);
             this.label2.TabIndex = 10;
             this.label2.Text = "Dashboard";
             // 
@@ -76,7 +76,7 @@
             this.panel2.Controls.Add(this.pbRoom);
             this.panel2.Controls.Add(this.lblRoom);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(33, 20);
+            this.panel2.Location = new System.Drawing.Point(56, 121);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(503, 145);
@@ -119,7 +119,7 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lblOccu);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(33, 231);
+            this.panel3.Location = new System.Drawing.Point(56, 283);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(503, 145);
@@ -163,7 +163,7 @@
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.lblEarnings);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(616, 231);
+            this.panel4.Location = new System.Drawing.Point(639, 283);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(499, 145);
@@ -227,7 +227,7 @@
             this.panel1.Controls.Add(this.lblTotalBed);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(616, 20);
+            this.panel1.Location = new System.Drawing.Point(616, 34);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(499, 145);
@@ -267,14 +267,11 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Beige;
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Controls.Add(this.panel3);
-            this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel1);
-            this.panel5.Location = new System.Drawing.Point(23, 106);
+            this.panel5.Location = new System.Drawing.Point(23, 86);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1143, 398);
+            this.panel5.Size = new System.Drawing.Size(1143, 399);
             this.panel5.TabIndex = 22;
             // 
             // dashBoard
@@ -284,6 +281,9 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1197, 558);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

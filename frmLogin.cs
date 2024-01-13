@@ -118,5 +118,9 @@ namespace boardingHouseProj
             }
         }
 
+        private void btnSee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

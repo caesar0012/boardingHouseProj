@@ -89,7 +89,7 @@
             // btnPay
             // 
             this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnPay.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnPay.BackColor = System.Drawing.Color.Silver;
             this.btnPay.FlatAppearance.BorderSize = 0;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +108,7 @@
             // btnDashBoard
             // 
             this.btnDashBoard.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDashBoard.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnDashBoard.BackColor = System.Drawing.Color.Silver;
             this.btnDashBoard.FlatAppearance.BorderSize = 0;
             this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashBoard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,7 +142,7 @@
             // btnShowTenant
             // 
             this.btnShowTenant.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowTenant.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnShowTenant.BackColor = System.Drawing.Color.Silver;
             this.btnShowTenant.FlatAppearance.BorderSize = 0;
             this.btnShowTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowTenant.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,7 +209,7 @@
             // btnShowRoom
             // 
             this.btnShowRoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowRoom.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnShowRoom.BackColor = System.Drawing.Color.Silver;
             this.btnShowRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnShowRoom.FlatAppearance.BorderSize = 0;
             this.btnShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -277,7 +277,7 @@
             // btnShowStaff
             // 
             this.btnShowStaff.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowStaff.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnShowStaff.BackColor = System.Drawing.Color.Silver;
             this.btnShowStaff.FlatAppearance.BorderSize = 0;
             this.btnShowStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowStaff.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,7 +345,7 @@
             // btnShowAdmin
             // 
             this.btnShowAdmin.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnShowAdmin.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnShowAdmin.BackColor = System.Drawing.Color.Silver;
             this.btnShowAdmin.FlatAppearance.BorderSize = 0;
             this.btnShowAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAdmin.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,24 +419,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(487, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(442, 35);
+            this.label1.Size = new System.Drawing.Size(536, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Diaz Rodriguez Boarding House";
             // 
             // btnExit
             // 
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.BackColor = System.Drawing.Color.Silver;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(1209, 12);
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(1221, 12);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
+            this.btnExit.Size = new System.Drawing.Size(88, 32);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Logout";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -489,7 +490,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1327, 724);
             this.Controls.Add(this.flpMain);
             this.Controls.Add(this.panel1);

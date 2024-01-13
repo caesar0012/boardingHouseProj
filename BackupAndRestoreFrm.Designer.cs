@@ -41,10 +41,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 24);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(137, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 42);
+            this.label1.Size = new System.Drawing.Size(336, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Backup and Restore";
             // 
@@ -53,7 +53,7 @@
             this.btnBackup.BackColor = System.Drawing.Color.Silver;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.Location = new System.Drawing.Point(384, 42);
+            this.btnBackup.Location = new System.Drawing.Point(370, 42);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(126, 36);
             this.btnBackup.TabIndex = 4;
@@ -66,7 +66,7 @@
             this.btnRestore.BackColor = System.Drawing.Color.Silver;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestore.Location = new System.Drawing.Point(384, 162);
+            this.btnRestore.Location = new System.Drawing.Point(370, 162);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(126, 36);
             this.btnRestore.TabIndex = 8;
@@ -79,7 +79,7 @@
             this.btnRestoreBrwse.BackColor = System.Drawing.Color.Silver;
             this.btnRestoreBrwse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestoreBrwse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestoreBrwse.Location = new System.Drawing.Point(384, 102);
+            this.btnRestoreBrwse.Location = new System.Drawing.Point(370, 102);
             this.btnRestoreBrwse.Name = "btnRestoreBrwse";
             this.btnRestoreBrwse.Size = new System.Drawing.Size(126, 36);
             this.btnRestoreBrwse.TabIndex = 6;
@@ -90,7 +90,7 @@
             // txtRestore
             // 
             this.txtRestore.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRestore.Location = new System.Drawing.Point(23, 104);
+            this.txtRestore.Location = new System.Drawing.Point(18, 102);
             this.txtRestore.Name = "txtRestore";
             this.txtRestore.Size = new System.Drawing.Size(318, 34);
             this.txtRestore.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.panel2.Controls.Add(this.txtRestore);
             this.panel2.Location = new System.Drawing.Point(46, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(532, 227);
+            this.panel2.Size = new System.Drawing.Size(516, 227);
             this.panel2.TabIndex = 10;
             // 
             // btnClose
@@ -113,7 +113,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(528, 9);
+            this.btnClose.Location = new System.Drawing.Point(537, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(69, 32);
             this.btnClose.TabIndex = 11;

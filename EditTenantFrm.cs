@@ -363,5 +363,10 @@ namespace boardingHouseProj
         {
             this.Close();
         }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

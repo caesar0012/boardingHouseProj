@@ -173,6 +173,12 @@
     <Compile Include="ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Room_Assignment_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room_Assignment_frm.Designer.cs">
+      <DependentUpon>Room_Assignment_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="room_tenant_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </Compile>
     <EmbeddedResource Include="ReceiptForm.resx">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room_Assignment_frm.resx">
+      <DependentUpon>Room_Assignment_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="room_tenant_add.resx">
       <DependentUpon>room_tenant_add.cs</DependentUpon>

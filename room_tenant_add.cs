@@ -319,7 +319,7 @@ namespace boardingHouseProj
                             using (SqlCommand command = new SqlCommand(query, connect))
                             {
                                 command.Parameters.AddWithValue("@tenant_id", int.Parse(tnantID));
-                                command.Parameters.AddWithValue("@staff_id", btnSee.staff_id);
+                                command.Parameters.AddWithValue("@staff_id", frmLogin.staff_id);
                                 command.Parameters.AddWithValue("@room_id", roomNum1);
                                 command.Parameters.AddWithValue("@assignBed", int.Parse(txtBed.Text));
                                 command.Parameters.AddWithValue("@monthly", double.Parse(txtMonthlyPayment.Text));

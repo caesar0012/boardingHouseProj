@@ -20,7 +20,7 @@ namespace boardingHouseProj
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            btnSee l1 = new btnSee();
+            frmLogin l1 = new frmLogin();
             l1.ShowDialog();
             this.Close();
         }
@@ -72,7 +72,7 @@ namespace boardingHouseProj
                         // Check if retrievedStaffID is not null before converting to string
                         if (retrievedStaffID != null)
                         {
-                            btnSee.staff_id = retrievedStaffID.ToString();
+                            frmLogin.staff_id = retrievedStaffID.ToString();
                         }
                     }
 

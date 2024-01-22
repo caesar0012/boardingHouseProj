@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace boardingHouseProj
 {
-    public partial class btnSee : Form
+    public partial class frmLogin : Form
     {
-        public btnSee()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -69,11 +69,11 @@ namespace boardingHouseProj
                         {
                             if (reader.Read())
                             {
-                              /*  // Assuming 'retrievedStaffID' is of type string
+                                // Assuming 'retrievedStaffID' is of type string
                                 staff_id = reader["Staff_id"].ToString();
 
                                 // Assuming 'retriveRole' is a string, update it accordingly if it's not
-                                role = reader["Role"].ToString();*/
+                                role = reader["Role"].ToString();
                             }
                         }
 

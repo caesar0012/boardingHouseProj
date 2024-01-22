@@ -25,7 +25,7 @@ namespace boardingHouseProj
             {
                 timeLoad.Stop();
 
-                btnSee l1 = new btnSee();
+                frmLogin l1 = new frmLogin();
                 l1.Show();
                 this.Hide();
             }

@@ -30,17 +30,17 @@ namespace boardingHouseProj
 
         void roleCheck() {
 
-            if (btnSee.role == "Admin") {
+            if (frmLogin.role == "Admin") {
 
 
 
-            } else if (btnSee.role == "Manager") {
+            } else if (frmLogin.role == "Manager") {
 
                 flpAdmin.Hide();
                 btnManageStaff.Hide();
 
             }
-            else if (btnSee.role == "Cashier")
+            else if (frmLogin.role == "Cashier")
             {
 
                 flpAdmin.Hide();
@@ -67,14 +67,14 @@ namespace boardingHouseProj
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Staff_id", btnSee.staff_id);
+                        command.Parameters.AddWithValue("@Staff_id", frmLogin.staff_id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 // Assign the value from the reader to frmLogin.staff_id
-                                btnSee.staff_id = reader["Staff_id"].ToString();
+                                frmLogin.staff_id = reader["Staff_id"].ToString();
 
                                 byte[] img = reader["ProfilePic"] as byte[];
 
@@ -208,7 +208,7 @@ namespace boardingHouseProj
             TimeRoom.Start();
             timeNavi.Start();
 
-            OpenForm(new room_tenant_add());
+            OpenForm(new Room_Assignment_frm());
         }
 
         private void btnManageRoom_Click(object sender, EventArgs e)
@@ -292,7 +292,7 @@ namespace boardingHouseProj
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            btnSee l1 = new btnSee();
+            frmLogin l1 = new frmLogin();
             l1.ShowDialog();
         }
 

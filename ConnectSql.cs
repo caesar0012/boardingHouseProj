@@ -17,7 +17,7 @@ namespace boardingHouseProj
 
             Ronlenovo = @"Data Source=PC\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
 
-              apiton = @"Data Source=COLA\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
+              dapiton = @"Data Source=COLA\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
 
                 @"Data Source=LAPTOP-PAMDIS9L\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True;Trust Server Certificate=True"
 

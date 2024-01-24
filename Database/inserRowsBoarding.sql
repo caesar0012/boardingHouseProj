@@ -30,6 +30,24 @@ VALUES
 ('303', 'Accessible Room', 'Male', 2500, 100.00, 'Available', 61),
 ('304', 'VIP Suite', 'Female', 15, 2500.00, 'Available', 61);
 
+INSERT INTO bed_tbl (RoomID, BedNumber)
+VALUES
+    (30, 101),
+    (31, 102),
+    (32, 201),
+    (32, 202),
+    (33, 301),
+    (33, 302),
+    (34, 401),
+    (34, 402),
+    (35, 501),
+    (35, 502),
+    (36, 601),
+    (36, 602),
+    (37, 701),
+    (37, 702),
+    (38, 801);
+
 INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Guardian, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
 VALUES
 ('Johny', 'Roadman', 'Male', 1234567890, 'Emergency1', 9876543210, 'Family', 'School1', 'Address1', NULL, 0),

@@ -17,20 +17,18 @@ VALUES
   ('Henry', 'Davis', NULL, 3333333333, 'henrydavis', 'password456', 'Favorite Team', 'San Francisco Giants', 'Cashier'),
   ('Isabella', 'Rodriguez', NULL, 4444444444, 'isabellarodriguez', 'password789', 'Birth Place', 'Miami', 'Admin');
 
-  
-
 INSERT INTO Room (Room_number, Description, allowed_gender, Capacity, Price, Status, Staff_id)
 VALUES 
-('1011', 'Standard Single', 'Male', 5, 75.00, 'Available', 60),
-('102', 'Deluxe Double', 'Female', 10, 120.00, 'Available', 63),
-('103', 'Executive Suite', 'Male', 10, 200.00, 'Available', 72),
-('201', 'Standard Twin', 'Female', 10, 90.00, 'Available', 61),
-('202', 'Family Room', 'Male', 10, 150.00, 'Available', 61),
-('203', 'Luxury Suite', 'Female', 20, 250.00, 'Available', 64),
-('301', 'Honeymoon Suite', 'Male', 20, 180.00, 'Available', 65),
-('302', 'Penthouse', 'Female', 10, 400.00, 'Available', 61),
-('303', 'Accessible Room', 'Male', 20, 100.00, 'Available', 61),
-('304', 'VIP Suite', 'Female', 15, 300.00, 'Available', 61);
+('1011', 'Standard Single', 'Male', 5, 3500.00, 'Available', 60),
+('102', 'Deluxe Double', 'Female', 10, 2500.00, 'Available', 63),
+('103', 'Executive Suite', 'Male', 10, 4500.00, 'Available', 72),
+('201', 'Standard Twin', 'Female', 10, 1500.00, 'Available', 61),
+('202', 'Family Room', 'Male', 10, 2500.00, 'Available', 61),
+('203', 'Luxury Suite', 'Female', 20, 2500.00, 'Available', 64),
+('301', 'Honeymoon Suite', 'Male', 20, 2500.00, 'Available', 65),
+('302', 'Penthouse', 'Female', 10, 2500.00, 'Available', 61),
+('303', 'Accessible Room', 'Male', 2500, 100.00, 'Available', 61),
+('304', 'VIP Suite', 'Female', 15, 2500.00, 'Available', 61);
 
 INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
 VALUES
@@ -49,6 +47,8 @@ VALUES
 ('Bombastic', 'Moore', 'Female', 8901234567, 'Emergency8', 2109876543, 'Relative', 'School8', 'Address8', NULL, 0),
 ('Georgiana', 'Lee', 'Male', 9012345678, 'Emergency9', 1098765432, 'Sibling', 'School9', 'Address9', NULL, 0),
 ('Holistic', 'Nguyen', 'Female', 9876543210, 'Emergency10', 9876543210, 'Family', 'School10', 'Address10', NULL, 0);
+
+
 
 INSERT INTO lease_tbl (Tenant_id, Staff_id, room_id, assign_bed, StartLease, EndLease)
 VALUES

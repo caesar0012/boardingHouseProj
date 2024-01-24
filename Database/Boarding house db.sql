@@ -26,7 +26,7 @@ create table Tenant(
 	Lastname varchar(45),
 	Gender varchar(10),
 	Contact bigint,
-	Emergency_name varchar(45),
+	Guardian varchar(45),
 	Emergency_Contact bigint,
 	Relationship varchar(30),
 	School varchar(45),
@@ -53,13 +53,23 @@ Create table Room(
 
 );
 
+create table bed_tbl(
+	
+	bed_id int primary key identity(74,1),
+	RoomID INT,
+    BedNumber INT,
+	Archive smallint default 0
+
+    FOREIGN KEY (RoomID) REFERENCES Room(Room_id)
+);
+
 Create Table lease_tbl(
 	
 	lease_id int primary key identity(40,1),
 	Tenant_id int unique,
 	Staff_id int,
 	room_id int,
-	assign_bed int,
+	bed_id int,
 	MonthlyPayment decimal,
 	DepositAmount DECIMAL,
 	StartLease date,
@@ -67,7 +77,8 @@ Create Table lease_tbl(
 
 	FOREIGN key (Tenant_id) REFERENCES Tenant(Tenant_id),
 	FOREIGN key (Staff_id) REFERENCES Staff_acc(Staff_id),
-	FOREIGN KEy (Room_id) REFERENCES Room(Room_id)
+	FOREIGN KEy (Room_id) REFERENCES Room(Room_id),
+	FOREIGN KEy (bed_id) REFERENCES bed_tbl(bed_id)
 );
 
 CREATE TABLE Payment (
@@ -126,4 +137,3 @@ CREATE TABLE TenantRequest (
 	FOREIGN key(Tenant_id) REFERENCES Tenant(Tenant_id)
 
 );
-

@@ -30,7 +30,7 @@ VALUES
 ('303', 'Accessible Room', 'Male', 2500, 100.00, 'Available', 61),
 ('304', 'VIP Suite', 'Female', 15, 2500.00, 'Available', 61);
 
-INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Emergency_name, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
+INSERT INTO Tenant (FirstName, Lastname, Gender, Contact, Guardian, Emergency_Contact, Relationship, School, Address, Document_pic, archive)
 VALUES
 ('Johny', 'Roadman', 'Male', 1234567890, 'Emergency1', 9876543210, 'Family', 'School1', 'Address1', NULL, 0),
 ('Jane', 'Smith', 'Female', 2345678901, 'Emergency2', 8765432109, 'Friend', 'School2', 'Address2', NULL, 0),
@@ -50,18 +50,18 @@ VALUES
 
 
 
-INSERT INTO lease_tbl (Tenant_id, Staff_id, room_id, assign_bed, StartLease, EndLease)
+INSERT INTO lease_tbl (Tenant_id, Staff_id, room_id, bed_id, StartLease, EndLease)
 VALUES
-    (21, 61, 30, 1, '2023-01-01', '2024-12-31'),
-    (22, 62, 33, 2, '2023-02-01', '2024-11-30'),
-    (23, 62, 30, 3, '2023-03-01', '2024-10-31'),
-    (24, 62, 31, 4, '2023-04-01', '2024-09-30'),
-    (25, 64, 33, 5, '2023-05-01', '2024-08-31'),
-    (26, 64, 34, 6, '2023-06-01', '2024-07-31'),
-    (27, 65, 39, 7, '2023-07-01', '2024-06-30'),
-    (28, 60, 38, 8, '2023-08-01', '2024-05-31'),
-    (29, 61, 34, 9, '2023-09-01', '2024-04-30'),
-    (34, 67, 32, 10, '2023-10-01', '2024-03-31');
+    (21, 61, 30, 74, '2023-01-01', '2024-12-31'),
+    (22, 62, 33, 75, '2023-02-01', '2024-11-30'),
+    (23, 62, 30, 76, '2023-03-01', '2024-10-31'),
+    (24, 62, 31, 77, '2023-04-01', '2024-09-30'),
+    (25, 64, 33, 78, '2023-05-01', '2024-08-31'),
+    (26, 64, 34, 79, '2023-06-01', '2024-07-31'),
+    (27, 65, 39, 80, '2023-07-01', '2024-06-30'),
+    (28, 60, 38, 81, '2023-08-01', '2024-05-31'),
+    (29, 61, 34, 82, '2023-09-01', '2024-04-30'),
+    (34, 67, 32, 83, '2023-10-01', '2024-03-31');
 
 
 

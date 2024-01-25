@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -88,6 +88,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(119, 22);
             this.txtLastName.TabIndex = 2;
+            this.txtLastName.Text = "Bolt";
             // 
             // txtFirstName
             // 
@@ -96,6 +97,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(119, 22);
             this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.Text = "Freeza";
             // 
             // lblLastName
             // 
@@ -124,6 +126,7 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(173, 22);
             this.txtContact.TabIndex = 5;
+            this.txtContact.Text = "0995";
             // 
             // lblSchool
             // 
@@ -142,6 +145,7 @@
             this.txtSchool.Name = "txtSchool";
             this.txtSchool.Size = new System.Drawing.Size(173, 22);
             this.txtSchool.TabIndex = 7;
+            this.txtSchool.Text = "School 1";
             // 
             // lblRelation
             // 
@@ -160,6 +164,7 @@
             this.txtRelationship.Name = "txtRelationship";
             this.txtRelationship.Size = new System.Drawing.Size(119, 22);
             this.txtRelationship.TabIndex = 11;
+            this.txtRelationship.Text = "Enemy";
             // 
             // lblAddress
             // 
@@ -178,6 +183,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(173, 22);
             this.txtAddress.TabIndex = 9;
+            this.txtAddress.Text = "Address 1";
             // 
             // lblGuardian
             // 
@@ -196,6 +202,7 @@
             this.txtGuardian.Name = "txtGuardian";
             this.txtGuardian.Size = new System.Drawing.Size(116, 22);
             this.txtGuardian.TabIndex = 17;
+            this.txtGuardian.Text = "Goku";
             // 
             // lblEmgencyContact
             // 
@@ -214,6 +221,7 @@
             this.txtEmergencyContact.Name = "txtEmergencyContact";
             this.txtEmergencyContact.Size = new System.Drawing.Size(173, 22);
             this.txtEmergencyContact.TabIndex = 15;
+            this.txtEmergencyContact.Text = "0999";
             // 
             // panel1
             // 
@@ -287,6 +295,7 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(96, 24);
             this.cmbGender.TabIndex = 20;
+            this.cmbGender.Text = "Male";
             // 
             // panel2
             // 
@@ -357,6 +366,7 @@
             this.dtStart.Name = "dtStart";
             this.dtStart.Size = new System.Drawing.Size(229, 22);
             this.dtStart.TabIndex = 33;
+            this.dtStart.Value = new System.DateTime(2024, 1, 24, 22, 0, 1, 0);
             // 
             // txtDeposit
             // 
@@ -368,17 +378,19 @@
             // 
             // dgRoom
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
-            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgRoom.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRoom.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.Location = new System.Drawing.Point(333, 10);
@@ -386,6 +398,7 @@
             this.dgRoom.RowHeadersVisible = false;
             this.dgRoom.Size = new System.Drawing.Size(532, 265);
             this.dgRoom.TabIndex = 0;
+            this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoom_CellClick);
             // 
             // lblRent
             // 
@@ -432,6 +445,7 @@
             this.txtBed.Name = "txtBed";
             this.txtBed.Size = new System.Drawing.Size(138, 22);
             this.txtBed.TabIndex = 26;
+            this.txtBed.Tag = "Hello";
             // 
             // txtRoom
             // 

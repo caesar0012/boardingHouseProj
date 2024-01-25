@@ -11,6 +11,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace boardingHouseProj
 {
@@ -30,8 +31,21 @@ namespace boardingHouseProj
         private void btnRegister_Click(object sender, EventArgs e)
         {
             ValidateFields();
-            insertTenant();
-            clear();
+
+            if (CheckBed())
+            {
+
+                return;
+
+            }
+            else {
+
+                insertTenant();
+                clear();
+
+            }
+            
+            
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -53,7 +67,7 @@ namespace boardingHouseProj
         private void SetFontColorBasedOnEmpty(TextBox textBox, Label label01, ref bool isEmptyFlag)
         {
             //ref isEmptyFlag mean, if any changes made it will affect all the variables like static var behavior
-           
+
             if (string.IsNullOrEmpty(textBox.Text))
             {
                 label01.ForeColor = Color.Red;
@@ -108,7 +122,8 @@ namespace boardingHouseProj
             }
         }
 
-        void clear() {
+        void clear()
+        {
 
             txtAddress.Clear();
             txtBed.Clear();
@@ -128,9 +143,10 @@ namespace boardingHouseProj
 
         }
 
-        void insertTenant() {
-
-            try {
+        void insertTenant()
+        {
+            try
+            {
 
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
@@ -170,20 +186,37 @@ namespace boardingHouseProj
 
                 }
             }
-            catch{
+            catch (Exception ex)
+            {
 
-                MessageBox.Show("Error: Failed to Register the Tenant");
-            
+                MessageBox.Show(ex.Message);
+
             }
         }
 
-        void loadDataGrid() {
+        void loadDataGrid()
+        {
 
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
 
                 connect.Open();
 
-                string query = "Select * from Room";
+                string query = "SELECT \r\n    " +
+                    "r1.Room_number AS Room,\r\n    " +
+                    "r1.Description,\r\n    " +
+                    "r1.Price,\r\n    " +
+                    "r1.allowed_gender AS Gender,\r\n    " +
+                    "r1.capacity - COUNT(b1.RoomID) AS Avail,\r\n    " +
+                    "r1.Capacity\r\n" +
+                    "FROM Room AS r1\r\n" +
+                    "LEFT JOIN bed_tbl AS b1 ON r1.Room_id = b1.RoomID where r1.Archive = 0" +
+                    "GROUP BY \r\n    " +
+                    "r1.Room_number, \r\n    " +
+                    "r1.Description, \r\n    " +
+                    "r1.Price,\r\n    " +
+                    "r1.allowed_gender,\r\n    " +
+                    "r1.Capacity; -- Only include non-aggregated columns in the GROUP BY clause\r\n";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -193,6 +226,102 @@ namespace boardingHouseProj
                 dt.Load(reader);
                 dgRoom.DataSource = dt;
             }
+        }
+
+        private void dgRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgRoom.Rows[e.RowIndex];
+
+                txtRoom.Text = selectedRow.Cells["Room"].Value.ToString();
+                string Rent = selectedRow.Cells["Price"].Value.ToString();
+
+                txtRent.Text = Rent;
+
+                double depo = double.Parse(Rent) * 2;
+
+                txtDeposit.Text = depo.ToString();
+
+            }
+        }
+
+        bool CheckBed()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
+                    string query = "SELECT COUNT(b1.BedNumber) " +
+                                   "FROM bed_tbl AS b1 " +
+                                   "LEFT JOIN Room AS r1 ON b1.RoomID = r1.Room_id " +
+                                   "WHERE r1.Room_number = @roomNum and BedNumber = @bedNum";
+
+                    connect.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
+                        cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Bed Taken");
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                // Log the exception or handle it appropriately.
+            }
+
+            return false;
+        }
+
+        void registerLease() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+                connect.Open();
+
+                DateTime startDt = dtStart.Value;
+                DateTime endDt = dtEnd.Value;
+
+                string query = "INSERT INTO lease_tbl \r\n" +
+                    "(Tenant_id, Staff_id, Bed_id, MonthlyPayment, DepositAmount, StartLease, EndLease)\r\n" +
+                    "SELECT\r\n    " +
+                    "(\r\n        " +
+                    "SELECT Tenant_id\r\n        " +
+                    "FROM Tenant\r\n        " +
+                    "WHERE FirstName = @fName AND LastName = @Lname\r\n    ),\r\n    " +
+                    "@staff_id,\r\n    " +
+                    "b1.Bed_id,\r\n   " +
+                    " @rent,\r\n  " +
+                    "  @deposit,\r\n  " +
+                    "  @startLease,\r\n  " +
+                    "  @endLease'\r\nFROM\r\n   " +
+                    " bed_tbl AS b1\r\nLEFT JOIN\r\n   " +
+                    " Room AS r1 ON b1.RoomID = r1.Room_id\r\nWHERE\r\n  " +
+                    "  r1.Room_number = @roomNum AND b1.BedNumber = @bedNum;";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+
+                    //cmd.Parameters.AddWithValue("@tntID", );
+                    cmd.Parameters.AddWithValue("@staffID", frmLogin.staff_id);
+                    cmd.Parameters.AddWithValue("@Rent", double.Parse(txtRent.Text));
+                    cmd.Parameters.AddWithValue("@Depo", double.Parse(txtDeposit.Text));
+                    cmd.Parameters.AddWithValue("@startLease", startDt);
+                    cmd.Parameters.AddWithValue("@endLease", endDt);
+                    cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
+                    cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }        
         }
     }
 }

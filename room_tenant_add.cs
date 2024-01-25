@@ -352,17 +352,16 @@ namespace boardingHouseProj
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
-                            cmd.Parameters.AddWithValue("@RoomNum", cmbRoomNum.Text);
+                        cmd.Parameters.AddWithValue("@RoomNum", cmbRoomNum.Text);
 
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    // Assuming Room_id is of type int, use GetInt32 instead of GetString
-                                    return reader.GetInt32(0); // Use index 0 for Room_id
-                                }
+                            // Assuming Room_id is of type int, use GetInt32 instead of GetString
+                                return reader.GetInt32(0); // Use index 0 for Room_id
                             }
-                        
+                        }
                     }
                 }
             }

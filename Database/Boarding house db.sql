@@ -58,7 +58,7 @@ create table bed_tbl(
 	bed_id int primary key identity(74,1),
 	RoomID INT,
     BedNumber INT,
-	Archive smallint default 0
+	status smallint
 
     FOREIGN KEY (RoomID) REFERENCES Room(Room_id)
 );
@@ -68,7 +68,6 @@ Create Table lease_tbl(
 	lease_id int primary key identity(40,1),
 	Tenant_id int unique,
 	Staff_id int,
-	room_id int,
 	bed_id int,
 	MonthlyPayment decimal,
 	DepositAmount DECIMAL,
@@ -76,9 +75,7 @@ Create Table lease_tbl(
 	EndLease date NULL,
 
 	FOREIGN key (Tenant_id) REFERENCES Tenant(Tenant_id),
-	FOREIGN key (Staff_id) REFERENCES Staff_acc(Staff_id),
-	FOREIGN KEy (Room_id) REFERENCES Room(Room_id),
-	FOREIGN KEy (bed_id) REFERENCES bed_tbl(bed_id)
+	FOREIGN key (Staff_id) REFERENCES Staff_acc(Staff_id)
 );
 
 CREATE TABLE Payment (

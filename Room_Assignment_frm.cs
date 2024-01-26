@@ -8,10 +8,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml.Linq;
 
 namespace boardingHouseProj
 {
@@ -31,19 +33,18 @@ namespace boardingHouseProj
         private void btnRegister_Click(object sender, EventArgs e)
         {
             ValidateFields();
+            insertTenant();
+            registerLease();
 
-            if (CheckBed())
+            /*if (CheckBed())
             {
 
                 return;
 
             }
             else {
-
-                insertTenant();
-                clear();
-
-            }
+                
+            }*/
             
             
         }
@@ -178,12 +179,23 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@Relationship", txtRelationship.Text);
                     cmd.Parameters.AddWithValue("@School", txtSchool.Text);
                     cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                    cmd.Parameters.AddWithValue("@Document_pic", imageData);
+
+                    if (imageData != null)
+                    {
+
+                        cmd.Parameters.AddWithValue("@Document_pic", imageData);
+
+                    }
+                    else {
+
+                        return;
+                        
+                    }
 
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Tenant information has been successfully added");
-
+                    
                 }
             }
             catch (Exception ex)
@@ -282,46 +294,52 @@ namespace boardingHouseProj
             return false;
         }
 
-        void registerLease() {
-
-            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+        void registerLease()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
                 connect.Open();
 
                 DateTime startDt = dtStart.Value;
                 DateTime endDt = dtEnd.Value;
 
-                string query = "INSERT INTO lease_tbl \r\n" +
-                    "(Tenant_id, Staff_id, Bed_id, MonthlyPayment, DepositAmount, StartLease, EndLease)\r\n" +
-                    "SELECT\r\n    " +
-                    "(\r\n        " +
-                    "SELECT Tenant_id\r\n        " +
-                    "FROM Tenant\r\n        " +
-                    "WHERE FirstName = @fName AND LastName = @Lname\r\n    ),\r\n    " +
-                    "@staff_id,\r\n    " +
-                    "b1.Bed_id,\r\n   " +
-                    " @rent,\r\n  " +
-                    "  @deposit,\r\n  " +
-                    "  @startLease,\r\n  " +
-                    "  @endLease'\r\nFROM\r\n   " +
-                    " bed_tbl AS b1\r\nLEFT JOIN\r\n   " +
-                    " Room AS r1 ON b1.RoomID = r1.Room_id\r\nWHERE\r\n  " +
-                    "  r1.Room_number = @roomNum AND b1.BedNumber = @bedNum;";
+                string query = @"INSERT INTO lease_tbl(Tenant_id, Staff_id, Bed_id, MonthlyPayment, DepositAmount, StartLease, EndLease)
+                                SELECT
+                                    (Select Tenant_id from Tenant where FirstName = @fname and Lastname  = @lname),
+                                    @staffID,
+                                    (Select
 
-                using (SqlCommand cmd = new SqlCommand(query, connect)) {
+                                            b1.bed_id
+                                        from bed_tbl as b1
 
-                    //cmd.Parameters.AddWithValue("@tntID", );
+                                        left join Room as r1
+
+                                        on b1.RoomID = r1.Room_id
+
+                                        where r1.Room_number = @roomNum and b1.BedNumber = @bedNum),
+                                    @rent,
+                                    @deposit,
+                                    @startLease,
+                                    @endLease";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@fName", txtFirstName.Text);
+                    cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
                     cmd.Parameters.AddWithValue("@staffID", frmLogin.staff_id);
-                    cmd.Parameters.AddWithValue("@Rent", double.Parse(txtRent.Text));
-                    cmd.Parameters.AddWithValue("@Depo", double.Parse(txtDeposit.Text));
+                    cmd.Parameters.AddWithValue("@rent", double.Parse(txtRent.Text));
+                    cmd.Parameters.AddWithValue("@deposit", double.Parse(txtDeposit.Text));
                     cmd.Parameters.AddWithValue("@startLease", startDt);
                     cmd.Parameters.AddWithValue("@endLease", endDt);
                     cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
                     cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
 
                     cmd.ExecuteNonQuery();
-
+                    MessageBox.Show("Done Registering a lease");
+                    clear();
                 }
-            }        
+            }
         }
+
     }
 }

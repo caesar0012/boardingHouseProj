@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@
             this.lblFirstName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.Location = new System.Drawing.Point(47, 11);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(102, 22);
+            this.lblFirstName.Size = new System.Drawing.Size(80, 17);
             this.lblFirstName.TabIndex = 1;
             this.lblFirstName.Text = "First Name";
             // 
@@ -86,7 +86,7 @@
             this.txtLastName.Location = new System.Drawing.Point(204, 38);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(119, 26);
+            this.txtLastName.Size = new System.Drawing.Size(119, 22);
             this.txtLastName.TabIndex = 2;
             this.txtLastName.Text = "Bolt";
             // 
@@ -95,7 +95,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(50, 38);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(119, 26);
+            this.txtFirstName.Size = new System.Drawing.Size(119, 22);
             this.txtFirstName.TabIndex = 4;
             this.txtFirstName.Text = "Freeza";
             // 
@@ -105,7 +105,7 @@
             this.lblLastName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastName.Location = new System.Drawing.Point(201, 13);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(101, 22);
+            this.lblLastName.Size = new System.Drawing.Size(79, 17);
             this.lblLastName.TabIndex = 3;
             this.lblLastName.Text = "Last Name";
             // 
@@ -115,7 +115,7 @@
             this.lblContact.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.Location = new System.Drawing.Point(564, 13);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(75, 22);
+            this.lblContact.Size = new System.Drawing.Size(59, 17);
             this.lblContact.TabIndex = 6;
             this.lblContact.Text = "Contact";
             // 
@@ -124,7 +124,7 @@
             this.txtContact.Location = new System.Drawing.Point(567, 38);
             this.txtContact.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(173, 26);
+            this.txtContact.Size = new System.Drawing.Size(173, 22);
             this.txtContact.TabIndex = 5;
             this.txtContact.Text = "0995";
             // 
@@ -134,7 +134,7 @@
             this.lblSchool.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSchool.Location = new System.Drawing.Point(564, 81);
             this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(69, 22);
+            this.lblSchool.Size = new System.Drawing.Size(53, 17);
             this.lblSchool.TabIndex = 8;
             this.lblSchool.Text = "School";
             // 
@@ -143,7 +143,7 @@
             this.txtSchool.Location = new System.Drawing.Point(567, 108);
             this.txtSchool.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(173, 26);
+            this.txtSchool.Size = new System.Drawing.Size(173, 22);
             this.txtSchool.TabIndex = 7;
             this.txtSchool.Text = "School 1";
             // 
@@ -153,7 +153,7 @@
             this.lblRelation.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRelation.Location = new System.Drawing.Point(201, 81);
             this.lblRelation.Name = "lblRelation";
-            this.lblRelation.Size = new System.Drawing.Size(114, 22);
+            this.lblRelation.Size = new System.Drawing.Size(88, 17);
             this.lblRelation.TabIndex = 12;
             this.lblRelation.Text = "Relationship";
             // 
@@ -162,7 +162,7 @@
             this.txtRelationship.Location = new System.Drawing.Point(204, 108);
             this.txtRelationship.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(119, 26);
+            this.txtRelationship.Size = new System.Drawing.Size(119, 22);
             this.txtRelationship.TabIndex = 11;
             this.txtRelationship.Text = "Enemy";
             // 
@@ -172,7 +172,7 @@
             this.lblAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(360, 13);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(82, 22);
+            this.lblAddress.Size = new System.Drawing.Size(62, 17);
             this.lblAddress.TabIndex = 10;
             this.lblAddress.Text = "Address";
             // 
@@ -181,7 +181,7 @@
             this.txtAddress.Location = new System.Drawing.Point(363, 40);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(173, 26);
+            this.txtAddress.Size = new System.Drawing.Size(173, 22);
             this.txtAddress.TabIndex = 9;
             this.txtAddress.Text = "Address 1";
             // 
@@ -191,7 +191,7 @@
             this.lblGuardian.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGuardian.Location = new System.Drawing.Point(50, 81);
             this.lblGuardian.Name = "lblGuardian";
-            this.lblGuardian.Size = new System.Drawing.Size(86, 22);
+            this.lblGuardian.Size = new System.Drawing.Size(67, 17);
             this.lblGuardian.TabIndex = 18;
             this.lblGuardian.Text = "Guardian";
             // 
@@ -200,7 +200,7 @@
             this.txtGuardian.Location = new System.Drawing.Point(53, 108);
             this.txtGuardian.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtGuardian.Name = "txtGuardian";
-            this.txtGuardian.Size = new System.Drawing.Size(116, 26);
+            this.txtGuardian.Size = new System.Drawing.Size(116, 22);
             this.txtGuardian.TabIndex = 17;
             this.txtGuardian.Text = "Goku";
             // 
@@ -210,7 +210,7 @@
             this.lblEmgencyContact.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmgencyContact.Location = new System.Drawing.Point(360, 81);
             this.lblEmgencyContact.Name = "lblEmgencyContact";
-            this.lblEmgencyContact.Size = new System.Drawing.Size(177, 22);
+            this.lblEmgencyContact.Size = new System.Drawing.Size(138, 17);
             this.lblEmgencyContact.TabIndex = 16;
             this.lblEmgencyContact.Text = "Emergency Contact";
             // 
@@ -219,7 +219,7 @@
             this.txtEmergencyContact.Location = new System.Drawing.Point(363, 108);
             this.txtEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtEmergencyContact.Name = "txtEmergencyContact";
-            this.txtEmergencyContact.Size = new System.Drawing.Size(173, 26);
+            this.txtEmergencyContact.Size = new System.Drawing.Size(173, 22);
             this.txtEmergencyContact.TabIndex = 15;
             this.txtEmergencyContact.Text = "0999";
             // 
@@ -271,7 +271,7 @@
             this.lblDocu.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocu.Location = new System.Drawing.Point(770, 79);
             this.lblDocu.Name = "lblDocu";
-            this.lblDocu.Size = new System.Drawing.Size(107, 22);
+            this.lblDocu.Size = new System.Drawing.Size(84, 17);
             this.lblDocu.TabIndex = 23;
             this.lblDocu.Text = "Documents";
             // 
@@ -281,7 +281,7 @@
             this.lblGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(770, 11);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(74, 22);
+            this.lblGender.Size = new System.Drawing.Size(56, 17);
             this.lblGender.TabIndex = 21;
             this.lblGender.Text = "Gender";
             // 
@@ -293,9 +293,10 @@
             "Female"});
             this.cmbGender.Location = new System.Drawing.Point(773, 36);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(96, 26);
+            this.cmbGender.Size = new System.Drawing.Size(96, 24);
             this.cmbGender.TabIndex = 20;
             this.cmbGender.Text = "Male";
+            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -339,7 +340,7 @@
             this.label16.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(9, 214);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(102, 22);
+            this.label16.Size = new System.Drawing.Size(78, 17);
             this.label16.TabIndex = 36;
             this.label16.Text = "End Lease";
             // 
@@ -349,7 +350,7 @@
             this.label15.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(9, 164);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(107, 22);
+            this.label15.Size = new System.Drawing.Size(83, 17);
             this.label15.TabIndex = 35;
             this.label15.Text = "Start Lease";
             // 
@@ -357,14 +358,14 @@
             // 
             this.dtEnd.Location = new System.Drawing.Point(120, 211);
             this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(269, 26);
+            this.dtEnd.Size = new System.Drawing.Size(269, 22);
             this.dtEnd.TabIndex = 34;
             // 
             // dtStart
             // 
             this.dtStart.Location = new System.Drawing.Point(120, 160);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(269, 26);
+            this.dtStart.Size = new System.Drawing.Size(269, 22);
             this.dtStart.TabIndex = 33;
             this.dtStart.Value = new System.DateTime(2024, 1, 24, 22, 0, 1, 0);
             // 
@@ -373,24 +374,24 @@
             this.txtDeposit.Location = new System.Drawing.Point(228, 114);
             this.txtDeposit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDeposit.Name = "txtDeposit";
-            this.txtDeposit.Size = new System.Drawing.Size(138, 26);
+            this.txtDeposit.Size = new System.Drawing.Size(138, 22);
             this.txtDeposit.TabIndex = 29;
             // 
             // dgRoom
             // 
             this.dgRoom.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.RosyBrown;
-            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown;
+            this.dgRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRoom.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRoom.EnableHeadersVisualStyles = false;
             this.dgRoom.Location = new System.Drawing.Point(424, 14);
@@ -407,7 +408,7 @@
             this.lblRent.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRent.Location = new System.Drawing.Point(47, 89);
             this.lblRent.Name = "lblRent";
-            this.lblRent.Size = new System.Drawing.Size(50, 22);
+            this.lblRent.Size = new System.Drawing.Size(39, 17);
             this.lblRent.TabIndex = 32;
             this.lblRent.Text = "Rent";
             // 
@@ -416,7 +417,7 @@
             this.txtRent.Location = new System.Drawing.Point(51, 114);
             this.txtRent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRent.Name = "txtRent";
-            this.txtRent.Size = new System.Drawing.Size(135, 26);
+            this.txtRent.Size = new System.Drawing.Size(135, 22);
             this.txtRent.TabIndex = 31;
             // 
             // lblDeposit
@@ -425,7 +426,7 @@
             this.lblDeposit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeposit.Location = new System.Drawing.Point(225, 89);
             this.lblDeposit.Name = "lblDeposit";
-            this.lblDeposit.Size = new System.Drawing.Size(76, 22);
+            this.lblDeposit.Size = new System.Drawing.Size(58, 17);
             this.lblDeposit.TabIndex = 30;
             this.lblDeposit.Text = "Deposit";
             // 
@@ -435,7 +436,7 @@
             this.lblBed.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBed.Location = new System.Drawing.Point(225, 19);
             this.lblBed.Name = "lblBed";
-            this.lblBed.Size = new System.Drawing.Size(45, 22);
+            this.lblBed.Size = new System.Drawing.Size(34, 17);
             this.lblBed.TabIndex = 27;
             this.lblBed.Text = "Bed";
             // 
@@ -444,7 +445,7 @@
             this.txtBed.Location = new System.Drawing.Point(228, 44);
             this.txtBed.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBed.Name = "txtBed";
-            this.txtBed.Size = new System.Drawing.Size(138, 26);
+            this.txtBed.Size = new System.Drawing.Size(138, 22);
             this.txtBed.TabIndex = 26;
             this.txtBed.Tag = "Hello";
             // 
@@ -453,7 +454,7 @@
             this.txtRoom.Location = new System.Drawing.Point(48, 44);
             this.txtRoom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRoom.Name = "txtRoom";
-            this.txtRoom.Size = new System.Drawing.Size(138, 26);
+            this.txtRoom.Size = new System.Drawing.Size(138, 22);
             this.txtRoom.TabIndex = 28;
             // 
             // lblRoom
@@ -462,13 +463,13 @@
             this.lblRoom.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoom.Location = new System.Drawing.Point(45, 17);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(62, 22);
+            this.lblRoom.Size = new System.Drawing.Size(48, 17);
             this.lblRoom.TabIndex = 25;
             this.lblRoom.Text = "Room";
             // 
             // Room_Assignment_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1028, 482);

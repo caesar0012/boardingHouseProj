@@ -19,6 +19,8 @@ namespace boardingHouseProj
 {
     public partial class Room_Assignment_frm : Form
     {
+        string genderCell;
+
         public Room_Assignment_frm()
         {
             InitializeComponent();
@@ -32,34 +34,8 @@ namespace boardingHouseProj
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            int bedNum002 = int.Parse(txtBed.Text);
-
-            if (bedNum002 > cap)
-            {
-
-                MessageBox.Show("Bed Number doesn't exist");
-                return;
-            }
-
             ValidateFields();
-
-            if (BedExist())
-            {
-                updateBed();
-
-            } else if (isBedAvail()) {
-
-                updateBed();
             
-            }
-            else {
-
-                insertTenant();
-                createBed();
-                registerLease();
-
-            }
-            MessageBox.Show("Done Register");
 
         }
 
@@ -131,10 +107,55 @@ namespace boardingHouseProj
                 lblDocu.ForeColor = SystemColors.ControlText; // Reset to default color
             }
 
+            if (cmbGender.Text != genderCell) {
+
+                MessageBox.Show("Male and Female should be separated");
+                return;
+            
+            }
+
             if (isEmptyFlag)
             {
                 MessageBox.Show("Please fill the fields");
             }
+            int bedNum002;
+
+            if (int.TryParse(txtBed.Text, out bedNum002))
+            {
+                if (bedNum002 > cap)
+                {
+
+                    MessageBox.Show("Bed Number doesn't exist");
+                    return;
+                }
+                if (BedExist())
+                {
+                    return;
+
+                }
+                else if (isBedAvail())
+                {
+
+                    updateBed();
+
+                }
+                else
+                {
+
+                    insertTenant();
+                    createBed();
+                    registerLease();
+
+                }
+                MessageBox.Show("Done Register");
+            }
+            else
+            {
+
+                bedNum002 = 0; // Or any other default value that makes sense in your context
+            }
+
+            
         }
 
         void clear()
@@ -242,7 +263,7 @@ namespace boardingHouseProj
                     "r1.Description, \r\n    " +
                     "r1.Price,\r\n    " +
                     "r1.allowed_gender,\r\n    " +
-                    "r1.Capacity; -- Only include non-aggregated columns in the GROUP BY clause\r\n";
+                    "r1.Capacity;";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
 
@@ -273,6 +294,8 @@ namespace boardingHouseProj
                 txtDeposit.Text = depo.ToString();
 
                 cap = int.Parse(cap01);
+
+                genderCell = selectedRow.Cells["Gender"].Value.ToString();
             }
         }
 
@@ -400,23 +423,17 @@ namespace boardingHouseProj
                 DateTime endDt = dtEnd.Value;
 
                 string query = @"INSERT INTO lease_tbl(Tenant_id, Staff_id, Bed_id, MonthlyPayment, DepositAmount, StartLease, EndLease)
-                                SELECT
-                                    (Select Tenant_id from Tenant where FirstName = @fname and Lastname  = @lname),
-                                    @staffID,
-                                    (Select
-
-                                            b1.bed_id
-                                        from bed_tbl as b1
-
-                                        left join Room as r1
-
-                                        on b1.RoomID = r1.Room_id
-
-                                        where r1.Room_number = @roomNum and b1.BedNumber = @bedNum),
-                                    @rent,
-                                    @deposit,
-                                    @startLease,
-                                    @endLease";
+                        SELECT
+                            (SELECT TOP 1 Tenant_id FROM Tenant WHERE FirstName = @fName AND Lastname = @lname),
+                            @staffID,
+                            (SELECT TOP 1 b1.bed_id
+                             FROM bed_tbl AS b1
+                             LEFT JOIN Room AS r1 ON b1.RoomID = r1.Room_id
+                             WHERE r1.Room_number = @roomNum AND b1.BedNumber = @bedNum),
+                            @rent,
+                            @deposit,
+                            @startLease,
+                            @endLease";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
@@ -430,11 +447,24 @@ namespace boardingHouseProj
                     cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
                     cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Done Registering a lease");
-                    clear();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Done Registering a lease");
+                        clear();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error registering lease: " + ex.Message);
+                        // You may want to log the exception details or handle the error in a specific way.
+                    }
                 }
             }
+        }
+
+        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

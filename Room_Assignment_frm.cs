@@ -32,6 +32,15 @@ namespace boardingHouseProj
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            int bedNum002 = int.Parse(txtBed.Text);
+
+            if (bedNum002 > cap)
+            {
+
+                MessageBox.Show("Bed Number doesn't exist");
+                return;
+            }
+
             ValidateFields();
 
             if (BedExist())
@@ -245,6 +254,7 @@ namespace boardingHouseProj
             }
         }
 
+        int cap;
         private void dgRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -258,8 +268,11 @@ namespace boardingHouseProj
 
                 double depo = double.Parse(Rent) * 2;
 
+                string cap01 = selectedRow.Cells["Capacity"].Value.ToString();
+
                 txtDeposit.Text = depo.ToString();
 
+                cap = int.Parse(cap01);
             }
         }
 

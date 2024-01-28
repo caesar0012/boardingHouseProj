@@ -35,7 +35,7 @@ namespace boardingHouseProj
         private void btnRegister_Click(object sender, EventArgs e)
         {
             ValidateFields();
-            
+            Room_Assignment_frm_Load(sender, e);
 
         }
 
@@ -228,8 +228,6 @@ namespace boardingHouseProj
                     }
 
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Tenant information has been successfully added");
                     
                 }
             }
@@ -450,7 +448,6 @@ namespace boardingHouseProj
                     try
                     {
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Done Registering a lease");
                         clear();
                     }
                     catch (SqlException ex)

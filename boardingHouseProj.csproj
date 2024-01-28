@@ -134,6 +134,12 @@
     <Compile Include="loadBar.Designer.cs">
       <DependentUpon>loadBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageRoomBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageRoomBed.Designer.cs">
+      <DependentUpon>ManageRoomBed.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageStaffFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loadBar.resx">
       <DependentUpon>loadBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageRoomBed.resx">
+      <DependentUpon>ManageRoomBed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageStaffFrm.resx">
       <DependentUpon>ManageStaffFrm.cs</DependentUpon>

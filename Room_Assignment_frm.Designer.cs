@@ -127,6 +127,7 @@
             this.txtContact.Size = new System.Drawing.Size(173, 22);
             this.txtContact.TabIndex = 5;
             this.txtContact.Text = "0995";
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
             // lblSchool
             // 
@@ -222,6 +223,7 @@
             this.txtEmergencyContact.Size = new System.Drawing.Size(173, 22);
             this.txtEmergencyContact.TabIndex = 15;
             this.txtEmergencyContact.Text = "0999";
+            this.txtEmergencyContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmergencyContact_KeyPress);
             // 
             // panel1
             // 
@@ -296,7 +298,6 @@
             this.cmbGender.Size = new System.Drawing.Size(96, 24);
             this.cmbGender.TabIndex = 20;
             this.cmbGender.Text = "Male";
-            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -448,6 +449,7 @@
             this.txtBed.Size = new System.Drawing.Size(138, 22);
             this.txtBed.TabIndex = 26;
             this.txtBed.Tag = "Hello";
+            this.txtBed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBed_KeyPress);
             // 
             // txtRoom
             // 

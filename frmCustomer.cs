@@ -179,11 +179,9 @@ namespace boardingHouseProj
 
         private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Check if the pressed key is not a digit or a control key
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                // If not a digit or a control key, set the Handled property to true
-                // to prevent the character from being entered into the TextBox
+
                 e.Handled = true;
             }
         }

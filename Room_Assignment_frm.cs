@@ -24,6 +24,10 @@ namespace boardingHouseProj
         public Room_Assignment_frm()
         {
             InitializeComponent();
+
+            txtContact.MaxLength = 11;
+            txtEmergencyContact.MaxLength = 11;
+
         }
 
         string imgFilePath;
@@ -459,9 +463,22 @@ namespace boardingHouseProj
             }
         }
 
-        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtEmergencyContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContact_KeyPress(sender, e);
+        }
+
+        private void txtBed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContact_KeyPress(sender, e);
         }
     }
 }

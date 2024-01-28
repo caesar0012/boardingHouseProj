@@ -33,20 +33,25 @@ namespace boardingHouseProj
         private void btnRegister_Click(object sender, EventArgs e)
         {
             ValidateFields();
-            insertTenant();
-            registerLease();
 
-            /*if (CheckBed())
+            if (BedExist())
             {
+                updateBed();
 
-                return;
+            } else if (isBedAvail()) {
 
+                updateBed();
+            
             }
             else {
-                
-            }*/
-            
-            
+
+                insertTenant();
+                createBed();
+                registerLease();
+
+            }
+            MessageBox.Show("Done Register");
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -201,7 +206,7 @@ namespace boardingHouseProj
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: insertTenant" + ex.Message);
 
             }
         }
@@ -258,7 +263,7 @@ namespace boardingHouseProj
             }
         }
 
-        bool CheckBed()
+        bool BedExist()
         {
             try
             {
@@ -267,7 +272,8 @@ namespace boardingHouseProj
                     string query = "SELECT COUNT(b1.BedNumber) " +
                                    "FROM bed_tbl AS b1 " +
                                    "LEFT JOIN Room AS r1 ON b1.RoomID = r1.Room_id " +
-                                   "WHERE r1.Room_number = @roomNum and BedNumber = @bedNum";
+                                   "WHERE r1.Room_number = @roomNum AND BedNumber = @bedNum " +
+                                   "AND b1.status = 'Occupied'";
 
                     connect.Open();
                     using (SqlCommand cmd = new SqlCommand(query, connect))
@@ -287,11 +293,88 @@ namespace boardingHouseProj
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error BedExist: " + ex.Message);
                 // Log the exception or handle it appropriately.
             }
 
             return false;
+        }
+
+        bool isBedAvail()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+                {
+                    string query = "SELECT COUNT(b1.BedNumber) " +
+                                   "FROM bed_tbl AS b1 " +
+                                   "LEFT JOIN Room AS r1 ON b1.RoomID = r1.Room_id " +
+                                   "WHERE r1.Room_number = @roomNum and BedNumber = @bedNum and " +
+                                   "b1.status = 'Available'";
+
+                    connect.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
+                        cmd.Parameters.AddWithValue("@bedNum", txtBed.Text);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            Console.WriteLine("Bed Available");
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error BEdAvail: " + ex.Message);
+                // Log the exception or handle it appropriately.
+            }
+
+            return false;
+        }
+
+
+        void createBed()
+        {
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
+            {
+                connect.Open();
+                string query = @"INSERT INTO bed_tbl (RoomID, BedNumber, status)
+                        VALUES (
+                          (SELECT Room_id FROM Room WHERE Room_number = @roomNum),
+                          @bedNum,
+                          'Occupied');";
+                SqlCommand cmd = new SqlCommand(query, connect);
+                cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
+                cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Bed Created");
+            }
+        }
+
+        void updateBed() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = @"UPDATE bed_tbl
+                    SET status = 'Occupied'
+                    WHERE RoomID = (SELECT Room_id FROM Room WHERE Room_number = @roomNum)
+                    and BedNumber = @bedNum;";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+
+                cmd.Parameters.AddWithValue("@roomNum", txtRoom.Text);
+                cmd.Parameters.AddWithValue("@bedNum", int.Parse(txtBed.Text));
+
+                cmd.ExecuteNonQuery();
+            
+            }
         }
 
         void registerLease()
@@ -340,6 +423,5 @@ namespace boardingHouseProj
                 }
             }
         }
-
     }
 }

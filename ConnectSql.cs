@@ -10,7 +10,7 @@ namespace boardingHouseProj
     internal class ConnectSql
     {
 
-        public static string connectionString = @"Data Source=PC\SQLEXPRESS;Initial Catalog=BoardingHouse;Integrated Security=True";
+        public static string connectionString = @"Data Source=COLA\SQLEXPRESS01;Initial Catalog=BoardingHouse;Integrated Security=True;";
         /*
           edward = @"Data Source=DESKTOP-2GB3QJK\SQLEXPRESS01;Initial Catalog=BoardingHouse;Integrated Security=True";
 

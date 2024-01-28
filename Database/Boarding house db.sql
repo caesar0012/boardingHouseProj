@@ -58,7 +58,7 @@ create table bed_tbl(
 	bed_id int primary key identity(74,1),
 	RoomID INT,
     BedNumber INT,
-	status smallint
+	status varchar(15) default 'Available'
 
     FOREIGN KEY (RoomID) REFERENCES Room(Room_id)
 );

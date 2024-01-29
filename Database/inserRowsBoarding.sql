@@ -27,7 +27,7 @@ VALUES
 ('203', 'Luxury Suite', 'Female', 20, 2500.00, 'Available', 64),
 ('301', 'Honeymoon Suite', 'Male', 20, 2500.00, 'Available', 65),
 ('302', 'Penthouse', 'Female', 10, 2500.00, 'Available', 61),
-('303', 'Accessible Room', 'Male', 2500, 100.00, 'Available', 61),
+('303', 'Accessible Room', 'Male', 5, 3500.00, 'Available', 61),
 ('304', 'VIP Suite', 'Female', 15, 2500.00, 'Available', 61);
 
 INSERT INTO bed_tbl (RoomID, BedNumber)

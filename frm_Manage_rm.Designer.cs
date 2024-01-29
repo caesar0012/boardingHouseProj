@@ -110,7 +110,6 @@
             this.dgRoom.Size = new System.Drawing.Size(603, 373);
             this.dgRoom.TabIndex = 11;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellClick);
-            this.dgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRoom_CellContentClick);
             // 
             // txtPrice
             // 
@@ -171,7 +170,6 @@
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(191, 20);
             this.txtRoomNumber.TabIndex = 17;
-            this.txtRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNumber_KeyPress);
             // 
             // label2
             // 
@@ -229,7 +227,6 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(191, 21);
             this.cmbStatus.TabIndex = 27;
-            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // cmbDefault
             // 

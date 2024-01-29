@@ -17,6 +17,8 @@ namespace boardingHouseProj
 {
     public partial class frmManage_rm : Form
     {
+        private static string stats;
+        public static string roomNum = "";
         public frmManage_rm()
         {
             InitializeComponent();
@@ -34,7 +36,6 @@ namespace boardingHouseProj
                 btnDelete.Hide();
             
             }
-        
         }
 
         private void frmManage_rm_Load(object sender, EventArgs e)
@@ -42,15 +43,10 @@ namespace boardingHouseProj
             string query = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 0;";
             showData(query);
         }
-
-        private static string stats;
-        public static string roomNum = "";
         private void showData(string query)
         {
-
             try
             {
-
                 using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
                 {
                     connect.Open();
@@ -71,22 +67,11 @@ namespace boardingHouseProj
                     dgRoom.Sort(dgRoom.Columns["Room_number"], System.ComponentModel.ListSortDirection.Ascending);
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
 
                 MessageBox.Show(ex.Message); //Shows the message in messagebox for whats the error
 
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void gridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -139,12 +124,6 @@ namespace boardingHouseProj
             }
         }
 
-
-        private void txtRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void txtCapacity_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the key is not a control key, a digit, or a minus sign
@@ -157,18 +136,6 @@ namespace boardingHouseProj
             {
                 e.Handled = true; // Ignore the '-' key
             }
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-            Payment_Frm f1 = new Payment_Frm();
-            f1.TopLevel = false;
-            f1.Dock = DockStyle.Fill; // Optional to fill the panel
-            this.Controls.Add(f1);
-            f1.BringToFront();
-
-
-            f1.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -295,11 +262,6 @@ namespace boardingHouseProj
             }
         }
 
-        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRecover_Click(object sender, EventArgs e)
         {
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString))
@@ -374,23 +336,21 @@ namespace boardingHouseProj
 
                         cmd.ExecuteNonQuery();
 
-                        string query1 = "update l1 set\r\n    " +
-                            "l1.room_id = null,\r\n    " +
-                            "l1.assign_bed = null\r\n" +
-                            "from Lease_tbl as l1\r\n" +
-                            "left join Room as r1\r\n" +
-                            "on l1.Room_id = r1.Room_id\r\n" +
-                            "where r1.Room_number = @rmNum";
+                        string query1 = @"UPDATE lease_tbl
+                                            SET bed_id = null
+                                            WHERE bed_id IN (
+                                                SELECT b1.Bed_id
+                                                FROM bed_tbl AS b1
+                                                LEFT JOIN Room AS r1 ON b1.RoomID = r1.Room_id
+                                                WHERE r1.Room_number = @roomNum);";
 
                         using (SqlCommand cmd1 = new SqlCommand(query1, connect)) {
 
-                            cmd1.Parameters.AddWithValue("@rmNum", roomNum);
+                            cmd1.Parameters.AddWithValue("@roomNum", roomNum);
                             cmd1.ExecuteNonQuery();
                         
                         }
-
                             MessageBox.Show("Archive Successfully.");
-
                     }
 
                     frmManage_rm_Load(sender, e);
@@ -402,7 +362,6 @@ namespace boardingHouseProj
                 return;
             }
         }
-
         void clear() {
 
             txtRoomNumber.Clear();

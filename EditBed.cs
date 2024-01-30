@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace boardingHouseProj
 {
@@ -20,7 +22,19 @@ namespace boardingHouseProj
 
         private void EditBed_Load(object sender, EventArgs e)
         {
-            string query = "Select * from Room";
+            string query = @"select
+	                            b1.bed_id,
+	                            b1.BedNumber,
+	                            t1.FirstName + ' ' + t1.LastName as Name,
+	                            l1.StartLease,
+	                            l1.EndLease,
+	                            b1.status as Status
+                            from bed_tbl as b1
+                            left join lease_tbl as l1
+                            on  b1.bed_id = l1.bed_id
+                            left join Tenant as t1
+                            on l1.Tenant_id = t1.Tenant_id
+                            where l1.lease_id is not null";
             loadData(query);
         }
 
@@ -51,9 +65,23 @@ namespace boardingHouseProj
                 DataGridViewRow selectedRow = dgBed.Rows[e.RowIndex];
                 selectedRow.Selected = true;
 
-                txtID.Text = selectedRow.Cells["Room_id"].Value.ToString();
-
             }
         }
     }
 }
+
+//This is query for showing 
+/*select
+
+    b1.bed_id,
+	b1.BedNumber,
+	t1.FirstName + ' ' + t1.LastName as Name,
+	l1.StartLease,
+	l1.EndLease,
+	b1.status as Status
+from bed_tbl as b1
+left join lease_tbl as l1
+on  b1.bed_id = l1.bed_id
+left join Tenant as t1
+on l1.Tenant_id = t1.Tenant_id
+where l1.lease_id is not null*/

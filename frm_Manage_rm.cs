@@ -40,7 +40,7 @@ namespace boardingHouseProj
 
         private void frmManage_rm_Load(object sender, EventArgs e)
         {
-            string query = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 0;";
+            string query = " Select Room_number as 'Room', Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 0;";
             showData(query);
         }
         private void showData(string query)
@@ -64,7 +64,7 @@ namespace boardingHouseProj
                             dgRoom.AllowUserToAddRows = false;
                         }
                     }
-                    dgRoom.Sort(dgRoom.Columns["Room_number"], System.ComponentModel.ListSortDirection.Ascending);
+                    dgRoom.Sort(dgRoom.Columns["Room"], System.ComponentModel.ListSortDirection.Ascending);
                 }
             }
             catch (Exception ex){
@@ -95,7 +95,7 @@ namespace boardingHouseProj
                 selectedRow.Selected = true;
 
                 // Use the column names directly instead of retrieving index
-                string roomNumber = selectedRow.Cells["Room_number"].Value?.ToString();
+                string roomNumber = selectedRow.Cells["Room"].Value?.ToString();
                 string desc = selectedRow.Cells["Description"].Value?.ToString();
                 string capacity = selectedRow.Cells["Capacity"].Value?.ToString();
                 string price = selectedRow.Cells["Price"].Value?.ToString(); // Fix the column name here

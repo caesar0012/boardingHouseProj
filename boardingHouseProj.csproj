@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EditBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBed.Designer.cs">
+      <DependentUpon>EditBed.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditBedRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dashBoard.resx">
       <DependentUpon>dashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBed.resx">
+      <DependentUpon>EditBed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditBedRoom.resx">
       <DependentUpon>EditBedRoom.cs</DependentUpon>

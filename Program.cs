@@ -16,7 +16,7 @@ namespace boardingHouseProj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmManage_rm()) ;
+            Application.Run(new EditBed()) ;
         }
     }
 }

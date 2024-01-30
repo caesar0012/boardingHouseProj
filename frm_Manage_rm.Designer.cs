@@ -50,6 +50,7 @@
             this.cmbDefault = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRecover = new System.Windows.Forms.Button();
+            this.btnBed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(97, 398);
+            this.btnConfirm.Location = new System.Drawing.Point(101, 396);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(91, 24);
             this.btnConfirm.TabIndex = 12;
@@ -270,12 +271,25 @@
             this.btnRecover.UseVisualStyleBackColor = false;
             this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
+            // btnBed
+            // 
+            this.btnBed.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBed.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBed.Location = new System.Drawing.Point(812, 18);
+            this.btnBed.Name = "btnBed";
+            this.btnBed.Size = new System.Drawing.Size(91, 24);
+            this.btnBed.TabIndex = 32;
+            this.btnBed.Text = "Bed";
+            this.btnBed.UseVisualStyleBackColor = false;
+            // 
             // frmManage_rm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(930, 455);
+            this.Controls.Add(this.btnBed);
             this.Controls.Add(this.cmbDefault);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbStatus);
@@ -324,5 +338,6 @@
         private System.Windows.Forms.ComboBox cmbDefault;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRecover;
+        private System.Windows.Forms.Button btnBed;
     }
 }

@@ -85,43 +85,50 @@ namespace boardingHouseProj
 
         private void gridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            // Check if the clicked cell is not in the header row
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            try
             {
-                DataGridViewRow selectedRow = dgRoom.Rows[e.RowIndex];
-
-                // Select the entire row
-                selectedRow.Selected = true;
-
-                // Use the column names directly instead of retrieving index
-                string roomNumber = selectedRow.Cells["Room"].Value?.ToString();
-                string desc = selectedRow.Cells["Description"].Value?.ToString();
-                string capacity = selectedRow.Cells["Capacity"].Value?.ToString();
-                string price = selectedRow.Cells["Price"].Value?.ToString(); // Fix the column name here
-
-                string status = selectedRow.Cells["Status"].Value?.ToString(); // Fix the column name here
-
-                stats = status;
-
-                roomNum = roomNumber;
-
-                // Check if any cell value is null
-                if (roomNumber != null && desc != null && capacity != null && price != null)
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    // Set the values to the text boxes
-                    txtRoomNumber.Text = roomNumber;
-                    txtDescription.Text = desc;
-                    txtCapacity.Text = capacity;
-                    txtPrice.Text = price;
-                    cmbGender.Text = selectedRow.Cells["Allowed Gender"].Value?.ToString();
-                    cmbStatus.Text = selectedRow.Cells["Status"].Value?.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("One or more cell values are null.");
+                    DataGridViewRow selectedRow = dgRoom.Rows[e.RowIndex];
+
+                    // Select the entire row
+                    selectedRow.Selected = true;
+
+                    // Use the column names directly instead of retrieving index
+                    string roomNumber = selectedRow.Cells["Room"].Value?.ToString();
+                    string desc = selectedRow.Cells["Description"].Value?.ToString();
+                    string capacity = selectedRow.Cells["Capacity"].Value?.ToString();
+                    string price = selectedRow.Cells["Price"].Value?.ToString(); // Fix the column name here
+
+                    string status = selectedRow.Cells["Status"].Value?.ToString(); // Fix the column name here
+
+                    stats = status;
+
+                    roomNum = roomNumber;
+
+                    // Check if any cell value is null
+                    if (roomNumber != null && desc != null && capacity != null && price != null)
+                    {
+                        // Set the values to the text boxes
+                        txtRoomNumber.Text = roomNumber;
+                        txtDescription.Text = desc;
+                        txtCapacity.Text = capacity;
+                        txtPrice.Text = price;
+                        cmbGender.Text = selectedRow.Cells["Allowed Gender"].Value?.ToString();
+                        cmbStatus.Text = selectedRow.Cells["Status"].Value?.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("One or more cell values are null.");
+                    }
                 }
             }
+            catch { 
+            
+                //do nothing
+
+            }
+            
         }
 
         private void txtCapacity_KeyPress(object sender, KeyPressEventArgs e)
@@ -294,7 +301,7 @@ namespace boardingHouseProj
                 btnRecover.Show();
                 btnDelete.Hide();
 
-                string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
+                string query1 = " Select Room_number as Room, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
                 showData(query1);
                 btnConfirm.Enabled = false;
 
@@ -371,6 +378,12 @@ namespace boardingHouseProj
             cmbStatus.Text = "";
             cmbGender.Text = "";
         
+        }
+
+        private void btnBed_Click(object sender, EventArgs e)
+        {
+            EditBed e1 = new EditBed();
+            e1.ShowDialog();
         }
     }
 }

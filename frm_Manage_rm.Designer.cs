@@ -282,6 +282,7 @@
             this.btnBed.TabIndex = 32;
             this.btnBed.Text = "Bed";
             this.btnBed.UseVisualStyleBackColor = false;
+            this.btnBed.Click += new System.EventHandler(this.btnBed_Click);
             // 
             // frmManage_rm
             // 

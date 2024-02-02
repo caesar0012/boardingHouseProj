@@ -40,20 +40,34 @@
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.dtEndLease = new System.Windows.Forms.DateTimePicker();
             this.cmbBedStats = new System.Windows.Forms.ComboBox();
+            this.clmnBed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnRemove = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgBed)).BeginInit();
             this.SuspendLayout();
             // 
             // dgBed
             // 
-            this.dgBed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgBed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBed.ColumnHeadersHeight = 29;
+            this.dgBed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnBed,
+            this.clmnName,
+            this.clmnStart,
+            this.clmnEnd,
+            this.clmnStatus,
+            this.clmnRemove});
             this.dgBed.EnableHeadersVisualStyles = false;
-            this.dgBed.Location = new System.Drawing.Point(221, 62);
+            this.dgBed.Location = new System.Drawing.Point(221, 52);
             this.dgBed.Name = "dgBed";
             this.dgBed.RowHeadersVisible = false;
-            this.dgBed.Size = new System.Drawing.Size(516, 311);
+            this.dgBed.RowHeadersWidth = 51;
+            this.dgBed.Size = new System.Drawing.Size(565, 311);
             this.dgBed.TabIndex = 0;
             this.dgBed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBed_CellClick);
+            this.dgBed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBed_CellContentClick);
             // 
             // label1
             // 
@@ -61,7 +75,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(15, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 16);
+            this.label1.Size = new System.Drawing.Size(38, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bed";
             // 
@@ -69,7 +83,7 @@
             // 
             this.txtBed.Location = new System.Drawing.Point(18, 71);
             this.txtBed.Name = "txtBed";
-            this.txtBed.Size = new System.Drawing.Size(179, 20);
+            this.txtBed.Size = new System.Drawing.Size(179, 23);
             this.txtBed.TabIndex = 2;
             // 
             // label2
@@ -78,7 +92,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tenant";
             // 
@@ -88,7 +102,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(18, 298);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.Size = new System.Drawing.Size(82, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "EndLease";
             // 
@@ -98,7 +112,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 5;
             this.label4.Text = "StartLease";
             // 
@@ -108,7 +122,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(15, 179);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.Size = new System.Drawing.Size(88, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Bed Status";
             // 
@@ -116,9 +130,9 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.IndianRed;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(61, 364);
+            this.btnUpdate.Location = new System.Drawing.Point(61, 360);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 27);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -129,21 +143,21 @@
             this.cmbTenant.FormattingEnabled = true;
             this.cmbTenant.Location = new System.Drawing.Point(15, 137);
             this.cmbTenant.Name = "cmbTenant";
-            this.cmbTenant.Size = new System.Drawing.Size(182, 22);
+            this.cmbTenant.Size = new System.Drawing.Size(182, 24);
             this.cmbTenant.TabIndex = 12;
             // 
             // dtStart
             // 
             this.dtStart.Location = new System.Drawing.Point(18, 265);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(179, 20);
+            this.dtStart.Size = new System.Drawing.Size(179, 23);
             this.dtStart.TabIndex = 13;
             // 
             // dtEndLease
             // 
             this.dtEndLease.Location = new System.Drawing.Point(18, 331);
             this.dtEndLease.Name = "dtEndLease";
-            this.dtEndLease.Size = new System.Drawing.Size(179, 20);
+            this.dtEndLease.Size = new System.Drawing.Size(179, 23);
             this.dtEndLease.TabIndex = 14;
             // 
             // cmbBedStats
@@ -155,15 +169,64 @@
             "Under Maintenance"});
             this.cmbBedStats.Location = new System.Drawing.Point(18, 210);
             this.cmbBedStats.Name = "cmbBedStats";
-            this.cmbBedStats.Size = new System.Drawing.Size(182, 22);
+            this.cmbBedStats.Size = new System.Drawing.Size(182, 24);
             this.cmbBedStats.TabIndex = 15;
+            // 
+            // clmnBed
+            // 
+            this.clmnBed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnBed.FillWeight = 75.08021F;
+            this.clmnBed.HeaderText = "Assign Bed";
+            this.clmnBed.MinimumWidth = 6;
+            this.clmnBed.Name = "clmnBed";
+            // 
+            // clmnName
+            // 
+            this.clmnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnName.FillWeight = 75.08021F;
+            this.clmnName.HeaderText = "Name";
+            this.clmnName.MinimumWidth = 6;
+            this.clmnName.Name = "clmnName";
+            // 
+            // clmnStart
+            // 
+            this.clmnStart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnStart.FillWeight = 75.08021F;
+            this.clmnStart.HeaderText = "StartLease";
+            this.clmnStart.MinimumWidth = 6;
+            this.clmnStart.Name = "clmnStart";
+            // 
+            // clmnEnd
+            // 
+            this.clmnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnEnd.FillWeight = 75.08021F;
+            this.clmnEnd.HeaderText = "EndLease";
+            this.clmnEnd.MinimumWidth = 6;
+            this.clmnEnd.Name = "clmnEnd";
+            // 
+            // clmnStatus
+            // 
+            this.clmnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmnStatus.FillWeight = 75.08021F;
+            this.clmnStatus.HeaderText = "Status";
+            this.clmnStatus.MinimumWidth = 6;
+            this.clmnStatus.Name = "clmnStatus";
+            // 
+            // clmnRemove
+            // 
+            this.clmnRemove.FillWeight = 224.5989F;
+            this.clmnRemove.HeaderText = "";
+            this.clmnRemove.MinimumWidth = 6;
+            this.clmnRemove.Name = "clmnRemove";
+            this.clmnRemove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmnRemove.Width = 70;
             // 
             // EditBed
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(762, 399);
+            this.ClientSize = new System.Drawing.Size(798, 399);
             this.Controls.Add(this.cmbBedStats);
             this.Controls.Add(this.dtEndLease);
             this.Controls.Add(this.dtStart);
@@ -201,5 +264,11 @@
         private System.Windows.Forms.DateTimePicker dtStart;
         private System.Windows.Forms.DateTimePicker dtEndLease;
         private System.Windows.Forms.ComboBox cmbBedStats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnBed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnStatus;
+        private System.Windows.Forms.DataGridViewImageColumn clmnRemove;
     }
 }

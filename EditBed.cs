@@ -166,5 +166,27 @@ namespace boardingHouseProj
                 }
             }
         }
+
+        void updateTenantLease() {
+
+            using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
+
+                connect.Open();
+
+                string query = "";
+
+                SqlCommand cmd = new SqlCommand(query, connect);
+                
+
+                cmd.ExecuteNonQuery();
+            
+            
+            }
+        
+        
+        
+        
+        
+        }
     }
 }

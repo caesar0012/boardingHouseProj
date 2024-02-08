@@ -24,6 +24,7 @@ namespace boardingHouseProj
         {
             loadData();
             loadTenant();
+            lblRoomNum.Text = frmManage_rm.roomNum;
         }
 
         private void loadData() {
@@ -68,12 +69,16 @@ namespace boardingHouseProj
                     DataGridViewRow selectedRow = dgBed.Rows[e.RowIndex];
                     selectedRow.Selected = true;
 
-                    txtBed.Text = selectedRow.Cells["clmnBed"].Value.ToString();
-                    cmbTenant.Text = selectedRow.Cells["clmnName"].Value.ToString();
-                    cmbBedStats.Text = selectedRow.Cells["clmnStatus"].Value.ToString();
+                    txtBed.Text = selectedRow.Cells["clmnBed"].Value?.ToString();
+                    cmbTenant.Text = selectedRow.Cells["clmnName"].Value?.ToString();
+                    cmbBedStats.Text = selectedRow.Cells["clmnStatus"].Value?.ToString();
 
 
 
+                }
+                else { 
+                
+                
                 }
             }
             catch { 
@@ -96,15 +101,19 @@ namespace boardingHouseProj
 
 
                 cmd.ExecuteNonQuery();
+
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            updateTenantLease();
+            MessageBox.Show("Done Update");
         }
 
         void loadTenant() {
+
+            cmbTenant.Items.Clear();
 
             using (SqlConnection connect = new SqlConnection(ConnectSql.connectionString)) {
 
@@ -143,6 +152,8 @@ namespace boardingHouseProj
 
                 cmd.Parameters.AddWithValue("@TName", cmbTenant.Text);
                 cmd.ExecuteNonQuery();
+
+                
             
             }
         }
@@ -156,9 +167,10 @@ namespace boardingHouseProj
                 // Check the user's choice
                 if (result == DialogResult.Yes)
                 {
-                   removeTenant();
-                    dgBed.Refresh();
-                    
+                    removeTenant();
+                    dgBed.Rows.Clear();
+                    loadData();
+                    loadTenant();
                 }
                 else
                 {
@@ -173,20 +185,27 @@ namespace boardingHouseProj
 
                 connect.Open();
 
-                string query = "";
+                string query = @"Update lease_tbl set 
+	                                bed_id = (select 
+	                                b1.bed_id 
+                                from bed_tbl as b1
+                                left join Room as r1
+                                on b1.RoomID = r1.Room_id
+                                where r1.Room_number = @roomNum), 
+                                    staff_id = @staffID
+                                where Tenant_id = (
+	                                Select Tenant_id from Tenant where
+	                                FirstName + ' ' + Lastname = @Tname)";
 
                 SqlCommand cmd = new SqlCommand(query, connect);
-                
+
+                cmd.Parameters.AddWithValue("@roomNum", frmManage_rm.roomNum);
+                cmd.Parameters.AddWithValue("@Tname", cmbTenant.Text);
+                cmd.Parameters.AddWithValue("@staffID", frmLogin.staff_id);
 
                 cmd.ExecuteNonQuery();
-            
-            
+                MessageBox.Show("Done Update");
             }
-        
-        
-        
-        
-        
         }
     }
 }

@@ -22,7 +22,6 @@ namespace boardingHouseProj
         public frmManage_rm()
         {
             InitializeComponent();
-            dgRoom.DataError += dataGridView1_DataError;
             btnRecover.Hide();
 
             checkRole();
@@ -74,14 +73,6 @@ namespace boardingHouseProj
             }
         }
 
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            // Display the default error dialog
-            MessageBox.Show("Error in data: " + e.Exception.Message, "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            // Optionally, you can cancel the event to suppress the default error dialog
-            e.Cancel = true;
-        }
 
         private void gridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -287,7 +278,7 @@ namespace boardingHouseProj
                     MessageBox.Show("Recover Successfully.");
                 }
 
-                string query1 = " Select Room_number, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
+                string query1 = " Select Room_number as Room, Description, allowed_gender as 'Allowed Gender', Price, Capacity, Status from Room where archive = 1;";
                 showData(query1);
             }
             clear();

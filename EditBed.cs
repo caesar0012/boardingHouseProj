@@ -108,7 +108,6 @@ namespace boardingHouseProj
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             updateTenantLease();
-            MessageBox.Show("Done Update");
         }
 
         void loadTenant() {
@@ -205,6 +204,9 @@ namespace boardingHouseProj
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Done Update");
+                dgBed.Rows.Clear();
+                loadData();
+                loadTenant();
             }
         }
     }
